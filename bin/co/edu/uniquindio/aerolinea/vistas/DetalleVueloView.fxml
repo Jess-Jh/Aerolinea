@@ -19,7 +19,7 @@
    <children>
       <TextField fx:id="txtCostoPorPersona" layoutX="41.0" layoutY="272.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="255.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
       <Separator layoutX="320.0" orientation="VERTICAL" prefHeight="419.0" prefWidth="29.0" />
-      <Label layoutX="40.0" layoutY="37.0" text="Detalles del vuelo">
+      <Label layoutX="40.0" layoutY="37.0" text="Detalles selección ">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -66,7 +66,7 @@
       <FontAwesomeIconView fill="#057935" glyphName="FLAG" layoutX="42.0" layoutY="186.0" selectionFill="#42eb5e" size="17.0" />
       <FontAwesomeIconView fill="#057935" glyphName="MAP_MARKER" layoutX="40.0" layoutY="237.0" selectionEnd="0" selectionFill="#42eb5e" size="17.0" />
       <FontAwesomeIconView fill="#057935" glyphName="MALE" layoutX="42.0" layoutY="292.0" selectionFill="#42eb5e" size="17.0" />
-      <Label layoutX="556.0" layoutY="63.0" text="Vuelos">
+      <Label layoutX="556.0" layoutY="54.0" text="Vuelos">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
@@ -90,11 +90,17 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btnCancelarCompra" layoutX="600.0" layoutY="339.0" mnemonicParsing="false" onAction="#cancelarCompra" prefHeight="27.0" prefWidth="219.0" style="-fx-background-color: green;" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>
