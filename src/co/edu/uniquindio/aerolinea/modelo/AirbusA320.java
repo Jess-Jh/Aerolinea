@@ -10,9 +10,9 @@ public class AirbusA320 extends Aeronave {
 	 * Constructor 
 	 * @param capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion
 	 */
-	public AirbusA320(CapacidadAsientos capacidadAsientos, double capacidadCarga, Ruta ruta,
+	public AirbusA320(String nombre, CapacidadAsientos capacidadAsientos, double capacidadCarga, Ruta ruta,
 			HashSet<Tripulante> listaTripulantes, String numIdentificacionAvion) {
-		super(capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion);
+		super(nombre, capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion);
 	}
 	
 	public AirbusA320() {}

@@ -6,6 +6,7 @@ import java.util.HashSet;
 public abstract class Aeronave implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	private String nombre;
 	private CapacidadAsientos capacidadAsientos;
 	private double capacidadCarga;
 	private Ruta ruta;
@@ -16,8 +17,9 @@ public abstract class Aeronave implements Serializable {
 	 * Constructor
 	 * @param capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion
 	 */
-	public Aeronave(CapacidadAsientos capacidadAsientos, double capacidadCarga, Ruta ruta, HashSet<Tripulante> listaTripulantes,
+	public Aeronave(String nombre, CapacidadAsientos capacidadAsientos, double capacidadCarga, Ruta ruta, HashSet<Tripulante> listaTripulantes,
 					String numIdentificacionAvion) {
+		this.nombre = nombre;
 		this.capacidadAsientos = capacidadAsientos;
 		this.capacidadCarga = capacidadCarga;
 		this.ruta = ruta;
@@ -28,6 +30,12 @@ public abstract class Aeronave implements Serializable {
 	public Aeronave() {}
 	
 	//-------------------- Métodos Getters and Setters -------------------------------------------->>
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	public CapacidadAsientos getCapacidadAsientos() {
 		return capacidadAsientos;
 	}

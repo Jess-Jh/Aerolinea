@@ -16,7 +16,7 @@ public class Tiquete implements Serializable {
 	private double costoPorPersona;
 	private double precioFinal;
 	private Cliente cliente;
-	private ArrayList<String> ocupacionSillas;
+	private ArrayList<Asiento> ocupacionSillas;
 	
 	/**
 	 * Constructor
@@ -25,7 +25,7 @@ public class Tiquete implements Serializable {
 	 */
 	public Tiquete(TipoViaje tipoViaje, TipoClase claseServicio, Ruta rutaViaje, LocalDate fechaInicio,
 			LocalDate fechaRegreso, int cantPersonas, double costoPorPersona, double precioFinal, Cliente cliente,
-			ArrayList<String> ocupacionSillas) {
+			ArrayList<Asiento> ocupacionSillas) {
 		this.tipoViaje = tipoViaje;
 		this.claseServicio = claseServicio;
 		this.rutaViaje = rutaViaje;
@@ -95,10 +95,10 @@ public class Tiquete implements Serializable {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	public ArrayList<String> getOcupacionSillas() {
+	public ArrayList<Asiento> getOcupacionSillas() {
 		return ocupacionSillas;
 	}
-	public void setOcupacionSillas(ArrayList<String> ocupacionSillas) {
+	public void setOcupacionSillas(ArrayList<Asiento> ocupacionSillas) {
 		this.ocupacionSillas = ocupacionSillas;
 	}
 	//---------------------------------------------------------------------|
