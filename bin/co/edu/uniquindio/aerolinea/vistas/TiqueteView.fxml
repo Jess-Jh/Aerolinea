@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="334.0" prefWidth="726.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<AnchorPane prefHeight="351.0" prefWidth="726.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
    <children>
       <Label layoutX="259.0" layoutY="14.0" text="Compra de Tiquetes">
          <font>
