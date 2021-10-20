@@ -3,6 +3,7 @@ package co.edu.uniquindio.aerolinea.aplicacion;
 import java.io.IOException;
 
 import co.edu.uniquindio.aerolinea.controladores.ModelFactoryController;
+import co.edu.uniquindio.aerolinea.controladores.OcupacionSillasController;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -48,10 +49,10 @@ public class AplicacionAerolinea extends Application {
 	public void mostrarVentanaPrincipal() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/InicioSesionView.fxml"));
+			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/OcupacionSillasView.fxml"));
 			AnchorPane anchorPane = (AnchorPane)loader.load();
-//			InicioSesionController inicioSesionController = loader.getController();
-//			inicioSesionController.setAplicacion(this);
+			OcupacionSillasController ocupacionSillasController = loader.getController();
+			ocupacionSillasController.setAplicacion(this);
 			
 			Scene scene = new Scene(anchorPane);
 //			scene.setFill(Color.TRANSPARENT);
