@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,6 +24,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A1 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A2E" layoutX="390.0" layoutY="178.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A2" textFill="WHITE">
          <font>
@@ -31,6 +39,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A2 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A3E" layoutX="421.0" layoutY="178.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A3" textFill="WHITE">
          <font>
@@ -39,6 +54,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A3 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C1E" layoutX="358.0" layoutY="209.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C1" textFill="WHITE">
          <font>
@@ -47,6 +69,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C1 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C2E" layoutX="390.0" layoutY="209.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C2" textFill="WHITE">
          <font>
@@ -55,6 +84,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C2 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C3E" layoutX="421.0" layoutY="209.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C3" textFill="WHITE">
          <font>
@@ -63,6 +99,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C3 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D1E" layoutX="360.0" layoutY="277.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D1" textFill="WHITE">
          <font>
@@ -71,6 +114,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D1 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D2E" layoutX="392.0" layoutY="277.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D2" textFill="WHITE">
          <font>
@@ -79,6 +129,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D2 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D3E" layoutX="423.0" layoutY="277.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D3" textFill="WHITE">
          <font>
@@ -87,6 +144,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D3 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F1E" layoutX="360.0" layoutY="308.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F1" textFill="WHITE">
          <font>
@@ -95,6 +159,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F1 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F2E" layoutX="392.0" layoutY="308.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F2" textFill="WHITE">
          <font>
@@ -103,6 +174,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F2 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F3E" layoutX="423.0" layoutY="308.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F3" textFill="WHITE">
          <font>
@@ -111,6 +189,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F3 Ejecutiva">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A1C" layoutX="517.0" layoutY="176.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A1">
          <font>
@@ -119,6 +204,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A1 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B1C" layoutX="517.0" layoutY="198.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B1">
          <font>
@@ -127,6 +219,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B1 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C1C" layoutX="517.0" layoutY="220.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C1">
          <font>
@@ -135,6 +234,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C1 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D1C" layoutX="517.0" layoutY="267.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D1">
          <font>
@@ -143,6 +249,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D1 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E1C" layoutX="517.0" layoutY="289.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E1">
          <font>
@@ -151,6 +264,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E1 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F1C" layoutX="517.0" layoutY="311.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F1">
          <font>
@@ -159,6 +279,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F1 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A2C" layoutX="543.0" layoutY="176.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A2">
          <font>
@@ -167,6 +294,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A2 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B2C" layoutX="543.0" layoutY="198.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B2">
          <font>
@@ -175,6 +309,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B2 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C2C" layoutX="543.0" layoutY="220.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C2">
          <font>
@@ -183,6 +324,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C2 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D2C" layoutX="543.0" layoutY="267.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D2">
          <font>
@@ -191,6 +339,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D2 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E2C" layoutX="543.0" layoutY="289.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E2">
          <font>
@@ -199,6 +354,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E2 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F2C" layoutX="543.0" layoutY="311.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F2">
          <font>
@@ -207,6 +369,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F2 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A3C" layoutX="569.0" layoutY="176.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A3">
          <font>
@@ -215,6 +384,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A3 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B3C" layoutX="569.0" layoutY="198.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B3">
          <font>
@@ -223,6 +399,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B3 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C3C" layoutX="569.0" layoutY="220.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C3">
          <font>
@@ -231,6 +414,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C3 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D3C" layoutX="569.0" layoutY="267.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D3">
          <font>
@@ -239,6 +429,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D3 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E3C" layoutX="569.0" layoutY="289.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E3">
          <font>
@@ -247,6 +444,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E3 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F3C" layoutX="569.0" layoutY="311.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F3">
          <font>
@@ -255,6 +459,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F3 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A4C" layoutX="595.0" layoutY="176.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A4">
          <font>
@@ -263,6 +474,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A4 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B4C" layoutX="595.0" layoutY="198.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B4">
          <font>
@@ -271,6 +489,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B4 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C4C" layoutX="595.0" layoutY="220.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C4">
          <font>
@@ -279,6 +504,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C4 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D4C" layoutX="595.0" layoutY="267.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D4">
          <font>
@@ -287,6 +519,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D4 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E4C" layoutX="595.0" layoutY="289.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E4">
          <font>
@@ -295,6 +534,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E4 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F4C" layoutX="595.0" layoutY="311.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F4">
          <font>
@@ -303,6 +549,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F4 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A5C" layoutX="621.0" layoutY="176.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A5">
          <font>
@@ -311,6 +564,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A5 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B5C" layoutX="621.0" layoutY="198.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B5">
          <font>
@@ -319,6 +579,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B5 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C5C" layoutX="621.0" layoutY="220.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C5">
          <font>
@@ -327,6 +594,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C5 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D5C" layoutX="621.0" layoutY="267.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D5">
          <font>
@@ -335,6 +609,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D5 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E5C" layoutX="621.0" layoutY="289.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E5">
          <font>
@@ -343,6 +624,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E5 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F5C" layoutX="621.0" layoutY="311.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F5">
          <font>
@@ -351,6 +639,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F5 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A6C" layoutX="646.0" layoutY="177.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A6">
          <font>
@@ -359,6 +654,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A6 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B6C" layoutX="646.0" layoutY="199.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B6">
          <font>
@@ -367,6 +669,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B6 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C6C" layoutX="646.0" layoutY="221.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C6">
          <font>
@@ -375,6 +684,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C6 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D6C" layoutX="646.0" layoutY="267.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D6">
          <font>
@@ -383,6 +699,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D6 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E6C" layoutX="646.0" layoutY="289.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E6">
          <font>
@@ -391,6 +714,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E6 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F6C" layoutX="646.0" layoutY="311.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F6">
          <font>
@@ -399,6 +729,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F6 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A7C" layoutX="672.0" layoutY="177.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A7">
          <font>
@@ -407,6 +744,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A7 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B7C" layoutX="672.0" layoutY="199.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B7">
          <font>
@@ -415,6 +759,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B7 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C7C" layoutX="672.0" layoutY="221.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C7">
          <font>
@@ -423,6 +774,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C7 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D7C" layoutX="672.0" layoutY="267.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D7">
          <font>
@@ -431,6 +789,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D7 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E7C" layoutX="672.0" layoutY="289.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E7">
          <font>
@@ -439,6 +804,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E7 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F7C" layoutX="672.0" layoutY="311.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F7">
          <font>
@@ -447,6 +819,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F7 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A8C" layoutX="703.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A8">
          <font>
@@ -455,6 +834,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A8 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B8C" layoutX="703.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B8">
          <font>
@@ -463,6 +849,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B8 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C8C" layoutX="703.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C8">
          <font>
@@ -471,6 +864,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C8 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D8C" layoutX="703.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D8">
          <font>
@@ -479,6 +879,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D8 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E8C" layoutX="703.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E8">
          <font>
@@ -487,6 +894,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E8 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F8C" layoutX="703.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F8">
          <font>
@@ -495,6 +909,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F8 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A9C" layoutX="738.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A9">
          <font>
@@ -503,6 +924,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A9 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B9C" layoutX="738.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B9">
          <font>
@@ -511,6 +939,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B9 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C9C" layoutX="738.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C9">
          <font>
@@ -519,6 +954,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C9 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D9C" layoutX="738.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D9">
          <font>
@@ -527,6 +969,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D9 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E9C" layoutX="738.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E9">
          <font>
@@ -535,6 +984,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E9 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F9C" layoutX="738.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F9">
          <font>
@@ -543,6 +999,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F9 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A10C" layoutX="764.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A10">
          <font>
@@ -551,6 +1014,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A10 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B10C" layoutX="764.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B10">
          <font>
@@ -559,6 +1029,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B10 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C10C" layoutX="764.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C10">
          <font>
@@ -567,6 +1044,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C10 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D10C" layoutX="764.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D10">
          <font>
@@ -575,6 +1059,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D10 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E10C" layoutX="764.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E10">
          <font>
@@ -583,6 +1074,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E10 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F10C" layoutX="764.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F10">
          <font>
@@ -591,6 +1089,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F10 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A11C" layoutX="790.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A11">
          <font>
@@ -599,6 +1104,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A11 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C11C" layoutX="790.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C11">
          <font>
@@ -607,6 +1119,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C11 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D11C" layoutX="790.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D11">
          <font>
@@ -615,6 +1134,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D11 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E11C" layoutX="790.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E11">
          <font>
@@ -623,6 +1149,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E11 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F11C" layoutX="790.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F11">
          <font>
@@ -631,6 +1164,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F11 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A12C" layoutX="816.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A12">
          <font>
@@ -639,6 +1179,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A12 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B12C" layoutX="816.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B12">
          <font>
@@ -647,6 +1194,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B12 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C12C" layoutX="816.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C12">
          <font>
@@ -655,6 +1209,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C12 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D12C" layoutX="816.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D12">
          <font>
@@ -663,6 +1224,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D12 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E12C" layoutX="816.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E12">
          <font>
@@ -671,6 +1239,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E12 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F12C" layoutX="816.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F12">
          <font>
@@ -679,6 +1254,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F12 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A13C" layoutX="842.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A13">
          <font>
@@ -687,6 +1269,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A13 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B13C" layoutX="842.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B13">
          <font>
@@ -695,6 +1284,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B13 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C13C" layoutX="842.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C13">
          <font>
@@ -703,6 +1299,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C13 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D13C" layoutX="842.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D13">
          <font>
@@ -711,6 +1314,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D13 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E13C" layoutX="842.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E13">
          <font>
@@ -719,6 +1329,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E13 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F13C" layoutX="842.0" layoutY="313.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F13">
          <font>
@@ -727,6 +1344,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F13 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A14C" layoutX="867.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A14">
          <font>
@@ -735,6 +1359,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A14 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B14C" layoutX="867.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B14">
          <font>
@@ -743,6 +1374,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B14 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C14C" layoutX="867.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C14">
          <font>
@@ -751,6 +1389,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C14 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D14C" layoutX="867.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D14">
          <font>
@@ -759,6 +1404,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D14 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E14C" layoutX="867.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E14">
          <font>
@@ -767,6 +1419,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E14 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F14C" layoutX="867.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F14">
          <font>
@@ -775,6 +1434,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F14 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A15C" layoutX="893.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A15">
          <font>
@@ -783,6 +1449,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A15 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B15C" layoutX="893.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B15">
          <font>
@@ -791,6 +1464,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B15 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C15C" layoutX="893.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C15">
          <font>
@@ -799,6 +1479,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C15 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D15C" layoutX="893.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D15">
          <font>
@@ -807,6 +1494,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D15 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E15C" layoutX="893.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E15">
          <font>
@@ -815,6 +1509,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E15 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F15C" layoutX="893.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F15">
          <font>
@@ -823,6 +1524,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F15 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B11C" layoutX="790.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B11">
          <font>
@@ -831,6 +1539,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A11 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A16C" layoutX="919.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A16">
          <font>
@@ -839,6 +1554,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A16 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B16C" layoutX="919.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B16">
          <font>
@@ -847,6 +1569,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B16 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C16C" layoutX="919.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C16">
          <font>
@@ -855,6 +1584,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C16 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D16C" layoutX="919.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D16">
          <font>
@@ -863,6 +1599,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D16 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E16C" layoutX="919.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E16">
          <font>
@@ -871,6 +1614,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E16 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F16C" layoutX="919.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F16">
          <font>
@@ -879,6 +1629,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F16 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A17C" layoutX="945.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A17">
          <font>
@@ -887,6 +1644,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A17 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B17C" layoutX="945.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B17">
          <font>
@@ -895,6 +1659,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B17 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C17C" layoutX="945.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C17">
          <font>
@@ -903,6 +1674,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C17 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D17C" layoutX="945.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D17">
          <font>
@@ -911,6 +1689,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D17 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E17C" layoutX="945.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E17">
          <font>
@@ -919,6 +1704,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E17 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F17C" layoutX="945.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F17">
          <font>
@@ -927,6 +1719,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F17 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A18C" layoutX="971.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A18">
          <font>
@@ -935,6 +1734,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A18 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C18C" layoutX="971.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C18">
          <font>
@@ -943,6 +1749,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C18 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D18C" layoutX="971.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D18">
          <font>
@@ -951,6 +1764,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D18 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E18C" layoutX="971.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E18">
          <font>
@@ -959,6 +1779,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E18 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F18C" layoutX="971.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F18">
          <font>
@@ -967,6 +1794,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F18 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A19C" layoutX="997.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A19">
          <font>
@@ -975,6 +1809,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A19 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B19C" layoutX="997.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B19">
          <font>
@@ -983,6 +1824,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B19 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C19C" layoutX="997.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C19">
          <font>
@@ -991,6 +1839,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C19 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D19C" layoutX="997.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D19">
          <font>
@@ -999,6 +1854,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D19 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E19C" layoutX="997.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E19">
          <font>
@@ -1007,6 +1869,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E19 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F19C" layoutX="997.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F19">
          <font>
@@ -1015,6 +1884,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F19 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A20C" layoutX="1023.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A20">
          <font>
@@ -1023,6 +1899,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A20 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B20C" layoutX="1023.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B20">
          <font>
@@ -1031,6 +1914,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B20 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C20C" layoutX="1023.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C20">
          <font>
@@ -1039,6 +1929,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C20 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D20C" layoutX="1023.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D20">
          <font>
@@ -1047,6 +1944,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C20 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E20C" layoutX="1023.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E20">
          <font>
@@ -1055,6 +1959,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E20 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F20C" layoutX="1023.0" layoutY="313.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F20">
          <font>
@@ -1063,6 +1974,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F20 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A21C" layoutX="1048.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A21">
          <font>
@@ -1071,6 +1989,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A21 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B21C" layoutX="1048.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B21">
          <font>
@@ -1079,6 +2004,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B21 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C21C" layoutX="1048.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C21">
          <font>
@@ -1087,6 +2019,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C21 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D21C" layoutX="1048.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D21">
          <font>
@@ -1095,6 +2034,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D21 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E21C" layoutX="1048.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E21">
          <font>
@@ -1103,6 +2049,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E21 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F21C" layoutX="1048.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F21">
          <font>
@@ -1111,6 +2064,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F21 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A22C" layoutX="1074.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A22">
          <font>
@@ -1119,6 +2079,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A22 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B22C" layoutX="1074.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B22">
          <font>
@@ -1127,6 +2094,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B22 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C22C" layoutX="1074.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C22">
          <font>
@@ -1135,6 +2108,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C22 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="D22C" layoutX="1074.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D22">
          <font>
@@ -1143,6 +2123,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D22 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E22C" layoutX="1074.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E22">
          <font>
@@ -1151,6 +2137,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E23 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F22C" layoutX="1074.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F22">
          <font>
@@ -1159,6 +2152,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F22 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B18C" layoutX="971.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B18">
          <font>
@@ -1167,6 +2166,13 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B18 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="A23C" layoutX="1100.0" layoutY="178.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A23">
          <font>
@@ -1175,6 +2181,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="A23 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="B23C" layoutX="1100.0" layoutY="200.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="B23">
          <font>
@@ -1183,6 +2195,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="B23 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="C23C" layoutX="1100.0" layoutY="222.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C23">
          <font>
@@ -1191,14 +2209,26 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="C23 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
-      <Button fx:id="D23C" layoutX="1100.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D23">
+      <Button fx:id="D23C" layoutX="1100.0" layoutY="268.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D23 ">
          <font>
             <Font size="6.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="D23 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="E23C" layoutX="1100.0" layoutY="290.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E23">
          <font>
@@ -1207,6 +2237,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="E23 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Button fx:id="F23C" layoutX="1100.0" layoutY="312.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F23">
          <font>
@@ -1215,6 +2251,12 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <tooltip>
+            <Tooltip text="F23 Económica">
+               <font>
+                  <Font size="14.0" />
+               </font></Tooltip>
+         </tooltip>
       </Button>
       <Label layoutX="533.0" layoutY="20.0" text="Airbus A320">
          <font>
