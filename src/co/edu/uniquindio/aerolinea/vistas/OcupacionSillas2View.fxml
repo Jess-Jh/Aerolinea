@@ -2970,21 +2970,6 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G28C" layoutX="1171.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G28">
-         <font>
-            <Font size="6.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <tooltip>
-            <Tooltip text="G28 Económica">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Tooltip>
-         </tooltip>
-      </Button>
       <Button fx:id="C28C" layoutX="1171.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C28">
          <font>
             <Font size="6.0" />
@@ -2994,21 +2979,6 @@
          </cursor>
          <tooltip>
             <Tooltip text="C28 Económica">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Tooltip>
-         </tooltip>
-      </Button>
-      <Button fx:id="D28C" layoutX="1171.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D28">
-         <font>
-            <Font size="6.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <tooltip>
-            <Tooltip text="D28 Económica">
                <font>
                   <Font size="14.0" />
                </font>
