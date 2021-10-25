@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import co.edu.uniquindio.aerolinea.controladores.ModelFactoryController;
 import co.edu.uniquindio.aerolinea.controladores.OcupacionSillasController;
+import co.edu.uniquindio.aerolinea.controladores.TiqueteController;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class AplicacionAerolinea extends Application {
@@ -49,18 +51,44 @@ public class AplicacionAerolinea extends Application {
 	public void mostrarVentanaPrincipal() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/TiqueteView.fxml"));
+			AnchorPane anchorPane = (AnchorPane)loader.load();
+			TiqueteController tiqueteController = loader.getController();
+			tiqueteController.setAplicacion(this);
+			
+			dialogStage = new Stage();
+			dialogStage.setTitle("Registro de viaje");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			
+			Scene scene = new Scene(anchorPane);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	/**
+	 * Cargar vista GestiónAdministración
+	 */
+	public void mostrarOcupacionSillasView() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/OcupacionSillasView.fxml"));
 			AnchorPane anchorPane = (AnchorPane)loader.load();
 			OcupacionSillasController ocupacionSillasController = loader.getController();
 			ocupacionSillasController.setAplicacion(this);
 			
+			dialogStage = new Stage();
+			dialogStage.setTitle("Administración");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			
 			Scene scene = new Scene(anchorPane);
-//			scene.setFill(Color.TRANSPARENT);
-//			primaryStage.initStyle(StageStyle.TRANSPARENT);
-			
 			primaryStage.setScene(scene);
-			primaryStage.show();				
-			
+			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

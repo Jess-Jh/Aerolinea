@@ -9,6 +9,7 @@ import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -496,9 +497,9 @@ public class OcupacionSillasController {
     @FXML
     private Button btnCancelarPuestos;
     
-
     @FXML
-    private TextField txtPuestosSeleccionados;
+    private Label txtPuestosSeleccionados;
+    
     String puestosSeleccionados = "";
     
     private AplicacionAerolinea aplicacionAerolinea;

@@ -1,6 +1,7 @@
 package co.edu.uniquindio.aerolinea.modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -91,6 +92,10 @@ public class Aerolinea implements Serializable {
 	public String toString() {
 		return "Aerolinea [nombre=" + nombre + ", listaAeronaves=" + listaAeronaves + ", listaTripulantes="+ listaTripulantes + ", listaEquipajes=" + listaEquipajes 
 				+ ", listaTiquetes=" + listaTiquetes+ ", listaRutas=" + listaRutas + ", listaClientes=" + listaClientes + ", listaCarros=" + listaCarros+ "]";
+	}
+
+	public Object buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, double numeroPersonas) {
+		return null;
 	}
 	
 	

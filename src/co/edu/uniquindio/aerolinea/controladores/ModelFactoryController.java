@@ -1,5 +1,7 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
+import java.time.LocalDate;
+
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 
@@ -54,6 +56,10 @@ public class ModelFactoryController implements Runnable {
 
 	public void run() {
 		
+	}
+	
+	public void buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, double numeroPersonas) {
+		aerolinea.buscarViaje(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);
 	}
 
 }
