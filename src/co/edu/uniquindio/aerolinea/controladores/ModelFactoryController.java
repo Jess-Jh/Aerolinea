@@ -4,6 +4,12 @@ import java.time.LocalDate;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
+import co.edu.uniquindio.aerolinea.modelo.Internacional;
+import co.edu.uniquindio.aerolinea.modelo.Nacional;
+import co.edu.uniquindio.aerolinea.modelo.Ruta;
+import co.edu.uniquindio.aerolinea.modelo.TipoClase;
+import co.edu.uniquindio.aerolinea.modelo.TipoViaje;
+import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 
 public class ModelFactoryController implements Runnable {
 	
@@ -58,8 +64,29 @@ public class ModelFactoryController implements Runnable {
 		
 	}
 	
-	public void buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, double numeroPersonas) {
-		aerolinea.buscarViaje(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);
+	public Tiquete buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, double numeroPersonas) {
+		Tiquete tiquete = new Tiquete();
+		Ruta ruta;
+		int cantPersonas = (int) numeroPersonas;
+
+		if(destino.equalsIgnoreCase("Monterrey") || destino.equalsIgnoreCase("Cancún")) ruta = new Nacional(origen, destino);
+		else ruta = new Internacional(origen, destino);
+		
+		tiquete.setRutaViaje(ruta);
+		
+		if(viajeSeleccionado.equalsIgnoreCase("Ida")) tiquete.setTipoViaje(TipoViaje.IDA);
+		else tiquete.setTipoViaje(TipoViaje.IDA_Y_VUELTA);
+		
+		if(clase.equalsIgnoreCase("Ejecutiva")) tiquete.setClaseServicio(TipoClase.EJECUTIVA);
+		else tiquete.setClaseServicio(TipoClase.ECONOMICA);
+		
+		tiquete.setFechaInicio(fechaSalida);
+		tiquete.setFechaRegreso(fechaRegreso);
+		tiquete.setCantPersonas(cantPersonas);
+		
+		DetalleVueloController detalleVueloController;
+		
+		return tiquete;
 	}
 
 }

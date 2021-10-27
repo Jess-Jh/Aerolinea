@@ -1,5 +1,6 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -7,14 +8,20 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.excepciones.DatosInvalidosException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
+import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -22,13 +29,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * Controlador de la vista TiqueteView
  * @author Jessica Ospina
  */
 public class TiqueteController implements Initializable {
-	
+		
 	//----------SINGLETON----------------------------------------------------->>
 	ModelFactoryController modelFactoryController;
 	Aerolinea aerolinea;
@@ -155,27 +164,44 @@ public class TiqueteController implements Initializable {
 
     @FXML
     void buscarViaje(ActionEvent event) {
-    	String viajeSeleccionado = "";
+    	String viajeSeleccionado = ""; 
+    	Tiquete tiquete;
     	
     	if(rbtIda.isSelected()) viajeSeleccionado = "ida";
     	if(rbtidaVuelta.isSelected()) viajeSeleccionado = "idaYVuelta";
     	
-    	buscarViaje(viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
-    			    txtFechaRegreso.getValue(), sldNumeroPersonas.getValue() );
-    }
-
-	private void buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida,
-			LocalDate fechaRegreso, double numeroPersonas) {
-		
 		try {
-			verificarDatos(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);
+			tiquete = buscarViaje(viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
+					txtFechaRegreso.getValue(), sldNumeroPersonas.getValue() );
 			
-			modelFactoryController.buscarViaje(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);
+			//------------------------------- Cargando Vista del detalle de vuelo ----------------------------------------------------------->>
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/aerolinea/vistas/DetalleVueloView.fxml"));
+			Parent root = loader.load();
+			
+			DetalleVueloController detalleVueloController = loader.getController();
+			detalleVueloController.recuperarDatos(cmbOrigen.getValue(), cmbDestino.getValue(), viajeSeleccionado);
+			
+ 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+			//-------------------------------------------------------------------------------------------------------------------------------||
 			
 		} catch (DatosInvalidosException e) {
 			aplicacionAerolinea.mostrarMensaje("Registro Viaje", "Registro Viaje", e.getMessage(), AlertType.WARNING);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+    }
+
+	private Tiquete buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida,
+			LocalDate fechaRegreso, double numeroPersonas) throws DatosInvalidosException {
 		
+		Tiquete tiquete = null;
+		
+		verificarDatos(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);
+		return tiquete = modelFactoryController.buscarViaje(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);			
+
 	}
 
 	/**

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="502.0" prefWidth="945.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="raiz" prefHeight="502.0" prefWidth="945.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.aerolinea.controladores.DetalleVueloController">
    <children>
       <TextField fx:id="txtCostoPorPersona" layoutX="41.0" layoutY="315.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
       <Separator layoutX="320.0" orientation="VERTICAL" prefHeight="502.0" prefWidth="29.0" />

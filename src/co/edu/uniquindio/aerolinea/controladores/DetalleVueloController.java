@@ -3,8 +3,10 @@ package co.edu.uniquindio.aerolinea.controladores;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
+import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,11 +19,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 public class DetalleVueloController implements Initializable {
-	
-	TiqueteController tiqueteController;
-	
+		
 	//----------SINGLETON----------------------------------------------------->>
 	ModelFactoryController modelFactoryController;
 	Aerolinea aerolinea;
@@ -39,6 +41,9 @@ public class DetalleVueloController implements Initializable {
 	}
 	//-----------------------------------------------------------------------||
 
+    @FXML
+    private AnchorPane raiz;
+	
     @FXML
     private ResourceBundle resources;
 
@@ -61,10 +66,10 @@ public class DetalleVueloController implements Initializable {
     private TableColumn<Aeronave, String> columnCantPasajeros;
 
     @FXML
-    private TableColumn<Aeronave, String> columnDuracionVuelo;
+    private TableColumn<Ruta, String> columnDuracionVuelo;
 
     @FXML
-    private TableColumn<Aeronave, String> columnHoraSalida;
+    private TableColumn<Ruta, String> columnHoraSalida;
 
     @FXML
     private TableColumn<Aeronave, String> columnNombreAeronave;
@@ -86,10 +91,42 @@ public class DetalleVueloController implements Initializable {
 
     @FXML
     private TextField txtVuelo;
+    
+    private AplicacionAerolinea aplicacionAerolinea;
+    
+    private Aeronave aeronaveSeleccion;
+    
+    // Listado de Aeronaves que se muestran en la interfaz 
+    ObservableList<Aeronave> listadoAeronaves = FXCollections.observableArrayList();
+    
+	@Override
+	public void initialize(URL location, ResourceBundle resource) {
+		
+		this.columnNombreAeronave.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+		this.columnCantPasajeros.setCellValueFactory(new PropertyValueFactory<>("capacidadAsientos"));
+		this.columnDuracionVuelo.setCellValueFactory(new PropertyValueFactory<>("duracion"));
+		this.columnHoraSalida.setCellValueFactory(new PropertyValueFactory<>("horaSalida"));
+		
+		//Obtener selección de la tabla
+		tableViewVuelos.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
+			if(newSelection != null) {
+				aeronaveSeleccion = newSelection;
+			}
+		});
+	}
+	
+	public void recuperarDatos(String origen, String destino, String viajeSeleccionado) {
+		cmbOrigen.setValue(origen);
+		cmbDestino.setValue(destino);
+		
+		if(viajeSeleccionado.equalsIgnoreCase("ida")) rbtIda.setSelected(true);
+		else rbtidaVuelta.setSelected(true);
+				
+	}    
 
     @FXML
     void cancelarCompra(ActionEvent event) {
-
+    	
     }
 
     @FXML
@@ -97,11 +134,7 @@ public class DetalleVueloController implements Initializable {
 
     }
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 
 

@@ -8,6 +8,7 @@ import co.edu.uniquindio.aerolinea.controladores.TiqueteController;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -49,9 +50,31 @@ public class AplicacionAerolinea extends Application {
 	}
 	
 	public void mostrarVentanaPrincipal() {
+			
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/TiqueteView.fxml"));
+			AnchorPane anchorPane = (AnchorPane)loader.load();
+			TiqueteController tiqueteController = loader.getController();
+			tiqueteController.setAplicacion(this);
+			
+			dialogStage = new Stage();
+			dialogStage.setTitle("Registro de viaje");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			
+			Scene scene = new Scene(anchorPane);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void mostrarDetalleVueloView() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/DetalleVueloView.fxml"));
 			AnchorPane anchorPane = (AnchorPane)loader.load();
 			TiqueteController tiqueteController = loader.getController();
 			tiqueteController.setAplicacion(this);
