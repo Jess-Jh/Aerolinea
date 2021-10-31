@@ -1,14 +1,15 @@
 package co.edu.uniquindio.aerolinea.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public abstract class Aeronave implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private String nombre;
-	private CapacidadAsientos capacidadAsientos;
-	private double capacidadCarga;
+	private ArrayList<Asiento> capacidadAsientos;
+	protected double capacidadCarga;
 	private Ruta ruta;
 	private HashSet<Tripulante> listaTripulantes;
 	private String numIdentificacionAvion;
@@ -17,11 +18,9 @@ public abstract class Aeronave implements Serializable {
 	 * Constructor
 	 * @param capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion
 	 */
-	public Aeronave(String nombre, CapacidadAsientos capacidadAsientos, double capacidadCarga, Ruta ruta, HashSet<Tripulante> listaTripulantes,
-					String numIdentificacionAvion) {
+	public Aeronave(String nombre, double capacidadCarga, Ruta ruta, String numIdentificacionAvion) {
 		this.nombre = nombre;
-		this.capacidadAsientos = capacidadAsientos;
-		this.capacidadCarga = capacidadCarga;
+		this.capacidadAsientos = new ArrayList<>();
 		this.ruta = ruta;
 		this.listaTripulantes = new HashSet<>();
 		this.numIdentificacionAvion = numIdentificacionAvion;
@@ -36,10 +35,10 @@ public abstract class Aeronave implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public CapacidadAsientos getCapacidadAsientos() {
+	public ArrayList<Asiento> getCapacidadAsientos() {
 		return capacidadAsientos;
 	}
-	public void setCapacidadAsientos(CapacidadAsientos capacidadAsientos) {
+	public void setCapacidadAsientos(ArrayList<Asiento> capacidadAsientos) {
 		this.capacidadAsientos = capacidadAsientos;
 	}
 	public double getCapacidadCarga() {
@@ -67,6 +66,11 @@ public abstract class Aeronave implements Serializable {
 		this.numIdentificacionAvion = numIdentificacionAvion;
 	}
 	//-------------------------------------------------------------------------------------------------------||
+
+	@Override
+	public String toString() {
+		return nombre + "," + capacidadCarga + "," + ruta.getCiudadDestino() + "," + numIdentificacionAvion;
+	}
 	
 	
 	

@@ -2,13 +2,12 @@ package co.edu.uniquindio.aerolinea.aplicacion;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.aerolinea.controladores.AerolineaController;
 import co.edu.uniquindio.aerolinea.controladores.ModelFactoryController;
 import co.edu.uniquindio.aerolinea.controladores.OcupacionSillasController;
-import co.edu.uniquindio.aerolinea.controladores.TiqueteController;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -53,13 +52,13 @@ public class AplicacionAerolinea extends Application {
 			
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/TiqueteView.fxml"));
+			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/AerolineaView.fxml"));
 			AnchorPane anchorPane = (AnchorPane)loader.load();
-			TiqueteController tiqueteController = loader.getController();
-			tiqueteController.setAplicacion(this);
+			AerolineaController aerolineaController = loader.getController();
+			aerolineaController.setAplicacion(this);
 			
 			dialogStage = new Stage();
-			dialogStage.setTitle("Registro de viaje");
+			dialogStage.setTitle("Gestión de Viajes de la Aerolínea");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
 			
@@ -70,31 +69,9 @@ public class AplicacionAerolinea extends Application {
 			e.printStackTrace();
 		}
 	}
-	
-	public void mostrarDetalleVueloView() {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/DetalleVueloView.fxml"));
-			AnchorPane anchorPane = (AnchorPane)loader.load();
-			TiqueteController tiqueteController = loader.getController();
-			tiqueteController.setAplicacion(this);
-			
-			dialogStage = new Stage();
-			dialogStage.setTitle("Registro de viaje");
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-			dialogStage.initOwner(primaryStage);
-			
-			Scene scene = new Scene(anchorPane);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
 
 	/**
-	 * Cargar vista GestiónAdministración
+	 * Cargar vista mostrarOcupacionSillas
 	 */
 	public void mostrarOcupacionSillasView() {
 		try {
@@ -105,7 +82,7 @@ public class AplicacionAerolinea extends Application {
 			ocupacionSillasController.setAplicacion(this);
 			
 			dialogStage = new Stage();
-			dialogStage.setTitle("Administración");
+			dialogStage.setTitle("Ocupación Sillas");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
 			

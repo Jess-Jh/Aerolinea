@@ -2,19 +2,21 @@ package co.edu.uniquindio.aerolinea.modelo;
 
 import java.time.LocalDate;
 
-public abstract class Tripulante extends Persona {
+public class Tripulante extends Persona {
 	
 	private static final long serialVersionUID = 1L;
 	private String estudiosRealizados;
+	private TipoTripulante tipoTripulante;
 	
 	/**
 	 * Constructor
 	 * @param identificacion, nombre apellido, direccion, correoElectronico, fechaNacimiento, estudiosRealizados
 	 */
 	public Tripulante(String identificacion, String nombre, String apellido, String direccion, String correoElectronico,
-			LocalDate fechaNacimiento, String estudiosRealizados) {
+			LocalDate fechaNacimiento, String estudiosRealizados, TipoTripulante tipoTripulante) {
 		super(identificacion, nombre, apellido, direccion, correoElectronico, fechaNacimiento);
 		this.estudiosRealizados = estudiosRealizados;
+		this.tipoTripulante = tipoTripulante;
 	}
 	
 	public Tripulante() {}
@@ -25,6 +27,12 @@ public abstract class Tripulante extends Persona {
 	}
 	public void setEstudiosRealizados(String estudiosRealizados) {
 		this.estudiosRealizados = estudiosRealizados;
+	}
+	public TipoTripulante getTipoTripulante() {
+		return tipoTripulante;
+	}
+	public void setTipoTripulante(TipoTripulante tipoTripulante) {
+		this.tipoTripulante = tipoTripulante;
 	}
 	//---------------------------------------------------------------------------------------------||
 

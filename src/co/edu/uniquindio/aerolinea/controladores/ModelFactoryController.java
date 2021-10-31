@@ -1,19 +1,26 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
+import co.edu.uniquindio.aerolinea.modelo.Aeronave;
+import co.edu.uniquindio.aerolinea.modelo.AirbusA320;
+import co.edu.uniquindio.aerolinea.modelo.AirbusA330;
+import co.edu.uniquindio.aerolinea.modelo.Boeing787;
 import co.edu.uniquindio.aerolinea.modelo.Internacional;
 import co.edu.uniquindio.aerolinea.modelo.Nacional;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoClase;
 import co.edu.uniquindio.aerolinea.modelo.TipoViaje;
 import co.edu.uniquindio.aerolinea.modelo.Tiquete;
+import co.edu.uniquindio.aerolinea.persistencia.Persistencia;
 
 public class ModelFactoryController implements Runnable {
 	
 	Aerolinea aerolinea;
+	Persistencia persistencia;
 	AplicacionAerolinea aplicacionAerolinea;
 	
 	//--------------------Singleton---------------------------------------------------------->
@@ -30,9 +37,28 @@ public class ModelFactoryController implements Runnable {
 		inicializarDatos();
 	}
 	
-	private void inicializarDatos() {				
+	private void inicializarDatos() {	
+		
+		aerolinea = new Aerolinea("Caribe Airlines");
+		
+		cargarDatos();
+		
+		aerolinea.datosViajes();
+		
+			
 //		guardarRecursoXML();
 //		cargarRecursoXML();
+	}
+
+	/**
+	 * Cargar datos de los archivos .txt
+	 */
+	private void cargarDatos() {
+		try {
+			Persistencia.cargarDatosAeronaves(aerolinea);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public Aerolinea getAerolinea() {
@@ -69,8 +95,7 @@ public class ModelFactoryController implements Runnable {
 		Ruta ruta;
 		int cantPersonas = (int) numeroPersonas;
 
-		if(destino.equalsIgnoreCase("Monterrey") || destino.equalsIgnoreCase("Cancún")) ruta = new Nacional(origen, destino);
-		else ruta = new Internacional(origen, destino);
+		ruta = aerolinea.confirmarRuta(destino);
 		
 		tiquete.setRutaViaje(ruta);
 		
@@ -83,9 +108,7 @@ public class ModelFactoryController implements Runnable {
 		tiquete.setFechaInicio(fechaSalida);
 		tiquete.setFechaRegreso(fechaRegreso);
 		tiquete.setCantPersonas(cantPersonas);
-		
-		DetalleVueloController detalleVueloController;
-		
+				
 		return tiquete;
 	}
 

@@ -180,8 +180,10 @@ public class TiqueteController implements Initializable {
 			
 			DetalleVueloController detalleVueloController = loader.getController();
 			detalleVueloController.recuperarDatos(cmbOrigen.getValue(), cmbDestino.getValue(), viajeSeleccionado);
-			
+			detalleVueloController.setAplicacion(aplicacionAerolinea);
+		
  			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+ 			stage.setTitle("Registro de viaje");
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();

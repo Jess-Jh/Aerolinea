@@ -7,6 +7,7 @@ public class Asiento implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String idCliente;
 	private String posicion;
+	private TipoClase tipoClase;
 	private EstadoAsiento estadoAsiento;
 	
 	/**
@@ -37,6 +38,12 @@ public class Asiento implements Serializable {
 	}
 	public void setEstadoAsiento(EstadoAsiento estadoAsiento) {
 		this.estadoAsiento = estadoAsiento;
+	}
+	public TipoClase getTipoClase() {
+		return tipoClase;
+	}
+	public void setTipoClase(TipoClase tipoClase) {
+		this.tipoClase = tipoClase;
 	}
 	//-------------------------------------------------------------------------------------------------------||
 

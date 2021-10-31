@@ -1,16 +1,39 @@
 package co.edu.uniquindio.aerolinea.modelo;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class Boeing787 extends Aeronave {
 
 	private static final long serialVersionUID = 1L;
-
-	public Boeing787(String nombre, CapacidadAsientos capacidadAsientos, double capacidadCarga, Ruta ruta,
-			HashSet<Tripulante> listaTripulantes, String numIdentificacionAvion) {
-		super(nombre, capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion);
-	}
+	private ArrayList<Asiento> capacidadAsientos;
+	private double capacidadCarga;
 	
+	/**
+	 * Constructor
+	 * @param nombre, ruta, numIdentificacionAvion, capacidadAsientos, capacidadCarga
+	 */
+	public Boeing787(String nombre, double capacidadCarga, Ruta ruta, String numIdentificacionAvion) {
+		super(nombre, capacidadCarga, ruta, numIdentificacionAvion);
+		this.capacidadAsientos = new ArrayList<>(250);
+		this.capacidadCarga = 50000.0;
+	}
+
 	public Boeing787() {}
+	
+	//-------------------- Métodos Getters and Setters -------------------------------------------->>
+	public ArrayList<Asiento> getCapacidadAsientos() {
+		return capacidadAsientos;
+	}
+	public void setCapacidadAsientos(ArrayList<Asiento> capacidadAsientos) {
+		this.capacidadAsientos = capacidadAsientos;
+	}
+	public double getCapacidadCarga() {
+		return capacidadCarga;
+	}
+	public void setCapacidadCarga(double capacidadCarga) {
+		this.capacidadCarga = capacidadCarga;
+	}
+	//-------------------------------------------------------------------------------------------------------||
+
 
 }

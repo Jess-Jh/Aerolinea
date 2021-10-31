@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
+import co.edu.uniquindio.aerolinea.modelo.AirbusA320;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +21,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 
 public class DetalleVueloController implements Initializable {
 		
@@ -42,9 +42,6 @@ public class DetalleVueloController implements Initializable {
 	//-----------------------------------------------------------------------||
 
     @FXML
-    private AnchorPane raiz;
-	
-    @FXML
     private ResourceBundle resources;
 
     @FXML
@@ -63,16 +60,22 @@ public class DetalleVueloController implements Initializable {
     private ComboBox<String> cmbOrigen;
 
     @FXML
-    private TableColumn<Aeronave, String> columnCantPasajeros;
+    private TableColumn<Aeronave, String> columnNumeroIdAvion;
 
     @FXML
-    private TableColumn<Ruta, String> columnDuracionVuelo;
+    private TableColumn<Aeronave, String> columnNombreAeronave;
+    
+    @FXML
+    private TableColumn<Ruta, String> columnDestino;
+
+    @FXML
+    private TableColumn<Ruta, String> columnDuracion;
 
     @FXML
     private TableColumn<Ruta, String> columnHoraSalida;
 
     @FXML
-    private TableColumn<Aeronave, String> columnNombreAeronave;
+    private TableColumn<Ruta, String> columnOrigen;
 
     @FXML
     private ToggleGroup grupoVuelo;
@@ -85,6 +88,9 @@ public class DetalleVueloController implements Initializable {
 
     @FXML
     private TableView<Aeronave> tableViewVuelos;
+    
+    @FXML
+    private TableView<Ruta> tableViewRutas;
 
     @FXML
     private TextField txtCostoPorPersona;
@@ -96,25 +102,58 @@ public class DetalleVueloController implements Initializable {
     
     private Aeronave aeronaveSeleccion;
     
-    // Listado de Aeronaves que se muestran en la interfaz 
-    ObservableList<Aeronave> listadoAeronaves = FXCollections.observableArrayList();
-    
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
 		
 		this.columnNombreAeronave.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-		this.columnCantPasajeros.setCellValueFactory(new PropertyValueFactory<>("capacidadAsientos"));
-		this.columnDuracionVuelo.setCellValueFactory(new PropertyValueFactory<>("duracion"));
+		this.columnNumeroIdAvion.setCellValueFactory(new PropertyValueFactory<>("numIdentificacionAvion"));
+		this.columnOrigen.setCellValueFactory(new PropertyValueFactory<>("ciudadOrigen"));
+		this.columnDestino.setCellValueFactory(new PropertyValueFactory<>("ciudadDestino"));
+		this.columnDuracion.setCellValueFactory(new PropertyValueFactory<>("duracion"));
 		this.columnHoraSalida.setCellValueFactory(new PropertyValueFactory<>("horaSalida"));
 		
 		//Obtener selección de la tabla
 		tableViewVuelos.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
 			if(newSelection != null) {
 				aeronaveSeleccion = newSelection;
+				if(aeronaveSeleccion != null) txtVuelo.setText(aeronaveSeleccion.getNombre());
 			}
 		});
+//		tableViewVuelos.setDisable(true);
+	}
+    
+    // Listado de Aeronaves que se muestran en la interfaz 
+    ObservableList<Aeronave> listadoAeronaves = FXCollections.observableArrayList();
+    // Listado de Rutas que se muestran en la interfaz 
+    ObservableList<Ruta> listadoRutas = FXCollections.observableArrayList();
+    
+    public void setAplicacion(AplicacionAerolinea aplicacionAerolinea) {
+    	this.aplicacionAerolinea = aplicacionAerolinea;
+    	this.aerolinea = aplicacionAerolinea.getAerolinea();
+    	tableViewVuelos.getItems().clear();
+    	tableViewVuelos.setItems(getVuelos());
+    	tableViewRutas.getItems().clear();
+    	tableViewRutas.setItems(getRutas());
+    }
+    
+    /**
+     * Obtener los vuelos de la aerolínea
+     * @return
+     */
+	private ObservableList<Aeronave> getVuelos() {
+		listadoAeronaves.addAll(aerolinea.getListaAeronaves());
+		return listadoAeronaves;
 	}
 	
+    /**
+     * Obtener las rutas de la aerolínea
+     * @return
+     */
+	private ObservableList<Ruta> getRutas() {
+		listadoRutas.addAll(aerolinea.getListaRutas());
+		return listadoRutas;
+	}
+
 	public void recuperarDatos(String origen, String destino, String viajeSeleccionado) {
 		cmbOrigen.setValue(origen);
 		cmbDestino.setValue(destino);
@@ -126,7 +165,7 @@ public class DetalleVueloController implements Initializable {
 
     @FXML
     void cancelarCompra(ActionEvent event) {
-    	
+//    	aplicacionAerolinea.mostrarVentanaPrincipal();
     }
 
     @FXML

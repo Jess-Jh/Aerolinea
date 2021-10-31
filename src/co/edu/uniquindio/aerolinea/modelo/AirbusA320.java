@@ -1,20 +1,45 @@
 package co.edu.uniquindio.aerolinea.modelo;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class AirbusA320 extends Aeronave {
 
 	private static final long serialVersionUID = 1L;
+	private ArrayList<Asiento> capacidadAsientos;
+	private double capacidadCarga;
 
 	/**
 	 * Constructor 
-	 * @param capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion
+	 * @param nombre, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion
 	 */
-	public AirbusA320(String nombre, CapacidadAsientos capacidadAsientos, double capacidadCarga, Ruta ruta,
-			HashSet<Tripulante> listaTripulantes, String numIdentificacionAvion) {
-		super(nombre, capacidadAsientos, capacidadCarga, ruta, listaTripulantes, numIdentificacionAvion);
+	public AirbusA320(String nombre, double capacidadCarga, Ruta ruta, String numIdentificacionAvion) {
+		super(nombre, capacidadCarga, ruta, numIdentificacionAvion);
+		capacidadAsientos = new ArrayList<>(150);
 	}
 	
 	public AirbusA320() {}
+
+	//-------------------- Métodos Getters and Setters -------------------------------------------->>
+	public ArrayList<Asiento> getCapacidadAsientos() {
+		return capacidadAsientos;
+	}
+	public void setCapacidadAsientos(ArrayList<Asiento> capacidadAsientos) {
+		this.capacidadAsientos = capacidadAsientos;
+	}
+	public double getCapacidadCarga() {
+		return capacidadCarga;
+	}
+	public void setCapacidadCarga(double capacidadCarga) {
+		this.capacidadCarga = capacidadCarga;
+	}
+	//-------------------------------------------------------------------------------------------------------||
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
+	
+	
 
 }

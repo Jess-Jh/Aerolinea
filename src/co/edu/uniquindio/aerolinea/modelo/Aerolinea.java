@@ -5,7 +5,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Aerolinea implements Serializable {
 	
@@ -13,26 +17,30 @@ public class Aerolinea implements Serializable {
 	private String nombre;
 	private ArrayList<Aeronave> listaAeronaves;
 	private HashSet<Tripulante> listaTripulantes;
+	private HashMap<String, Tripulante> listadoTripulantesAsignados;
 	private ArrayList<Equipaje> listaEquipajes;
 	private HashMap<String, Tiquete> listaTiquetes;
 	private ArrayList<Ruta> listaRutas;
 	private TreeSet<Cliente> listaClientes;
 	private ArrayList<CarroEmbarque> listaCarros;
+	private ArrayList<CruceAeronavesRutas> listaViajes;
 	
 	/**
 	 * Constructor clase Aerolinea
 	 * @param nombre, listaAeronaves, listaTripulantes, listaEquipajes, listaTiquetes, listaRutas, listaClientes, listaCarros
 	 */
-	public Aerolinea(String nombre, ArrayList<Aeronave> listaAeronaves, HashSet<Tripulante> listaTripulantes, ArrayList<Equipaje> listaEquipajes, 
-			HashMap<String, Tiquete> listaTiquetes, ArrayList<Ruta> listaRutas,TreeSet<Cliente> listaClientes, ArrayList<CarroEmbarque> listaCarros) {
+	public Aerolinea(String nombre) {
 		this.nombre = nombre;
 		this.listaAeronaves = new ArrayList<>();
 		this.listaTripulantes = new HashSet<>();
 		this.listaEquipajes = new ArrayList<>();
 		this.listaTiquetes = new HashMap<String, Tiquete>();
+		this.listadoTripulantesAsignados = new HashMap<String, Tripulante>();
 		this.listaRutas = new ArrayList<>();
 		this.listaClientes = new TreeSet<>();
 		this.listaCarros = new ArrayList<>();
+		this.listaViajes = new ArrayList<>();
+		
 	}
 	
 	public Aerolinea() {}
@@ -55,6 +63,12 @@ public class Aerolinea implements Serializable {
 	}
 	public void setListaTripulantes(HashSet<Tripulante> listaTripulantes) {
 		this.listaTripulantes = listaTripulantes;
+	}
+	public HashMap<String, Tripulante> getListadoTripulantesAsignados() {
+		return listadoTripulantesAsignados;
+	}
+	public void setListadoTripulantesAsignados(HashMap<String, Tripulante> listadoTripulantesAsignados) {
+		this.listadoTripulantesAsignados = listadoTripulantesAsignados;
 	}
 	public ArrayList<Equipaje> getListaEquipajes() {
 		return listaEquipajes;
@@ -86,7 +100,14 @@ public class Aerolinea implements Serializable {
 	public void setListaCarros(ArrayList<CarroEmbarque> listaCarros) {
 		this.listaCarros = listaCarros;
 	}
+	public ArrayList<CruceAeronavesRutas> getListaViajes() {
+		return listaViajes;
+	}
+	public void setListaViajes(ArrayList<CruceAeronavesRutas> listaViajes) {
+		this.listaViajes = listaViajes;
+	}	
 	//---------------------------------------------------------------------------------------------||
+
 
 	@Override
 	public String toString() {
@@ -94,18 +115,55 @@ public class Aerolinea implements Serializable {
 				+ ", listaTiquetes=" + listaTiquetes+ ", listaRutas=" + listaRutas + ", listaClientes=" + listaClientes + ", listaCarros=" + listaCarros+ "]";
 	}
 
-	public Object buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, double numeroPersonas) {
-		return null;
+	/**
+	 * Confirmar una ruta para cargar los datos del archivo
+	 * @param string
+	 * @return
+	 */
+	public Ruta confirmarRuta(String destinoRuta) {
+		Ruta ruta = null;
+		if(destinoRuta.equalsIgnoreCase("Monterrey")) {
+			ruta = new Nacional("CDMX", "Monterrey", "2 H 45 Min", "6:00 am");
+			listaRutas.add(ruta);
+		}
+		if(destinoRuta.equalsIgnoreCase("Cancún")) {
+			ruta = new Nacional("CDMX", "Cancún", "3 H 12 Min", "8:00 am");
+			listaRutas.add(ruta);
+		}
+		if(destinoRuta.equalsIgnoreCase("Buenos Aires")) {
+			ruta = new Internacional("CDMX", "Buenos Aires", "9 H 5 Min", "11:30 pm");
+			listaRutas.add(ruta);
+		}
+		if(destinoRuta.equalsIgnoreCase("Los Ángeles")) {
+			ruta = new Internacional("CDMX", "Los Ángeles", "3 H 25 Min", "9:45 am");
+			listaRutas.add(ruta);
+		}
+		if(destinoRuta.equalsIgnoreCase("Bogotá")) {
+			ruta = new Internacional("CDMX", "Bogotá", "3 H 45 Min", "1:30 pm");
+			listaRutas.add(ruta);
+		}
+		if(destinoRuta.equalsIgnoreCase("Panamá")) {
+			ruta = new Internacional("CDMX", "Panamá", "2 H 55 Min", "2:45 pm");
+			listaRutas.add(ruta);
+		}
+		return ruta;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/**
+	 * Llenar los datos de la lista de los viajes para mostrar en la tableView
+	 * @return
+	 */
+	public ArrayList<CruceAeronavesRutas> datosViajes() {
+		ArrayList<CruceAeronavesRutas> listaViajes = new ArrayList<>();
+		CruceAeronavesRutas viaje = null;
+		
+		for (int i = 0; i < listaAeronaves.size(); i++) {
+			viaje = new CruceAeronavesRutas(listaAeronaves.get(i).getNombre(), listaAeronaves.get(i).getNumIdentificacionAvion(), 
+					listaRutas.get(i).getCiudadOrigen(), listaRutas.get(i).getCiudadDestino(), listaRutas.get(i).getDuracion(), listaRutas.get(i).getHoraSalida());
+			
+			listaViajes.add(viaje);
+		}
+		return listaViajes;
+	}	
 
 }

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="raiz" prefHeight="502.0" prefWidth="945.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.aerolinea.controladores.DetalleVueloController">
+<AnchorPane accessibleRole="CHECK_BOX" prefHeight="502.0" prefWidth="945.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.aerolinea.controladores.DetalleVueloController">
    <children>
       <TextField fx:id="txtCostoPorPersona" layoutX="41.0" layoutY="315.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
       <Separator layoutX="320.0" orientation="VERTICAL" prefHeight="502.0" prefWidth="29.0" />
@@ -50,7 +50,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbOrigen" layoutX="41.0" layoutY="171.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+      <ComboBox fx:id="cmbOrigen" accessibleRole="TEXT_FIELD" layoutX="41.0" layoutY="171.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
       <Label layoutX="41.0" layoutY="219.0" text="Destino">
          <font>
             <Font size="17.0" />
@@ -70,12 +70,10 @@
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <TableView fx:id="tableViewVuelos" layoutX="349.0" layoutY="102.0" prefHeight="258.0" prefWidth="579.0">
+      <TableView fx:id="tableViewVuelos" layoutX="349.0" layoutY="102.0" prefHeight="258.0" prefWidth="203.0" style="-fx-background-color: transparent;">
          <columns>
-            <TableColumn fx:id="columnNombreAeronave" prefWidth="119.0" text="Aeronave" />
-            <TableColumn fx:id="columnCantPasajeros" prefWidth="194.0" text="Cantidad Pasajeros" />
-            <TableColumn fx:id="columnDuracionVuelo" prefWidth="139.0" text="Duración" />
-            <TableColumn fx:id="columnHoraSalida" prefWidth="126.0" text="Hora de Salida" />
+            <TableColumn fx:id="columnNombreAeronave" prefWidth="88.0" text="Aeronave" />
+            <TableColumn fx:id="columnNumeroIdAvion" prefWidth="113.0" text="Número Id Avión" />
          </columns>
       </TableView>
       <TextField fx:id="txtVuelo" layoutX="39.0" layoutY="386.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" promptText="Seleccione un vuelo de la tabla" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
@@ -101,5 +99,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <TableView fx:id="tableViewRutas" layoutX="550.0" layoutY="102.0" prefHeight="258.0" prefWidth="368.0" style="-fx-background-color: transparent;">
+        <columns>
+          <TableColumn fx:id="columnOrigen" prefWidth="92.0" text="Origen" />
+          <TableColumn fx:id="columnDestino" prefWidth="93.0" text="Destino" />
+            <TableColumn fx:id="columnDuracion" prefWidth="85.0" text="Duración" />
+            <TableColumn fx:id="columnHoraSalida" prefWidth="94.0" text="Hora Salida" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

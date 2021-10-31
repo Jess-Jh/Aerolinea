@@ -1,0 +1,21 @@
+Airbus A320,19000.0,Monterrey,01
+Airbus A320,19000.0,Cancún,02
+Airbus A330,19000.0,Buenos Aires,03
+Boeing 787,19000.0,Los Ángeles,04
+Airbus A330,19000.0,Los Ángeles,05
+Airbus A320,19000.0,Monterrey,06
+Airbus A320,19000.0,Cancún,07
+Boeing 787,19000.0,Buenos Aires,08
+Airbus A330,19000.0,Buenos Aires,09
+Boeing 787,19000.0,Los Ángeles,10
+Airbus A320,19000.0,Monterrey,11
+Airbus A330,19000.0,Bogotá,12
+Boeing 787,19000.0,Bogotá,13
+Boeing 787,19000.0,Panamá,14
+Airbus A330,19000.0,Panamá,15
+Airbus A320,19000.0,Cancún,16
+Airbus A320,19000.0,Monterrey,17
+Airbus A330,19000.0,Buenos Aires,18
+Airbus A320,19000.0,Cancún,19
+Airbus A320,19000.0,Monterrey,20
+Airbus A330,19000.0,Panamá,21
