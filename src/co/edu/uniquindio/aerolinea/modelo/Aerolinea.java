@@ -1,17 +1,14 @@
 package co.edu.uniquindio.aerolinea.modelo;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class Aerolinea implements Serializable {
+import co.edu.uniquindio.aerolinea.modelo.servicios.IAerolinea;
+
+public class Aerolinea implements Serializable, IAerolinea {
 	
 	private static final long serialVersionUID = 1L;
 	private String nombre;
@@ -114,6 +111,14 @@ public class Aerolinea implements Serializable {
 		return "Aerolinea [nombre=" + nombre + ", listaAeronaves=" + listaAeronaves + ", listaTripulantes="+ listaTripulantes + ", listaEquipajes=" + listaEquipajes 
 				+ ", listaTiquetes=" + listaTiquetes+ ", listaRutas=" + listaRutas + ", listaClientes=" + listaClientes + ", listaCarros=" + listaCarros+ "]";
 	}
+	
+	@Override
+	public void realizarAsignacionMateria(String idVueloSeleccionado, ArrayList<Tripulante> listaTripulantesVuelos) {
+		
+		for (Tripulante tripulante : listaTripulantesVuelos) {
+			listadoTripulantesAsignados.put(idVueloSeleccionado, tripulante);
+		}
+	}	
 
 	/**
 	 * Confirmar una ruta para cargar los datos del archivo
@@ -164,6 +169,25 @@ public class Aerolinea implements Serializable {
 			listaViajes.add(viaje);
 		}
 		return listaViajes;
-	}	
+	}
+
+	/**
+	 * Confirmar el tipo de tripulante 
+	 * @param string
+	 * @return
+	 */
+	public TipoTripulante confirmarTipoTripulante(String tipoTripulante) {
+		TipoTripulante cargoTripulante = null;
+		
+		if(tipoTripulante.equalsIgnoreCase("Piloto")) cargoTripulante = TipoTripulante.PILOTO;
+		
+		if(tipoTripulante.equalsIgnoreCase("Copiloto")) cargoTripulante = TipoTripulante.COPILOTO;
+
+		if(tipoTripulante.equalsIgnoreCase("AUXILIAR_VUELO")) cargoTripulante = TipoTripulante.AUXILIAR_VUELO;
+			
+		return cargoTripulante;
+	}
+
+	
 
 }

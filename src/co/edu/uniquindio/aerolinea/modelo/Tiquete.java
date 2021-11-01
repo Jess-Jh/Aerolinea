@@ -24,7 +24,7 @@ public class Tiquete implements Serializable {
 	 * @param ocupacionSillas
 	 */
 	public Tiquete(TipoViaje tipoViaje, TipoClase claseServicio, Ruta rutaViaje, LocalDate fechaInicio,
-			LocalDate fechaRegreso, int cantPersonas, double costoPorPersona, double precioFinal, Cliente cliente,
+			LocalDate fechaRegreso, int cantPersonas, double precioFinal, Cliente cliente,
 			ArrayList<Asiento> ocupacionSillas) {
 		this.tipoViaje = tipoViaje;
 		this.claseServicio = claseServicio;
@@ -32,12 +32,12 @@ public class Tiquete implements Serializable {
 		this.fechaInicio = fechaInicio;
 		this.fechaRegreso = fechaRegreso;
 		this.cantPersonas = cantPersonas;
-		this.costoPorPersona = costoPorPersona;
+		this.costoPorPersona = asignarValorTiquete(rutaViaje.getCiudadDestino());
 		this.precioFinal = precioFinal;
 		this.cliente = cliente;
 		this.ocupacionSillas = ocupacionSillas;
 	}
-	
+
 	public Tiquete () {}
 
 	//----------Métodos Getters and Setters-------------------------------->																																																																																																																																																																	
@@ -103,6 +103,23 @@ public class Tiquete implements Serializable {
 	}
 	//---------------------------------------------------------------------|
 	
+	/**
+	 * Asignar valor a los tiquetes
+	 * @param destino 
+	 * @return
+	 */
+	public static double asignarValorTiquete(String destino) {
+		double valorTiquete = 0;
+		
+		if(destino.equalsIgnoreCase("Monterrey")) valorTiquete = 200000.0;
+		if(destino.equalsIgnoreCase("Cancún")) valorTiquete = 350000.0;
+		if(destino.equalsIgnoreCase("Buenos Aires")) valorTiquete = 2000000.0;
+		if(destino.equalsIgnoreCase("Los Ángeles")) valorTiquete = 3000000.0;
+		if(destino.equalsIgnoreCase("Bogotá")) valorTiquete = 500000.0;
+		if(destino.equalsIgnoreCase("Panamá")) valorTiquete = 700000.0;
+		
+		return valorTiquete;
+	}
 	
 	
 	

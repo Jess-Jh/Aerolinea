@@ -2,6 +2,7 @@ package co.edu.uniquindio.aerolinea.controladores;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
@@ -15,9 +16,11 @@ import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoClase;
 import co.edu.uniquindio.aerolinea.modelo.TipoViaje;
 import co.edu.uniquindio.aerolinea.modelo.Tiquete;
+import co.edu.uniquindio.aerolinea.modelo.Tripulante;
+import co.edu.uniquindio.aerolinea.modelo.servicios.IModelFactory;
 import co.edu.uniquindio.aerolinea.persistencia.Persistencia;
 
-public class ModelFactoryController implements Runnable {
+public class ModelFactoryController implements Runnable, IModelFactory {
 	
 	Aerolinea aerolinea;
 	Persistencia persistencia;
@@ -56,6 +59,7 @@ public class ModelFactoryController implements Runnable {
 	private void cargarDatos() {
 		try {
 			Persistencia.cargarDatosAeronaves(aerolinea);
+			Persistencia.cargarDatosTripulante(aerolinea);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -90,6 +94,13 @@ public class ModelFactoryController implements Runnable {
 		
 	}
 	
+	@Override
+	public void realizarAsignacionVuelo(String idVueloSeleccionado, ArrayList<Tripulante> listaTripulantesVuelos) {
+		aerolinea.realizarAsignacionMateria(idVueloSeleccionado, listaTripulantesVuelos);
+	}
+	
+	
+	
 	public Tiquete buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, double numeroPersonas) {
 		Tiquete tiquete = new Tiquete();
 		Ruta ruta;
@@ -111,5 +122,7 @@ public class ModelFactoryController implements Runnable {
 				
 		return tiquete;
 	}
+
+	
 
 }

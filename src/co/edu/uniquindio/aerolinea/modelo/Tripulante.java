@@ -36,4 +36,10 @@ public class Tripulante extends Persona {
 	}
 	//---------------------------------------------------------------------------------------------||
 
+	@Override
+	public String toString() {
+		return super.toString() + "," + estudiosRealizados + "," + tipoTripulante;
+	}
+	
+	
 }
