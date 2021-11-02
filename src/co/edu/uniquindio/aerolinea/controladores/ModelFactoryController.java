@@ -25,7 +25,15 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	Aerolinea aerolinea;
 	Persistencia persistencia;
 	AplicacionAerolinea aplicacionAerolinea;
+	private ArrayList<String> listaPuestosCliente = new ArrayList<>();
 	
+	public ArrayList<String> getListaPuestosCliente() {
+		return listaPuestosCliente;
+	}
+	public void setListaPuestosCliente(ArrayList<String> listaPuestosCliente) {
+		this.listaPuestosCliente = listaPuestosCliente;
+	}
+
 	//--------------------Singleton---------------------------------------------------------->
 	private static class singletonHolder {
 		private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
@@ -121,6 +129,14 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		tiquete.setCantPersonas(cantPersonas);
 				
 		return tiquete;
+	}
+
+	/**
+	 * Lista de los puestos en el avión seleccionados por el cliente
+	 * @param listaSillasCliente
+	 */
+	public void ocupacionSillasCliente(ArrayList<String> listaSillasCliente) {
+		listaPuestosCliente.addAll(listaSillasCliente);
 	}
 
 	

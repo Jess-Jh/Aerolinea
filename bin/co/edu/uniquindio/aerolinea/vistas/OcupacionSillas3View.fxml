@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1391.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1391.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.aerolinea.controladores.OcupacionSillas3Controller">
    <children>
       <ImageView fitHeight="361.0" fitWidth="1317.0" layoutX="20.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -31,15 +31,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="btnAceptarPuestos" layoutX="195.0" layoutY="595.0" mnemonicParsing="false" onAction="#aceptarPuestos" prefHeight="35.0" prefWidth="494.0" style="-fx-background-color: green;" text="Aceptar" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="btnCancelarPuestos" layoutX="718.0" layoutY="595.0" mnemonicParsing="false" onAction="#cancelarPuestos" prefHeight="35.0" prefWidth="494.0" style="-fx-background-color: green;" text="Cancelar" textFill="WHITE">
+      <Button fx:id="btnAceptarPuestos" layoutX="195.0" layoutY="595.0" mnemonicParsing="false" onAction="#aceptarPuestos" prefHeight="35.0" prefWidth="988.0" style="-fx-background-color: green;" text="Aceptar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

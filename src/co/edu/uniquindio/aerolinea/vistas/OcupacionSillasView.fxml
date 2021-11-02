@@ -2257,7 +2257,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Label layoutX="533.0" layoutY="20.0" text="Airbus A320">
+      <Label layoutX="513.0" layoutY="26.0" text="Airbus A320">
          <font>
             <Font name="System Bold" size="46.0" />
          </font>
@@ -2272,15 +2272,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="btnAceptarPuestos" layoutX="205.0" layoutY="528.0" mnemonicParsing="false" onAction="#aceptarPuestos" prefHeight="27.0" prefWidth="433.0" style="-fx-background-color: green;" text="Aceptar" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="btnCancelarPuestos" layoutX="667.0" layoutY="528.0" mnemonicParsing="false" onAction="#cancelarPuestos" prefHeight="27.0" prefWidth="433.0" style="-fx-background-color: green;" text="Cancelar" textFill="WHITE">
+      <Button fx:id="btnAceptarPuestos" layoutX="203.0" layoutY="526.0" mnemonicParsing="false" onAction="#aceptarPuestos" prefHeight="35.0" prefWidth="924.0" style="-fx-background-color: green;" text="Aceptar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

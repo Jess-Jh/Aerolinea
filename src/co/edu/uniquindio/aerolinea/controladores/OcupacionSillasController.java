@@ -1,19 +1,30 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
+import co.edu.uniquindio.aerolinea.excepciones.DatosInvalidosException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+/**
+ * Clase Singleton
+ * @author Jessica Johana Ospina Patiño
+ */
 public class OcupacionSillasController {
 	
 	//----------SINGLETON----------------------------------------------------->
@@ -36,11 +47,9 @@ public class OcupacionSillasController {
     @FXML
     private ResourceBundle resources;
     
-//    ArrayList<Button> listaBotones = {A10C, A11C};
-
     @FXML
     private URL location;
-
+    
     @FXML
     private Button A10C;
 
@@ -493,43 +502,70 @@ public class OcupacionSillasController {
 
     @FXML
     private Button btnAceptarPuestos;
-
-    @FXML
-    private Button btnCancelarPuestos;
     
     @FXML
     private Label txtPuestosSeleccionados;
     
-    String puestosSeleccionados = "";
+    ArrayList<String> puestosSeleccionados = new ArrayList<>();
     
     private AplicacionAerolinea aplicacionAerolinea;
     
+    private ArrayList<Button> listaBotonesSeleccionados = new ArrayList<>();
+    
+    public ArrayList<Button> getListaBotonesSeleccionados() {
+		return listaBotonesSeleccionados;
+	}
+	public void setListaBotonesSeleccionados(ArrayList<Button> listaBotonesSeleccionados) {
+		this.listaBotonesSeleccionados = listaBotonesSeleccionados;
+	}
+    
     public void setAplicacion(AplicacionAerolinea aplicacionAerolinea) {
     	this.aplicacionAerolinea = aplicacionAerolinea;
-    	this.aerolinea = aplicacionAerolinea.getAerolinea();
+    	this.aerolinea = aplicacionAerolinea.getAerolinea();    	
     }
 
     @FXML
     void handleButtonPress(ActionEvent event) {
-    	((Button)event.getTarget()).setStyle("-fx-background-color:GREEN");
-    	puestosSeleccionados += ((Button)event.getTarget()).getId() + "   ";
-    	txtPuestosSeleccionados.setText(puestosSeleccionados);
+    	
+    	if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: #E5E102;") || ((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: #079CE6;")) {
+    		    		    		
+    		((Button)event.getTarget()).setStyle("-fx-background-color: GREEN");
+    		listaBotonesSeleccionados.add(((Button)event.getTarget()));
+    		
+    		puestosSeleccionados.add(((Button)event.getTarget()).getId());
+    		txtPuestosSeleccionados.setText(puestosSeleccionados + " ");
+    		
+    	} else if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: GREEN") && ((Button)event.getTarget()).getId().endsWith("E")) {
+    		
+    		((Button)event.getTarget()).setStyle("-fx-background-color: #079CE6;");
+    		listaBotonesSeleccionados.remove(((Button)event.getTarget()));
+    		
+    		puestosSeleccionados.remove(((Button)event.getTarget()).getId());
+    		txtPuestosSeleccionados.setText(puestosSeleccionados + " ");
+    		
+    	} else if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: GREEN") && ((Button)event.getTarget()).getId().endsWith("C")) {
+
+    		((Button)event.getTarget()).setStyle("-fx-background-color: #E5E102;");
+    		listaBotonesSeleccionados.remove(((Button)event.getTarget()));
+    		
+    		puestosSeleccionados.remove(((Button)event.getTarget()).getId());
+    		txtPuestosSeleccionados.setText(puestosSeleccionados + " ");
+    	}	
     }
 
-    @FXML
+	@FXML
     void aceptarPuestos(ActionEvent event) {
-
+		ArrayList<String> listaSillasCliente = new ArrayList<>();
+    	for (Button puestoSeleccionado : listaBotonesSeleccionados) {
+    		puestoSeleccionado.setStyle("-fx-background-color: #EA1200");
+    		listaSillasCliente.add(puestoSeleccionado.getId());
+		}
+    	
+    	modelFactoryController.ocupacionSillasCliente(listaSillasCliente);
+    	aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "Se han registrado sus puestos con éxito", AlertType.INFORMATION);
+    	
+    	btnAceptarPuestos.setDisable(true);    	
     }
 
-    @FXML
-    void cancelarPuestos(ActionEvent event) {
-
-    }
-
-    @FXML
-    void initialize() {
-
-
-    }
 
 }

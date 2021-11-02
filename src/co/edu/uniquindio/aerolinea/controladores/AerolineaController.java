@@ -270,6 +270,8 @@ public class AerolineaController implements Initializable {
     private CruceAeronavesRutas aeronaveSeleccionTripulacion;
     private Tripulante tripulanteSeleccion;
     
+    ArrayList<Button> listaPuestosUsuario = new ArrayList<>();
+    
 	// Listado de Aeronaves que se muestran en la interfaz 
     private ObservableList<CruceAeronavesRutas> listadoAeronaves = FXCollections.observableArrayList();
     // Listado de Tripulantes que se muestran en la interfaz 
@@ -481,8 +483,7 @@ public class AerolineaController implements Initializable {
 	}
     
     @FXML
-    void realizarAsignacion(ActionEvent event) {
-    	
+    void realizarAsignacion(ActionEvent event) { 	
     	String idVueloSeleccionado = txtIdAvion.getText();
     	realizarAsignacionVuelo(idVueloSeleccionado, listadoTripulantesAsignados);
     }
@@ -617,7 +618,6 @@ public class AerolineaController implements Initializable {
 			tableViewVuelos.getItems().clear();
 	    	tableViewVuelos.setItems(getVuelos(cmbDestino.getValue()));
 	    	//---------------------------------------------------------------------------------------------------||
-	    
 			tabPrincipalTiquetes.getSelectionModel().select(1);
 			
 		} catch (DatosInvalidosException e) {
@@ -708,13 +708,88 @@ public class AerolineaController implements Initializable {
     }
 
     @FXML
+    void seleccionarPuesto(ActionEvent event) {
+    	aplicacionAerolinea.mostrarOcupacionSillasView();
+    }
+    
+    @FXML
     void pagarTiquetes(ActionEvent event) {
-    	tabPrincipalAerolinea.getSelectionModel().select(2);
+    	agregarCliente(txtIdentificacionOPasaporte.getText(), txtNombre.getText(), txtApellido.getText(), txtDireccion.getText(), txtCorreoElectronico.getText(),
+    			txtFechaNacimiento.getValue(), txtDireccionResidencia.getText(), txtTarjetaDebitoCredito.getText());
+    	
     }
 
-    @FXML
-    void seleccionarPuesto(ActionEvent event) {
-    }
+    /**
+     * Agregar el cliente que realiza la compra del o los tiquetes
+     * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento
+     * @param direccionResidencia, tarjetaDebitoCredito
+     */
+	private void agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, LocalDate fechaNacimiento,
+			String direccionResidencia, String tarjetaDebitoCredito) {
+		try {
+			verificarDatos(identificacionOPasaporte,nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
+		
+			ArrayList<String> listaPuestosCliente = new ArrayList<>();
+			
+			listaPuestosCliente = modelFactoryController.getListaPuestosCliente();
+			
+			
+			
+			tabPrincipalAerolinea.getSelectionModel().select(2);
+		} catch (DatosInvalidosException e) {
+			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", e.getMessage(), AlertType.WARNING);
+		}
+	}
+	
+	/**
+	 * Datos de la ocupación de sillas del usuario
+	 * @param listaBotonesSeleccionados
+	 * @return
+	 */
+	public void obtenerDatos(ArrayList<Button> listaBotonesSeleccionados) {
+		listaPuestosUsuario.addAll(listaBotonesSeleccionados);		
+	}
+
+	
+	private boolean verificarDatos(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, LocalDate fechaNacimiento, String direccionResidencia,
+			String tarjetaDebitoCredito) throws DatosInvalidosException {
+			
+		String notificacion = "";	
+		
+		if(identificacionOPasaporte == null || identificacionOPasaporte.equals("")) {
+			notificacion += "Ingrese la identificación o pasaporte\n";
+		}
+		if(nombre == null || nombre.equals("")) {
+			notificacion += "Ingrese el nombre\n";
+		}
+		if(apellido == null || apellido.equals("")) {
+			notificacion += "Ingrese el apellido\n";
+		}
+		if(direccion == null || direccion.equals("")) {
+			notificacion += "Ingrese la dirección\n";
+		}
+		if(correoElectronico == null || correoElectronico.equals("")) {
+			notificacion += "Seleccione el correo electrónico\n";
+		}
+		if(fechaNacimiento == null) {
+			notificacion += "Seleccione la fecha de nacimiento\n";
+		}
+		if(direccionResidencia == null || direccionResidencia.equals("")) {
+			notificacion += "Ingrese la dirección de residencia\n";
+		}
+		if(tarjetaDebitoCredito == null || tarjetaDebitoCredito.equals("")) {
+			notificacion += "Ingrese el número de la tarjeta débito o crédito\n";
+		}
+		if(notificacion.equals("")) {
+			return true;
+		}
+		throw new DatosInvalidosException(notificacion); 
+	}
+
+
+		
+	
+
 
 
 

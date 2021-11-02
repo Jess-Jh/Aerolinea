@@ -23,9 +23,8 @@ public class Tiquete implements Serializable {
 	 * @param tipoViaje, claseServicio, rutaViaje, fechaInicio, fechaRegreso, cantPersonas, costoPorPersona, precioFinal, cliente
 	 * @param ocupacionSillas
 	 */
-	public Tiquete(TipoViaje tipoViaje, TipoClase claseServicio, Ruta rutaViaje, LocalDate fechaInicio,
-			LocalDate fechaRegreso, int cantPersonas, double precioFinal, Cliente cliente,
-			ArrayList<Asiento> ocupacionSillas) {
+	public Tiquete(TipoViaje tipoViaje, TipoClase claseServicio, Ruta rutaViaje, LocalDate fechaInicio, LocalDate fechaRegreso, 
+			int cantPersonas, double precioFinal, Cliente cliente, ArrayList<Asiento> ocupacionSillas) {
 		this.tipoViaje = tipoViaje;
 		this.claseServicio = claseServicio;
 		this.rutaViaje = rutaViaje;

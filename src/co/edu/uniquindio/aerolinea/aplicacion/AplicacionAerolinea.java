@@ -63,8 +63,8 @@ public class AplicacionAerolinea extends Application {
 			dialogStage.initOwner(primaryStage);
 			
 			Scene scene = new Scene(anchorPane);
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			dialogStage.setScene(scene);
+			dialogStage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -87,8 +87,54 @@ public class AplicacionAerolinea extends Application {
 			dialogStage.initOwner(primaryStage);
 			
 			Scene scene = new Scene(anchorPane);
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			dialogStage.setScene(scene);
+			dialogStage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * Cargar vista mostrarOcupacionSillas
+	 */
+	public void mostrarOcupacionSillas2View() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/OcupacionSillas2View.fxml"));
+			AnchorPane anchorPane = (AnchorPane)loader.load();
+			OcupacionSillasController ocupacionSillasController = loader.getController();
+			ocupacionSillasController.setAplicacion(this);
+			
+			dialogStage = new Stage();
+			dialogStage.setTitle("Ocupación Sillas");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			
+			Scene scene = new Scene(anchorPane);
+			dialogStage.setScene(scene);
+			dialogStage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * Cargar vista mostrarOcupacionSillas
+	 */
+	public void mostrarOcupacionSillas3View() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/OcupacionSillas3View.fxml"));
+			AnchorPane anchorPane = (AnchorPane)loader.load();
+			OcupacionSillasController ocupacionSillasController = loader.getController();
+			ocupacionSillasController.setAplicacion(this);
+			
+			dialogStage = new Stage();
+			dialogStage.setTitle("Ocupación Sillas");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			
+			Scene scene = new Scene(anchorPane);
+			dialogStage.setScene(scene);
+			dialogStage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

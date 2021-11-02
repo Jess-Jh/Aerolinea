@@ -8,6 +8,9 @@ import java.util.TreeSet;
 
 import co.edu.uniquindio.aerolinea.modelo.servicios.IAerolinea;
 
+/**
+ * @author Jessica Johana Ospina P.
+ */
 public class Aerolinea implements Serializable, IAerolinea {
 	
 	private static final long serialVersionUID = 1L;
