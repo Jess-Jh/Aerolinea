@@ -10,6 +10,7 @@ import co.edu.uniquindio.aerolinea.excepciones.CupoTripulanteException;
 import co.edu.uniquindio.aerolinea.excepciones.DatosInvalidosException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
+import co.edu.uniquindio.aerolinea.modelo.Cliente;
 import co.edu.uniquindio.aerolinea.modelo.CruceAeronavesRutas;
 import co.edu.uniquindio.aerolinea.modelo.Nacional;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
@@ -37,6 +38,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 
 public class AerolineaController implements Initializable {
 
@@ -301,6 +303,7 @@ public class AerolineaController implements Initializable {
 					txtIdAvion.setText(aeronaveSeleccionTripulacion.getIdAvion());
 					tableViewTripulantes.setDisable(false);
 					txtTextoSeleccionVuelos.setText("");
+					
 					txtTextoSeleccionTripulantes.setText("Seleccione los tripulantes que desea asignar al vuelo, si desea cancelar una asignación selecciónelo de la tabla \"Asignación de Vuelos\"");
 					verificarTripulantes(txtIdAvion.getText());
 				}
@@ -709,7 +712,10 @@ public class AerolineaController implements Initializable {
 
     @FXML
     void seleccionarPuesto(ActionEvent event) {
-    	aplicacionAerolinea.mostrarOcupacionSillasView();
+    	
+    	if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A320")) aplicacionAerolinea.mostrarOcupacionSillasView();
+//    	if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A330")) aplicacionAerolinea.mostrarOcupacionSillas2View();
+//    	if(aeronaveSeleccion.getNombreAeronave().equals("Boeing 787")) aplicacionAerolinea.mostrarOcupacionSillas3View();
     }
     
     @FXML
@@ -727,14 +733,20 @@ public class AerolineaController implements Initializable {
 	private void agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, LocalDate fechaNacimiento,
 			String direccionResidencia, String tarjetaDebitoCredito) {
 		try {
-			verificarDatos(identificacionOPasaporte,nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
-		
 			ArrayList<String> listaPuestosCliente = new ArrayList<>();
-			
 			listaPuestosCliente = modelFactoryController.getListaPuestosCliente();
+			verificarDatos(identificacionOPasaporte,nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito, listaPuestosCliente);
+		
+			String viajeSeleccionado = ""; 	    	
+	    	if(rbtIda.isSelected()) viajeSeleccionado = "ida";
+	    	if(rbtidaVuelta.isSelected()) viajeSeleccionado = "idaYVuelta";
+	    	
+			Cliente cliente = new Cliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
 			
+//			Tiquete tiquete = modelFactoryController.agregarCompraTiquete(viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
+//											txtFechaRegreso.getValue(), sldNumeroPersonas.getValue(), cliente, listaPuestosCliente);
 			
-			
+			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "La compra de su tiquete con destino a " + cmbDestino.getValue() + " se ha realizado con éxito", AlertType.WARNING);
 			tabPrincipalAerolinea.getSelectionModel().select(2);
 		} catch (DatosInvalidosException e) {
 			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", e.getMessage(), AlertType.WARNING);
@@ -752,37 +764,31 @@ public class AerolineaController implements Initializable {
 
 	
 	private boolean verificarDatos(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, LocalDate fechaNacimiento, String direccionResidencia,
-			String tarjetaDebitoCredito) throws DatosInvalidosException {
+			String tarjetaDebitoCredito, ArrayList<String> listaPuestosCliente) throws DatosInvalidosException {
 			
 		String notificacion = "";	
 		
-		if(identificacionOPasaporte == null || identificacionOPasaporte.equals("")) {
-			notificacion += "Ingrese la identificación o pasaporte\n";
-		}
-		if(nombre == null || nombre.equals("")) {
-			notificacion += "Ingrese el nombre\n";
-		}
-		if(apellido == null || apellido.equals("")) {
-			notificacion += "Ingrese el apellido\n";
-		}
-		if(direccion == null || direccion.equals("")) {
-			notificacion += "Ingrese la dirección\n";
-		}
-		if(correoElectronico == null || correoElectronico.equals("")) {
-			notificacion += "Seleccione el correo electrónico\n";
-		}
-		if(fechaNacimiento == null) {
-			notificacion += "Seleccione la fecha de nacimiento\n";
-		}
-		if(direccionResidencia == null || direccionResidencia.equals("")) {
-			notificacion += "Ingrese la dirección de residencia\n";
-		}
-		if(tarjetaDebitoCredito == null || tarjetaDebitoCredito.equals("")) {
-			notificacion += "Ingrese el número de la tarjeta débito o crédito\n";
-		}
-		if(notificacion.equals("")) {
+		if(identificacionOPasaporte == null || identificacionOPasaporte.equals("")) notificacion += "Ingrese la identificación o pasaporte\n";
+		
+		if(nombre == null || nombre.equals("")) notificacion += "Ingrese el nombre\n";
+		
+		if(apellido == null || apellido.equals("")) notificacion += "Ingrese el apellido\n";
+		
+		if(direccion == null || direccion.equals("")) notificacion += "Ingrese la dirección\n";
+		
+		if(correoElectronico == null || correoElectronico.equals("")) notificacion += "Seleccione el correo electrónico\n";
+		
+		if(fechaNacimiento == null) notificacion += "Seleccione la fecha de nacimiento\n";
+		
+		if(direccionResidencia == null || direccionResidencia.equals("")) notificacion += "Ingrese la dirección de residencia\n";
+		
+		if(tarjetaDebitoCredito == null || tarjetaDebitoCredito.equals("")) notificacion += "Ingrese el número de la tarjeta débito o crédito\n";
+		
+		if(listaPuestosCliente.isEmpty()) notificacion += "Seleccione los puestos que desea ocupar\n";
+		
+		if(notificacion.equals("")) 
 			return true;
-		}
+		
 		throw new DatosInvalidosException(notificacion); 
 	}
 

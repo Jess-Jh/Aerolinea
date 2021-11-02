@@ -18,7 +18,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1382.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.aerolinea.controladores.AerolineaController">
    <children>
       <TabPane fx:id="tabPrincipalAerolinea" layoutX="-2.0" prefHeight="718.0" prefWidth="1376.0" tabClosingPolicy="UNAVAILABLE">
@@ -86,7 +85,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Label fx:id="txtTextoSeleccionVuelos" layoutX="47.0" layoutY="60.0" prefHeight="25.0" prefWidth="551.0">
+                        <Label fx:id="txtTextoSeleccionVuelos" layoutX="47.0" layoutY="60.0" prefHeight="25.0" prefWidth="551.0" style="-fx-text-fill: red;">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -106,7 +105,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="txtTextoSeleccionTripulantes" layoutX="212.0" layoutY="60.0" prefHeight="25.0" prefWidth="973.0">
+                        <Label fx:id="txtTextoSeleccionTripulantes" layoutX="212.0" layoutY="60.0" prefHeight="25.0" prefWidth="973.0" style="-fx-text-fill: green;">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -436,7 +435,7 @@
                                              </font>
                                           </Label>
                                           <TextField fx:id="txtDireccionResidencia" layoutX="692.0" layoutY="317.0" prefHeight="32.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <Button fx:id="btnSeleccionarPuesto" layoutX="685.0" layoutY="390.0" mnemonicParsing="false" onAction="#seleccionarPuesto" prefHeight="31.0" prefWidth="445.0" style="-fx-background-color: gray;" text="Seleccionar Puesto(s)" textFill="WHITE">
+                                          <Button fx:id="btnSeleccionarPuesto" layoutX="685.0" layoutY="390.0" mnemonicParsing="false" onAction="#seleccionarPuesto" prefHeight="31.0" prefWidth="445.0" style="-fx-background-color: #258928;" text="Seleccionar Puesto(s)" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>

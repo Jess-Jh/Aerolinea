@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.excepciones.DatosInvalidosException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
@@ -555,16 +557,25 @@ public class OcupacionSillasController {
 
 	@FXML
     void aceptarPuestos(ActionEvent event) {
-		ArrayList<String> listaSillasCliente = new ArrayList<>();
-    	for (Button puestoSeleccionado : listaBotonesSeleccionados) {
-    		puestoSeleccionado.setStyle("-fx-background-color: #EA1200");
-    		listaSillasCliente.add(puestoSeleccionado.getId());
+		
+		//Confirmar que el usuario si quiere los puestos seleccionados
+		int mensajeDeConfirmacion = JOptionPane.showConfirmDialog(null, "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.");
+		
+		if(mensajeDeConfirmacion == 0) {
+			ArrayList<String> listaSillasCliente = new ArrayList<>();
+			for (Button puestoSeleccionado : listaBotonesSeleccionados) {
+				puestoSeleccionado.setStyle("-fx-background-color: #EA1200");
+				listaSillasCliente.add(puestoSeleccionado.getId());
+			}
+			
+			modelFactoryController.ocupacionSillasCliente(listaSillasCliente);
+			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "Se han registrado sus puestos con éxito", AlertType.INFORMATION);
+			
+			btnAceptarPuestos.setDisable(true);
 		}
+    		
+		
     	
-    	modelFactoryController.ocupacionSillasCliente(listaSillasCliente);
-    	aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "Se han registrado sus puestos con éxito", AlertType.INFORMATION);
-    	
-    	btnAceptarPuestos.setDisable(true);    	
     }
 
 
