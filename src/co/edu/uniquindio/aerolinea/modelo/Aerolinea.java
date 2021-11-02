@@ -128,27 +128,27 @@ public class Aerolinea implements Serializable, IAerolinea {
 	public Ruta confirmarRuta(String destinoRuta) {
 		Ruta ruta = null;
 		if(destinoRuta.equalsIgnoreCase("Monterrey")) {
-			ruta = new Nacional("CDMX", "Monterrey", "2 H 45 Min", "6:00 am");
+			ruta = new Nacional("CDMX", "Monterrey", "2 H 45 Min", "6:00am");
 			listaRutas.add(ruta);
 		}
 		if(destinoRuta.equalsIgnoreCase("Cancún")) {
-			ruta = new Nacional("CDMX", "Cancún", "3 H 12 Min", "8:00 am");
+			ruta = new Nacional("CDMX", "Cancún", "3 H 12 Min", "8:00am");
 			listaRutas.add(ruta);
 		}
 		if(destinoRuta.equalsIgnoreCase("Buenos Aires")) {
-			ruta = new Internacional("CDMX", "Buenos Aires", "9 H 5 Min", "11:30 pm");
+			ruta = new Internacional("CDMX", "Buenos Aires", "9 H 5 Min", "11:30pm");
 			listaRutas.add(ruta);
 		}
 		if(destinoRuta.equalsIgnoreCase("Los Ángeles")) {
-			ruta = new Internacional("CDMX", "Los Ángeles", "3 H 25 Min", "9:45 am");
+			ruta = new Internacional("CDMX", "Los Ángeles", "3 H 25 Min", "9:45am");
 			listaRutas.add(ruta);
 		}
 		if(destinoRuta.equalsIgnoreCase("Bogotá")) {
-			ruta = new Internacional("CDMX", "Bogotá", "3 H 45 Min", "1:30 pm");
+			ruta = new Internacional("CDMX", "Bogotá", "3 H 45 Min", "1:30pm");
 			listaRutas.add(ruta);
 		}
 		if(destinoRuta.equalsIgnoreCase("Panamá")) {
-			ruta = new Internacional("CDMX", "Panamá", "2 H 55 Min", "2:45 pm");
+			ruta = new Internacional("CDMX", "Panamá", "2 H 55 Min", "2:45pm");
 			listaRutas.add(ruta);
 		}
 		return ruta;
@@ -170,6 +170,25 @@ public class Aerolinea implements Serializable, IAerolinea {
 		}
 		return listaViajes;
 	}
+	
+	/**
+	 * Llenar los datos de la lista de los viajes para mostrar en la tableView con un destino definido
+	 * @return
+	 */
+	public ArrayList<CruceAeronavesRutas> datosViajes(String destino) {
+		ArrayList<CruceAeronavesRutas> listaViajes = new ArrayList<>();
+		CruceAeronavesRutas viaje = null;
+		
+		for (int i = 0; i < listaAeronaves.size(); i++) {	
+			if(listaRutas.get(i).getCiudadDestino().equalsIgnoreCase(destino)) {
+				viaje = new CruceAeronavesRutas(listaAeronaves.get(i).getNombre(), listaAeronaves.get(i).getNumIdentificacionAvion(), 
+						listaRutas.get(i).getCiudadOrigen(), listaRutas.get(i).getCiudadDestino(), listaRutas.get(i).getDuracion(), listaRutas.get(i).getHoraSalida());
+				
+				listaViajes.add(viaje);				
+			}
+		}
+		return listaViajes;
+	}
 
 	/**
 	 * Confirmar el tipo de tripulante 
@@ -187,6 +206,8 @@ public class Aerolinea implements Serializable, IAerolinea {
 			
 		return cargoTripulante;
 	}
+
+
 
 	
 

@@ -11,6 +11,8 @@ import co.edu.uniquindio.aerolinea.excepciones.DatosInvalidosException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
 import co.edu.uniquindio.aerolinea.modelo.CruceAeronavesRutas;
+import co.edu.uniquindio.aerolinea.modelo.Nacional;
+import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoTripulante;
 import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 import co.edu.uniquindio.aerolinea.modelo.Tripulante;
@@ -327,7 +329,7 @@ public class AerolineaController implements Initializable {
 		//-------------------------------------------------------------------------------------------------------------||
 		//--------------------------------------------------------------------------------------------------------------------------------------------||
 		
-		//----------------------------------------- Gestión Tripulantes --------------------------------------------------------------------------->>
+		//----------------------------------------- Gestión Tiquetes --------------------------------------------------------------------------->>
 		//----------------------------------------- Selección Viaje ------------------------------------------------------------>>
 		
     	// Añadiendo Listener al value property.
@@ -360,7 +362,6 @@ public class AerolineaController implements Initializable {
     	listaCmbDestino.add("Panamá");
     	cmbDestino.setItems(listaCmbDestino);
     	//--------------------------------------------------------------------------------------------------------------------||
-		
     	//----------------------------------------- Detalle del Vuelo ------------------------------------------------------------>>
 		
 		this.columnNombreAeronave.setCellValueFactory(new PropertyValueFactory<>("nombreAeronave"));
@@ -374,7 +375,7 @@ public class AerolineaController implements Initializable {
 		tableViewVuelos.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
 			if(newSelection != null) {
 				aeronaveSeleccion = newSelection;
-				if(aeronaveSeleccion != null) txtVuelo.setText(aeronaveSeleccion.getNombreAeronave() + " Id Avión: " + aeronaveSeleccion.getIdAvion());
+				if(aeronaveSeleccion != null) txtVuelo.setText(aeronaveSeleccion.getNombreAeronave() + "      Id Avión: " + aeronaveSeleccion.getIdAvion());
 			}
 		});
 		//--------------------------------------------------------------------------------------------------------------------||
@@ -394,8 +395,8 @@ public class AerolineaController implements Initializable {
     	
     	tableviewAsignacionVuelos.getItems().clear();
     	
-    	tableViewVuelos.getItems().clear();
-    	tableViewVuelos.setItems(getVuelos());
+//    	tableViewVuelos.getItems().clear();
+//    	tableViewVuelos.setItems(getVuelos());
     }
     
     /**
@@ -405,6 +406,16 @@ public class AerolineaController implements Initializable {
 	private ObservableList<CruceAeronavesRutas> getVuelos() {
 		listadoAeronaves.clear();
 		listadoAeronaves.addAll(aerolinea.datosViajes());
+		return listadoAeronaves;
+	}
+	
+	/**
+	 * Obtener los vuelos de la aerolínea
+	 * @return
+	 */
+	private ObservableList<CruceAeronavesRutas> getVuelos(String destino) {
+		listadoAeronaves.clear();
+		listadoAeronaves.addAll(aerolinea.datosViajes(destino));
 		return listadoAeronaves;
 	}
 
@@ -585,7 +596,6 @@ public class AerolineaController implements Initializable {
     void buscarViaje(ActionEvent event) {
     	
        	String viajeSeleccionado = ""; 
-       	Tiquete tiquete = null;
     	
     	if(rbtIda.isSelected()) {
     		viajeSeleccionado = "ida";
@@ -600,11 +610,14 @@ public class AerolineaController implements Initializable {
 			verificarDatos(viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
 					txtFechaRegreso.getValue(), sldNumeroPersonas.getValue() );
 			
+			//--------- Llenar campos de la tabla con datos agregados por el usuario ---------------------------->>
 			cmbOrigen1.setValue(cmbOrigen.getValue());
 			cmbDestino1.setValue(cmbDestino.getValue());
-			
 			txtCostoPorPersona.setText(String.valueOf(Tiquete.asignarValorTiquete(cmbDestino.getValue())));
-			
+			tableViewVuelos.getItems().clear();
+	    	tableViewVuelos.setItems(getVuelos(cmbDestino.getValue()));
+	    	//---------------------------------------------------------------------------------------------------||
+	    
 			tabPrincipalTiquetes.getSelectionModel().select(1);
 			
 		} catch (DatosInvalidosException e) {
@@ -652,7 +665,34 @@ public class AerolineaController implements Initializable {
 		throw new DatosInvalidosException(notificacion); 
 	}
 
-    
+    @FXML
+    void realizarCompra(ActionEvent event) throws DatosInvalidosException {
+    	double costoTotalViaje = 0;
+    	double totalCostoPersonas;
+    	double tasa;
+    	
+    	Ruta ruta = aerolinea.confirmarRuta(cmbDestino.getValue());
+    	
+    	if(aeronaveSeleccion == null)  
+    		aplicacionAerolinea.mostrarMensaje("Gestión Tiquetes", "Gestión Tiquetes", "Seleccione un vuelo de la tabla", AlertType.WARNING);
+    	else {
+    		txtVuelo1.setText(aeronaveSeleccion.getNombreAeronave());
+    		txtDuracionVuelo.setText(ruta.getDuracion());
+    		txtHoraSalida.setText(ruta.getHoraSalida());
+    		totalCostoPersonas = Double.valueOf(txtCostoPorPersona.getText()) * (int) sldNumeroPersonas.getValue();
+    		
+    		if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A320")) {
+    			tasa = totalCostoPersonas * 0.008;
+    			costoTotalViaje =  totalCostoPersonas + tasa;
+    		}
+    		else {
+    			tasa = totalCostoPersonas * 0.0097;
+    			costoTotalViaje =  totalCostoPersonas + tasa;
+    		}    		
+    		txtPrecioTotal.setText(String.valueOf(costoTotalViaje));
+    		tabPrincipalTiquetes.getSelectionModel().select(2);    		
+    	}	
+    }
     
 
     @FXML
@@ -670,11 +710,6 @@ public class AerolineaController implements Initializable {
     @FXML
     void pagarTiquetes(ActionEvent event) {
     	tabPrincipalAerolinea.getSelectionModel().select(2);
-    }
-
-    @FXML
-    void realizarCompra(ActionEvent event) {
-    	tabPrincipalTiquetes.getSelectionModel().select(2);
     }
 
     @FXML
