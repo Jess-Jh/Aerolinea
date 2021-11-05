@@ -560,7 +560,8 @@ public class OcupacionSillasController {
 		
 		//Confirmar que el usuario si quiere los puestos seleccionados
 		int mensajeDeConfirmacion = JOptionPane.showConfirmDialog(null, "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.");
-		
+		aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.", AlertType.CONFIRMATION);
+//		System.out.println(aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.", AlertType.CONFIRMATION);		
 		if(mensajeDeConfirmacion == 0) {
 			ArrayList<String> listaSillasCliente = new ArrayList<>();
 			for (Button puestoSeleccionado : listaBotonesSeleccionados) {

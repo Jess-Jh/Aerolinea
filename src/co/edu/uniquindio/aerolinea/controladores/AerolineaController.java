@@ -196,6 +196,9 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private Label txtAsignacionTripulantes;
+    
+    @FXML
+    private Label txtTextoConfirmacionSeleccionVuelo;
 
     @FXML
     private TextField txtCorreoElectronico;
@@ -250,6 +253,9 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private Label txtTextoSeleccionPiloto;
+    
+    @FXML
+    private Label txtTextoConfirmacionRegistroTripulantes;
 
     @FXML
     private TextField txtNombre;
@@ -283,9 +289,10 @@ public class AerolineaController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
 		
-		tableViewTripulantes.setDisable(true);
-		txtTextoSeleccionVuelos.setText("Primero seleccione el vuelo al que le va a asignar los tripulantes");
-		txtTextoSeleccionTripulantes.setText("");
+//		tableViewTripulantes.setDisable(true);
+//		txtTextoSeleccionVuelos.setText("Primero seleccione el vuelo al que le va a asignar los tripulantes");
+//		txtTextoSeleccionTripulantes.setText("");
+		
 		
 		//----------------------------------------- Gestión Tripulantes --------------------------------------------------------------------------->>
 		//----------------------------------------- Vuelos ------------------------------------------------------------>>
@@ -301,10 +308,10 @@ public class AerolineaController implements Initializable {
 				aeronaveSeleccionTripulacion = newSelection;			
 				if(aeronaveSeleccionTripulacion != null) {
 					txtIdAvion.setText(aeronaveSeleccionTripulacion.getIdAvion());
-					tableViewTripulantes.setDisable(false);
-					txtTextoSeleccionVuelos.setText("");
-					
-					txtTextoSeleccionTripulantes.setText("Seleccione los tripulantes que desea asignar al vuelo, si desea cancelar una asignación selecciónelo de la tabla \"Asignación de Vuelos\"");
+//					tableViewTripulantes.setDisable(false);
+//					txtTextoSeleccionVuelos.setText("");
+//					
+//					txtTextoSeleccionTripulantes.setText("Seleccione los tripulantes que desea asignar al vuelo, si desea cancelar una asignación selecciónelo de la tabla \"Asignación de Vuelos\"");
 					verificarTripulantes(txtIdAvion.getText());
 				}
 			}
@@ -325,12 +332,12 @@ public class AerolineaController implements Initializable {
 		//----------------------------------------- Asignación de Vuelos ---------------------------------------------->>
 		this.columnCedulaTripulanteAsignado.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
 		this.columnCargoTipulanteAsignado.setCellValueFactory(new PropertyValueFactory<>("tipoTripulante"));
-				
+		
 		tableviewAsignacionVuelos.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
 			if(newSelection != null) {
 				tripulanteSeleccion = newSelection;			
 			}
-		});
+		});		
 		//-------------------------------------------------------------------------------------------------------------||
 		//--------------------------------------------------------------------------------------------------------------------------------------------||
 		
@@ -509,6 +516,7 @@ public class AerolineaController implements Initializable {
 				}
 				
 				modelFactoryController.realizarAsignacionVuelo(idVueloSeleccionado, listaTripulantesVuelos);
+				txtTextoConfirmacionRegistroTripulantes.setText("¡Los tripulantes han sido registrados con éxito!");
 				aplicacionAerolinea.mostrarMensaje("Asignación de Vuelo", "Asignación de Vuelo", "Se realizó la asignación del vuelo con éxito", AlertType.INFORMATION);
 		    
 				//------- Limpiar campos para una nueva asignación ------------>>
@@ -519,8 +527,9 @@ public class AerolineaController implements Initializable {
 	    		txtTextoSeleccionPiloto.setText("");
 	    		txtTextoSeleccionCopiloto.setText("");
 	    		txtTextoSeleccionAuxiliaresVuelo.setText("");
-				tabPrincipalAerolinea.getSelectionModel().select(1);
 				//-------------------------------------------------------------||
+	    		txtTextoConfirmacionRegistroTripulantes.setText("");
+	    		
 			}
 		} catch (DatosInvalidosException | CupoTripulanteException e) {
 			aplicacionAerolinea.mostrarMensaje("Asignación de Vuelo", "Asignación de Vuelo", e.getMessage(), AlertType.WARNING);

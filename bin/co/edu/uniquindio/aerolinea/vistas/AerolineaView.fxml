@@ -31,12 +31,12 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="tableViewTripulantes" layoutX="521.0" layoutY="135.0" onMousePressed="#pasarDatosTablaAsignacionTripulantes" prefHeight="442.0" prefWidth="375.0" style="-fx-background-color: transparent;">
+                        <TableView fx:id="tableViewTripulantes" layoutX="521.0" layoutY="135.0" onMousePressed="#pasarDatosTablaAsignacionTripulantes" prefHeight="443.0" prefWidth="375.0" style="-fx-background-color: transparent; -fx-border-color: gray;">
                            <columns>
                               <TableColumn fx:id="columnNombreTripulante" prefWidth="75.0" text="Nombre" />
                               <TableColumn fx:id="columnApellidoTripulante" prefWidth="97.0" text="Apellido" />
                               <TableColumn fx:id="columnCedulaTripulante" prefWidth="86.0" text="Cédula" />
-                              <TableColumn fx:id="columnCargoTripulante" prefWidth="116.0" text="Cargo" />
+                              <TableColumn fx:id="columnCargoTripulante" prefWidth="113.0" text="Cargo" />
                            </columns>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -47,7 +47,7 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="tableViewVuelosTripulacion" layoutX="36.0" layoutY="135.0" prefHeight="444.0" prefWidth="413.0" style="-fx-background-color: transparent;">
+                        <TableView fx:id="tableViewVuelosTripulacion" layoutX="36.0" layoutY="135.0" prefHeight="444.0" prefWidth="413.0" style="-fx-background-color: transparent; -fx-border-color: gray;">
                            <columns>
                               <TableColumn fx:id="columnNombreAeronaveTripulacion" prefWidth="87.0" text="Aeronave" />
                               <TableColumn fx:id="columnNumeroIdAvionTripulacion" prefWidth="124.0" text="Número Id Avión" />
@@ -58,10 +58,10 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </TableView>
-                        <TableView fx:id="tableviewAsignacionVuelos" layoutX="978.0" layoutY="180.0" onMousePressed="#retirarDatosTablaAsignacionTripulantes" prefHeight="239.0" prefWidth="358.0" style="-fx-background-color: transparent;">
+                        <TableView fx:id="tableviewAsignacionVuelos" layoutX="978.0" layoutY="160.0" onMousePressed="#retirarDatosTablaAsignacionTripulantes" prefHeight="239.0" prefWidth="358.0" style="-fx-background-color: transparent; -fx-border-color: gray;">
                           <columns>
                             <TableColumn fx:id="columnCedulaTripulanteAsignado" prefWidth="179.0" text="Cédula Tripulante" />
-                            <TableColumn fx:id="columnCargoTipulanteAsignado" prefWidth="177.0" text="Cargo" />
+                            <TableColumn fx:id="columnCargoTipulanteAsignado" prefWidth="174.0" text="Cargo" />
                           </columns>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -85,51 +85,61 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Label fx:id="txtTextoSeleccionVuelos" layoutX="47.0" layoutY="60.0" prefHeight="25.0" prefWidth="551.0" style="-fx-text-fill: red;">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="1084.0" layoutY="154.0" text="Id Avión : ">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="txtIdAvion" layoutX="1151.0" layoutY="150.0" prefHeight="17.0" prefWidth="59.0">
+                        <Label fx:id="txtTextoSeleccionVuelos" layoutX="142.0" layoutY="66.0" prefHeight="25.0" prefWidth="207.0" style="-fx-text-fill: green;" text="Paso 1. Seleccione el vuelo">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="txtTextoSeleccionPiloto" layoutX="1015.0" layoutY="467.0" prefHeight="17.0" prefWidth="321.0">
+                        <Label layoutX="1089.0" layoutY="134.0" text="Id Avión : ">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="txtTextoSeleccionTripulantes" layoutX="212.0" layoutY="60.0" prefHeight="25.0" prefWidth="973.0" style="-fx-text-fill: green;">
+                        <Label fx:id="txtIdAvion" layoutX="1156.0" layoutY="131.0" prefHeight="17.0" prefWidth="59.0">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="txtTextoSeleccionCopiloto" layoutX="1015.0" layoutY="493.0" prefHeight="17.0" prefWidth="321.0">
+                        <Label fx:id="txtTextoSeleccionPiloto" layoutX="1015.0" layoutY="440.0" prefHeight="17.0" prefWidth="321.0">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="txtTextoSeleccionAuxiliaresVuelo" layoutX="1016.0" layoutY="519.0" prefHeight="17.0" prefWidth="321.0">
+                        <Label fx:id="txtTextoSeleccionTripulantes" layoutX="532.0" layoutY="66.0" prefHeight="25.0" prefWidth="354.0" style="-fx-text-fill: green;" text="Paso 2. Seleccione los tripulantes para el vuelo">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtTextoSeleccionCopiloto" layoutX="1015.0" layoutY="463.0" prefHeight="17.0" prefWidth="321.0">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="txtTextoSeleccionNumeroTripulantes" layoutX="998.0" layoutY="438.0" prefHeight="17.0" prefWidth="321.0">
+                        <Label fx:id="txtTextoSeleccionAuxiliaresVuelo" layoutX="1016.0" layoutY="485.0" prefHeight="17.0" prefWidth="321.0">
                            <font>
                               <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtTextoSeleccionNumeroTripulantes" layoutX="998.0" layoutY="411.0" prefHeight="17.0" prefWidth="321.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtTextoSeleccionTripulantes1" layoutX="976.0" layoutY="66.0" prefHeight="25.0" prefWidth="357.0" style="-fx-text-fill: green;" text="Paso 3. Tripulantes seleccionados para el vuelo">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtTextoConfirmacionRegistroTripulantes" layoutX="953.0" layoutY="540.0" prefHeight="27.0" prefWidth="403.0" style="-fx-text-fill: #FD6F00;">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Compra de Tiquetes">
+          <Tab text="Gestión de Tiquetes">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -471,11 +481,6 @@
                               </Tab>
                           </tabs>
                         </TabPane>
-                        <Label layoutX="601.0" layoutY="1.0" text="Gestión Tiquetes">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
                      </children>
                   </AnchorPane>
             </content>
