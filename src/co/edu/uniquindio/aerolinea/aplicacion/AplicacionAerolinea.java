@@ -1,6 +1,7 @@
 package co.edu.uniquindio.aerolinea.aplicacion;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import co.edu.uniquindio.aerolinea.controladores.AerolineaController;
 import co.edu.uniquindio.aerolinea.controladores.ModelFactoryController;
@@ -11,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -154,6 +156,18 @@ public class AplicacionAerolinea extends Application {
     	alert.setHeaderText(header);
     	alert.setContentText(contenido);
     	alert.showAndWait();
+    }
+    
+    public boolean mostrarMensaje(String titulo, String header, String contenido) {
+    	Alert alert = new Alert(AlertType.CONFIRMATION);
+    	alert.setTitle(titulo);
+    	alert.setHeaderText(header);
+    	alert.setContentText(contenido);
+    	
+    	Optional<ButtonType> result = alert.showAndWait();
+    	
+    	if (result.get() == ButtonType.OK) return true;
+    	return false;
     }
 
 

@@ -558,11 +558,9 @@ public class OcupacionSillasController {
 	@FXML
     void aceptarPuestos(ActionEvent event) {
 		
-		//Confirmar que el usuario si quiere los puestos seleccionados
-		int mensajeDeConfirmacion = JOptionPane.showConfirmDialog(null, "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.");
-		aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.", AlertType.CONFIRMATION);
-//		System.out.println(aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.", AlertType.CONFIRMATION);		
-		if(mensajeDeConfirmacion == 0) {
+		boolean confirmacion = aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "¿Desea seleccionar estos puestos? Después de seleccionados ya no podrá cambiarlos.");		
+		
+		if(confirmacion == true) {
 			ArrayList<String> listaSillasCliente = new ArrayList<>();
 			for (Button puestoSeleccionado : listaBotonesSeleccionados) {
 				puestoSeleccionado.setStyle("-fx-background-color: #EA1200");
@@ -571,13 +569,11 @@ public class OcupacionSillasController {
 			
 			modelFactoryController.ocupacionSillasCliente(listaSillasCliente);
 			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "Se han registrado sus puestos con éxito", AlertType.INFORMATION);
-			
 			btnAceptarPuestos.setDisable(true);
 		}
-    		
 		
-    	
-    }
+	}
+    		
 
 
 }
