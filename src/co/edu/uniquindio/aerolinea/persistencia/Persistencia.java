@@ -1,5 +1,6 @@
 package co.edu.uniquindio.aerolinea.persistencia;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,7 +18,24 @@ public class Persistencia {
 	
 	private static final String RUTA_ARCHIVO_AERONAVES = "src/resource/archivos/archivoAeronaves.txt";
 	private static final String RUTA_ARCHIVO_TRIPULANTES = "src/resource/archivos/archivoTripulantes.txt";
+	private static final String RUTA_ARCHIVO_AEROLINEA_XML = "src/resource/archivos/archivoAerolinea.xml";
 	
+	//-------------------GUARDAR Y CARGAR RECURSO XML------------------------------------------------------->
+	public static void guardarRecursoXMLAerolinea(Aerolinea aerolinea) throws FileNotFoundException {
+		ArchivoUtil.guardarRecursoXML(RUTA_ARCHIVO_AEROLINEA_XML, aerolinea);
+	}
+
+	public static Aerolinea cargarRecursoXMLAerolinea() throws FileNotFoundException {
+		Object object = null;
+		Aerolinea aerolinea = null;
+		
+		object = ArchivoUtil.cargarRecursoXML(RUTA_ARCHIVO_AEROLINEA_XML);
+		aerolinea = (Aerolinea) object;
+		
+		return aerolinea;
+	}
+	//-----------------------------------------------------------------------------------------------------||
+
 	/**
 	 * Cargar los datos de una Aeronave
 	 * @param aerolínea
@@ -49,7 +67,6 @@ public class Persistencia {
 				aeronave = new Boeing787(split[0], Double.parseDouble(split[1]), ruta, split[3]);
 				aerolinea.getListaAeronaves().add(aeronave);				
 			}
-			
 		}
 	}
 	
@@ -78,8 +95,6 @@ public class Persistencia {
 			
 			tripulante = new Tripulante(split[0], split[1], split[2], split[3], split[4], fechaNacimiento, split[6], tipoTripulante);
 			aerolinea.getListaTripulantes().add(tripulante);	
-			
-			
 		}
 	}
 	

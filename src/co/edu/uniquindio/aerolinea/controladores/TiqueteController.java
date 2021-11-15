@@ -167,6 +167,7 @@ public class TiqueteController implements Initializable {
     	String viajeSeleccionado = ""; 
     	Tiquete tiquete;
     	
+    	
     	if(rbtIda.isSelected()) viajeSeleccionado = "ida";
     	if(rbtidaVuelta.isSelected()) viajeSeleccionado = "idaYVuelta";
     	

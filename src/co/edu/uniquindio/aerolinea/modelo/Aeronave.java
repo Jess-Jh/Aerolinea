@@ -8,7 +8,7 @@ public abstract class Aeronave implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private String nombre;
-	private ArrayList<Asiento> capacidadAsientos;
+	private ArrayList<String> capacidadAsientos;
 	protected double capacidadCarga;
 	private Ruta ruta;
 	private HashSet<Tripulante> listaTripulantes;
@@ -35,10 +35,10 @@ public abstract class Aeronave implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public ArrayList<Asiento> getCapacidadAsientos() {
+	public ArrayList<String> getCapacidadAsientos() {
 		return capacidadAsientos;
 	}
-	public void setCapacidadAsientos(ArrayList<Asiento> capacidadAsientos) {
+	public void setCapacidadAsientos(ArrayList<String> capacidadAsientos) {
 		this.capacidadAsientos = capacidadAsientos;
 	}
 	public double getCapacidadCarga() {

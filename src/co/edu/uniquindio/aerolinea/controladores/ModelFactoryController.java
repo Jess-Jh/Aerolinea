@@ -1,5 +1,6 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import co.edu.uniquindio.aerolinea.modelo.Aeronave;
 import co.edu.uniquindio.aerolinea.modelo.AirbusA320;
 import co.edu.uniquindio.aerolinea.modelo.AirbusA330;
 import co.edu.uniquindio.aerolinea.modelo.Boeing787;
+import co.edu.uniquindio.aerolinea.modelo.Cliente;
 import co.edu.uniquindio.aerolinea.modelo.Internacional;
 import co.edu.uniquindio.aerolinea.modelo.Nacional;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
@@ -53,12 +55,9 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		aerolinea = new Aerolinea("Caribe Airlines");
 		
 		cargarDatos();
-		
-		aerolinea.datosViajes();
-		
-			
-//		guardarRecursoXML();
-//		cargarRecursoXML();
+		aerolinea.datosViajes();	
+		cargarRecursoXML();
+		guardarRecursoXML();
 	}
 
 	/**
@@ -80,23 +79,23 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		this.aerolinea = aerolinea;
 	}
 	
-	//-----------------RECURSOS XML----------------------------------------------->
-
+	//-----------------RECURSOS BINARIO Y XML----------------------------------------------->
 	public void guardarRecursoXML() {
-		
-//		hiloServicio_guardarXML = new Thread(this);
-//		hiloServicio_guardarXML.start();		
-//	}
-//	
-//	public void cargarRecursoXML() {
-//		try {
-//			aerolinea = Persistencia.cargarRecursoXMLGimnasio();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}		
+		try {
+			Persistencia.guardarRecursoXMLAerolinea(aerolinea);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}		
+	}
+	
+	public void cargarRecursoXML() {
+		try {
+			aerolinea = Persistencia.cargarRecursoXMLAerolinea();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 	}
 	//-------------------------------------------------------------------------------------||
-
 
 	public void run() {
 		
@@ -137,6 +136,35 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	 */
 	public void ocupacionSillasCliente(ArrayList<String> listaSillasCliente) {
 		listaPuestosCliente.addAll(listaSillasCliente);
+	}
+	/**
+	 * Agregar un cliente a la Aerolinea
+	 * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento
+	 * @param direccionResidencia, tarjetaDebitoCredito
+	 * @return
+	 */
+	public Cliente agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, 
+			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito) {
+		
+		Cliente cliente = aerolinea.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
+		guardarRecursoXML();
+		return cliente;
+	}
+	
+	/**
+	 * Agregar un tiquete a la Aerolinea
+	 * @param string 
+	 * @param costoTotalViaje 
+	 * @param viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numPersonas, cliente
+	 * @param listaPuestosCliente
+	 * @return
+	 */
+	public Tiquete agregarCompraTiquete(String idAvion, String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, int numPersonas, double costoTotalViaje, Cliente cliente,
+			ArrayList<String> listaPuestosCliente) {
+		
+		Tiquete tiquete = aerolinea.agregarTiquete(idAvion, viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numPersonas, costoTotalViaje, cliente, listaPuestosCliente);
+		guardarRecursoXML();
+		return tiquete;
 	}
 
 	

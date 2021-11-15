@@ -1,5 +1,6 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -23,7 +24,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -38,7 +43,10 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class AerolineaController implements Initializable {
 
@@ -277,6 +285,7 @@ public class AerolineaController implements Initializable {
     private CruceAeronavesRutas aeronaveSeleccion;
     private CruceAeronavesRutas aeronaveSeleccionTripulacion;
     private Tripulante tripulanteSeleccion;
+    double costoTotalViaje;
     
     ArrayList<Button> listaPuestosUsuario = new ArrayList<>();
     
@@ -622,7 +631,7 @@ public class AerolineaController implements Initializable {
 		try {
 			verificarDatos(viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
 					txtFechaRegreso.getValue(), sldNumeroPersonas.getValue() );
-			
+						
 			//--------- Llenar campos de la tabla con datos agregados por el usuario ---------------------------->>
 			cmbOrigen1.setValue(cmbOrigen.getValue());
 			cmbDestino1.setValue(cmbDestino.getValue());
@@ -679,7 +688,6 @@ public class AerolineaController implements Initializable {
 
     @FXML
     void realizarCompra(ActionEvent event) throws DatosInvalidosException {
-    	double costoTotalViaje = 0;
     	double totalCostoPersonas;
     	double tasa;
     	
@@ -722,14 +730,39 @@ public class AerolineaController implements Initializable {
     @FXML
     void seleccionarPuesto(ActionEvent event) {
     	
-    	if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A320")) aplicacionAerolinea.mostrarOcupacionSillasView();
+    	if(aeronaveSeleccion.getNombreAeronave() == null){
+    		aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "Para la selección de su puesto primero elija el vuelo en el que va a viajar", AlertType.WARNING);
+    	} else {
+    		if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A320")) {
+    			try {
+    				FXMLLoader loader = new FXMLLoader();
+    				loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/OcupacionSillasView.fxml"));
+    				AnchorPane anchorPane = (AnchorPane)loader.load();
+    				OcupacionSillasController ocupacionSillasController = loader.getController();
+    				ocupacionSillasController.recuperarDatos(aeronaveSeleccion.getIdAvion(), cmbClase.getValue(), (int)sldNumeroPersonas.getValue());
+    				ocupacionSillasController.setAplicacion(aplicacionAerolinea);
+    				
+    				Stage dialogStage = new Stage();
+    				dialogStage.setTitle("Ocupación Sillas");
+    				dialogStage.initModality(Modality.WINDOW_MODAL);
+    				
+    				Scene scene = new Scene(anchorPane);
+    				dialogStage.setScene(scene);
+    				dialogStage.showAndWait();
+    				    				
+    			} catch (IOException e) {
+    				e.printStackTrace();
+    			}
+    		}
+    	
+    	}
 //    	if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A330")) aplicacionAerolinea.mostrarOcupacionSillas2View();
 //    	if(aeronaveSeleccion.getNombreAeronave().equals("Boeing 787")) aplicacionAerolinea.mostrarOcupacionSillas3View();
     }
     
     @FXML
     void pagarTiquetes(ActionEvent event) {
-    	agregarCliente(txtIdentificacionOPasaporte.getText(), txtNombre.getText(), txtApellido.getText(), txtDireccion.getText(), txtCorreoElectronico.getText(),
+    	agregarCompraTiquetes(txtIdentificacionOPasaporte.getText(), txtNombre.getText(), txtApellido.getText(), txtDireccion.getText(), txtCorreoElectronico.getText(),
     			txtFechaNacimiento.getValue(), txtDireccionResidencia.getText(), txtTarjetaDebitoCredito.getText());
     	
     }
@@ -739,7 +772,7 @@ public class AerolineaController implements Initializable {
      * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento
      * @param direccionResidencia, tarjetaDebitoCredito
      */
-	private void agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, LocalDate fechaNacimiento,
+	private void agregarCompraTiquetes(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, LocalDate fechaNacimiento,
 			String direccionResidencia, String tarjetaDebitoCredito) {
 		try {
 			ArrayList<String> listaPuestosCliente = new ArrayList<>();
@@ -750,13 +783,12 @@ public class AerolineaController implements Initializable {
 	    	if(rbtIda.isSelected()) viajeSeleccionado = "ida";
 	    	if(rbtidaVuelta.isSelected()) viajeSeleccionado = "idaYVuelta";
 	    	
-			Cliente cliente = new Cliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
+	    	Cliente cliente = modelFactoryController.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
 			
-//			Tiquete tiquete = modelFactoryController.agregarCompraTiquete(viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
-//											txtFechaRegreso.getValue(), sldNumeroPersonas.getValue(), cliente, listaPuestosCliente);
+			Tiquete tiquete = modelFactoryController.agregarCompraTiquete(aeronaveSeleccion.getIdAvion(), viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
+											txtFechaRegreso.getValue(), (int)sldNumeroPersonas.getValue(), costoTotalViaje, cliente, listaPuestosCliente);
 			
-			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "La compra de su tiquete con destino a " + cmbDestino.getValue() + " se ha realizado con éxito", AlertType.WARNING);
-			tabPrincipalAerolinea.getSelectionModel().select(2);
+			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "La compra de su tiquete con destino a " + tiquete.getRutaViaje().getCiudadDestino() + " se ha realizado con éxito", AlertType.INFORMATION);
 		} catch (DatosInvalidosException e) {
 			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", e.getMessage(), AlertType.WARNING);
 		}

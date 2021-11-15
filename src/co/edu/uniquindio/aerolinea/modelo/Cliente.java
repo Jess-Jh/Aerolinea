@@ -2,7 +2,7 @@ package co.edu.uniquindio.aerolinea.modelo;
 
 import java.time.LocalDate;
 
-public class Cliente extends Persona {
+public class Cliente extends Persona implements Comparable<Cliente>{
 	
 	private static final long serialVersionUID = 1L;
 	private String direccionResidencia;
@@ -36,6 +36,11 @@ public class Cliente extends Persona {
 		this.numTarjetaDebitoCredito = numTarjetaDebitoCredito;
 	}
 	//-------------------------------------------------------------------------------------------------------||
+
+	@Override
+	public int compareTo(Cliente cliente) {
+		return this.getIdentificacion().compareToIgnoreCase(cliente.getIdentificacion());
+	}
 	
 	
 	

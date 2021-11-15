@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class AirbusA320 extends Aeronave {
 
 	private static final long serialVersionUID = 1L;
-	private ArrayList<Asiento> capacidadAsientos;
+	private ArrayList<String> capacidadAsientos;
 	private double capacidadCarga;
 
 	/**
@@ -20,10 +20,10 @@ public class AirbusA320 extends Aeronave {
 	public AirbusA320() {}
 
 	//-------------------- Métodos Getters and Setters -------------------------------------------->>
-	public ArrayList<Asiento> getCapacidadAsientos() {
+	public ArrayList<String> getCapacidadAsientos() {
 		return capacidadAsientos;
 	}
-	public void setCapacidadAsientos(ArrayList<Asiento> capacidadAsientos) {
+	public void setCapacidadAsientos(ArrayList<String> capacidadAsientos) {
 		this.capacidadAsientos = capacidadAsientos;
 	}
 	public double getCapacidadCarga() {

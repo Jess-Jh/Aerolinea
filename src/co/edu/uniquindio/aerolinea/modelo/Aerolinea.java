@@ -1,6 +1,7 @@
 package co.edu.uniquindio.aerolinea.modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -208,6 +209,52 @@ public class Aerolinea implements Serializable, IAerolinea {
 		if(tipoTripulante.equalsIgnoreCase("AUXILIAR_VUELO")) cargoTripulante = TipoTripulante.AUXILIAR_VUELO;
 			
 		return cargoTripulante;
+	}
+
+	/**
+	 * Agregar Cliente a la Aerolinea
+	 * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia
+	 * @param tarjetaDebitoCredito
+	 * @return
+	 */
+	public Cliente agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, 
+			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito) {
+		
+		Cliente cliente = new Cliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
+		listaClientes.add(cliente);
+		
+		return cliente;
+	}
+
+	/**
+	 * Agregar un tiquete a la Aerolinea
+	 * @param idAvion, destino, costoTotalViaje, viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numPersonas, cliente
+	 * @param listaPuestosCliente
+	 * @return
+	 */
+	public Tiquete agregarTiquete(String idAvion, String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, int numPersonas, double costoTotalViaje, Cliente cliente,
+			ArrayList<String> listaPuestosCliente) {
+		TipoViaje tipoViaje = null;
+		TipoClase claseCliente = null;
+		
+		Ruta ruta = confirmarRuta(destino);
+		
+		for (Aeronave aeronave : listaAeronaves) {
+			if(aeronave.getNumIdentificacionAvion().equalsIgnoreCase(idAvion)) {
+				aeronave.getCapacidadAsientos().addAll(listaPuestosCliente);
+			}
+		}
+		
+		if(viajeSeleccionado.equalsIgnoreCase("ida")) tipoViaje = TipoViaje.IDA;
+		if(viajeSeleccionado.equalsIgnoreCase("idaYVuelta")) tipoViaje = TipoViaje.IDA_Y_VUELTA;
+		
+		if(clase.equalsIgnoreCase("Ejecutiva")) claseCliente = TipoClase.EJECUTIVA;
+		if(clase.equalsIgnoreCase("Económica")) claseCliente = TipoClase.ECONOMICA;
+		
+		Tiquete tiquete = new Tiquete(tipoViaje, claseCliente, ruta, fechaSalida, fechaRegreso, numPersonas, costoTotalViaje, cliente, listaPuestosCliente);
+		listaTiquetes.put(cliente.getIdentificacion(), tiquete);
+		
+		return tiquete;
 	}
 
 
