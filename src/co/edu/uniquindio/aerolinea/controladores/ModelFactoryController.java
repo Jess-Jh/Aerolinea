@@ -8,13 +8,7 @@ import java.util.ArrayList;
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
-import co.edu.uniquindio.aerolinea.modelo.Aeronave;
-import co.edu.uniquindio.aerolinea.modelo.AirbusA320;
-import co.edu.uniquindio.aerolinea.modelo.AirbusA330;
-import co.edu.uniquindio.aerolinea.modelo.Boeing787;
 import co.edu.uniquindio.aerolinea.modelo.Cliente;
-import co.edu.uniquindio.aerolinea.modelo.Internacional;
-import co.edu.uniquindio.aerolinea.modelo.Nacional;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoClase;
 import co.edu.uniquindio.aerolinea.modelo.TipoViaje;
@@ -98,17 +92,11 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	}
 	//-------------------------------------------------------------------------------------||
 
-	public void run() {
-		
-	}
-	
 	@Override
 	public void realizarAsignacionVuelo(String idVueloSeleccionado, ArrayList<Tripulante> listaTripulantesVuelos) throws VueloException {
 		aerolinea.realizarAsignacionVuelo(idVueloSeleccionado, listaTripulantesVuelos);
 		guardarRecursoXML();
 	}
-	
-	
 	
 	public Tiquete buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, double numeroPersonas) {
 		Tiquete tiquete = new Tiquete();
@@ -168,6 +156,8 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		guardarRecursoXML();
 		return tiquete;
 	}
+	@Override
+	public void run() {	}
 
 	
 

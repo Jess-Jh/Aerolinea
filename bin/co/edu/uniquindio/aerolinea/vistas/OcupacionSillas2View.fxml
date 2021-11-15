@@ -65,7 +65,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="A1E" layoutX="328.0" layoutY="188.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A1" textFill="WHITE">
+      <Button fx:id="A1E" layoutX="328.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A1" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -80,7 +80,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A2E" layoutX="357.0" layoutY="188.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A2" textFill="WHITE">
+      <Button fx:id="A2E" layoutX="357.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A2" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -95,7 +95,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A3E" layoutX="386.0" layoutY="188.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A3" textFill="WHITE">
+      <Button fx:id="A3E" layoutX="386.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A3" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -110,7 +110,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C1E" layoutX="328.0" layoutY="213.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C1" textFill="WHITE">
+      <Button fx:id="C1E" layoutX="328.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C1" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -125,7 +125,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C2E" layoutX="357.0" layoutY="213.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C2" textFill="WHITE">
+      <Button fx:id="C2E" layoutX="357.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C2" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -140,7 +140,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C3E" layoutX="386.0" layoutY="213.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C3" textFill="WHITE">
+      <Button fx:id="C3E" layoutX="386.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C3" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -155,7 +155,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D1E" layoutX="328.0" layoutY="257.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D1" textFill="WHITE">
+      <Button fx:id="D1E" layoutX="328.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D1" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -170,7 +170,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D2E" layoutX="357.0" layoutY="257.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D2" textFill="WHITE">
+      <Button fx:id="D2E" layoutX="357.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D2" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -185,7 +185,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D3E" layoutX="386.0" layoutY="257.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D3" textFill="WHITE">
+      <Button fx:id="D3E" layoutX="386.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D3" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -200,7 +200,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F1E" layoutX="328.0" layoutY="283.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F1" textFill="WHITE">
+      <Button fx:id="F1E" layoutX="328.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F1" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -215,7 +215,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F2E" layoutX="357.0" layoutY="283.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F2" textFill="WHITE">
+      <Button fx:id="F2E" layoutX="357.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F2" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -230,7 +230,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F3E" layoutX="386.0" layoutY="283.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F3" textFill="WHITE">
+      <Button fx:id="F3E" layoutX="386.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F3" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -245,7 +245,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A4E" layoutX="415.0" layoutY="188.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A4" textFill="WHITE">
+      <Button fx:id="A4E" layoutX="415.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A4" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -260,7 +260,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A5E" layoutX="444.0" layoutY="188.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A5" textFill="WHITE">
+      <Button fx:id="A5E" layoutX="444.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="A5" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -275,7 +275,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C4E" layoutX="415.0" layoutY="213.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C4" textFill="WHITE">
+      <Button fx:id="C4E" layoutX="415.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C4" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -290,7 +290,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C5E" layoutX="444.0" layoutY="213.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C5" textFill="WHITE">
+      <Button fx:id="C5E" layoutX="444.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="C5" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -305,7 +305,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D4E" layoutX="415.0" layoutY="256.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D4" textFill="WHITE">
+      <Button fx:id="D4E" layoutX="415.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D4" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -320,7 +320,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D5E" layoutX="444.0" layoutY="256.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D5" textFill="WHITE">
+      <Button fx:id="D5E" layoutX="444.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="D5" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -335,7 +335,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F4E" layoutX="415.0" layoutY="283.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F4" textFill="WHITE">
+      <Button fx:id="F4E" layoutX="415.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F4" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -350,7 +350,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F5E" layoutX="444.0" layoutY="282.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F5" textFill="WHITE">
+      <Button fx:id="F5E" layoutX="444.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="F5" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -365,7 +365,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H1E" layoutX="328.0" layoutY="325.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H1" textFill="WHITE">
+      <Button fx:id="H1E" layoutX="328.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H1" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -380,7 +380,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H2E" layoutX="357.0" layoutY="325.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H2" textFill="WHITE">
+      <Button fx:id="H2E" layoutX="357.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H2" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -395,7 +395,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H3E" layoutX="386.0" layoutY="325.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H3" textFill="WHITE">
+      <Button fx:id="H3E" layoutX="386.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H3" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -410,7 +410,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K1E" layoutX="328.0" layoutY="351.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K1" textFill="WHITE">
+      <Button fx:id="K1E" layoutX="328.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K1" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -425,7 +425,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K2E" layoutX="357.0" layoutY="351.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K2" textFill="WHITE">
+      <Button fx:id="K2E" layoutX="357.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K2" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -440,7 +440,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K3E" layoutX="386.0" layoutY="351.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K3" textFill="WHITE">
+      <Button fx:id="K3E" layoutX="386.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K3" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -455,7 +455,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H4E" layoutX="415.0" layoutY="324.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H4" textFill="WHITE">
+      <Button fx:id="H4E" layoutX="415.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H4" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -470,7 +470,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H5E" layoutX="444.0" layoutY="324.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H5" textFill="WHITE">
+      <Button fx:id="H5E" layoutX="444.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="H5" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -485,7 +485,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K4E" layoutX="415.0" layoutY="350.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K4" textFill="WHITE">
+      <Button fx:id="K4E" layoutX="415.0" layoutY="350.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K4" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -500,7 +500,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K5E" layoutX="444.0" layoutY="350.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K5" textFill="WHITE">
+      <Button fx:id="K5E" layoutX="444.0" layoutY="350.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="21.0" prefWidth="25.0" style="-fx-background-color: #079CE6;" text="K5" textFill="WHITE">
          <font>
             <Font size="8.0" />
          </font>
@@ -515,7 +515,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A1C" layoutX="507.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A1">
+      <Button fx:id="A1C" layoutX="507.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A1">
          <font>
             <Font size="8.0" />
          </font>
@@ -530,7 +530,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G1C" layoutX="507.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G1">
+      <Button fx:id="G1C" layoutX="507.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G1">
          <font>
             <Font size="8.0" />
          </font>
@@ -545,7 +545,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C1C" layoutX="507.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C1">
+      <Button fx:id="C1C" layoutX="507.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C1">
          <font>
             <Font size="8.0" />
          </font>
@@ -560,7 +560,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D1C" layoutX="507.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D1">
+      <Button fx:id="D1C" layoutX="507.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D1">
          <font>
             <Font size="8.0" />
          </font>
@@ -575,7 +575,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E1C" layoutX="507.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E1">
+      <Button fx:id="E1C" layoutX="507.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E1">
          <font>
             <Font size="8.0" />
          </font>
@@ -590,7 +590,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F1C" layoutX="507.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F1">
+      <Button fx:id="F1C" layoutX="507.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F1">
          <font>
             <Font size="8.0" />
          </font>
@@ -605,7 +605,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A2C" layoutX="531.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A2">
+      <Button fx:id="A2C" layoutX="531.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A2">
          <font>
             <Font size="8.0" />
          </font>
@@ -620,7 +620,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G2C" layoutX="531.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G2">
+      <Button fx:id="G2C" layoutX="531.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G2">
          <font>
             <Font size="8.0" />
          </font>
@@ -635,7 +635,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C2C" layoutX="531.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C2">
+      <Button fx:id="C2C" layoutX="531.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C2">
          <font>
             <Font size="8.0" />
          </font>
@@ -650,7 +650,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D2C" layoutX="531.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D2">
+      <Button fx:id="D2C" layoutX="531.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D2">
          <font>
             <Font size="8.0" />
          </font>
@@ -665,7 +665,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E2C" layoutX="531.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E2">
+      <Button fx:id="E2C" layoutX="531.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E2">
          <font>
             <Font size="8.0" />
          </font>
@@ -680,7 +680,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F2C" layoutX="531.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F2">
+      <Button fx:id="F2C" layoutX="531.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F2">
          <font>
             <Font size="8.0" />
          </font>
@@ -695,7 +695,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A3C" layoutX="555.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A3">
+      <Button fx:id="A3C" layoutX="555.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A3">
          <font>
             <Font size="8.0" />
          </font>
@@ -710,7 +710,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G3C" layoutX="555.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G3">
+      <Button fx:id="G3C" layoutX="555.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G3">
          <font>
             <Font size="8.0" />
          </font>
@@ -725,7 +725,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C3C" layoutX="555.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C3">
+      <Button fx:id="C3C" layoutX="555.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C3">
          <font>
             <Font size="8.0" />
          </font>
@@ -740,7 +740,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D3C" layoutX="555.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D3">
+      <Button fx:id="D3C" layoutX="555.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D3">
          <font>
             <Font size="8.0" />
          </font>
@@ -755,7 +755,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E3C" layoutX="555.0" layoutY="261.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E3">
+      <Button fx:id="E3C" layoutX="555.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E3">
          <font>
             <Font size="8.0" />
          </font>
@@ -770,7 +770,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F3C" layoutX="555.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F3">
+      <Button fx:id="F3C" layoutX="555.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F3">
          <font>
             <Font size="8.0" />
          </font>
@@ -785,7 +785,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A4C" layoutX="579.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A4">
+      <Button fx:id="A4C" layoutX="579.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A4">
          <font>
             <Font size="8.0" />
          </font>
@@ -800,7 +800,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G4C" layoutX="579.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G4">
+      <Button fx:id="G4C" layoutX="579.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G4">
          <font>
             <Font size="8.0" />
          </font>
@@ -815,7 +815,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C4C" layoutX="579.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C4">
+      <Button fx:id="C4C" layoutX="579.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C4">
          <font>
             <Font size="8.0" />
          </font>
@@ -830,7 +830,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D4C" layoutX="579.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D4">
+      <Button fx:id="D4C" layoutX="579.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D4">
          <font>
             <Font size="8.0" />
          </font>
@@ -845,7 +845,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E4C" layoutX="579.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E4">
+      <Button fx:id="E4C" layoutX="579.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E4">
          <font>
             <Font size="8.0" />
          </font>
@@ -860,7 +860,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F4C" layoutX="579.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F4">
+      <Button fx:id="F4C" layoutX="579.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F4">
          <font>
             <Font size="8.0" />
          </font>
@@ -875,7 +875,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A5C" layoutX="603.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A5">
+      <Button fx:id="A5C" layoutX="603.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A5">
          <font>
             <Font size="8.0" />
          </font>
@@ -890,7 +890,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G5C" layoutX="603.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G5">
+      <Button fx:id="G5C" layoutX="603.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G5">
          <font>
             <Font size="8.0" />
          </font>
@@ -905,7 +905,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C5C" layoutX="603.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C5">
+      <Button fx:id="C5C" layoutX="603.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C5">
          <font>
             <Font size="8.0" />
          </font>
@@ -920,7 +920,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D5C" layoutX="603.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D5">
+      <Button fx:id="D5C" layoutX="603.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D5">
          <font>
             <Font size="8.0" />
          </font>
@@ -935,7 +935,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E5C" layoutX="603.0" layoutY="261.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E5">
+      <Button fx:id="E5C" layoutX="603.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E5">
          <font>
             <Font size="8.0" />
          </font>
@@ -950,7 +950,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F5C" layoutX="603.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F5">
+      <Button fx:id="F5C" layoutX="603.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F5">
          <font>
             <Font size="8.0" />
          </font>
@@ -965,7 +965,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A6C" layoutX="627.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A6">
+      <Button fx:id="A6C" layoutX="627.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A6">
          <font>
             <Font size="8.0" />
          </font>
@@ -980,7 +980,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G6C" layoutX="627.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G6">
+      <Button fx:id="G6C" layoutX="627.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G6">
          <font>
             <Font size="8.0" />
          </font>
@@ -995,7 +995,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C6C" layoutX="627.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C6">
+      <Button fx:id="C6C" layoutX="627.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C6">
          <font>
             <Font size="8.0" />
          </font>
@@ -1010,7 +1010,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D6C" layoutX="627.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D6">
+      <Button fx:id="D6C" layoutX="627.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D6">
          <font>
             <Font size="8.0" />
          </font>
@@ -1025,7 +1025,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E6C" layoutX="627.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E6">
+      <Button fx:id="E6C" layoutX="627.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E6">
          <font>
             <Font size="8.0" />
          </font>
@@ -1040,7 +1040,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F6C" layoutX="627.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F6">
+      <Button fx:id="F6C" layoutX="627.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F6">
          <font>
             <Font size="8.0" />
          </font>
@@ -1055,7 +1055,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A7C" layoutX="651.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A7">
+      <Button fx:id="A7C" layoutX="651.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A7">
          <font>
             <Font size="8.0" />
          </font>
@@ -1070,7 +1070,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G7C" layoutX="651.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G7">
+      <Button fx:id="G7C" layoutX="651.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G7">
          <font>
             <Font size="8.0" />
          </font>
@@ -1085,7 +1085,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C7C" layoutX="651.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C7">
+      <Button fx:id="C7C" layoutX="651.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C7">
          <font>
             <Font size="8.0" />
          </font>
@@ -1100,7 +1100,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D7C" layoutX="651.0" layoutY="237.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D7">
+      <Button fx:id="D7C" layoutX="651.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D7">
          <font>
             <Font size="8.0" />
          </font>
@@ -1115,7 +1115,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E7C" layoutX="651.0" layoutY="259.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E7">
+      <Button fx:id="E7C" layoutX="651.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E7">
          <font>
             <Font size="8.0" />
          </font>
@@ -1130,7 +1130,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F7C" layoutX="651.0" layoutY="281.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F7">
+      <Button fx:id="F7C" layoutX="651.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F7">
          <font>
             <Font size="8.0" />
          </font>
@@ -1145,7 +1145,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A8C" layoutX="676.0" layoutY="185.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A8">
+      <Button fx:id="A8C" layoutX="676.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A8">
          <font>
             <Font size="8.0" />
          </font>
@@ -1160,7 +1160,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G8C" layoutX="676.0" layoutY="304.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G8">
+      <Button fx:id="G8C" layoutX="676.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G8">
          <font>
             <Font size="8.0" />
          </font>
@@ -1175,7 +1175,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C8C" layoutX="676.0" layoutY="207.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C8">
+      <Button fx:id="C8C" layoutX="676.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C8">
          <font>
             <Font size="8.0" />
          </font>
@@ -1190,7 +1190,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D8C" layoutX="676.0" layoutY="237.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D8">
+      <Button fx:id="D8C" layoutX="676.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D8">
          <font>
             <Font size="8.0" />
          </font>
@@ -1205,7 +1205,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E8C" layoutX="676.0" layoutY="259.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E8">
+      <Button fx:id="E8C" layoutX="676.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E8">
          <font>
             <Font size="8.0" />
          </font>
@@ -1220,7 +1220,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F8C" layoutX="676.0" layoutY="281.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F8">
+      <Button fx:id="F8C" layoutX="676.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F8">
          <font>
             <Font size="8.0" />
          </font>
@@ -1235,7 +1235,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A9C" layoutX="709.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A9">
+      <Button fx:id="A9C" layoutX="709.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A9">
          <font>
             <Font size="8.0" />
          </font>
@@ -1250,7 +1250,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G9C" layoutX="709.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G9">
+      <Button fx:id="G9C" layoutX="709.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G9">
          <font>
             <Font size="8.0" />
          </font>
@@ -1265,7 +1265,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C9C" layoutX="709.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C9">
+      <Button fx:id="C9C" layoutX="709.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C9">
          <font>
             <Font size="8.0" />
          </font>
@@ -1280,7 +1280,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D9C" layoutX="709.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D9">
+      <Button fx:id="D9C" layoutX="709.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D9">
          <font>
             <Font size="8.0" />
          </font>
@@ -1295,7 +1295,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E9C" layoutX="709.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E9">
+      <Button fx:id="E9C" layoutX="709.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E9">
          <font>
             <Font size="8.0" />
          </font>
@@ -1310,7 +1310,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F9C" layoutX="709.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F9">
+      <Button fx:id="F9C" layoutX="709.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F9">
          <font>
             <Font size="8.0" />
          </font>
@@ -1325,7 +1325,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A10C" layoutX="739.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A10">
+      <Button fx:id="A10C" layoutX="739.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A10">
          <font>
             <Font size="6.0" />
          </font>
@@ -1340,7 +1340,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G10C" layoutX="739.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G10">
+      <Button fx:id="G10C" layoutX="739.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G10">
          <font>
             <Font size="6.0" />
          </font>
@@ -1355,7 +1355,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C10C" layoutX="739.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C10">
+      <Button fx:id="C10C" layoutX="739.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C10">
          <font>
             <Font size="6.0" />
          </font>
@@ -1370,7 +1370,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D10C" layoutX="739.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D10">
+      <Button fx:id="D10C" layoutX="739.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D10">
          <font>
             <Font size="6.0" />
          </font>
@@ -1385,7 +1385,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E10C" layoutX="739.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E10">
+      <Button fx:id="E10C" layoutX="739.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E10">
          <font>
             <Font size="7.0" />
          </font>
@@ -1400,7 +1400,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F10C" layoutX="739.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F10">
+      <Button fx:id="F10C" layoutX="739.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F10">
          <font>
             <Font size="7.0" />
          </font>
@@ -1415,7 +1415,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A11C" layoutX="763.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A11">
+      <Button fx:id="A11C" layoutX="763.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A11">
          <font>
             <Font size="6.0" />
          </font>
@@ -1430,7 +1430,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C11C" layoutX="763.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C11">
+      <Button fx:id="C11C" layoutX="763.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C11">
          <font>
             <Font size="6.0" />
          </font>
@@ -1445,7 +1445,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D11C" layoutX="763.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D11">
+      <Button fx:id="D11C" layoutX="763.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D11">
          <font>
             <Font size="6.0" />
          </font>
@@ -1460,7 +1460,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E11C" layoutX="763.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E11">
+      <Button fx:id="E11C" layoutX="763.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E11">
          <font>
             <Font size="7.0" />
          </font>
@@ -1475,7 +1475,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F11C" layoutX="763.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F11">
+      <Button fx:id="F11C" layoutX="763.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F11">
          <font>
             <Font size="7.0" />
          </font>
@@ -1490,7 +1490,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A12C" layoutX="787.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A12">
+      <Button fx:id="A12C" layoutX="787.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A12">
          <font>
             <Font size="6.0" />
          </font>
@@ -1505,7 +1505,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G12C" layoutX="787.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G12">
+      <Button fx:id="G12C" layoutX="787.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G12">
          <font>
             <Font size="6.0" />
          </font>
@@ -1520,7 +1520,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C12C" layoutX="787.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C12">
+      <Button fx:id="C12C" layoutX="787.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C12">
          <font>
             <Font size="6.0" />
          </font>
@@ -1535,7 +1535,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D12C" layoutX="787.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D12">
+      <Button fx:id="D12C" layoutX="787.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D12">
          <font>
             <Font size="6.0" />
          </font>
@@ -1550,7 +1550,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E12C" layoutX="787.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E12">
+      <Button fx:id="E12C" layoutX="787.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E12">
          <font>
             <Font size="7.0" />
          </font>
@@ -1565,7 +1565,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F12C" layoutX="787.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F12">
+      <Button fx:id="F12C" layoutX="787.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F12">
          <font>
             <Font size="7.0" />
          </font>
@@ -1580,7 +1580,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A13C" layoutX="811.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A13">
+      <Button fx:id="A13C" layoutX="811.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A13">
          <font>
             <Font size="6.0" />
          </font>
@@ -1595,7 +1595,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G13C" layoutX="811.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G13">
+      <Button fx:id="G13C" layoutX="811.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G13">
          <font>
             <Font size="6.0" />
          </font>
@@ -1610,7 +1610,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C13C" layoutX="811.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C13">
+      <Button fx:id="C13C" layoutX="811.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C13">
          <font>
             <Font size="6.0" />
          </font>
@@ -1625,7 +1625,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D13C" layoutX="811.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D13">
+      <Button fx:id="D13C" layoutX="811.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D13">
          <font>
             <Font size="6.0" />
          </font>
@@ -1640,7 +1640,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E13C" layoutX="811.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E13">
+      <Button fx:id="E13C" layoutX="811.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E13">
          <font>
             <Font size="7.0" />
          </font>
@@ -1655,7 +1655,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F13C" layoutX="811.0" layoutY="283.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F13">
+      <Button fx:id="F13C" layoutX="811.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F13">
          <font>
             <Font size="7.0" />
          </font>
@@ -1670,7 +1670,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A14C" layoutX="835.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A14">
+      <Button fx:id="A14C" layoutX="835.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A14">
          <font>
             <Font size="6.0" />
          </font>
@@ -1685,7 +1685,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G14C" layoutX="835.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G14">
+      <Button fx:id="G14C" layoutX="835.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G14">
          <font>
             <Font size="6.0" />
          </font>
@@ -1700,7 +1700,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C14C" layoutX="835.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C14">
+      <Button fx:id="C14C" layoutX="835.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C14">
          <font>
             <Font size="6.0" />
          </font>
@@ -1715,7 +1715,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D14C" layoutX="835.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D14">
+      <Button fx:id="D14C" layoutX="835.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D14">
          <font>
             <Font size="6.0" />
          </font>
@@ -1730,7 +1730,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E14C" layoutX="835.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E14">
+      <Button fx:id="E14C" layoutX="835.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E14">
          <font>
             <Font size="7.0" />
          </font>
@@ -1745,7 +1745,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F14C" layoutX="835.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F14">
+      <Button fx:id="F14C" layoutX="835.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F14">
          <font>
             <Font size="7.0" />
          </font>
@@ -1760,7 +1760,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A15C" layoutX="859.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A15">
+      <Button fx:id="A15C" layoutX="859.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A15">
          <font>
             <Font size="6.0" />
          </font>
@@ -1775,7 +1775,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G15C" layoutX="859.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G15">
+      <Button fx:id="G15C" layoutX="859.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G15">
          <font>
             <Font size="6.0" />
          </font>
@@ -1790,7 +1790,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C15C" layoutX="859.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C15">
+      <Button fx:id="C15C" layoutX="859.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C15">
          <font>
             <Font size="6.0" />
          </font>
@@ -1805,7 +1805,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D15C" layoutX="859.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D15">
+      <Button fx:id="D15C" layoutX="859.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D15">
          <font>
             <Font size="6.0" />
          </font>
@@ -1820,7 +1820,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E15C" layoutX="859.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E15">
+      <Button fx:id="E15C" layoutX="859.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E15">
          <font>
             <Font size="7.0" />
          </font>
@@ -1835,7 +1835,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F15C" layoutX="859.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F15">
+      <Button fx:id="F15C" layoutX="859.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F15">
          <font>
             <Font size="7.0" />
          </font>
@@ -1850,7 +1850,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G11C" layoutX="763.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G11">
+      <Button fx:id="G11C" layoutX="763.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G11">
          <font>
             <Font size="6.0" />
          </font>
@@ -1865,7 +1865,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A16C" layoutX="883.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A16">
+      <Button fx:id="A16C" layoutX="883.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A16">
          <font>
             <Font size="6.0" />
          </font>
@@ -1880,7 +1880,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G16C" layoutX="883.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G16">
+      <Button fx:id="G16C" layoutX="883.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G16">
          <font>
             <Font size="6.0" />
          </font>
@@ -1895,7 +1895,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C16C" layoutX="883.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C16">
+      <Button fx:id="C16C" layoutX="883.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C16">
          <font>
             <Font size="6.0" />
          </font>
@@ -1910,7 +1910,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D16C" layoutX="883.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D16">
+      <Button fx:id="D16C" layoutX="883.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D16">
          <font>
             <Font size="6.0" />
          </font>
@@ -1925,7 +1925,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E16C" layoutX="883.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E16">
+      <Button fx:id="E16C" layoutX="883.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E16">
          <font>
             <Font size="7.0" />
          </font>
@@ -1940,7 +1940,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F16C" layoutX="883.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F16">
+      <Button fx:id="F16C" layoutX="883.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F16">
          <font>
             <Font size="7.0" />
          </font>
@@ -1955,7 +1955,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A17C" layoutX="907.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A17">
+      <Button fx:id="A17C" layoutX="907.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A17">
          <font>
             <Font size="6.0" />
          </font>
@@ -1970,7 +1970,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G17C" layoutX="907.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G17">
+      <Button fx:id="G17C" layoutX="907.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G17">
          <font>
             <Font size="6.0" />
          </font>
@@ -1985,7 +1985,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C17C" layoutX="907.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C17">
+      <Button fx:id="C17C" layoutX="907.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C17">
          <font>
             <Font size="6.0" />
          </font>
@@ -2000,7 +2000,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D17C" layoutX="907.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D17">
+      <Button fx:id="D17C" layoutX="907.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D17">
          <font>
             <Font size="6.0" />
          </font>
@@ -2015,7 +2015,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E17C" layoutX="907.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E17">
+      <Button fx:id="E17C" layoutX="907.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E17">
          <font>
             <Font size="7.0" />
          </font>
@@ -2030,7 +2030,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F17C" layoutX="907.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F17">
+      <Button fx:id="F17C" layoutX="907.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F17">
          <font>
             <Font size="7.0" />
          </font>
@@ -2045,7 +2045,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A18C" layoutX="931.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A18">
+      <Button fx:id="A18C" layoutX="931.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A18">
          <font>
             <Font size="6.0" />
          </font>
@@ -2060,7 +2060,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C18C" layoutX="931.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C18">
+      <Button fx:id="C18C" layoutX="931.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C18">
          <font>
             <Font size="6.0" />
          </font>
@@ -2075,7 +2075,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D18C" layoutX="931.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D18">
+      <Button fx:id="D18C" layoutX="931.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D18">
          <font>
             <Font size="6.0" />
          </font>
@@ -2090,7 +2090,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E18C" layoutX="931.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E18">
+      <Button fx:id="E18C" layoutX="931.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E18">
          <font>
             <Font size="7.0" />
          </font>
@@ -2105,7 +2105,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F18C" layoutX="931.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F18">
+      <Button fx:id="F18C" layoutX="931.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F18">
          <font>
             <Font size="7.0" />
          </font>
@@ -2120,7 +2120,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A19C" layoutX="955.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A19">
+      <Button fx:id="A19C" layoutX="955.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A19">
          <font>
             <Font size="6.0" />
          </font>
@@ -2135,7 +2135,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G19C" layoutX="955.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G19">
+      <Button fx:id="G19C" layoutX="955.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G19">
          <font>
             <Font size="6.0" />
          </font>
@@ -2150,7 +2150,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C19C" layoutX="955.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C19">
+      <Button fx:id="C19C" layoutX="955.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C19">
          <font>
             <Font size="6.0" />
          </font>
@@ -2165,7 +2165,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D19C" layoutX="955.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D19">
+      <Button fx:id="D19C" layoutX="955.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D19">
          <font>
             <Font size="6.0" />
          </font>
@@ -2180,7 +2180,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E19C" layoutX="955.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E19">
+      <Button fx:id="E19C" layoutX="955.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E19">
          <font>
             <Font size="7.0" />
          </font>
@@ -2195,7 +2195,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F19C" layoutX="955.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F19">
+      <Button fx:id="F19C" layoutX="955.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F19">
          <font>
             <Font size="7.0" />
          </font>
@@ -2210,7 +2210,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A20C" layoutX="979.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A20">
+      <Button fx:id="A20C" layoutX="979.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A20">
          <font>
             <Font size="6.0" />
          </font>
@@ -2225,7 +2225,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G20C" layoutX="979.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G20">
+      <Button fx:id="G20C" layoutX="979.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G20">
          <font>
             <Font size="6.0" />
          </font>
@@ -2240,7 +2240,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C20C" layoutX="979.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C20">
+      <Button fx:id="C20C" layoutX="979.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C20">
          <font>
             <Font size="6.0" />
          </font>
@@ -2255,7 +2255,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D20C" layoutX="979.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D20">
+      <Button fx:id="D20C" layoutX="979.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D20">
          <font>
             <Font size="6.0" />
          </font>
@@ -2270,7 +2270,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E20C" layoutX="979.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E20">
+      <Button fx:id="E20C" layoutX="979.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E20">
          <font>
             <Font size="7.0" />
          </font>
@@ -2285,7 +2285,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F20C" layoutX="979.0" layoutY="283.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F20">
+      <Button fx:id="F20C" layoutX="979.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F20">
          <font>
             <Font size="7.0" />
          </font>
@@ -2300,7 +2300,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A21C" layoutX="1003.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A21">
+      <Button fx:id="A21C" layoutX="1003.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A21">
          <font>
             <Font size="6.0" />
          </font>
@@ -2315,7 +2315,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G21C" layoutX="1003.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G21">
+      <Button fx:id="G21C" layoutX="1003.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G21">
          <font>
             <Font size="6.0" />
          </font>
@@ -2330,7 +2330,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C21C" layoutX="1003.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C21">
+      <Button fx:id="C21C" layoutX="1003.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C21">
          <font>
             <Font size="6.0" />
          </font>
@@ -2345,7 +2345,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D21C" layoutX="1003.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D21">
+      <Button fx:id="D21C" layoutX="1003.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D21">
          <font>
             <Font size="6.0" />
          </font>
@@ -2360,7 +2360,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E21C" layoutX="1003.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E21">
+      <Button fx:id="E21C" layoutX="1003.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E21">
          <font>
             <Font size="7.0" />
          </font>
@@ -2375,7 +2375,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F21C" layoutX="1003.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F21">
+      <Button fx:id="F21C" layoutX="1003.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F21">
          <font>
             <Font size="7.0" />
          </font>
@@ -2390,7 +2390,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A22C" layoutX="1027.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A22">
+      <Button fx:id="A22C" layoutX="1027.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A22">
          <font>
             <Font size="6.0" />
          </font>
@@ -2405,7 +2405,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G22C" layoutX="1027.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G22">
+      <Button fx:id="G22C" layoutX="1027.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G22">
          <font>
             <Font size="6.0" />
          </font>
@@ -2420,7 +2420,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C22C" layoutX="1027.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C22">
+      <Button fx:id="C22C" layoutX="1027.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C22">
          <font>
             <Font size="6.0" />
          </font>
@@ -2435,7 +2435,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D22C" layoutX="1027.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D22">
+      <Button fx:id="D22C" layoutX="1027.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D22">
          <font>
             <Font size="6.0" />
          </font>
@@ -2450,7 +2450,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E22C" layoutX="1027.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E22">
+      <Button fx:id="E22C" layoutX="1027.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E22">
          <font>
             <Font size="7.0" />
          </font>
@@ -2465,7 +2465,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F22C" layoutX="1027.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F22">
+      <Button fx:id="F22C" layoutX="1027.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F22">
          <font>
             <Font size="7.0" />
          </font>
@@ -2480,7 +2480,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G18C" layoutX="931.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G18">
+      <Button fx:id="G18C" layoutX="931.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G18">
          <font>
             <Font size="6.0" />
          </font>
@@ -2495,7 +2495,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A23C" layoutX="1051.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A23">
+      <Button fx:id="A23C" layoutX="1051.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A23">
          <font>
             <Font size="6.0" />
          </font>
@@ -2510,7 +2510,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G23C" layoutX="1051.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G23">
+      <Button fx:id="G23C" layoutX="1051.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G23">
          <font>
             <Font size="6.0" />
          </font>
@@ -2525,7 +2525,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C23C" layoutX="1051.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C23">
+      <Button fx:id="C23C" layoutX="1051.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C23">
          <font>
             <Font size="6.0" />
          </font>
@@ -2540,7 +2540,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D23C" layoutX="1051.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D23">
+      <Button fx:id="D23C" layoutX="1051.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D23">
          <font>
             <Font size="6.0" />
          </font>
@@ -2555,7 +2555,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E23C" layoutX="1051.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E23">
+      <Button fx:id="E23C" layoutX="1051.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E23">
          <font>
             <Font size="7.0" />
          </font>
@@ -2570,7 +2570,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F23C" layoutX="1051.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F23">
+      <Button fx:id="F23C" layoutX="1051.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F23">
          <font>
             <Font size="7.0" />
          </font>
@@ -2585,7 +2585,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A24C" layoutX="1075.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A24">
+      <Button fx:id="A24C" layoutX="1075.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A24">
          <font>
             <Font size="6.0" />
          </font>
@@ -2600,7 +2600,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G24C" layoutX="1075.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G24">
+      <Button fx:id="G24C" layoutX="1075.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G24">
          <font>
             <Font size="6.0" />
          </font>
@@ -2615,7 +2615,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C24C" layoutX="1075.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C24">
+      <Button fx:id="C24C" layoutX="1075.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C24">
          <font>
             <Font size="6.0" />
          </font>
@@ -2630,7 +2630,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D24C" layoutX="1075.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D24">
+      <Button fx:id="D24C" layoutX="1075.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D24">
          <font>
             <Font size="6.0" />
          </font>
@@ -2645,7 +2645,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E24C" layoutX="1075.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E24">
+      <Button fx:id="E24C" layoutX="1075.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E24">
          <font>
             <Font size="7.0" />
          </font>
@@ -2660,7 +2660,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F24C" layoutX="1075.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F24">
+      <Button fx:id="F24C" layoutX="1075.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F24">
          <font>
             <Font size="7.0" />
          </font>
@@ -2675,7 +2675,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A25C" layoutX="1099.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A25">
+      <Button fx:id="A25C" layoutX="1099.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A25">
          <font>
             <Font size="6.0" />
          </font>
@@ -2690,7 +2690,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G25C" layoutX="1099.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G25">
+      <Button fx:id="G25C" layoutX="1099.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G25">
          <font>
             <Font size="6.0" />
          </font>
@@ -2705,7 +2705,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C25C" layoutX="1099.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C25">
+      <Button fx:id="C25C" layoutX="1099.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C25">
          <font>
             <Font size="6.0" />
          </font>
@@ -2720,7 +2720,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D25C" layoutX="1099.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D25">
+      <Button fx:id="D25C" layoutX="1099.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D25">
          <font>
             <Font size="6.0" />
          </font>
@@ -2735,7 +2735,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E25C" layoutX="1099.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E25">
+      <Button fx:id="E25C" layoutX="1099.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E25">
          <font>
             <Font size="7.0" />
          </font>
@@ -2750,7 +2750,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F25C" layoutX="1099.0" layoutY="283.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F25">
+      <Button fx:id="F25C" layoutX="1099.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F25">
          <font>
             <Font size="7.0" />
          </font>
@@ -2765,7 +2765,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A26C" layoutX="1123.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A26">
+      <Button fx:id="A26C" layoutX="1123.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A26">
          <font>
             <Font size="6.0" />
          </font>
@@ -2780,7 +2780,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G26C" layoutX="1123.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G26">
+      <Button fx:id="G26C" layoutX="1123.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G26">
          <font>
             <Font size="6.0" />
          </font>
@@ -2795,7 +2795,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C26C" layoutX="1123.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C26">
+      <Button fx:id="C26C" layoutX="1123.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C26">
          <font>
             <Font size="6.0" />
          </font>
@@ -2810,7 +2810,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D26C" layoutX="1123.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D26">
+      <Button fx:id="D26C" layoutX="1123.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D26">
          <font>
             <Font size="6.0" />
          </font>
@@ -2825,7 +2825,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E26C" layoutX="1123.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E26">
+      <Button fx:id="E26C" layoutX="1123.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E26">
          <font>
             <Font size="7.0" />
          </font>
@@ -2840,7 +2840,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F26C" layoutX="1123.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F26">
+      <Button fx:id="F26C" layoutX="1123.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F26">
          <font>
             <Font size="7.0" />
          </font>
@@ -2855,7 +2855,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A27C" layoutX="1147.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A27">
+      <Button fx:id="A27C" layoutX="1147.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A27">
          <font>
             <Font size="6.0" />
          </font>
@@ -2870,7 +2870,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="G27C" layoutX="1147.0" layoutY="305.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G27">
+      <Button fx:id="G27C" layoutX="1147.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="G27">
          <font>
             <Font size="6.0" />
          </font>
@@ -2885,7 +2885,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C27C" layoutX="1147.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C27">
+      <Button fx:id="C27C" layoutX="1147.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C27">
          <font>
             <Font size="6.0" />
          </font>
@@ -2900,7 +2900,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="D27C" layoutX="1147.0" layoutY="238.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D27">
+      <Button fx:id="D27C" layoutX="1147.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="D27">
          <font>
             <Font size="6.0" />
          </font>
@@ -2915,7 +2915,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E27C" layoutX="1147.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E27">
+      <Button fx:id="E27C" layoutX="1147.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E27">
          <font>
             <Font size="7.0" />
          </font>
@@ -2930,7 +2930,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F27C" layoutX="1147.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F27">
+      <Button fx:id="F27C" layoutX="1147.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F27">
          <font>
             <Font size="7.0" />
          </font>
@@ -2945,7 +2945,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="A28C" layoutX="1171.0" layoutY="186.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A28">
+      <Button fx:id="A28C" layoutX="1171.0" layoutY="186.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="A28">
          <font>
             <Font size="6.0" />
          </font>
@@ -2960,7 +2960,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="C28C" layoutX="1171.0" layoutY="208.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C28">
+      <Button fx:id="C28C" layoutX="1171.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="C28">
          <font>
             <Font size="6.0" />
          </font>
@@ -2975,7 +2975,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="E28C" layoutX="1171.0" layoutY="260.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E28">
+      <Button fx:id="E28C" layoutX="1171.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="E28">
          <font>
             <Font size="7.0" />
          </font>
@@ -2990,7 +2990,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="F28C" layoutX="1171.0" layoutY="282.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F28">
+      <Button fx:id="F28C" layoutX="1171.0" layoutY="282.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="F28">
          <font>
             <Font size="7.0" />
          </font>
@@ -3005,7 +3005,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H1C" layoutX="507.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H1">
+      <Button fx:id="H1C" layoutX="507.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H1">
          <font>
             <Font size="8.0" />
          </font>
@@ -3020,7 +3020,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K1C" layoutX="507.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K1">
+      <Button fx:id="K1C" layoutX="507.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K1">
          <font>
             <Font size="8.0" />
          </font>
@@ -3035,7 +3035,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H2C" layoutX="531.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H2">
+      <Button fx:id="H2C" layoutX="531.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H2">
          <font>
             <Font size="8.0" />
          </font>
@@ -3050,7 +3050,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K2C" layoutX="531.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K2">
+      <Button fx:id="K2C" layoutX="531.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K2">
          <font>
             <Font size="8.0" />
          </font>
@@ -3065,7 +3065,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H3C" layoutX="555.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H3">
+      <Button fx:id="H3C" layoutX="555.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H3">
          <font>
             <Font size="8.0" />
          </font>
@@ -3080,7 +3080,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K3C" layoutX="555.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K3">
+      <Button fx:id="K3C" layoutX="555.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K3">
          <font>
             <Font size="8.0" />
          </font>
@@ -3095,7 +3095,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H4C" layoutX="579.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H4">
+      <Button fx:id="H4C" layoutX="579.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H4">
          <font>
             <Font size="8.0" />
          </font>
@@ -3110,7 +3110,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K4C" layoutX="579.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K4">
+      <Button fx:id="K4C" layoutX="579.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K4">
          <font>
             <Font size="8.0" />
          </font>
@@ -3125,7 +3125,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H5C" layoutX="603.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H5">
+      <Button fx:id="H5C" layoutX="603.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H5">
          <font>
             <Font size="8.0" />
          </font>
@@ -3140,7 +3140,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K5C" layoutX="603.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K5">
+      <Button fx:id="K5C" layoutX="603.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K5">
          <font>
             <Font size="8.0" />
          </font>
@@ -3155,7 +3155,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H6C" layoutX="627.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H6">
+      <Button fx:id="H6C" layoutX="627.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H6">
          <font>
             <Font size="8.0" />
          </font>
@@ -3170,7 +3170,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K6C" layoutX="627.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K6">
+      <Button fx:id="K6C" layoutX="627.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K6">
          <font>
             <Font size="8.0" />
          </font>
@@ -3185,7 +3185,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H7C" layoutX="651.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H7">
+      <Button fx:id="H7C" layoutX="651.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H7">
          <font>
             <Font size="8.0" />
          </font>
@@ -3200,7 +3200,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K7C" layoutX="651.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K7">
+      <Button fx:id="K7C" layoutX="651.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K7">
          <font>
             <Font size="8.0" />
          </font>
@@ -3215,7 +3215,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H8C" layoutX="676.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H8">
+      <Button fx:id="H8C" layoutX="676.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H8">
          <font>
             <Font size="8.0" />
          </font>
@@ -3230,7 +3230,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K8C" layoutX="676.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K8">
+      <Button fx:id="K8C" layoutX="676.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K8">
          <font>
             <Font size="8.0" />
          </font>
@@ -3245,7 +3245,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H9C" layoutX="709.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H9">
+      <Button fx:id="H9C" layoutX="709.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H9">
          <font>
             <Font size="8.0" />
          </font>
@@ -3260,7 +3260,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K9C" layoutX="709.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K9">
+      <Button fx:id="K9C" layoutX="709.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K9">
          <font>
             <Font size="8.0" />
          </font>
@@ -3275,7 +3275,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H10C" layoutX="739.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H10">
+      <Button fx:id="H10C" layoutX="739.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H10">
          <font>
             <Font size="6.0" />
          </font>
@@ -3290,7 +3290,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K10C" layoutX="739.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K10">
+      <Button fx:id="K10C" layoutX="739.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K10">
          <font>
             <Font size="7.0" />
          </font>
@@ -3305,7 +3305,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H11C" layoutX="763.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H11">
+      <Button fx:id="H11C" layoutX="763.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H11">
          <font>
             <Font size="6.0" />
          </font>
@@ -3320,7 +3320,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H12C" layoutX="787.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H12">
+      <Button fx:id="H12C" layoutX="787.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H12">
          <font>
             <Font size="6.0" />
          </font>
@@ -3335,7 +3335,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K12C" layoutX="787.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K12">
+      <Button fx:id="K12C" layoutX="787.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K12">
          <font>
             <Font size="7.0" />
          </font>
@@ -3350,7 +3350,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H13C" layoutX="811.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H13">
+      <Button fx:id="H13C" layoutX="811.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H13">
          <font>
             <Font size="6.0" />
          </font>
@@ -3365,7 +3365,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K13C" layoutX="811.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K13">
+      <Button fx:id="K13C" layoutX="811.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K13">
          <font>
             <Font size="7.0" />
          </font>
@@ -3380,7 +3380,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H14C" layoutX="835.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H14">
+      <Button fx:id="H14C" layoutX="835.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H14">
          <font>
             <Font size="6.0" />
          </font>
@@ -3395,7 +3395,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K14C" layoutX="835.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K14">
+      <Button fx:id="K14C" layoutX="835.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K14">
          <font>
             <Font size="7.0" />
          </font>
@@ -3410,7 +3410,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H15C" layoutX="859.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H15">
+      <Button fx:id="H15C" layoutX="859.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H15">
          <font>
             <Font size="6.0" />
          </font>
@@ -3425,7 +3425,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K15C" layoutX="859.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K15">
+      <Button fx:id="K15C" layoutX="859.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K15">
          <font>
             <Font size="7.0" />
          </font>
@@ -3440,7 +3440,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K11C" layoutX="763.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K11">
+      <Button fx:id="K11C" layoutX="763.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K11">
          <font>
             <Font size="7.0" />
          </font>
@@ -3455,7 +3455,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H16C" layoutX="883.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H16">
+      <Button fx:id="H16C" layoutX="883.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H16">
          <font>
             <Font size="6.0" />
          </font>
@@ -3470,7 +3470,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K16C" layoutX="883.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K16">
+      <Button fx:id="K16C" layoutX="883.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K16">
          <font>
             <Font size="7.0" />
          </font>
@@ -3485,7 +3485,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H17C" layoutX="907.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H17">
+      <Button fx:id="H17C" layoutX="907.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H17">
          <font>
             <Font size="6.0" />
          </font>
@@ -3500,7 +3500,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K17C" layoutX="907.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K17">
+      <Button fx:id="K17C" layoutX="907.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K17">
          <font>
             <Font size="7.0" />
          </font>
@@ -3515,7 +3515,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H18C" layoutX="931.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H18">
+      <Button fx:id="H18C" layoutX="931.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H18">
          <font>
             <Font size="6.0" />
          </font>
@@ -3530,7 +3530,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H19C" layoutX="955.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H19">
+      <Button fx:id="H19C" layoutX="955.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H19">
          <font>
             <Font size="6.0" />
          </font>
@@ -3545,7 +3545,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K19C" layoutX="955.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K19">
+      <Button fx:id="K19C" layoutX="955.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K19">
          <font>
             <Font size="7.0" />
          </font>
@@ -3560,7 +3560,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H20C" layoutX="979.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H20">
+      <Button fx:id="H20C" layoutX="979.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H20">
          <font>
             <Font size="6.0" />
          </font>
@@ -3575,7 +3575,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K20C" layoutX="979.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K20">
+      <Button fx:id="K20C" layoutX="979.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K20">
          <font>
             <Font size="7.0" />
          </font>
@@ -3590,7 +3590,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H21C" layoutX="1003.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H21">
+      <Button fx:id="H21C" layoutX="1003.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H21">
          <font>
             <Font size="6.0" />
          </font>
@@ -3605,7 +3605,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K21C" layoutX="1003.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K21">
+      <Button fx:id="K21C" layoutX="1003.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K21">
          <font>
             <Font size="7.0" />
          </font>
@@ -3620,7 +3620,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H22C" layoutX="1027.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H22">
+      <Button fx:id="H22C" layoutX="1027.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H22">
          <font>
             <Font size="6.0" />
          </font>
@@ -3635,7 +3635,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K22C" layoutX="1027.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K22">
+      <Button fx:id="K22C" layoutX="1027.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K22">
          <font>
             <Font size="7.0" />
          </font>
@@ -3649,7 +3649,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K18C" layoutX="931.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K18">
+      <Button fx:id="K18C" layoutX="931.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K18">
          <font>
             <Font size="7.0" />
          </font>
@@ -3664,7 +3664,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H23C" layoutX="1051.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H23">
+      <Button fx:id="H23C" layoutX="1051.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H23">
          <font>
             <Font size="6.0" />
          </font>
@@ -3679,7 +3679,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K23C" layoutX="1051.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K23">
+      <Button fx:id="K23C" layoutX="1051.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K23">
          <font>
             <Font size="7.0" />
          </font>
@@ -3693,7 +3693,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H24C" layoutX="1075.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H24">
+      <Button fx:id="H24C" layoutX="1075.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H24">
          <font>
             <Font size="6.0" />
          </font>
@@ -3708,7 +3708,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K24C" layoutX="1075.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K24">
+      <Button fx:id="K24C" layoutX="1075.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K24">
          <font>
             <Font size="7.0" />
          </font>
@@ -3722,7 +3722,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H25C" layoutX="1099.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H25">
+      <Button fx:id="H25C" layoutX="1099.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H25">
          <font>
             <Font size="6.0" />
          </font>
@@ -3737,7 +3737,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K25C" layoutX="1099.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K25">
+      <Button fx:id="K25C" layoutX="1099.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K25">
          <font>
             <Font size="7.0" />
          </font>
@@ -3751,7 +3751,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H26C" layoutX="1123.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H26">
+      <Button fx:id="H26C" layoutX="1123.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H26">
          <font>
             <Font size="6.0" />
          </font>
@@ -3766,7 +3766,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K26C" layoutX="1123.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K26">
+      <Button fx:id="K26C" layoutX="1123.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K26">
          <font>
             <Font size="7.0" />
          </font>
@@ -3780,7 +3780,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H27C" layoutX="1147.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H27">
+      <Button fx:id="H27C" layoutX="1147.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H27">
          <font>
             <Font size="6.0" />
          </font>
@@ -3795,7 +3795,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K27C" layoutX="1147.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K27">
+      <Button fx:id="K27C" layoutX="1147.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K27">
          <font>
             <Font size="7.0" />
          </font>
@@ -3809,7 +3809,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="H28C" layoutX="1171.0" layoutY="334.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H28">
+      <Button fx:id="H28C" layoutX="1171.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="H28">
          <font>
             <Font size="6.0" />
          </font>
@@ -3824,7 +3824,7 @@
             </Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="K28C" layoutX="1171.0" layoutY="356.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K28">
+      <Button fx:id="K28C" layoutX="1171.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonPress" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: #E5E102;" text="K28">
          <font>
             <Font size="7.0" />
          </font>
@@ -3838,6 +3838,6 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Label fx:id="txtPuestosSeleccionados1" layoutX="187.0" layoutY="501.0" prefHeight="26.0" prefWidth="1042.0" wrapText="true" />
+      <Label fx:id="txtPuestosSeleccionados" layoutX="187.0" layoutY="501.0" prefHeight="26.0" prefWidth="1042.0" wrapText="true" />
    </children>
 </AnchorPane>

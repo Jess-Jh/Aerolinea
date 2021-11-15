@@ -77,7 +77,7 @@ public class AerolineaController implements Initializable {
     private Button btnCancelarCompra;
 
     @FXML
-    private Button btnCancelarCompraTiquetes;
+    private Button btnRegistrarNuevoViaje;
 
     @FXML
     private Button btnPagarTiquetes;
@@ -693,9 +693,33 @@ public class AerolineaController implements Initializable {
     }
 
     @FXML
-    void cancelarCompraTiquetes(ActionEvent event) {
-    	tabPrincipalTiquetes.getSelectionModel().select(1);
-
+    void registrarNuevoViaje(ActionEvent event) {
+    	
+		rbtIda.setSelected(false);
+		rbtidaVuelta.setSelected(false);
+    	
+    	cmbDestino.setValue("");
+    	cmbClase.setValue("");
+    	txtFechaSalida.setValue(null);;
+    	txtFechaRegreso.setValue(null);
+    	sldNumeroPersonas.setValue(0);
+    	
+    	rbtIda1.setSelected(false);
+		rbtidaVuelta1.setSelected(false);
+    	cmbOrigen1.setValue("");
+		cmbDestino1.setValue("");
+		txtCostoPorPersona.setText("");
+		txtVuelo.setText("");
+		
+		txtVuelo1.setText("");
+		txtDuracionVuelo.setText("");
+		txtHoraSalida.setText("");
+		txtPrecioTotal.setText("");
+		
+		txtIdentificacionOPasaporte.setText(""); txtNombre.setText(""); txtApellido.setText(""); txtDireccion.setText(""); txtCorreoElectronico.setText("");
+		txtFechaNacimiento.setValue(null); txtDireccionResidencia.setText(""); txtTarjetaDebitoCredito.setText("");
+		
+    	tabPrincipalTiquetes.getSelectionModel().select(0);
     }
 
     @FXML
@@ -704,34 +728,56 @@ public class AerolineaController implements Initializable {
     	if(aeronaveSeleccion.getNombreAeronave() == null){
     		aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "Para la selección de su puesto primero elija el vuelo en el que va a viajar", AlertType.WARNING);
     	} else {
-    		if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A320")) {
-    			try {
-    				FXMLLoader loader = new FXMLLoader();
-    				loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/OcupacionSillasView.fxml"));
-    				AnchorPane anchorPane = (AnchorPane)loader.load();
-    				OcupacionSillasController ocupacionSillasController = loader.getController();
-    				ocupacionSillasController.recuperarDatos(aeronaveSeleccion.getIdAvion(), cmbClase.getValue(), (int)sldNumeroPersonas.getValue());
-    				ocupacionSillasController.setAplicacion(aplicacionAerolinea);
-    				
-    				Stage dialogStage = new Stage();
-    				dialogStage.setTitle("Ocupación Sillas");
-    				dialogStage.initModality(Modality.WINDOW_MODAL);
-    				
-    				Scene scene = new Scene(anchorPane);
-    				dialogStage.setScene(scene);
-    				dialogStage.showAndWait();
-    				    				
-    			} catch (IOException e) {
-    				e.printStackTrace();
-    			}
-    		}
-    	
+    		if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A320")) 
+    			cargarVista("OcupacionSillasView");
+    		if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A330")) 
+    			cargarVista("OcupacionSillas2View");
+    		if(aeronaveSeleccion.getNombreAeronave().equals("Boeing 787")) 
+    			cargarVista("OcupacionSillas3View");
     	}
-//    	if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A330")) aplicacionAerolinea.mostrarOcupacionSillas2View();
-//    	if(aeronaveSeleccion.getNombreAeronave().equals("Boeing 787")) aplicacionAerolinea.mostrarOcupacionSillas3View();
     }
     
-    @FXML
+    /**
+     * Cargar la vista de la aeronave dependiendo de la elección del usuario
+     * @param string
+     */
+    private void cargarVista(String nombreView) {
+    	try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(AplicacionAerolinea.class.getResource("/co/edu/uniquindio/aerolinea/vistas/"+nombreView+".fxml"));
+			AnchorPane anchorPane = (AnchorPane)loader.load();
+			
+			if(nombreView.equalsIgnoreCase("OcupacionSillasView")) {
+				OcupacionSillasController ocupacionSillasController = loader.getController();
+				ocupacionSillasController.recuperarDatos(aeronaveSeleccion.getIdAvion(), cmbClase.getValue(), (int)sldNumeroPersonas.getValue());
+				ocupacionSillasController.setAplicacion(aplicacionAerolinea);
+			}
+			if(nombreView.equalsIgnoreCase("OcupacionSillas2View")) {
+				OcupacionSillas2Controller ocupacionSillasController = loader.getController();
+				ocupacionSillasController.recuperarDatos(aeronaveSeleccion.getIdAvion(), cmbClase.getValue(), (int)sldNumeroPersonas.getValue());
+				ocupacionSillasController.setAplicacion(aplicacionAerolinea);
+			}
+			if(nombreView.equalsIgnoreCase("OcupacionSillas3View")) {
+				OcupacionSillas3Controller ocupacionSillasController = loader.getController();
+				ocupacionSillasController.recuperarDatos(aeronaveSeleccion.getIdAvion(), cmbClase.getValue(), (int)sldNumeroPersonas.getValue());
+				ocupacionSillasController.setAplicacion(aplicacionAerolinea);
+			}
+			
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Ocupación Sillas");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			
+			Scene scene = new Scene(anchorPane);
+			dialogStage.setScene(scene);
+			dialogStage.showAndWait();
+			    				
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	@FXML
     void pagarTiquetes(ActionEvent event) {
     	agregarCompraTiquetes(txtIdentificacionOPasaporte.getText(), txtNombre.getText(), txtApellido.getText(), txtDireccion.getText(), txtCorreoElectronico.getText(),
     			txtFechaNacimiento.getValue(), txtDireccionResidencia.getText(), txtTarjetaDebitoCredito.getText());

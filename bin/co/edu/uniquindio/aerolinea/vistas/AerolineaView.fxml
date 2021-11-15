@@ -467,7 +467,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button fx:id="btnCancelarCompraTiquetes" layoutX="923.0" layoutY="535.0" mnemonicParsing="false" onAction="#cancelarCompraTiquetes" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: green;" text="Cancelar" textFill="WHITE">
+                                          <Button fx:id="btnRegistrarNuevoViaje" layoutX="923.0" layoutY="535.0" mnemonicParsing="false" onAction="#registrarNuevoViaje" prefHeight="35.0" prefWidth="321.0" style="-fx-background-color: green;" text="Registrar Nuevo Viaje" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="16.0" />
                                              </font>
