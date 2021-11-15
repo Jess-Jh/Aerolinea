@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeSet;
 
+import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.servicios.IAerolinea;
 
 /**
@@ -18,7 +19,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 	private String nombre;
 	private ArrayList<Aeronave> listaAeronaves;
 	private HashSet<Tripulante> listaTripulantes;
-	private HashMap<String, Tripulante> listadoTripulantesAsignados;
+	private HashMap<String, String> listadoTripulantesAsignados;
 	private ArrayList<Equipaje> listaEquipajes;
 	private HashMap<String, Tiquete> listaTiquetes;
 	private ArrayList<Ruta> listaRutas;
@@ -36,7 +37,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 		this.listaTripulantes = new HashSet<>();
 		this.listaEquipajes = new ArrayList<>();
 		this.listaTiquetes = new HashMap<String, Tiquete>();
-		this.listadoTripulantesAsignados = new HashMap<String, Tripulante>();
+		this.listadoTripulantesAsignados = new HashMap<String, String>();
 		this.listaRutas = new ArrayList<>();
 		this.listaClientes = new TreeSet<>();
 		this.listaCarros = new ArrayList<>();
@@ -65,10 +66,10 @@ public class Aerolinea implements Serializable, IAerolinea {
 	public void setListaTripulantes(HashSet<Tripulante> listaTripulantes) {
 		this.listaTripulantes = listaTripulantes;
 	}
-	public HashMap<String, Tripulante> getListadoTripulantesAsignados() {
+	public HashMap<String, String> getListadoTripulantesAsignados() {
 		return listadoTripulantesAsignados;
 	}
-	public void setListadoTripulantesAsignados(HashMap<String, Tripulante> listadoTripulantesAsignados) {
+	public void setListadoTripulantesAsignados(HashMap<String, String> listadoTripulantesAsignados) {
 		this.listadoTripulantesAsignados = listadoTripulantesAsignados;
 	}
 	public ArrayList<Equipaje> getListaEquipajes() {
@@ -117,11 +118,18 @@ public class Aerolinea implements Serializable, IAerolinea {
 	}
 	
 	@Override
-	public void realizarAsignacionMateria(String idVueloSeleccionado, ArrayList<Tripulante> listaTripulantesVuelos) {
+	public void realizarAsignacionVuelo(String idVueloSeleccionado, ArrayList<Tripulante> listaTripulantesVuelos) throws VueloException {
+		String cedulasTripulantes = "";
+		
+		for (HashMap.Entry<String, String> entry : listadoTripulantesAsignados.entrySet()) {
+			if(entry.getKey().equalsIgnoreCase(idVueloSeleccionado))
+				throw new VueloException("El vuelo ya tiene registrados unos tripulantes.");
+	    }
 		
 		for (Tripulante tripulante : listaTripulantesVuelos) {
-			listadoTripulantesAsignados.put(idVueloSeleccionado, tripulante);
+			cedulasTripulantes += tripulante.getIdentificacion() + "-";
 		}
+		listadoTripulantesAsignados.put(idVueloSeleccionado, cedulasTripulantes);
 	}	
 
 	/**

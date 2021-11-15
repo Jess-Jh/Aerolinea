@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
+import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
 import co.edu.uniquindio.aerolinea.modelo.AirbusA320;
@@ -102,8 +103,9 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	}
 	
 	@Override
-	public void realizarAsignacionVuelo(String idVueloSeleccionado, ArrayList<Tripulante> listaTripulantesVuelos) {
-		aerolinea.realizarAsignacionMateria(idVueloSeleccionado, listaTripulantesVuelos);
+	public void realizarAsignacionVuelo(String idVueloSeleccionado, ArrayList<Tripulante> listaTripulantesVuelos) throws VueloException {
+		aerolinea.realizarAsignacionVuelo(idVueloSeleccionado, listaTripulantesVuelos);
+		guardarRecursoXML();
 	}
 	
 	

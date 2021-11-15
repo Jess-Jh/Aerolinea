@@ -2,5 +2,17 @@
 10985376382,Felipe,Torres,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Derecho Aéreo,Copiloto
 19874998473,Luisa Maria,Torres,Cra 19 #34-78,luisfe@hotmail.com,1993-01-02,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
 19874039483,Pablo,Osorio,Cra 34 #65-78,palo@gmail.com,2002-04-24,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
-10985376382,Felipe,Torres,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Gestión de la Seguridad Operacional,AUXILIAR_VUELO
-10985376382,Felipe,Torres,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
+9834734882,Xiomara,Bermudez,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Gestión de la Seguridad Operacional,AUXILIAR_VUELO
+10985376382,Adrian,Vasquez,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
+1987345623,Luisa,Sanchez,Cll 34 #56-78,lube@gmail.com,1998-03-14,Navegacion Aérea,Piloto
+372625183,Felipe,Hipila,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Derecho Aéreo,Copiloto
+32897874234,Stiven,Torres,Cra 19 #34-78,luisfe@hotmail.com,1993-01-02,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
+32672769983,Pablo,Diaz,Cra 34 #65-78,palo@gmail.com,2002-04-24,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
+9875645212,Tomas,Lopez,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Gestión de la Seguridad Operacional,AUXILIAR_VUELO
+2984763267,Angela,Zaragoza,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
+463466332,Vanesa,Lopez,Cll 34 #56-78,lube@gmail.com,1998-03-14,Navegacion Aérea,Piloto
+372625183,Angel,Muñoz,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Derecho Aéreo,Copiloto
+32897874234,Juan,Puentes,Cra 19 #34-78,luisfe@hotmail.com,1993-01-02,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
+32672769983,Alex,Diaz,Cra 34 #65-78,palo@gmail.com,2002-04-24,Comunicaciones Aeronáuticas,AUXILIAR_VUELO
+9875645212,Fabio,Hernandez,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Gestión de la Seguridad Operacional,AUXILIAR_VUELO
+2984763267,Luisa,Ruiz,Cra 19 #65-78,felip@hotmail.com,2000-04-24,Comunicaciones Aeronáuticas,AUXILIAR_VUELO

@@ -9,11 +9,11 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.excepciones.CupoTripulanteException;
 import co.edu.uniquindio.aerolinea.excepciones.DatosInvalidosException;
+import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
 import co.edu.uniquindio.aerolinea.modelo.Cliente;
 import co.edu.uniquindio.aerolinea.modelo.CruceAeronavesRutas;
-import co.edu.uniquindio.aerolinea.modelo.Nacional;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoTripulante;
 import co.edu.uniquindio.aerolinea.modelo.Tiquete;
@@ -26,8 +26,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -44,7 +42,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -297,12 +294,7 @@ public class AerolineaController implements Initializable {
     
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
-		
-//		tableViewTripulantes.setDisable(true);
-//		txtTextoSeleccionVuelos.setText("Primero seleccione el vuelo al que le va a asignar los tripulantes");
-//		txtTextoSeleccionTripulantes.setText("");
-		
-		
+			
 		//----------------------------------------- Gestión Tripulantes --------------------------------------------------------------------------->>
 		//----------------------------------------- Vuelos ------------------------------------------------------------>>
 		
@@ -317,10 +309,6 @@ public class AerolineaController implements Initializable {
 				aeronaveSeleccionTripulacion = newSelection;			
 				if(aeronaveSeleccionTripulacion != null) {
 					txtIdAvion.setText(aeronaveSeleccionTripulacion.getIdAvion());
-//					tableViewTripulantes.setDisable(false);
-//					txtTextoSeleccionVuelos.setText("");
-//					
-//					txtTextoSeleccionTripulantes.setText("Seleccione los tripulantes que desea asignar al vuelo, si desea cancelar una asignación selecciónelo de la tabla \"Asignación de Vuelos\"");
 					verificarTripulantes(txtIdAvion.getText());
 				}
 			}
@@ -415,9 +403,6 @@ public class AerolineaController implements Initializable {
     	tableViewTripulantes.setItems(getTripulantes());
     	
     	tableviewAsignacionVuelos.getItems().clear();
-    	
-//    	tableViewVuelos.getItems().clear();
-//    	tableViewVuelos.setItems(getVuelos());
     }
     
     /**
@@ -446,15 +431,6 @@ public class AerolineaController implements Initializable {
 	 */
 	private ObservableList<Tripulante> getTripulantes() {
 		listadoTripulantes.clear();
-		listadoTripulantes.addAll(aerolinea.getListaTripulantes());
-		return listadoTripulantes;
-	}
-
-	/**
-	 * Obtener la asignación de los vuelos de la aerolínea
-	 * @return
-	 */
-	private ObservableList<Tripulante> getVuelosAsignados() {
 		listadoTripulantes.addAll(aerolinea.getListaTripulantes());
 		return listadoTripulantes;
 	}
@@ -518,26 +494,31 @@ public class AerolineaController implements Initializable {
 			verificarDatos(idVueloSeleccionado, listadoTripulantesAsignados);
 			
 			if(verificarCantidadTripulantes(idVueloSeleccionado, listadoTripulantesAsignados)) {
-				ArrayList<Tripulante> listaTripulantesVuelos = new ArrayList<>();
 				
-				for (Tripulante tripulante : listadoTripulantesAsignados) {
-					listaTripulantesVuelos.add(tripulante);
+				try {
+					ArrayList<Tripulante> listaTripulantesVuelos = new ArrayList<>();
+					
+					for (Tripulante tripulante : listadoTripulantesAsignados) {
+						listaTripulantesVuelos.add(tripulante);
+					}
+					modelFactoryController.realizarAsignacionVuelo(idVueloSeleccionado, listaTripulantesVuelos);
+					
+					txtTextoConfirmacionRegistroTripulantes.setText("¡Los tripulantes han sido registrados con éxito!");
+					aplicacionAerolinea.mostrarMensaje("Asignación de Vuelo", "Asignación de Vuelo", "Se realizó la asignación del vuelo con éxito", AlertType.INFORMATION);
+					
+					//------- Limpiar campos para una nueva asignación ------------>>
+					txtIdAvion.setText("");
+					initialize(location, resources);
+					setAplicacion(aplicacionAerolinea);
+					txtTextoSeleccionNumeroTripulantes.setText("");
+					txtTextoSeleccionPiloto.setText("");
+					txtTextoSeleccionCopiloto.setText("");
+					txtTextoSeleccionAuxiliaresVuelo.setText("");
+					//-------------------------------------------------------------||
+					txtTextoConfirmacionRegistroTripulantes.setText("");
+				} catch (VueloException e) {
+					aplicacionAerolinea.mostrarMensaje("Asignación de Vuelo", "Asignación de Vuelo", e.getMessage(), AlertType.WARNING);
 				}
-				
-				modelFactoryController.realizarAsignacionVuelo(idVueloSeleccionado, listaTripulantesVuelos);
-				txtTextoConfirmacionRegistroTripulantes.setText("¡Los tripulantes han sido registrados con éxito!");
-				aplicacionAerolinea.mostrarMensaje("Asignación de Vuelo", "Asignación de Vuelo", "Se realizó la asignación del vuelo con éxito", AlertType.INFORMATION);
-		    
-				//------- Limpiar campos para una nueva asignación ------------>>
-				txtIdAvion.setText("");
-				initialize(location, resources);
-				setAplicacion(aplicacionAerolinea);
-				txtTextoSeleccionNumeroTripulantes.setText("");
-	    		txtTextoSeleccionPiloto.setText("");
-	    		txtTextoSeleccionCopiloto.setText("");
-	    		txtTextoSeleccionAuxiliaresVuelo.setText("");
-				//-------------------------------------------------------------||
-	    		txtTextoConfirmacionRegistroTripulantes.setText("");
 	    		
 			}
 		} catch (DatosInvalidosException | CupoTripulanteException e) {
@@ -645,16 +626,6 @@ public class AerolineaController implements Initializable {
 			aplicacionAerolinea.mostrarMensaje("Registro Viaje", "Registro Viaje", e.getMessage(), AlertType.WARNING);
 		}
     }
-
-//	private Tiquete buscarViaje(String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida,
-//			LocalDate fechaRegreso, double numeroPersonas) throws DatosInvalidosException {
-//		
-//		Tiquete tiquete = null;
-//		
-//		verificarDatos(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);
-//		return tiquete = modelFactoryController.buscarViaje(viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numeroPersonas);			
-//
-//	}
 
 	/**
 	 * Verificar los datos ingresados por el usuario
@@ -777,16 +748,26 @@ public class AerolineaController implements Initializable {
 		try {
 			ArrayList<String> listaPuestosCliente = new ArrayList<>();
 			listaPuestosCliente = modelFactoryController.getListaPuestosCliente();
-			verificarDatos(identificacionOPasaporte,nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito, listaPuestosCliente);
-		
+			Cliente clienteCompra = null;
+			Tiquete tiquete;
+			
 			String viajeSeleccionado = ""; 	    	
 	    	if(rbtIda.isSelected()) viajeSeleccionado = "ida";
 	    	if(rbtidaVuelta.isSelected()) viajeSeleccionado = "idaYVuelta";
-	    	
-	    	Cliente cliente = modelFactoryController.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
 			
-			Tiquete tiquete = modelFactoryController.agregarCompraTiquete(aeronaveSeleccion.getIdAvion(), viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
-											txtFechaRegreso.getValue(), (int)sldNumeroPersonas.getValue(), costoTotalViaje, cliente, listaPuestosCliente);
+			for (Cliente cliente : aerolinea.getListaClientes()) {
+				if(identificacionOPasaporte.equalsIgnoreCase(cliente.getIdentificacion())) {
+					clienteCompra = cliente;
+				}
+			} 
+
+			if(clienteCompra == null) {
+				verificarDatos(identificacionOPasaporte,nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito, listaPuestosCliente);
+				clienteCompra = modelFactoryController.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
+			}
+			
+			tiquete = modelFactoryController.agregarCompraTiquete(aeronaveSeleccion.getIdAvion(), viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
+					txtFechaRegreso.getValue(), (int)sldNumeroPersonas.getValue(), costoTotalViaje, clienteCompra, listaPuestosCliente);
 			
 			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "La compra de su tiquete con destino a " + tiquete.getRutaViaje().getCiudadDestino() + " se ha realizado con éxito", AlertType.INFORMATION);
 		} catch (DatosInvalidosException e) {
