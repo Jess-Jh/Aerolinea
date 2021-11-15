@@ -45,6 +45,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * Controlador de la Aerolinea
+ * @author Jessica Ospina
+ */
 public class AerolineaController implements Initializable {
 
 	//----------SINGLETON----------------------------------------------------->>
@@ -384,7 +388,10 @@ public class AerolineaController implements Initializable {
 		tableViewVuelos.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
 			if(newSelection != null) {
 				aeronaveSeleccion = newSelection;
-				if(aeronaveSeleccion != null) txtVuelo.setText(aeronaveSeleccion.getNombreAeronave() + "      Id Avión: " + aeronaveSeleccion.getIdAvion());
+				if(aeronaveSeleccion != null) {
+					txtVuelo.setText(aeronaveSeleccion.getNombreAeronave() + "      Id Avión: " + aeronaveSeleccion.getIdAvion());
+					txtVuelo1.setText(aeronaveSeleccion.getNombreAeronave());
+				}
 			}
 		});
 		//--------------------------------------------------------------------------------------------------------------------||
@@ -667,7 +674,6 @@ public class AerolineaController implements Initializable {
     	if(aeronaveSeleccion == null)  
     		aplicacionAerolinea.mostrarMensaje("Gestión Tiquetes", "Gestión Tiquetes", "Seleccione un vuelo de la tabla", AlertType.WARNING);
     	else {
-    		txtVuelo1.setText(aeronaveSeleccion.getNombreAeronave());
     		txtDuracionVuelo.setText(ruta.getDuracion());
     		txtHoraSalida.setText(ruta.getHoraSalida());
     		totalCostoPersonas = Double.valueOf(txtCostoPorPersona.getText()) * (int) sldNumeroPersonas.getValue();

@@ -17,6 +17,10 @@ import co.edu.uniquindio.aerolinea.modelo.Tripulante;
 import co.edu.uniquindio.aerolinea.modelo.servicios.IModelFactory;
 import co.edu.uniquindio.aerolinea.persistencia.Persistencia;
 
+/**
+ * Clase Singleton
+ * @author Jessica Ospina
+ */
 public class ModelFactoryController implements Runnable, IModelFactory {
 	
 	Aerolinea aerolinea;
