@@ -7,17 +7,15 @@ public class Equipaje implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String identificacionCliente;
 	private double peso;
-	private double dimension;
 	private String numAvion;
 	
 	/**
 	 * Constructor
 	 * @param identificacionCliente, cantidad, peso, dimension, numAvion
 	 */
-	public Equipaje(String identificacionCliente, double peso, double dimension, String numAvion) {
+	public Equipaje(String identificacionCliente, double peso, String numAvion) {
 		this.identificacionCliente = identificacionCliente;
 		this.peso = peso;
-		this.dimension = dimension;
 		this.numAvion = numAvion;
 	}
 	
@@ -35,12 +33,6 @@ public class Equipaje implements Serializable {
 	}
 	public void setPeso(double peso) {
 		this.peso = peso;
-	}
-	public double getDimension() {
-		return dimension;
-	}
-	public void setDimension(double dimension) {
-		this.dimension = dimension;
 	}
 	public String getNumAvion() {
 		return numAvion;

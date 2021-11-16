@@ -1125,10 +1125,63 @@ public class AerolineaController implements Initializable {
 		throw new DatosInvalidosException(notificacion); 
 	}
 	
+
+    @FXML
+    void sumaDimensionesEquipaje(KeyEvent event) {
+    	int alto = 0, largo = 0, ancho = 0, dimension;
+    	int alto2 = 0, largo2 = 0, ancho2 = 0, dimension2;
+    	int altoMano = 0, largoMano = 0, anchoMano = 0, dimensionMano;
+    
+    	// Equipaje 1
+    	if(!(txtAltoEquipaje1.getText().equals(""))) alto =  Integer.valueOf(txtAltoEquipaje1.getText());
+    	if(!(txtAnchoEquipaje1.getText().equals(""))) ancho =  Integer.valueOf(txtAnchoEquipaje1.getText());
+    	if(!(txtLargoEquipaje1.getText().equals(""))) largo =  Integer.valueOf(txtLargoEquipaje1.getText());
+    	
+    	if(alto > 0 && largo > 0 && ancho > 0) {
+    		dimension = alto + largo + ancho;
+    		if(dimension > 170) {
+    			txtTotalDimensionEquipaje1.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
+    		} else 
+    			txtTotalDimensionEquipaje1.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
+    	
+    		txtTotalDimensionEquipaje1.setText(String.valueOf(dimension));
+    	}
+    	
+    	// Equipaje 2
+    	if(!(txtAltoEquipaje2.getText().equals(""))) alto2 =  Integer.valueOf(txtAltoEquipaje2.getText());
+    	if(!(txtAnchoEquipaje2.getText().equals(""))) ancho2 =  Integer.valueOf(txtAnchoEquipaje2.getText());
+    	if(!(txtLargoEquipaje2.getText().equals(""))) largo2 =  Integer.valueOf(txtLargoEquipaje2.getText());
+    	
+    	if(alto2 > 0 && largo2 > 0 && ancho2 > 0) {
+    		dimension2 = alto2 + largo2 + ancho2;
+    		if(dimension2 > 170) {
+    			txtTotalDimensionEquipaje2.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
+    		} else 
+    			txtTotalDimensionEquipaje2.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
+    		
+    		txtTotalDimensionEquipaje2.setText(String.valueOf(dimension2));
+    	}
+    	
+    	// Equipaje de mano
+    	if(!(txtAltoEquipajeMano.getText().equals(""))) altoMano =  Integer.valueOf(txtAltoEquipajeMano.getText());
+    	if(!(txtAnchoEquipajeMano.getText().equals(""))) anchoMano =  Integer.valueOf(txtAnchoEquipajeMano.getText());
+    	if(!(txtLargoEquipajeMano.getText().equals(""))) largoMano =  Integer.valueOf(txtLargoEquipajeMano.getText());
+    	
+    	if(altoMano > 0 && largoMano > 0 && anchoMano > 0) {
+    		dimensionMano = altoMano + largoMano + anchoMano;
+    		if(dimensionMano > 110) {
+    			txtTotalDimensionEquipajeMano.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
+    		} else 
+    			txtTotalDimensionEquipajeMano.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");
+    		
+    		txtTotalDimensionEquipajeMano.setText(String.valueOf(dimensionMano));
+    	}
+    }
+	
 	
     @FXML
     void aceptarRegistroEquipaje(ActionEvent event) {
-
+//    	aceptarEquipaje(txtAltoEquipaje1.getText(), txtAltoEquipaje2.getText());
     }
 
 
