@@ -221,6 +221,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 				viaje.setCiudadDestino(tiquete.getRutaViaje().getCiudadDestino());
 				viaje.setCiudadOrigen(tiquete.getClaseServicio().toString());
 				viaje.setDuracionViaje(tiquete.getRutaViaje().getDuracion());
+				viaje.setNombreAeronave(String.valueOf(tiquete.getCantPersonas()));
 				
 				listaViajes.add(viaje);
 			}

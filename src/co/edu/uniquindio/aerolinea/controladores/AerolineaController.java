@@ -42,6 +42,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
@@ -245,7 +246,7 @@ public class AerolineaController implements Initializable {
     private TextField txtAnchoEquipajeMano;
 
     @FXML
-    private TextField txtIdentificacionOPasaporte1;
+    private TextField txtFiltrarCliente;
 
     @FXML
     private TextField txtLargoEquipaje1;
@@ -427,7 +428,11 @@ public class AerolineaController implements Initializable {
     // Listado de Tripulantes que se muestran en la interfaz 
     private ObservableList<Tripulante> listadoTripulantes = FXCollections.observableArrayList();
     private ObservableList<Tripulante> listadoTripulantesAsignados = FXCollections.observableArrayList();
+    
     private ObservableList<Cliente> listadoClientes = FXCollections.observableArrayList();
+    // Lista observable para filtrar una búsqueda
+    ObservableList<Cliente> filtroListadoClientes = FXCollections.observableArrayList();
+
     private ObservableList<Equipaje> listadoEquipajes = FXCollections.observableArrayList();
     private ObservableList<CruceAeronavesRutas> listadoTiquetesCliente = FXCollections.observableArrayList();
     
@@ -552,7 +557,10 @@ public class AerolineaController implements Initializable {
 		
 		tableViewTiquetesCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
 			if(newSelection != null) {
-				tiqueteSeleccion = newSelection;	
+				tiqueteSeleccion = newSelection;
+				if(tiqueteSeleccion != null) {
+					llenarRequerimientosPesoEquipaje();
+				}
 			}
 		});	
 		//------------------------------------------------------------------------------------------------------------------------------||
@@ -569,7 +577,7 @@ public class AerolineaController implements Initializable {
 		//------------------------------------------------------------------------------------------------------------------------------||
 		//--------------------------------------------------------------------------------------------------------------------------------------------||
 	}
-	
+
 	public void setAplicacion(AplicacionAerolinea aplicacionAerolinea) {
     	this.aplicacionAerolinea = aplicacionAerolinea;
     	this.aerolinea = aplicacionAerolinea.getAerolinea();
@@ -652,7 +660,6 @@ public class AerolineaController implements Initializable {
     	}
     }
     
-
     @FXML
     void llenarTablaTiquetesCliente(MouseEvent event) {    		
         	tableViewTiquetesCliente.getItems().clear();
@@ -660,6 +667,51 @@ public class AerolineaController implements Initializable {
     }
     
     /**
+     * Mostrar los requerimientos de cada equipaje dependiendo del vuelo
+     */
+	private void llenarRequerimientosPesoEquipaje() {
+		lblCantTiquetes.setText(tiqueteSeleccion.getNombreAeronave());
+		
+		if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Monterrey") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Cancún")) {
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
+				lblRequerimientoEquipajeClase.setText("1 Pieza, peso máximo 24kg");
+				
+				//  Quitar requerimientos de la clase económica 
+				cambiarEstado(false);
+			} 
+				
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
+				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 34 kilogramos cada una");
+				cambiarEstado(true);
+			}
+		}
+		if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Buenos Aires") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Los Ángeles") ||
+		   tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Bogotá") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Panamá")) {
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
+				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 24 kilogramos cada una");
+				cambiarEstado(true);
+			} 
+			
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
+				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 34 kilogramos cada una");
+				cambiarEstado(true);
+			}
+		}
+	}
+    
+    /**
+     * Cambiar la visibilidad de los labels dependiendo del tipo de viaje
+     * @param estado
+     */
+    private void cambiarEstado(boolean estado) {
+    	lblAltoEquip2.setVisible(estado); lblAnchoEquip2.setVisible(estado); lblLargoEquip2.setVisible(estado);
+		lblEquipaje2.setVisible(estado); txtPesoEquipaje2.setVisible(estado); iconEquip2.setVisible(estado);
+		txtAltoEquipaje2.setVisible(estado); txtAnchoEquipaje2.setVisible(estado); txtLargoEquipaje2.setVisible(estado);
+		lblSum1Equip2.setVisible(estado); lblSum2Equip2.setVisible(estado); lblIgualEquip2.setVisible(estado);
+		txtTotalDimensionEquipaje2.setVisible(estado);
+	}
+
+	/**
      * Verificar los tripulantes que el usuario vaya seleccionando
      * @param text
      */
@@ -1021,6 +1073,11 @@ public class AerolineaController implements Initializable {
 					txtFechaRegreso.getValue(), (int)sldNumeroPersonas.getValue(), costoTotalViaje, clienteCompra, listaPuestosCliente);
 			
 			if(clienteCompra != null) listadoClientes.add(0, clienteCompra);
+			
+			// Añadir el cliente al filtro al momento de agregarlo al tableview
+			if(clienteCompra.toString().toLowerCase().contains(txtFiltrarCliente.getText().toLowerCase())) {
+				filtroListadoClientes.add(clienteCompra);
+			}
 			tableViewClientes.refresh();
 			
 			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "La compra de su tiquete con destino a " + tiquete.getRutaViaje().getCiudadDestino() + " se ha realizado con éxito", AlertType.INFORMATION);
@@ -1078,6 +1135,24 @@ public class AerolineaController implements Initializable {
     @FXML
     void registrarEquipajes(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void filtrarCliente(KeyEvent event) {
+    	String filtroCliente = txtFiltrarCliente.getText();
+    	
+    	if(filtroCliente.isEmpty()) {
+    		tableViewClientes.setItems(listadoClientes);
+    	} else {
+    		filtroListadoClientes.clear();
+    		
+    		for (Cliente cliente: listadoClientes) {
+				if(cliente.toString().toLowerCase().contains(filtroCliente.toLowerCase())) {
+					filtroListadoClientes.add(cliente);
+				}
+			}
+    		tableViewClientes.setItems(filtroListadoClientes);
+    	}
     }
 
 

@@ -561,7 +561,7 @@
                            </children>
                         </Pane>
                         <TextField fx:id="txtAnchoEquipaje1" layoutX="749.0" layoutY="288.0" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <TextField fx:id="txtIdentificacionOPasaporte1" layoutX="189.0" layoutY="56.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="285.0" promptText="Ingrese la identificación del cliente " style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="txtFiltrarCliente" layoutX="189.0" layoutY="56.0" nodeOrientation="RIGHT_TO_LEFT" onKeyReleased="#filtrarCliente" prefHeight="35.0" prefWidth="285.0" promptText="Ingrese la identificación del cliente " style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
                         <FontAwesomeIconView fill="#057935" glyphName="SEARCH" layoutX="194.0" layoutY="81.0" selectionFill="#42eb5e" size="18.0" />
                         <Label layoutX="69.0" layoutY="65.0" text="Buscar Cliente">
                            <font>
@@ -574,6 +574,9 @@
                             <TableColumn fx:id="columnApellidoCliente" prefWidth="141.66665649414062" text="Apellido" />
                               <TableColumn fx:id="columnIdentificacionCliente" prefWidth="163.33334350585938" text="Identificación" />
                           </columns>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </TableView>
                         <Label layoutX="74.0" layoutY="355.0" text="Registros Tiquete(s) Cliente">
                            <font>
@@ -587,6 +590,9 @@
                               <TableColumn fx:id="columnClaseTiquete" prefWidth="86.00001525878906" text="Clase" />
                               <TableColumn fx:id="columnDuracionViajeTiquete" prefWidth="108.0" text="Duración Viaje" />
                           </columns>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </TableView>
                         <Label layoutX="624.0" layoutY="26.0" text="Registro Equipaje">
                            <font>
@@ -609,7 +615,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblRequerimientoEquipajeClase" layoutX="572.0" layoutY="152.0" text="1 Pieza, peso máximo 24kg" />
+                        <Label fx:id="lblRequerimientoEquipajeClase" layoutX="572.0" layoutY="152.0" text="2 piezas con un peso máximo de 34 kilogramos cada una." />
                         <Label layoutX="568.0" layoutY="224.0" text="Dimensiones piezas ">
                            <font>
                               <Font size="16.0" />
@@ -658,6 +664,9 @@
                             <TableColumn fx:id="columnPesoEquipaje" prefWidth="130.0" text="Peso Equipaje" />
                               <TableColumn fx:id="columnIdentificacionClienteEquipaje" prefWidth="147.3333740234375" text="Identificación Cliente" />
                           </columns>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </TableView>
                         <Button fx:id="btnRegistrarEquipajes" layoutX="986.0" layoutY="542.0" mnemonicParsing="false" onAction="#registrarEquipajes" prefHeight="26.0" prefWidth="342.0" style="-fx-background-color: green;" text="Registrar Equipaje(s)" textFill="WHITE">
                            <font>
