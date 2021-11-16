@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Tiquete implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	private String idAvion;
 	private TipoViaje tipoViaje;
 	private TipoClase claseServicio;
 	private Ruta rutaViaje;
@@ -23,8 +24,9 @@ public class Tiquete implements Serializable {
 	 * @param tipoViaje, claseServicio, rutaViaje, fechaInicio, fechaRegreso, cantPersonas, costoPorPersona, precioFinal, cliente
 	 * @param ocupacionSillas
 	 */
-	public Tiquete(TipoViaje tipoViaje, TipoClase claseServicio, Ruta rutaViaje, LocalDate fechaInicio, LocalDate fechaRegreso, 
+	public Tiquete(String idAvion, TipoViaje tipoViaje, TipoClase claseServicio, Ruta rutaViaje, LocalDate fechaInicio, LocalDate fechaRegreso, 
 			int cantPersonas, double precioFinal, Cliente cliente, ArrayList<String> ocupacionSillas) {
+		this.idAvion = idAvion;
 		this.tipoViaje = tipoViaje;
 		this.claseServicio = claseServicio;
 		this.rutaViaje = rutaViaje;
@@ -39,7 +41,14 @@ public class Tiquete implements Serializable {
 
 	public Tiquete () {}
 
-	//----------Métodos Getters and Setters-------------------------------->																																																																																																																																																																	
+	//----------Métodos Getters and Setters-------------------------------->	
+	
+	public String getIdAvion() {
+		return idAvion;
+	}
+	public void setIdAvion(String idAvion) {
+		this.idAvion = idAvion;
+	}
 	public TipoViaje getTipoViaje() {
 		return tipoViaje;
 	}

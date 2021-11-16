@@ -14,10 +14,12 @@ import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
 import co.edu.uniquindio.aerolinea.modelo.Cliente;
 import co.edu.uniquindio.aerolinea.modelo.CruceAeronavesRutas;
+import co.edu.uniquindio.aerolinea.modelo.Equipaje;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoTripulante;
 import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 import co.edu.uniquindio.aerolinea.modelo.Tripulante;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -94,6 +96,12 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private Button btnSeleccionarPuesto;
+    
+    @FXML
+    private Button btnAceptarRegistroEquipaje;
+    
+    @FXML
+    private Button btnRegistrarEquipajes;
 
     @FXML
     private ComboBox<String> cmbClase;
@@ -160,6 +168,114 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private TableColumn<CruceAeronavesRutas, String> columnOrigenTripulacion;
+   
+    @FXML
+    private TableColumn<CruceAeronavesRutas, String> columnClaseTiquete;
+
+    @FXML
+    private TableColumn<CruceAeronavesRutas, String> columnDestinoTiquete;
+
+    @FXML
+    private TableColumn<CruceAeronavesRutas, String> columnDuracionViajeTiquete;
+
+    @FXML
+    private TableColumn<Equipaje, String> columnIdAvionEquipaje;
+
+    @FXML
+    private TableColumn<CruceAeronavesRutas, String> columnIdAvionTiquete;
+
+    @FXML
+    private TableColumn<Cliente, String> columnIdentificacionCliente;
+
+    @FXML
+    private TableColumn<Equipaje, String> columnIdentificacionClienteEquipaje;
+    
+    @FXML
+    private TableColumn<Cliente, String> columnApellidoCliente;
+
+    @FXML
+    private TableColumn<Cliente, String> columnNombreCliente;
+
+    @FXML
+    private TableColumn<Equipaje, Double> columnPesoEquipaje;
+
+    @FXML
+    private FontAwesomeIconView iconEquip2;
+
+    @FXML
+    private Label lblAltoEquip2;
+
+    @FXML
+    private Label lblAnchoEquip2;
+
+    @FXML
+    private Label lblEquipaje2;
+
+    @FXML
+    private Label lblIgualEquip2;
+
+    @FXML
+    private Label lblLargoEquip2;
+
+    @FXML
+    private Label lblRequerimientoEquipajeClase;
+
+    @FXML
+    private Label lblSum1Equip2;
+
+    @FXML
+    private Label lblSum2Equip2;
+
+    @FXML
+    private TextField txtAltoEquipaje1;
+
+    @FXML
+    private TextField txtAltoEquipaje2;
+
+    @FXML
+    private TextField txtAltoEquipajeMano;
+
+    @FXML
+    private TextField txtAnchoEquipaje1;
+
+    @FXML
+    private TextField txtAnchoEquipaje2;
+
+    @FXML
+    private TextField txtAnchoEquipajeMano;
+
+    @FXML
+    private TextField txtIdentificacionOPasaporte1;
+
+    @FXML
+    private TextField txtLargoEquipaje1;
+
+    @FXML
+    private TextField txtLargoEquipaje2;
+
+    @FXML
+    private TextField txtLargoEquipajeMano;
+
+    @FXML
+    private TextField txtPesoAdicional;
+
+    @FXML
+    private TextField txtPesoEquipaje1;
+
+    @FXML
+    private TextField txtPesoEquipaje2;
+
+    @FXML
+    private Label txtTextoSeleccionTripulantes1;
+
+    @FXML
+    private TextField txtTotalDimensionEquipaje1;
+
+    @FXML
+    private TextField txtTotalDimensionEquipaje2;
+
+    @FXML
+    private TextField txtTotalDimensionEquipajeMano;
     
     @FXML
     private ToggleGroup grupoVuelo;
@@ -199,6 +315,15 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private TableView<Tripulante> tableviewAsignacionVuelos;
+    
+    @FXML
+    private TableView<?> tableViewClientes;
+
+    @FXML
+    private TableView<?> tableViewEquipajes;
+
+    @FXML
+    private TableView<?> tableViewTiquetesCliente;
 
     @FXML
     private TextField txtApellido;
@@ -865,6 +990,18 @@ public class AerolineaController implements Initializable {
 		
 		throw new DatosInvalidosException(notificacion); 
 	}
+	
+	
+    @FXML
+    void aceptarRegistroEquipaje(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    void registrarEquipajes(ActionEvent event) {
+
+    }
 
 
 		

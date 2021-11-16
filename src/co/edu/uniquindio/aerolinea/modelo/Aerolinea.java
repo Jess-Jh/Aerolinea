@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map.Entry;
 import java.util.TreeSet;
 
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
@@ -201,6 +202,31 @@ public class Aerolinea implements Serializable, IAerolinea {
 		}
 		return listaViajes;
 	}
+	
+	
+	/**
+	 * Llenar los datos de la lista de los datos de los tiquetes para mostrar en la tableView de la Gestión de Equipaje
+	 * @param identificacionCliente
+	 * @return
+	 */
+	public ArrayList<CruceAeronavesRutas> datosViajesUsuario(String identificacionCliente) {
+		ArrayList<CruceAeronavesRutas> listaViajes = new ArrayList<>();
+		CruceAeronavesRutas viaje = null;
+		
+		for (Entry<String, Tiquete> entry : listaTiquetes.entrySet()) {
+			if(entry.getKey().equalsIgnoreCase(identificacionCliente)) {
+				Tiquete tiquete = entry.getValue();
+				viaje = new CruceAeronavesRutas();
+				viaje.setIdAvion(tiquete.getIdAvion());
+				viaje.setCiudadDestino(tiquete.getRutaViaje().getCiudadDestino());
+				viaje.setCiudadOrigen(tiquete.getClaseServicio().toString());
+				viaje.setDuracionViaje(tiquete.getRutaViaje().getDuracion());
+				
+				listaViajes.add(viaje);
+			}
+	    }
+		return listaViajes;
+	}
 
 	/**
 	 * Confirmar el tipo de tripulante 
@@ -252,21 +278,16 @@ public class Aerolinea implements Serializable, IAerolinea {
 				aeronave.getCapacidadAsientos().addAll(listaPuestosCliente);
 			}
 		}
-		
 		if(viajeSeleccionado.equalsIgnoreCase("ida")) tipoViaje = TipoViaje.IDA;
 		if(viajeSeleccionado.equalsIgnoreCase("idaYVuelta")) tipoViaje = TipoViaje.IDA_Y_VUELTA;
 		
 		if(clase.equalsIgnoreCase("Ejecutiva")) claseCliente = TipoClase.EJECUTIVA;
 		if(clase.equalsIgnoreCase("Económica")) claseCliente = TipoClase.ECONOMICA;
 		
-		Tiquete tiquete = new Tiquete(tipoViaje, claseCliente, ruta, fechaSalida, fechaRegreso, numPersonas, costoTotalViaje, cliente, listaPuestosCliente);
+		Tiquete tiquete = new Tiquete(idAvion, tipoViaje, claseCliente, ruta, fechaSalida, fechaRegreso, numPersonas, costoTotalViaje, cliente, listaPuestosCliente);
 		listaTiquetes.put(cliente.getIdentificacion(), tiquete);
 		
 		return tiquete;
 	}
-
-
-
-	
 
 }
