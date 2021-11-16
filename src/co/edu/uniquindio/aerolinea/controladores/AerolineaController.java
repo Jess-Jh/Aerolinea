@@ -317,13 +317,13 @@ public class AerolineaController implements Initializable {
     private TableView<Tripulante> tableviewAsignacionVuelos;
     
     @FXML
-    private TableView<?> tableViewClientes;
+    private TableView<Cliente> tableViewClientes;
 
     @FXML
-    private TableView<?> tableViewEquipajes;
+    private TableView<Equipaje> tableViewEquipajes;
 
     @FXML
-    private TableView<?> tableViewTiquetesCliente;
+    private TableView<CruceAeronavesRutas> tableViewTiquetesCliente;
 
     @FXML
     private TextField txtApellido;
@@ -371,6 +371,9 @@ public class AerolineaController implements Initializable {
     private Label txtLabel;
     
     @FXML
+    private Label lblCantTiquetes;
+    
+    @FXML
     private Label txtTextoSeleccionVuelos;
     
     @FXML
@@ -408,9 +411,13 @@ public class AerolineaController implements Initializable {
     
     private AplicacionAerolinea aplicacionAerolinea;
     
+    // Selección en las TableViews
     private CruceAeronavesRutas aeronaveSeleccion;
     private CruceAeronavesRutas aeronaveSeleccionTripulacion;
     private Tripulante tripulanteSeleccion;
+    private Cliente clienteSeleccion;
+    private CruceAeronavesRutas tiqueteSeleccion;
+    private Equipaje equipajeSeleccion;
     double costoTotalViaje;
     
     ArrayList<Button> listaPuestosUsuario = new ArrayList<>();
@@ -420,6 +427,9 @@ public class AerolineaController implements Initializable {
     // Listado de Tripulantes que se muestran en la interfaz 
     private ObservableList<Tripulante> listadoTripulantes = FXCollections.observableArrayList();
     private ObservableList<Tripulante> listadoTripulantesAsignados = FXCollections.observableArrayList();
+    private ObservableList<Cliente> listadoClientes = FXCollections.observableArrayList();
+    private ObservableList<Equipaje> listadoEquipajes = FXCollections.observableArrayList();
+    private ObservableList<CruceAeronavesRutas> listadoTiquetesCliente = FXCollections.observableArrayList();
     
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
@@ -521,7 +531,43 @@ public class AerolineaController implements Initializable {
 		});
 		//--------------------------------------------------------------------------------------------------------------------||
 		//--------------------------------------------------------------------------------------------------------------------------------------------||
+		//----------------------------------------- Gestión Equipajes --------------------------------------------------------------------------->>
+		//----------------------------------------- TableViewCientes ----------------------------------------------------------->
+		this.columnNombreCliente.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+		this.columnApellidoCliente.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+		this.columnIdentificacionCliente.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
 		
+		//Obtener selección de la tabla
+		tableViewClientes.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
+			if(newSelection != null) {
+				clienteSeleccion = newSelection;	
+			}
+		});
+		//-------------------------------------------------------------------------------------------------------------------------||
+		//----------------------------------------- TableViewTiquetesCliente ----------------------------------------------------------->
+		this.columnIdAvionTiquete.setCellValueFactory(new PropertyValueFactory<>("idAvion"));
+		this.columnDestinoTiquete.setCellValueFactory(new PropertyValueFactory<>("ciudadDestino"));
+		this.columnClaseTiquete.setCellValueFactory(new PropertyValueFactory<>("ciudadOrigen"));
+		this.columnDuracionViajeTiquete.setCellValueFactory(new PropertyValueFactory<>("duracionViaje"));
+		
+		tableViewTiquetesCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
+			if(newSelection != null) {
+				tiqueteSeleccion = newSelection;	
+			}
+		});	
+		//------------------------------------------------------------------------------------------------------------------------------||
+		//----------------------------------------- TableViewEquipajes ----------------------------------------------------------->
+		this.columnIdAvionEquipaje.setCellValueFactory(new PropertyValueFactory<>("numAvion"));
+		this.columnPesoEquipaje.setCellValueFactory(new PropertyValueFactory<>("peso"));
+		this.columnIdentificacionClienteEquipaje.setCellValueFactory(new PropertyValueFactory<>("identificacionCliente"));
+		
+		tableViewEquipajes.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
+			if(newSelection != null) {
+				equipajeSeleccion = newSelection;		
+			}
+		});	
+		//------------------------------------------------------------------------------------------------------------------------------||
+		//--------------------------------------------------------------------------------------------------------------------------------------------||
 	}
 	
 	public void setAplicacion(AplicacionAerolinea aplicacionAerolinea) {
@@ -534,7 +580,8 @@ public class AerolineaController implements Initializable {
     	tableViewTripulantes.getItems().clear();
     	tableViewTripulantes.setItems(getTripulantes());
     	
-    	tableviewAsignacionVuelos.getItems().clear();
+    	tableViewClientes.getItems().clear();
+    	tableViewClientes.setItems(getClientes());
     }
     
     /**
@@ -567,6 +614,26 @@ public class AerolineaController implements Initializable {
 		return listadoTripulantes;
 	}
 	
+	/**
+	 * Obtener los clientes de la aerolínea
+	 * @return
+	 */
+	private ObservableList<Cliente> getClientes() {
+		listadoClientes.clear();
+		listadoClientes.addAll(aerolinea.getListaClientes());
+		return listadoClientes;
+	}
+
+	/**
+	 * Obtener los tiquetes del cliente
+	 * @return
+	 */
+	private ObservableList<CruceAeronavesRutas> getTiquetesCliente() {
+			listadoTiquetesCliente.clear();
+			listadoTiquetesCliente.addAll(aerolinea.datosViajesUsuario(clienteSeleccion.getIdentificacion()));			
+		return listadoTiquetesCliente;
+	}
+	
     @FXML
     void pasarDatosTablaAsignacionTripulantes(MouseEvent event) {
     	if(tripulanteSeleccion != null) {
@@ -583,6 +650,13 @@ public class AerolineaController implements Initializable {
     		listadoTripulantes.add(tripulanteSeleccion);
     		listadoTripulantesAsignados.remove(tripulanteSeleccion);
     	}
+    }
+    
+
+    @FXML
+    void llenarTablaTiquetesCliente(MouseEvent event) {    		
+        	tableViewTiquetesCliente.getItems().clear();
+        	tableViewTiquetesCliente.setItems(getTiquetesCliente());
     }
     
     /**
@@ -945,6 +1019,9 @@ public class AerolineaController implements Initializable {
 			
 			tiquete = modelFactoryController.agregarCompraTiquete(aeronaveSeleccion.getIdAvion(), viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
 					txtFechaRegreso.getValue(), (int)sldNumeroPersonas.getValue(), costoTotalViaje, clienteCompra, listaPuestosCliente);
+			
+			if(clienteCompra != null) listadoClientes.add(0, clienteCompra);
+			tableViewClientes.refresh();
 			
 			aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "La compra de su tiquete con destino a " + tiquete.getRutaViaje().getCiudadDestino() + " se ha realizado con éxito", AlertType.INFORMATION);
 		} catch (DatosInvalidosException e) {

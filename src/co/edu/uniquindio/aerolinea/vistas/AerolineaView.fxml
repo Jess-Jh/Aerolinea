@@ -553,6 +553,11 @@
                               <Separator layoutX="1.0" layoutY="-7.0" prefHeight="0.0" prefWidth="395.0" />
                               <Separator layoutX="400.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="8.0" />
                               <Separator layoutX="1.0" layoutY="586.0" prefHeight="0.0" prefWidth="395.0" />
+                              <Label fx:id="lblCantTiquetes" layoutX="234.0" layoutY="21.0" prefHeight="19.0" prefWidth="39.0">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
                         <TextField fx:id="txtAnchoEquipaje1" layoutX="749.0" layoutY="288.0" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
@@ -563,7 +568,7 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="tableViewClientes" layoutX="68.0" layoutY="110.0" prefHeight="221.0" prefWidth="409.0">
+                        <TableView fx:id="tableViewClientes" layoutX="68.0" layoutY="110.0" onMousePressed="#llenarTablaTiquetesCliente" prefHeight="221.0" prefWidth="409.0">
                           <columns>
                             <TableColumn fx:id="columnNombreCliente" prefWidth="101.66667175292969" text="Nombre" />
                             <TableColumn fx:id="columnApellidoCliente" prefWidth="141.66665649414062" text="Apellido" />
@@ -717,7 +722,8 @@
                         </Button>
                         <Label layoutX="589.0" layoutY="296.0" text="1" textFill="WHITE" />
                         <Label layoutX="588.0" layoutY="345.0" text="2" textFill="WHITE" />
-                     </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
               </content>
             </Tab>
             <Tab text="Embarque de Equipaje">

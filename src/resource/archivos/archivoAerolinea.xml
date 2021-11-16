@@ -86,7 +86,23 @@
     <void method="add">
      <object class="co.edu.uniquindio.aerolinea.modelo.AirbusA330">
       <void property="capacidadAsientos">
-       <object class="java.util.ArrayList"/>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <string>K1C</string>
+        </void>
+        <void method="add">
+         <string>H1C</string>
+        </void>
+        <void method="add">
+         <string>H2C</string>
+        </void>
+        <void method="add">
+         <string>K2C</string>
+        </void>
+        <void method="add">
+         <string>K3C</string>
+        </void>
+       </object>
       </void>
       <void property="capacidadCarga">
        <double>52000.0</double>
@@ -254,7 +270,17 @@
     <void method="add">
      <object class="co.edu.uniquindio.aerolinea.modelo.AirbusA320">
       <void property="capacidadAsientos">
-       <object class="java.util.ArrayList"/>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <string>F4C</string>
+        </void>
+        <void method="add">
+         <string>E4C</string>
+        </void>
+        <void method="add">
+         <string>D4C</string>
+        </void>
+       </object>
       </void>
       <void property="listaTripulantes">
        <object class="java.util.HashSet"/>
@@ -356,7 +382,20 @@
     <void method="add">
      <object class="co.edu.uniquindio.aerolinea.modelo.Boeing787">
       <void property="capacidadAsientos">
-       <object class="java.util.ArrayList"/>
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <string>B1E</string>
+        </void>
+        <void method="add">
+         <string>D1E</string>
+        </void>
+        <void method="add">
+         <string>E1E</string>
+        </void>
+        <void method="add">
+         <string>E2E</string>
+        </void>
+       </object>
       </void>
       <void property="capacidadCarga">
        <double>50000.0</double>
@@ -798,6 +837,66 @@
     <void method="add">
      <object class="co.edu.uniquindio.aerolinea.modelo.Cliente" id="Cliente1">
       <void property="apellido">
+       <string>dddd</string>
+      </void>
+      <void property="correoElectronico">
+       <string>dddd</string>
+      </void>
+      <void property="direccion">
+       <string>dddd</string>
+      </void>
+      <void property="direccionResidencia">
+       <string>dddd</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-11</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>dddd</string>
+      </void>
+      <void property="nombre">
+       <string>ddddd</string>
+      </void>
+      <void property="numTarjetaDebitoCredito">
+       <string>111111</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Cliente" id="Cliente2">
+      <void property="apellido">
+       <string>qqqq</string>
+      </void>
+      <void property="correoElectronico">
+       <string>qqqq</string>
+      </void>
+      <void property="direccion">
+       <string>qqqq</string>
+      </void>
+      <void property="direccionResidencia">
+       <string>qqqq</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-18</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>qqqq</string>
+      </void>
+      <void property="nombre">
+       <string>qqqq</string>
+      </void>
+      <void property="numTarjetaDebitoCredito">
+       <string>999999</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Cliente" id="Cliente3">
+      <void property="apellido">
        <string>uuuu</string>
       </void>
       <void property="correoElectronico">
@@ -826,7 +925,7 @@
      </object>
     </void>
     <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Cliente" id="Cliente2">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Cliente" id="Cliente4">
       <void property="apellido">
        <string>zzzzz</string>
       </void>
@@ -852,6 +951,36 @@
       </void>
       <void property="numTarjetaDebitoCredito">
        <string>44444444</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Cliente" id="Cliente5">
+      <void property="apellido">
+       <string>ññññ</string>
+      </void>
+      <void property="correoElectronico">
+       <string>ññññ</string>
+      </void>
+      <void property="direccion">
+       <string>ññññ</string>
+      </void>
+      <void property="direccionResidencia">
+       <string>ñññññ</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-26</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>ñññññ</string>
+      </void>
+      <void property="nombre">
+       <string>ññññ</string>
+      </void>
+      <void property="numTarjetaDebitoCredito">
+       <string>ñññññ</string>
       </void>
      </object>
     </void>
@@ -1037,6 +1166,102 @@
       </void>
      </object>
     </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Nacional">
+      <void property="ciudadDestino">
+       <string>Cancún</string>
+      </void>
+      <void property="ciudadOrigen">
+       <string>CDMX</string>
+      </void>
+      <void property="duracion">
+       <string>3 H 12 Min</string>
+      </void>
+      <void property="horaSalida">
+       <string>8:00am</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Nacional" id="Nacional11">
+      <void property="ciudadDestino">
+       <string>Cancún</string>
+      </void>
+      <void property="ciudadOrigen">
+       <string>CDMX</string>
+      </void>
+      <void property="duracion">
+       <string>3 H 12 Min</string>
+      </void>
+      <void property="horaSalida">
+       <string>8:00am</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Internacional">
+      <void property="ciudadDestino">
+       <string>Los Ángeles</string>
+      </void>
+      <void property="ciudadOrigen">
+       <string>CDMX</string>
+      </void>
+      <void property="duracion">
+       <string>3 H 25 Min</string>
+      </void>
+      <void property="horaSalida">
+       <string>9:45am</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Internacional" id="Internacional13">
+      <void property="ciudadDestino">
+       <string>Los Ángeles</string>
+      </void>
+      <void property="ciudadOrigen">
+       <string>CDMX</string>
+      </void>
+      <void property="duracion">
+       <string>3 H 25 Min</string>
+      </void>
+      <void property="horaSalida">
+       <string>9:45am</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Internacional">
+      <void property="ciudadDestino">
+       <string>Buenos Aires</string>
+      </void>
+      <void property="ciudadOrigen">
+       <string>CDMX</string>
+      </void>
+      <void property="duracion">
+       <string>9 H 5 Min</string>
+      </void>
+      <void property="horaSalida">
+       <string>11:30pm</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Internacional" id="Internacional14">
+      <void property="ciudadDestino">
+       <string>Buenos Aires</string>
+      </void>
+      <void property="ciudadOrigen">
+       <string>CDMX</string>
+      </void>
+      <void property="duracion">
+       <string>9 H 5 Min</string>
+      </void>
+      <void property="horaSalida">
+       <string>11:30pm</string>
+      </void>
+     </object>
+    </void>
    </object>
   </void>
   <void property="listaTiquetes">
@@ -1112,6 +1337,110 @@
      </object>
     </void>
     <void method="put">
+     <string>ñññññ</string>
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tiquete">
+      <void property="cantPersonas">
+       <int>3</int>
+      </void>
+      <void property="claseServicio">
+       <object idref="TipoClase0"/>
+      </void>
+      <void property="cliente">
+       <object idref="Cliente5"/>
+      </void>
+      <void property="costoPorPersona">
+       <double>350000.0</double>
+      </void>
+      <void property="fechaInicio">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-04</string>
+       </object>
+      </void>
+      <void property="fechaRegreso">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-24</string>
+       </object>
+      </void>
+      <void property="idAvion">
+       <string>07</string>
+      </void>
+      <void property="ocupacionSillas">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <string>F4C</string>
+        </void>
+        <void method="add">
+         <string>E4C</string>
+        </void>
+        <void method="add">
+         <string>D4C</string>
+        </void>
+       </object>
+      </void>
+      <void property="precioFinal">
+       <double>1058400.0</double>
+      </void>
+      <void property="rutaViaje">
+       <object idref="Nacional11"/>
+      </void>
+     </object>
+    </void>
+    <void method="put">
+     <string>qqqq</string>
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tiquete">
+      <void property="cantPersonas">
+       <int>5</int>
+      </void>
+      <void property="claseServicio">
+       <object idref="TipoClase0"/>
+      </void>
+      <void property="cliente">
+       <object idref="Cliente2"/>
+      </void>
+      <void property="costoPorPersona">
+       <double>2000000.0</double>
+      </void>
+      <void property="fechaInicio">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-10</string>
+       </object>
+      </void>
+      <void property="fechaRegreso">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-21</string>
+       </object>
+      </void>
+      <void property="idAvion">
+       <string>03</string>
+      </void>
+      <void property="ocupacionSillas">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <string>K1C</string>
+        </void>
+        <void method="add">
+         <string>H1C</string>
+        </void>
+        <void method="add">
+         <string>H2C</string>
+        </void>
+        <void method="add">
+         <string>K2C</string>
+        </void>
+        <void method="add">
+         <string>K3C</string>
+        </void>
+       </object>
+      </void>
+      <void property="precioFinal">
+       <double>1.0097E7</double>
+      </void>
+      <void property="rutaViaje">
+       <object idref="Internacional14"/>
+      </void>
+     </object>
+    </void>
+    <void method="put">
      <string>zzzz</string>
      <object class="co.edu.uniquindio.aerolinea.modelo.Tiquete">
       <void property="cantPersonas">
@@ -1121,7 +1450,7 @@
        <object idref="TipoClase0"/>
       </void>
       <void property="cliente">
-       <object idref="Cliente2"/>
+       <object idref="Cliente4"/>
       </void>
       <void property="costoPorPersona">
        <double>200000.0</double>
@@ -1167,7 +1496,7 @@
        <object idref="TipoClase0"/>
       </void>
       <void property="cliente">
-       <object idref="Cliente1"/>
+       <object idref="Cliente3"/>
       </void>
       <void property="costoPorPersona">
        <double>200000.0</double>
@@ -1200,76 +1529,65 @@
       </void>
      </object>
     </void>
+    <void method="put">
+     <string>dddd</string>
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tiquete">
+      <void property="cantPersonas">
+       <int>4</int>
+      </void>
+      <void property="claseServicio">
+       <object class="java.lang.Enum" method="valueOf">
+        <class>co.edu.uniquindio.aerolinea.modelo.TipoClase</class>
+        <string>EJECUTIVA</string>
+       </object>
+      </void>
+      <void property="cliente">
+       <object idref="Cliente1"/>
+      </void>
+      <void property="costoPorPersona">
+       <double>3000000.0</double>
+      </void>
+      <void property="fechaInicio">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-04</string>
+       </object>
+      </void>
+      <void property="fechaRegreso">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2021-11-19</string>
+       </object>
+      </void>
+      <void property="idAvion">
+       <string>10</string>
+      </void>
+      <void property="ocupacionSillas">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <string>B1E</string>
+        </void>
+        <void method="add">
+         <string>D1E</string>
+        </void>
+        <void method="add">
+         <string>E1E</string>
+        </void>
+        <void method="add">
+         <string>E2E</string>
+        </void>
+       </object>
+      </void>
+      <void property="precioFinal">
+       <double>1.21164E7</double>
+      </void>
+      <void property="rutaViaje">
+       <object idref="Internacional13"/>
+      </void>
+     </object>
+    </void>
    </object>
   </void>
   <void property="listaTripulantes">
    <object class="java.util.HashSet">
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Zaragoza</string>
-      </void>
-      <void property="correoElectronico">
-       <string>felip@hotmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 19 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Comunicaciones Aeronáuticas</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2000-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>2984763267</string>
-      </void>
-      <void property="nombre">
-       <string>Angela</string>
-      </void>
-      <void property="tipoTripulante">
-       <object class="java.lang.Enum" id="TipoTripulante0" method="valueOf">
-        <class>co.edu.uniquindio.aerolinea.modelo.TipoTripulante</class>
-        <string>AUXILIAR_VUELO</string>
-       </object>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Muñoz</string>
-      </void>
-      <void property="correoElectronico">
-       <string>felip@hotmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 19 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Derecho Aéreo</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2000-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>372625183</string>
-      </void>
-      <void property="nombre">
-       <string>Angel</string>
-      </void>
-      <void property="tipoTripulante">
-       <object class="java.lang.Enum" id="TipoTripulante1" method="valueOf">
-        <class>co.edu.uniquindio.aerolinea.modelo.TipoTripulante</class>
-        <string>COPILOTO</string>
-       </object>
-      </void>
-     </object>
-    </void>
     <void method="add">
      <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
       <void property="apellido">
@@ -1296,130 +1614,10 @@
        <string>Luisa Maria</string>
       </void>
       <void property="tipoTripulante">
-       <object idref="TipoTripulante0"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Sanchez</string>
-      </void>
-      <void property="correoElectronico">
-       <string>lube@gmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cll 34 #56-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Navegacion Aérea</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>1998-03-14</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>1987345623</string>
-      </void>
-      <void property="nombre">
-       <string>Luisa</string>
-      </void>
-      <void property="tipoTripulante">
-       <object class="java.lang.Enum" id="TipoTripulante2" method="valueOf">
+       <object class="java.lang.Enum" id="TipoTripulante0" method="valueOf">
         <class>co.edu.uniquindio.aerolinea.modelo.TipoTripulante</class>
-        <string>PILOTO</string>
+        <string>AUXILIAR_VUELO</string>
        </object>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Diaz</string>
-      </void>
-      <void property="correoElectronico">
-       <string>palo@gmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 34 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Comunicaciones Aeronáuticas</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2002-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>32672769983</string>
-      </void>
-      <void property="nombre">
-       <string>Pablo</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante0"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Lopez</string>
-      </void>
-      <void property="correoElectronico">
-       <string>lube@gmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cll 34 #56-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Navegacion Aérea</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>1998-03-14</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>463466332</string>
-      </void>
-      <void property="nombre">
-       <string>Vanesa</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante2"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Osorio</string>
-      </void>
-      <void property="correoElectronico">
-       <string>palo@gmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 34 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Comunicaciones Aeronáuticas</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2002-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>19874039483</string>
-      </void>
-      <void property="nombre">
-       <string>Pablo</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante0"/>
       </void>
      </object>
     </void>
@@ -1429,13 +1627,43 @@
        <string>Torres</string>
       </void>
       <void property="correoElectronico">
+       <string>luisfe@hotmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 19 #34-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Comunicaciones Aeronáuticas</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>1993-01-02</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>32897874234</string>
+      </void>
+      <void property="nombre">
+       <string>Stiven</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Vasquez</string>
+      </void>
+      <void property="correoElectronico">
        <string>felip@hotmail.com</string>
       </void>
       <void property="direccion">
        <string>Cra 19 #65-78</string>
       </void>
       <void property="estudiosRealizados">
-       <string>Derecho Aéreo</string>
+       <string>Comunicaciones Aeronáuticas</string>
       </void>
       <void property="fechaNacimiento">
        <object class="java.time.LocalDate" method="parse">
@@ -1446,10 +1674,43 @@
        <string>10985376382</string>
       </void>
       <void property="nombre">
-       <string>Felipe</string>
+       <string>Adrian</string>
       </void>
       <void property="tipoTripulante">
-       <object idref="TipoTripulante1"/>
+       <object idref="TipoTripulante0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Bermudez</string>
+      </void>
+      <void property="correoElectronico">
+       <string>lube@gmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cll 34 #56-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Navegacion Aérea</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>1998-03-14</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>10800546789</string>
+      </void>
+      <void property="nombre">
+       <string>Luis</string>
+      </void>
+      <void property="tipoTripulante">
+       <object class="java.lang.Enum" id="TipoTripulante1" method="valueOf">
+        <class>co.edu.uniquindio.aerolinea.modelo.TipoTripulante</class>
+        <string>PILOTO</string>
+       </object>
       </void>
      </object>
     </void>
@@ -1489,6 +1750,249 @@
        <string>Torres</string>
       </void>
       <void property="correoElectronico">
+       <string>felip@hotmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 19 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Derecho Aéreo</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2000-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>10985376382</string>
+      </void>
+      <void property="nombre">
+       <string>Felipe</string>
+      </void>
+      <void property="tipoTripulante">
+       <object class="java.lang.Enum" id="TipoTripulante2" method="valueOf">
+        <class>co.edu.uniquindio.aerolinea.modelo.TipoTripulante</class>
+        <string>COPILOTO</string>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Muñoz</string>
+      </void>
+      <void property="correoElectronico">
+       <string>felip@hotmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 19 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Derecho Aéreo</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2000-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>372625183</string>
+      </void>
+      <void property="nombre">
+       <string>Angel</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante2"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Osorio</string>
+      </void>
+      <void property="correoElectronico">
+       <string>palo@gmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 34 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Comunicaciones Aeronáuticas</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2002-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>19874039483</string>
+      </void>
+      <void property="nombre">
+       <string>Pablo</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Lopez</string>
+      </void>
+      <void property="correoElectronico">
+       <string>lube@gmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cll 34 #56-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Navegacion Aérea</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>1998-03-14</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>463466332</string>
+      </void>
+      <void property="nombre">
+       <string>Vanesa</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante1"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Ruiz</string>
+      </void>
+      <void property="correoElectronico">
+       <string>felip@hotmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 19 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Comunicaciones Aeronáuticas</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2000-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>2984763267</string>
+      </void>
+      <void property="nombre">
+       <string>Luisa</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Lopez</string>
+      </void>
+      <void property="correoElectronico">
+       <string>felip@hotmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 19 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Gestión de la Seguridad Operacional</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2000-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>9875645212</string>
+      </void>
+      <void property="nombre">
+       <string>Tomas</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Hipila</string>
+      </void>
+      <void property="correoElectronico">
+       <string>felip@hotmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 19 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Derecho Aéreo</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2000-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>372625183</string>
+      </void>
+      <void property="nombre">
+       <string>Felipe</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante2"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Diaz</string>
+      </void>
+      <void property="correoElectronico">
+       <string>palo@gmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 34 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Comunicaciones Aeronáuticas</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2002-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>32672769983</string>
+      </void>
+      <void property="nombre">
+       <string>Pablo</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Puentes</string>
+      </void>
+      <void property="correoElectronico">
        <string>luisfe@hotmail.com</string>
       </void>
       <void property="direccion">
@@ -1506,7 +2010,67 @@
        <string>32897874234</string>
       </void>
       <void property="nombre">
-       <string>Stiven</string>
+       <string>Juan</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Sanchez</string>
+      </void>
+      <void property="correoElectronico">
+       <string>lube@gmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cll 34 #56-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Navegacion Aérea</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>1998-03-14</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>1987345623</string>
+      </void>
+      <void property="nombre">
+       <string>Luisa</string>
+      </void>
+      <void property="tipoTripulante">
+       <object idref="TipoTripulante1"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
+      <void property="apellido">
+       <string>Zaragoza</string>
+      </void>
+      <void property="correoElectronico">
+       <string>felip@hotmail.com</string>
+      </void>
+      <void property="direccion">
+       <string>Cra 19 #65-78</string>
+      </void>
+      <void property="estudiosRealizados">
+       <string>Comunicaciones Aeronáuticas</string>
+      </void>
+      <void property="fechaNacimiento">
+       <object class="java.time.LocalDate" method="parse">
+        <string>2000-04-24</string>
+       </object>
+      </void>
+      <void property="identificacion">
+       <string>2984763267</string>
+      </void>
+      <void property="nombre">
+       <string>Angela</string>
       </void>
       <void property="tipoTripulante">
        <object idref="TipoTripulante0"/>
@@ -1567,186 +2131,6 @@
       </void>
       <void property="nombre">
        <string>Fabio</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante0"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Hipila</string>
-      </void>
-      <void property="correoElectronico">
-       <string>felip@hotmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 19 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Derecho Aéreo</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2000-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>372625183</string>
-      </void>
-      <void property="nombre">
-       <string>Felipe</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante1"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Ruiz</string>
-      </void>
-      <void property="correoElectronico">
-       <string>felip@hotmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 19 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Comunicaciones Aeronáuticas</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2000-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>2984763267</string>
-      </void>
-      <void property="nombre">
-       <string>Luisa</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante0"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Bermudez</string>
-      </void>
-      <void property="correoElectronico">
-       <string>lube@gmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cll 34 #56-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Navegacion Aérea</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>1998-03-14</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>10800546789</string>
-      </void>
-      <void property="nombre">
-       <string>Luis</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante2"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Puentes</string>
-      </void>
-      <void property="correoElectronico">
-       <string>luisfe@hotmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 19 #34-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Comunicaciones Aeronáuticas</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>1993-01-02</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>32897874234</string>
-      </void>
-      <void property="nombre">
-       <string>Juan</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante0"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Lopez</string>
-      </void>
-      <void property="correoElectronico">
-       <string>felip@hotmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 19 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Gestión de la Seguridad Operacional</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2000-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>9875645212</string>
-      </void>
-      <void property="nombre">
-       <string>Tomas</string>
-      </void>
-      <void property="tipoTripulante">
-       <object idref="TipoTripulante0"/>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="co.edu.uniquindio.aerolinea.modelo.Tripulante">
-      <void property="apellido">
-       <string>Vasquez</string>
-      </void>
-      <void property="correoElectronico">
-       <string>felip@hotmail.com</string>
-      </void>
-      <void property="direccion">
-       <string>Cra 19 #65-78</string>
-      </void>
-      <void property="estudiosRealizados">
-       <string>Comunicaciones Aeronáuticas</string>
-      </void>
-      <void property="fechaNacimiento">
-       <object class="java.time.LocalDate" method="parse">
-        <string>2000-04-24</string>
-       </object>
-      </void>
-      <void property="identificacion">
-       <string>10985376382</string>
-      </void>
-      <void property="nombre">
-       <string>Adrian</string>
       </void>
       <void property="tipoTripulante">
        <object idref="TipoTripulante0"/>

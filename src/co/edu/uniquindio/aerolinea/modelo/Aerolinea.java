@@ -205,7 +205,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 	
 	
 	/**
-	 * Llenar los datos de la lista de los datos de los tiquetes para mostrar en la tableView de la Gestión de Equipaje
+	 * Llenar la lista de los datos de los tiquetes para mostrar en la tableView de la Gestión de Equipaje
 	 * @param identificacionCliente
 	 * @return
 	 */
