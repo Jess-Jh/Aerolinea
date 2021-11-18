@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.excepciones.CupoTripulanteException;
 import co.edu.uniquindio.aerolinea.excepciones.DatosInvalidosException;
+import co.edu.uniquindio.aerolinea.excepciones.EquipajeException;
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
@@ -1031,7 +1032,6 @@ public class AerolineaController implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	@FXML
@@ -1125,7 +1125,6 @@ public class AerolineaController implements Initializable {
 		throw new DatosInvalidosException(notificacion); 
 	}
 	
-
     @FXML
     void sumaDimensionesEquipaje(KeyEvent event) {
     	String equip1 = "Equipaje1", equip2 = "Equipaje2", equipMano = "EquipajeMano";
@@ -1175,7 +1174,7 @@ public class AerolineaController implements Initializable {
 			else txtTotalDimensionEquipaje.setText("");
 			
 		} catch (DatosInvalidosException e) {
-			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.INFORMATION);
+			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.WARNING);
 		}
 	}
     
@@ -1192,7 +1191,7 @@ public class AerolineaController implements Initializable {
 			notificacionNumero += "El alto debe ser un valor numérico\n";
 		}
 		if(!(largo.matches("[0-9.]*"))) {
-			notificacionNumero += "La largo debe ser un valor numérico\n";
+			notificacionNumero += "El largo debe ser un valor numérico\n";
 		}
 		if(!(ancho.matches("[0-9.]*"))) {
 			notificacionNumero += "El ancho debe ser un valor numérico\n";
@@ -1206,13 +1205,139 @@ public class AerolineaController implements Initializable {
 
 	@FXML
     void aceptarRegistroEquipaje(ActionEvent event) {
-//    	if()
-//    	
-//    	aceptarEquipaje();
-    }
+		
+		double pesoTotalEquipaje = 0;
+		
+		if(clienteSeleccion == null) aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Seleccione un cliente", AlertType.WARNING);
+		if(tiqueteSeleccion == null) aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Seleccione uno de los registros de tiquete(s) del cliente", AlertType.WARNING);
+				
+		else {
+			if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Monterrey") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Cancún")) {
+				if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
+					
+					pesoTotalEquipaje = verificarInformacionIngresada(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 24);
+					
+				} else if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
+										
+					pesoTotalEquipaje = verificarInformacionIngresada(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 34);
+				}
+			}
+			
+			if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Buenos Aires") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Los Ángeles") ||
+					   tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Bogotá") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Panamá")) {
+				if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
+					
+					pesoTotalEquipaje = verificarInformacionIngresada(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 24);
+					
+				} else if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
+					
+					pesoTotalEquipaje = verificarInformacionIngresada(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 34);
+				}
+			}			
+		}
+	}
+			
+	/**
+	 * Verificar la información ingresada por el usuario
+	 * @param pesoEquipaje1, totalDimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2
+	 * @param totalDimensionEquipajeMano, pesoAdicional, pesoEquipaje
+	 * @return
+	 */
+    private double verificarInformacionIngresada(String pesoEquipaje1, String totalDimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2, String totalDimensionEquipajeMano,
+			 String pesoAdicional, int pesoEquipaje) {
+    	
+    	double pesoTotalEquipaje = 0, equipaje1, equipaje2 = 0, equipajeAdicional = 0, dimensionEquipaje, dimensionEquipaje2, dimensionEquipajeMano; 	
+    	
+    	try {
+			verificarDatos(pesoEquipaje1, totalDimensionEquipaje1);
+			validarNumero(pesoEquipaje1);
+			equipaje1 = Double.valueOf(pesoEquipaje1);
+			dimensionEquipaje = Double.valueOf(totalDimensionEquipaje1);
+			
+			if(validarEquipaje(equipaje1, dimensionEquipaje, pesoEquipaje));
+			
+			if(!(pesoEquipaje2.equals(""))) {
+				verificarDatos(pesoEquipaje2, totalDimensionEquipaje2);
+				validarNumero(pesoEquipaje2);
+				equipaje2 = Double.valueOf(pesoEquipaje2);
+				dimensionEquipaje2 = Double.valueOf(totalDimensionEquipaje2);
+				
+				if(validarEquipaje(equipaje2, dimensionEquipaje2, pesoEquipaje));
+			}							
+			if(!(totalDimensionEquipajeMano.equals(""))) {
+				validarNumero(totalDimensionEquipajeMano);
+				dimensionEquipajeMano = Double.valueOf(totalDimensionEquipajeMano);
+				if(dimensionEquipajeMano > 110) aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "La suma de las dimensiones de su equipaje no puede ser mayor a 110 centímetros", AlertType.WARNING);
+			}
+			if(!(pesoAdicional.equals(""))) {
+				validarNumero(pesoAdicional);
+				equipajeAdicional = Double.valueOf(pesoAdicional);
+			}
+			pesoTotalEquipaje = equipaje1 + equipaje2 + equipajeAdicional;
+			
+			return pesoTotalEquipaje;
+			
+		} catch (DatosInvalidosException | EquipajeException e) {
+			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.WARNING);
+		}
+		return pesoTotalEquipaje;
+	}
+
+	
 
 
-    @FXML
+	/**
+	 * Validar peso y dimensión del equipaje
+	 * @param equipaje1, dimensionEquipaje, tamaño 
+	 * @return
+	 * @throws EquipajeException 
+	 */
+    private boolean validarEquipaje(double equipaje1, double dimensionEquipaje, int tamaño) throws EquipajeException {
+    	String notificacionNumero = "";
+    	
+    	if(equipaje1 > tamaño) {
+    		notificacionNumero += "El peso de su equipaje debe ser de máximo " + tamaño + " kilogramos\n";
+		}
+    	if(dimensionEquipaje > 170) {
+			notificacionNumero += "La suma de las dimensiones de su equipaje no puede ser mayor a 170 centímetros \n";
+		}
+		if(notificacionNumero.equals("")) {
+			return true;
+		}
+		throw new EquipajeException(notificacionNumero);
+	}
+
+	private boolean validarNumero(String peso) throws DatosInvalidosException {
+    	String notificacionNumero = "";
+		
+		if(!(peso.matches("[0-9.]*"))) {
+			notificacionNumero += "Debe ingresar un valor numérico\n";
+		}
+		if(notificacionNumero.equals("")) {
+			return true;
+		}
+		throw new DatosInvalidosException(notificacionNumero);
+	}
+    
+    private boolean verificarDatos(String pesoEquipaje, String dimensionEquipaje) throws DatosInvalidosException {
+			
+		String notificacion = "";	
+		
+		if(pesoEquipaje == null || pesoEquipaje.equals("")) notificacion += "Ingrese el peso del equipaje\n";
+		
+		if(dimensionEquipaje == null || dimensionEquipaje.equals("")) notificacion += "Ingrese las dimensiones del equipaje\n";
+		
+		if(notificacion.equals("")) 
+			return true;
+		
+		throw new DatosInvalidosException(notificacion); 
+	}
+
+	@FXML
     void registrarEquipajes(ActionEvent event) {
 
     }
