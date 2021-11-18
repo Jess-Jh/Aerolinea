@@ -1128,60 +1128,87 @@ public class AerolineaController implements Initializable {
 
     @FXML
     void sumaDimensionesEquipaje(KeyEvent event) {
-    	int alto = 0, largo = 0, ancho = 0, dimension;
-    	int alto2 = 0, largo2 = 0, ancho2 = 0, dimension2;
-    	int altoMano = 0, largoMano = 0, anchoMano = 0, dimensionMano;
-    
+    	String equip1 = "Equipaje1", equip2 = "Equipaje2", equipMano = "EquipajeMano";
+    	
     	// Equipaje 1
-    	if(!(txtAltoEquipaje1.getText().equals(""))) alto =  Integer.valueOf(txtAltoEquipaje1.getText());
-    	if(!(txtAnchoEquipaje1.getText().equals(""))) ancho =  Integer.valueOf(txtAnchoEquipaje1.getText());
-    	if(!(txtLargoEquipaje1.getText().equals(""))) largo =  Integer.valueOf(txtLargoEquipaje1.getText());
-    	
-    	if(alto > 0 && largo > 0 && ancho > 0) {
-    		dimension = alto + largo + ancho;
-    		if(dimension > 170) {
-    			txtTotalDimensionEquipaje1.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
-    		} else 
-    			txtTotalDimensionEquipaje1.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
-    	
-    		txtTotalDimensionEquipaje1.setText(String.valueOf(dimension));
-    	}
+    	calcularDimension(txtAltoEquipaje1.getText(), txtAnchoEquipaje1.getText(), txtLargoEquipaje1.getText(), equip1, txtTotalDimensionEquipaje1);    		
     	
     	// Equipaje 2
-    	if(!(txtAltoEquipaje2.getText().equals(""))) alto2 =  Integer.valueOf(txtAltoEquipaje2.getText());
-    	if(!(txtAnchoEquipaje2.getText().equals(""))) ancho2 =  Integer.valueOf(txtAnchoEquipaje2.getText());
-    	if(!(txtLargoEquipaje2.getText().equals(""))) largo2 =  Integer.valueOf(txtLargoEquipaje2.getText());
-    	
-    	if(alto2 > 0 && largo2 > 0 && ancho2 > 0) {
-    		dimension2 = alto2 + largo2 + ancho2;
-    		if(dimension2 > 170) {
-    			txtTotalDimensionEquipaje2.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
-    		} else 
-    			txtTotalDimensionEquipaje2.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
-    		
-    		txtTotalDimensionEquipaje2.setText(String.valueOf(dimension2));
-    	}
-    	
+    	calcularDimension(txtAltoEquipaje2.getText(), txtAnchoEquipaje2.getText(), txtLargoEquipaje2.getText(), equip2, txtTotalDimensionEquipaje2);
+
     	// Equipaje de mano
-    	if(!(txtAltoEquipajeMano.getText().equals(""))) altoMano =  Integer.valueOf(txtAltoEquipajeMano.getText());
-    	if(!(txtAnchoEquipajeMano.getText().equals(""))) anchoMano =  Integer.valueOf(txtAnchoEquipajeMano.getText());
-    	if(!(txtLargoEquipajeMano.getText().equals(""))) largoMano =  Integer.valueOf(txtLargoEquipajeMano.getText());
-    	
-    	if(altoMano > 0 && largoMano > 0 && anchoMano > 0) {
-    		dimensionMano = altoMano + largoMano + anchoMano;
-    		if(dimensionMano > 110) {
-    			txtTotalDimensionEquipajeMano.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");    		
-    		} else 
-    			txtTotalDimensionEquipajeMano.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 2px 0px;");
-    		
-    		txtTotalDimensionEquipajeMano.setText(String.valueOf(dimensionMano));
-    	}
+		calcularDimension(txtAltoEquipajeMano.getText(), txtAnchoEquipajeMano.getText(), txtLargoEquipajeMano.getText(), equipMano, txtTotalDimensionEquipajeMano);
     }
 	
-	
-    @FXML
+	/**
+	 * Calcular las dimensiones del equipaje
+	 * @param nombreEquipaje 
+	 * @param txtTotalDimensionEquipaje 
+	 * @param altoEquipaje, anchoEquipaje, largoEquipaje
+	 * @return 
+	 */
+    private void calcularDimension(String altoEquipaje, String anchoEquipaje, String largoEquipaje, String nombreEquipaje, TextField txtTotalDimensionEquipaje) {
+    	int alto = 0, largo = 0, ancho = 0, dimension = 0;
+    	
+    	try {
+			validarNumero(altoEquipaje, largoEquipaje, anchoEquipaje);
+			if(!(altoEquipaje.equals(""))) alto =  Integer.valueOf(altoEquipaje);
+			if(!(anchoEquipaje.equals(""))) ancho =  Integer.valueOf(anchoEquipaje);
+			if(!(largoEquipaje.equals(""))) largo =  Integer.valueOf(largoEquipaje);
+			
+			if(alto > 0 && largo > 0 && ancho > 0) {
+				dimension = alto + largo + ancho;
+			}
+			if(nombreEquipaje.equals("Equipaje1") || nombreEquipaje.equals("Equipaje2")) {
+				if(dimension > 170) {
+					txtTotalDimensionEquipaje.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 0px 0px;");    		
+				} else 
+					txtTotalDimensionEquipaje.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 0px 0px;");    		
+			} else {
+				
+				if(dimension > 110) {
+					txtTotalDimensionEquipaje.setStyle("-fx-text-fill: red; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 0px 0px;");    		
+				} else 
+					txtTotalDimensionEquipaje.setStyle("-fx-text-fill: black; -fx-background-color: transparent; -fx-border-color: green; -fx-border-width:  0px 0px 0px 0px;");	
+			}
+			if(dimension > 0) txtTotalDimensionEquipaje.setText(String.valueOf(dimension));
+			else txtTotalDimensionEquipaje.setText("");
+			
+		} catch (DatosInvalidosException e) {
+			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.INFORMATION);
+		}
+	}
+    
+    /**
+	 * validar que el usuario ingrese valores numéricos
+	 * @param peso, estatura, valorMensualidad, imc, porcentajeGrasa
+	 * @return
+	 * @throws DatosInvalidosException 
+	 */
+	private boolean validarNumero(String alto, String largo, String ancho) throws DatosInvalidosException {	
+		String notificacionNumero = "";
+				
+		if(!(alto.matches("[0-9.]*"))) {
+			notificacionNumero += "El alto debe ser un valor numérico\n";
+		}
+		if(!(largo.matches("[0-9.]*"))) {
+			notificacionNumero += "La largo debe ser un valor numérico\n";
+		}
+		if(!(ancho.matches("[0-9.]*"))) {
+			notificacionNumero += "El ancho debe ser un valor numérico\n";
+		}
+		
+		if(notificacionNumero.equals("")) {
+			return true;
+		}
+		throw new DatosInvalidosException(notificacionNumero);
+	}
+
+	@FXML
     void aceptarRegistroEquipaje(ActionEvent event) {
-//    	aceptarEquipaje(txtAltoEquipaje1.getText(), txtAltoEquipaje2.getText());
+//    	if()
+//    	
+//    	aceptarEquipaje();
     }
 
 

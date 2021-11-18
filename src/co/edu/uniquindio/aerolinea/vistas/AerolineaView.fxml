@@ -536,7 +536,7 @@
                               </Label>
                               <TextField fx:id="txtLargoEquipajeMano" layoutX="149.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
                               <TextField fx:id="txtAnchoEquipajeMano" layoutX="220.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                              <TextField fx:id="txtTotalDimensionEquipajeMano" layoutX="290.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                              <TextField fx:id="txtTotalDimensionEquipajeMano" layoutX="290.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
                               <Label layoutX="39.0" layoutY="352.0" text="Suma de las dimensiones máximo 110 centímetros" />
                               <Label layoutX="39.0" layoutY="450.0" text="Equipaje adicional">
                                  <font>
@@ -655,7 +655,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="txtLargoEquipaje1" layoutX="678.0" layoutY="288.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <TextField fx:id="txtTotalDimensionEquipaje1" layoutX="819.0" layoutY="288.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="txtTotalDimensionEquipaje1" layoutX="819.0" layoutY="288.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
                         <TextField fx:id="txtPesoEquipaje2" layoutX="790.0" layoutY="176.0" prefHeight="27.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
                         <Label layoutX="568.0" layoutY="250.0" text="Suma de las dimensiones por pieza (máximo 170 centímetros)" />
                         <TableView fx:id="tableViewEquipajes" layoutX="971.0" layoutY="149.0" prefHeight="371.0" prefWidth="371.0">
@@ -715,7 +715,7 @@
                            </font>
                         </Label>
                         <TextField fx:id="txtLargoEquipaje2" layoutX="677.0" layoutY="338.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <TextField fx:id="txtTotalDimensionEquipaje2" layoutX="818.0" layoutY="338.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="txtTotalDimensionEquipaje2" layoutX="818.0" layoutY="338.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
                         <Label fx:id="lblEquipaje2" layoutX="718.0" layoutY="181.0" text="Equipaje 2:">
                            <font>
                               <Font size="14.0" />
