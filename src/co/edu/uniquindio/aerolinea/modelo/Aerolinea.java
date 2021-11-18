@@ -8,8 +8,10 @@ import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.TreeSet;
 
+import co.edu.uniquindio.aerolinea.excepciones.EquipajeException;
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.servicios.IAerolinea;
+import javafx.collections.ObservableList;
 
 /**
  * @author Jessica Johana Ospina P.
@@ -289,6 +291,18 @@ public class Aerolinea implements Serializable, IAerolinea {
 		listaTiquetes.put(cliente.getIdentificacion(), tiquete);
 		
 		return tiquete;
+	}
+
+	/**
+	 * Registrar equipajes medidos y pesados
+	 * @param listadoEquipajes
+	 * @throws EquipajeException 
+	 */
+	public void registrarEquipajes(ObservableList<Equipaje> listadoEquipajes) throws EquipajeException {
+		
+		if(listadoEquipajes.isEmpty()) throw new EquipajeException("Primero llene los datos de algún equipaje para poder realizar su registro.");
+		
+		else this.listaEquipajes.addAll(listadoEquipajes);
 	}
 
 }

@@ -6,9 +6,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
+import co.edu.uniquindio.aerolinea.excepciones.EquipajeException;
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Cliente;
+import co.edu.uniquindio.aerolinea.modelo.Equipaje;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoClase;
 import co.edu.uniquindio.aerolinea.modelo.TipoViaje;
@@ -16,6 +18,7 @@ import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 import co.edu.uniquindio.aerolinea.modelo.Tripulante;
 import co.edu.uniquindio.aerolinea.modelo.servicios.IModelFactory;
 import co.edu.uniquindio.aerolinea.persistencia.Persistencia;
+import javafx.collections.ObservableList;
 
 /**
  * Clase Singleton
@@ -162,6 +165,17 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	}
 	@Override
 	public void run() {	}
+	
+	/**
+	 * Registrar los equipajes ya medidos y pesados en la aerolinea
+	 * @param listadoEquipajes
+	 * @throws EquipajeException 
+	 */
+	public void registrarEquipajesAerolinea(ObservableList<Equipaje> listadoEquipajes) throws EquipajeException {
+		aerolinea.registrarEquipajes(listadoEquipajes);
+		guardarRecursoXML();
+		
+	}
 
 	
 

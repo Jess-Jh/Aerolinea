@@ -1314,15 +1314,15 @@ public class AerolineaController implements Initializable {
     private boolean validarEquipaje(double equipaje1, double dimensionEquipaje, int tamaño) throws EquipajeException {
     	String notificacionNumero = "";
     	
-    	if(equipaje1 > tamaño) {
+    	if(equipaje1 > tamaño) 
     		notificacionNumero += "El peso de su equipaje debe ser de máximo " + tamaño + " kilogramos\n";
-		}
-    	if(dimensionEquipaje > 170) {
+		
+    	if(dimensionEquipaje > 170) 
 			notificacionNumero += "La suma de las dimensiones de su equipaje no puede ser mayor a 170 centímetros \n";
-		}
-		if(notificacionNumero.equals("")) {
+		
+		if(notificacionNumero.equals("")) 
 			return true;
-		}
+		
 		throw new EquipajeException(notificacionNumero);
 	}
 
@@ -1354,7 +1354,20 @@ public class AerolineaController implements Initializable {
 
 	@FXML
     void registrarEquipajes(ActionEvent event) {
-
+		try {
+			boolean confirmacion = aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "¿Desea registrar estos equipajes en el vuelo?");		
+			
+			if(confirmacion == true) {
+				modelFactoryController.registrarEquipajesAerolinea(listadoEquipajes);
+				aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Los equipajes han sido registrados con éxito", AlertType.WARNING);	
+				
+				listadoEquipajes.clear();
+				tableViewEquipajes.setItems(listadoEquipajes);
+				tableViewEquipajes.refresh();
+			}	
+		} catch (EquipajeException e) {
+			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.WARNING);							
+		}
     }
     
     @FXML
