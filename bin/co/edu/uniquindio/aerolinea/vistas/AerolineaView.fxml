@@ -15,6 +15,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -23,7 +25,7 @@
    <children>
       <TabPane fx:id="tabPrincipalAerolinea" layoutX="-2.0" prefHeight="718.0" prefWidth="1376.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Gestión y Asignación de la Tripulación">
+          <Tab text="Gestión Tripulación">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="690.0" prefWidth="1376.0">
                      <children>
@@ -737,7 +739,107 @@
             </Tab>
             <Tab text="Embarque de Equipaje">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="59.0" layoutY="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="59.0" layoutY="237.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="59.0" layoutY="292.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="59.0" layoutY="347.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="58.0" layoutY="402.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="58.0" layoutY="457.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="58.0" layoutY="512.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="58.0" layoutY="568.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="57.0" layoutY="624.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="59.0" layoutY="127.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="135.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="210.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="285.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="360.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="435.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="510.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="585.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="660.0" layoutY="54.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="735.0" layoutY="54.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button layoutX="60.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnRealizarCompra1" layoutX="211.0" layoutY="156.0" mnemonicParsing="false" onAction="#realizarCompra" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Llegada" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnRealizarCompra11" layoutX="447.0" layoutY="157.0" mnemonicParsing="false" onAction="#realizarCompra" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Salida" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="btnRealizarCompra111" layoutX="683.0" layoutY="157.0" mnemonicParsing="false" onAction="#realizarCompra" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Retirada" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Pane layoutX="276.0" layoutY="267.0" prefHeight="416.0" prefWidth="1028.0" style="-fx-background-color: #EAEAEA;">
+                           <children>
+                              <Label layoutX="395.0" layoutY="22.0" text="Zona de embarque">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="105.0" layoutY="81.0" text="Carro de embarque: ">
+                                 <font>
+                                    <Font name="System Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tableViewEquipajes1" layoutX="106.0" layoutY="153.0" prefHeight="227.0" prefWidth="371.0">
+                                 <columns>
+                                    <TableColumn fx:id="columnIdAvionEquipaje1" prefWidth="91.0" text="Id Avión" />
+                                    <TableColumn fx:id="columnPesoEquipaje1" prefWidth="130.0" text="Peso Equipaje" />
+                                    <TableColumn fx:id="columnIdentificacionClienteEquipaje1" prefWidth="147.3333740234375" text="Identificación Cliente" />
+                                 </columns>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TableView>
+                              <TableView fx:id="tableViewEquipajes11" layoutX="582.0" layoutY="151.0" prefHeight="227.0" prefWidth="371.0">
+                                 <columns>
+                                    <TableColumn fx:id="columnIdAvionEquipaje11" prefWidth="91.0" text="Id Avión" />
+                                    <TableColumn fx:id="columnPesoEquipaje11" prefWidth="130.0" text="Peso Equipaje" />
+                                    <TableColumn fx:id="columnIdentificacionClienteEquipaje11" prefWidth="147.3333740234375" text="Identificación Cliente" />
+                                 </columns>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TableView>
+                              <Label layoutX="584.0" layoutY="121.0" text="Equipajes asignados al carro de embarque">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="106.0" layoutY="123.0" text="Listado de Equipajes ">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="807.0" layoutY="82.0" text="Peso total:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="66.0" fitWidth="66.0" layoutX="736.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
               </content>
             </Tab>
         </tabs>

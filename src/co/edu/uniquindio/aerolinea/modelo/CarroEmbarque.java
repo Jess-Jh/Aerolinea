@@ -1,26 +1,29 @@
 package co.edu.uniquindio.aerolinea.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
+/**
+ * Clase Carro Embarque
+ * @author Jessica Ospina
+ */
 public class CarroEmbarque implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private double peso;
-	private Equipaje equipaje;
+	private ArrayList<Equipaje> listaEquipajes;
 	private String numIdentificacion;
-	private String numAvion;
 	
 	/**
 	 * Constructor
-	 * @param peso, equipaje, numIdentificacion, numAvion
+	 * @param peso, listaEquipajes, numIdentificacion
 	 */
-	public CarroEmbarque(double peso, Equipaje equipaje, String numIdentificacion, String numAvion) {
-		this.peso = peso;
-		this.equipaje = equipaje;
+	public CarroEmbarque(String numIdentificacion) {
+		this.peso = 500.0;
+		this.listaEquipajes = new ArrayList<>();
 		this.numIdentificacion = numIdentificacion;
-		this.numAvion = numAvion;
 	}
-	
+
 	public CarroEmbarque() {}
 
 	//--------------------------------------------- Métodos Getters and Setters ---------------------------------------------------------------------------------->>
@@ -30,23 +33,17 @@ public class CarroEmbarque implements Serializable {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	public Equipaje getEquipaje() {
-		return equipaje;
+	public ArrayList<Equipaje> getListaEquipajes() {
+		return listaEquipajes;
 	}
-	public void setEquipaje(Equipaje equipaje) {
-		this.equipaje = equipaje;
+	public void setListaEquipajes(ArrayList<Equipaje> listaEquipajes) {
+		this.listaEquipajes = listaEquipajes;
 	}
 	public String getNumIdentificacion() {
 		return numIdentificacion;
 	}
 	public void setNumIdentificacion(String numIdentificacion) {
 		this.numIdentificacion = numIdentificacion;
-	}
-	public String getNumAvion() {
-		return numAvion;
-	}
-	public void setNumAvion(String numAvion) {
-		this.numAvion = numAvion;
 	}
 	//--------------------------------------------------------------------------------------------------------------------------------------------------||
 
