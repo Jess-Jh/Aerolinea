@@ -1482,10 +1482,13 @@ public class AerolineaController implements Initializable {
 		} catch (DatosInvalidosException | EquipajeException e) {
 			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.WARNING);				
 		}
-    	
-    	
 	}
 
+    /**
+     * Verificar la clase en la cual el cliente viaja para modificar su equipaje
+     * @param identificacionCliente
+     * @return
+     */
 	private String verificarClase(String identificacionCliente) {
 		
 		String clase = "";
@@ -1500,14 +1503,23 @@ public class AerolineaController implements Initializable {
 
 	@FXML
     void eliminarEquipaje(ActionEvent event) {
-//    	if(confirmacion == true) {
-//			modelFactoryController.registrarEquipajesAerolinea(listadoEquipajes);
-//			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Los equipajes han sido registrados con éxito", AlertType.WARNING);	
-//			
-//			listadoEquipajes.clear();
-//			tableViewEquipajes.setItems(listadoEquipajes);
-//			tableViewEquipajes.refresh();
-//		}	
+		
+		if(equipajeSeleccion != null) {
+			boolean confirmacion = aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "¿Desea eliminar el equipaje?");	
+			
+			
+	    	if(confirmacion == true) {
+				modelFactoryController.eliminarEquipaje(equipajeSeleccion.getIdEquipaje());
+				aplicacionAerolinea.mostrarMensaje("Notificación eliminación Equipaje", "Notificación eliminación Equipaje", "El equipaje ha sido eliminado", AlertType.INFORMATION);	
+				
+				listadoEquipajes.remove(equipajeSeleccion);
+				tableViewEquipajes.refresh();
+			} else {
+				aplicacionAerolinea.mostrarMensaje("Notificación eliminación Equipaje", "Notificación eliminación Equipaje", "No se ha eliminado el equipaje", AlertType.INFORMATION);		
+			}
+		} else {
+			aplicacionAerolinea.mostrarMensaje("Notificación eliminación Equipaje", "Notificación eliminación Equipaje", "No se ha seleccionado ningún equipaje", AlertType.WARNING);		
+		}
     }
     
     @FXML

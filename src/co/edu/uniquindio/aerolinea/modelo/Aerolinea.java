@@ -408,6 +408,22 @@ public class Aerolinea implements Serializable, IAerolinea {
 		return null;
 	}
 
+	/**
+	 * Eliminar un equipaje
+	 * @param idEquipaje
+	 */
+	public boolean eliminarEquipaje(String idEquipaje) {
+		Equipaje equipaje = obtenerEquipaje(idEquipaje);
+		boolean equipajeEliminado = false;
+		
+		if(equipaje != null) {
+			listaEquipajes.remove(equipaje);
+			equipajeEliminado = true;
+		}
+		return equipajeEliminado;
+		
+	}
+
 
 
 }

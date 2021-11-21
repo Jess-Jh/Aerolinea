@@ -211,6 +211,18 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		guardarRecursoXML();
 		return equipaje;
 	}
+	/**
+	 * Eliminar un equipaje
+	 * @param idEquipaje
+	 */
+	public boolean eliminarEquipaje(String idEquipaje) {
+		
+		if(aerolinea.eliminarEquipaje(idEquipaje)) {
+			guardarRecursoXML();
+			return true;
+		}
+		return false;
+	}
 
 
 	
