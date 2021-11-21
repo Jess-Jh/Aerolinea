@@ -573,16 +573,40 @@ public class AerolineaController implements Initializable {
 		//------------------------------------------------------------------------------------------------------------------------------||
 		//----------------------------------------- TableViewEquipajes ----------------------------------------------------------->
 		this.columnIdAvionEquipaje.setCellValueFactory(new PropertyValueFactory<>("numAvion"));
-		this.columnPesoEquipaje.setCellValueFactory(new PropertyValueFactory<>("peso"));
+		this.columnPesoEquipaje.setCellValueFactory(new PropertyValueFactory<>("pesoTotal"));
 		this.columnIdentificacionClienteEquipaje.setCellValueFactory(new PropertyValueFactory<>("identificacionCliente"));
 		
 		tableViewEquipajes.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
 			if(newSelection != null) {
-				equipajeSeleccion = newSelection;		
+				equipajeSeleccion = newSelection;
+				mostrarInformacion();
 			}
 		});	
 		//------------------------------------------------------------------------------------------------------------------------------||
 		//--------------------------------------------------------------------------------------------------------------------------------------------||
+	}
+
+	/**
+	 * Mostrar información de los equipajes
+	 */
+	private void mostrarInformacion() {
+		if(equipajeSeleccion != null) {
+			txtPesoEquipaje1.setText(String.valueOf(equipajeSeleccion.getPesoEquipaje1())); 
+			txtPesoEquipaje2.setText(String.valueOf(equipajeSeleccion.getPesoEquipaje2())); 
+			txtTotalDimensionEquipaje1.setText(String.valueOf(equipajeSeleccion.getDimensionEquipaje1()));
+			txtTotalDimensionEquipaje2.setText(String.valueOf(equipajeSeleccion.getDimensionEquipaje2()));
+			txtTotalDimensionEquipajeMano.setText(String.valueOf(equipajeSeleccion.getDimensionEquipajeMano()));
+			txtPesoAdicional.setText(String.valueOf(equipajeSeleccion.getPesoAdicional()));
+			txtAltoEquipaje1.setText(String.valueOf(equipajeSeleccion.getAltoEquipaje1()));
+			txtAnchoEquipaje1.setText(String.valueOf(equipajeSeleccion.getAnchoEquipaje1())); 
+			txtLargoEquipaje1.setText(String.valueOf(equipajeSeleccion.getLargoEquipaje1()));
+			txtAltoEquipaje2.setText(String.valueOf(equipajeSeleccion.getAltoEquipaje2()));
+			txtAnchoEquipaje2.setText(String.valueOf(equipajeSeleccion.getAnchoEquipaje2())); 
+			txtLargoEquipaje2.setText(String.valueOf(equipajeSeleccion.getLargoEquipaje2()));
+			txtAltoEquipajeMano.setText(String.valueOf(equipajeSeleccion.getAltoEquipajeMano()));
+			txtAnchoEquipajeMano.setText(String.valueOf(equipajeSeleccion.getAnchoEquipajeMano())); 
+			txtLargoEquipajeMano.setText(String.valueOf(equipajeSeleccion.getLargoEquipajeMano()));
+		}
 	}
 
 	public void setAplicacion(AplicacionAerolinea aplicacionAerolinea) {
@@ -655,20 +679,17 @@ public class AerolineaController implements Initializable {
 		if(!(aerolinea.getListaEquipajes().isEmpty())) {
 			int contPersonas = 0;
 			
-			for (Equipaje equipaje : aerolinea.getListaEquipajes()) {
-							
+			for (Equipaje equipaje : aerolinea.getListaEquipajes()) {			
 				if(equipaje.getIdentificacionCliente().equalsIgnoreCase(clienteSeleccion.getIdentificacion())) {
 					contPersonas++;
 				}
 			}	
 			if(contPersonas == 0) {
-				for (int i = 0; i < cantPersonasTiquete; i++) {
-					listadoTiquetesCliente.add(tiqueteCliente);
-				}
+				for (int i = 0; i < cantPersonasTiquete; i++) listadoTiquetesCliente.add(tiqueteCliente);
+				
 			} else {
 				int totalEquipajesSinRegistrar = cantPersonasTiquete - contPersonas;
 				if(totalEquipajesSinRegistrar > 0) {
-					
 					for (int i = 0; i < totalEquipajesSinRegistrar; i++) listadoTiquetesCliente.add(tiqueteCliente);	
 				}
 			}
@@ -1293,7 +1314,7 @@ public class AerolineaController implements Initializable {
     private void agregarEquipajeAerolinea(String pesoEquipaje1, String totalDimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2, String totalDimensionEquipajeMano,
 			 String pesoAdicional, int pesoEquipaje) throws DatosInvalidosException, EquipajeException {
     	
-    	double pesoTotalEquipaje = 0, equipaje1, equipaje2 = 0, equipajeAdicional = 0, dimensionEquipaje, dimensionEquipaje2, dimensionEquipajeMano; 	
+    	double pesoTotalEquipaje = 0, equipaje1, equipaje2 = 0, equipajeAdicional = 0, dimensionEquipaje = 0, dimensionEquipaje2 = 0, dimensionEquipajeMano = 0; 	
     	
 		verificarDatos(pesoEquipaje1, totalDimensionEquipaje1);
 		validarNumero(pesoEquipaje1);
@@ -1321,7 +1342,12 @@ public class AerolineaController implements Initializable {
 		}
 		pesoTotalEquipaje = equipaje1 + equipaje2 + equipajeAdicional;
 		
-		Equipaje equipaje = modelFactoryController.agregarEquipaje(clienteSeleccion.getIdentificacion(), pesoTotalEquipaje, tiqueteSeleccion.getIdAvion());
+		
+		
+		Equipaje equipaje = modelFactoryController.agregarEquipaje(clienteSeleccion.getIdentificacion(), pesoTotalEquipaje, txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(),
+				txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(), txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), txtAltoEquipaje1.getText(), txtAnchoEquipaje1.getText(), 
+				txtLargoEquipaje1.getText(), txtAltoEquipaje2.getText(), txtAnchoEquipaje2.getText(), txtLargoEquipaje2.getText(), txtAltoEquipajeMano.getText(), txtAnchoEquipajeMano.getText(), txtLargoEquipajeMano.getText(),
+				tiqueteSeleccion.getIdAvion());
 		
 		if(equipaje != null) listadoEquipajes.add(0, equipaje);
 		tableViewEquipajes.refresh();

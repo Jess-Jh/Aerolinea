@@ -8,10 +8,8 @@ import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.TreeSet;
 
-import co.edu.uniquindio.aerolinea.excepciones.EquipajeException;
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.servicios.IAerolinea;
-import javafx.collections.ObservableList;
 
 /**
  * @author Jessica Johana Ospina P.
@@ -289,13 +287,48 @@ public class Aerolinea implements Serializable, IAerolinea {
 		return tiquete;
 	}
 
+	
 	/**
-	 * Agregar un equipaje a la Aerolinea
-	 * @param idEquipaje, identificacion, pesoTotalEquipaje, idAvion
+	 * Agregr un equipaje a la aerolinea
+	 * @param identificacion, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2
+	 * @param totalDimensionEquipajeMano, pesoAdicional, altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2
+	 * @param anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano, idAvion
 	 * @return
 	 */
-	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String idAvion) {
-		Equipaje equipaje = new Equipaje(identificacion, pesoTotalEquipaje, idAvion);
+
+	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2,
+			String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2,
+			String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano, String idAvion) {
+		
+		Equipaje equipaje = new Equipaje();
+		equipaje.setIdentificacionCliente(identificacion); 
+		equipaje.setPesoTotal(pesoTotalEquipaje);
+		equipaje.setNumAvion(idAvion);
+		
+		if(!(pesoEquipaje1.equals(""))) {
+			equipaje.setPesoEquipaje1(pesoEquipaje1);
+			equipaje.setDimensionEquipaje1(dimensionEquipaje1);
+			equipaje.setAltoEquipaje1(altoEquipaje1);
+			equipaje.setAnchoEquipaje1(anchoEquipaje1);
+			equipaje.setLargoEquipaje1(largoEquipaje1);
+		}
+		if(!(pesoEquipaje2.equals(""))) {
+			equipaje.setPesoEquipaje2(pesoEquipaje2);
+			equipaje.setDimensionEquipaje2(totalDimensionEquipaje2);
+			equipaje.setAltoEquipaje2(altoEquipaje2);
+			equipaje.setAnchoEquipaje2(anchoEquipaje2);
+			equipaje.setLargoEquipaje2(largoEquipaje2);
+		}
+		if(!(totalDimensionEquipajeMano.equals(""))) {
+			equipaje.setDimensionEquipajeMano(totalDimensionEquipajeMano);
+			equipaje.setAltoEquipajeMano(altoEquipajeMano);
+			equipaje.setAnchoEquipajeMano(anchoEquipajeMano);
+			equipaje.setLargoEquipajeMano(largoEquipajeMano);
+		}
+		
+		if(!(totalDimensionEquipajeMano.equals(""))) 
+			equipaje.setPesoAdicional(pesoAdicional);
+
 		listaEquipajes.add(equipaje);
 		
 		return equipaje;

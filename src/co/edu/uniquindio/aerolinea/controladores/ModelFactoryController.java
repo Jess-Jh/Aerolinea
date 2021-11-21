@@ -168,12 +168,16 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	
 	/**
 	 * Agregar un equipaje a la aerolinea
-	 * @param string 
-	 * @param identificacion, pesoTotalEquipaje, idAvion
+	 * @param identificacion, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, 
+	 * altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano, idAvion
 	 * @return
 	 */
-	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String idAvion) {
-		Equipaje equipaje = aerolinea.agregarEquipaje(identificacion, pesoTotalEquipaje, idAvion);
+	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, 
+			String totalDimensionEquipaje2, String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, 
+			String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano, String idAvion) {
+		
+		Equipaje equipaje = aerolinea.agregarEquipaje(identificacion, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, 
+				  altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano, idAvion);
 		guardarRecursoXML();
 		return equipaje;
 	}
