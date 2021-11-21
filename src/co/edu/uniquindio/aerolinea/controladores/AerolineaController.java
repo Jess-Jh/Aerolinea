@@ -30,6 +30,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -100,10 +101,13 @@ public class AerolineaController implements Initializable {
     private Button btnSeleccionarPuesto;
     
     @FXML
-    private Button btnAceptarRegistroEquipaje;
+    private Button btnAgregarEquipaje;
     
     @FXML
-    private Button btnRegistrarEquipajes;
+    private Button btnActualizarEquipaje;
+    
+    @FXML
+    private Button btnEliminarEquipaje;
 
     @FXML
     private ComboBox<String> cmbClase;
@@ -203,6 +207,9 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private FontAwesomeIconView iconEquip2;
+    
+    @FXML
+    private Label lblDetalleTiquete;
 
     @FXML
     private Label lblAltoEquip2;
@@ -373,9 +380,6 @@ public class AerolineaController implements Initializable {
     private Label txtLabel;
     
     @FXML
-    private Label lblCantTiquetes;
-    
-    @FXML
     private Label txtTextoSeleccionVuelos;
     
     @FXML
@@ -434,7 +438,7 @@ public class AerolineaController implements Initializable {
     
     private ObservableList<Cliente> listadoClientes = FXCollections.observableArrayList();
     // Lista observable para filtrar una búsqueda
-    ObservableList<Cliente> filtroListadoClientes = FXCollections.observableArrayList();
+    private ObservableList<Cliente> filtroListadoClientes = FXCollections.observableArrayList();
 
     private ObservableList<Equipaje> listadoEquipajes = FXCollections.observableArrayList();
     private ObservableList<CruceAeronavesRutas> listadoTiquetesCliente = FXCollections.observableArrayList();
@@ -563,10 +567,6 @@ public class AerolineaController implements Initializable {
 				tiqueteSeleccion = newSelection;
 				if(tiqueteSeleccion != null) {
 					llenarRequerimientosPesoEquipaje();
-					cantTiquetes = Integer.valueOf(tiqueteSeleccion.getNombreAeronave());
-					
-					if(cantTiquetes == 0) btnAceptarRegistroEquipaje.setDisable(true);	
-					else if(cantTiquetes > 0) btnAceptarRegistroEquipaje.setDisable(false);	
 				}
 			}
 		});	
@@ -598,8 +598,8 @@ public class AerolineaController implements Initializable {
     	tableViewClientes.getItems().clear();
     	tableViewClientes.setItems(getClientes());
 
-//    	tableViewEquipajes.getItems().clear();
-//    	tableViewEquipajes.setItems(getEquipajes());
+    	tableViewEquipajes.getItems().clear();
+    	tableViewEquipajes.setItems(getEquipajes());
     }
     
     /**
@@ -643,12 +643,40 @@ public class AerolineaController implements Initializable {
 	}
 
 	/**
-	 * Obtener los tiquetes del cliente
+	 * Obtener los tiquetes del cliente, sin contar con los que su equipaje ya se encuentra registrado
 	 * @return
+	 * @throws EquipajeException 
 	 */
-	private ObservableList<CruceAeronavesRutas> getTiquetesCliente() {
-			listadoTiquetesCliente.clear();
-			listadoTiquetesCliente.addAll(aerolinea.datosViajesUsuario(clienteSeleccion.getIdentificacion()));			
+	private ObservableList<CruceAeronavesRutas> getTiquetesCliente() throws EquipajeException {
+		listadoTiquetesCliente.clear();
+		CruceAeronavesRutas tiqueteCliente = aerolinea.datosViajeUsuario(clienteSeleccion.getIdentificacion());
+		int cantPersonasTiquete = Integer.valueOf(tiqueteCliente.getNombreAeronave());
+		
+		if(!(aerolinea.getListaEquipajes().isEmpty())) {
+			int contPersonas = 0;
+			
+			for (Equipaje equipaje : aerolinea.getListaEquipajes()) {
+							
+				if(equipaje.getIdentificacionCliente().equalsIgnoreCase(clienteSeleccion.getIdentificacion())) {
+					contPersonas++;
+				}
+			}	
+			if(contPersonas == 0) {
+				for (int i = 0; i < cantPersonasTiquete; i++) {
+					listadoTiquetesCliente.add(tiqueteCliente);
+				}
+			} else {
+				int totalEquipajesSinRegistrar = cantPersonasTiquete - contPersonas;
+				if(totalEquipajesSinRegistrar > 0) {
+					
+					for (int i = 0; i < totalEquipajesSinRegistrar; i++) listadoTiquetesCliente.add(tiqueteCliente);	
+				}
+			}
+		} else {
+			for (int i = 0; i < cantPersonasTiquete; i++) listadoTiquetesCliente.add(tiqueteCliente);
+		}
+		if(listadoTiquetesCliente.isEmpty()) throw new EquipajeException("El cliente ya no cuenta con equipajes para registrar");
+		
 		return listadoTiquetesCliente;
 	}
 
@@ -656,11 +684,11 @@ public class AerolineaController implements Initializable {
 	 * Obtener los equipajes del cliente
 	 * @return
 	 */
-//	private ObservableList<CruceAeronavesRutas> getEquipajes() {
-//		listadoTiquetesCliente.clear();
-//		listadoTiquetesCliente.addAll(aerolinea.datosViajesUsuario(clienteSeleccion.getIdentificacion()));			
-//		return listadoTiquetesCliente;
-//	}
+	private ObservableList<Equipaje> getEquipajes() {
+		listadoEquipajes.clear();
+		listadoEquipajes.addAll(aerolinea.getListaEquipajes());			
+		return listadoEquipajes;
+	}
 	
     @FXML
     void pasarDatosTablaAsignacionTripulantes(MouseEvent event) {
@@ -682,15 +710,19 @@ public class AerolineaController implements Initializable {
     
     @FXML
     void llenarTablaTiquetesCliente(MouseEvent event) {    		
-        	tableViewTiquetesCliente.getItems().clear();
-        	tableViewTiquetesCliente.setItems(getTiquetesCliente());
+    	tableViewTiquetesCliente.getItems().clear();
+    	try {
+			tableViewTiquetesCliente.setItems(getTiquetesCliente());
+		} catch (EquipajeException e) {
+			aplicacionAerolinea.mostrarMensaje("Registro Equipaje", "Registro Equipaje", e.getMessage(), AlertType.WARNING);
+		}
     }
     
     /**
      * Mostrar los requerimientos de cada equipaje dependiendo del vuelo
      */
 	private void llenarRequerimientosPesoEquipaje() {
-		lblCantTiquetes.setText(tiqueteSeleccion.getNombreAeronave());
+		lblDetalleTiquete.setText("Destino: " + tiqueteSeleccion.getCiudadDestino());
 		
 		if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Monterrey") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Cancún")) {
 			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
@@ -962,11 +994,9 @@ public class AerolineaController implements Initializable {
     	}	
     }
     
-
     @FXML
     void cancelarCompra(ActionEvent event) {
     	tabPrincipalTiquetes.getSelectionModel().select(0);
-
     }
 
     @FXML
@@ -1057,7 +1087,6 @@ public class AerolineaController implements Initializable {
     void pagarTiquetes(ActionEvent event) {
     	agregarCompraTiquetes(txtIdentificacionOPasaporte.getText(), txtNombre.getText(), txtApellido.getText(), txtDireccion.getText(), txtCorreoElectronico.getText(),
     			txtFechaNacimiento.getValue(), txtDireccionResidencia.getText(), txtTarjetaDebitoCredito.getText());
-    	
     }
 
     /**
@@ -1223,7 +1252,7 @@ public class AerolineaController implements Initializable {
 	}
 	
 	@FXML
-    void aceptarRegistroEquipaje(ActionEvent event) {
+    void agregarEquipaje(ActionEvent event) {  
 				
 		if(clienteSeleccion == null) aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Seleccione un cliente", AlertType.WARNING);
 		if(tiqueteSeleccion == null) aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Seleccione uno de los registros de tiquete(s) del cliente", AlertType.WARNING);
@@ -1232,21 +1261,15 @@ public class AerolineaController implements Initializable {
 			try {
 				if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
 					
-					verificarInformacionIngresada(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+					agregarEquipajeAerolinea(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
 							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 24);
 					
 				} else if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
 										
-					verificarInformacionIngresada(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+					agregarEquipajeAerolinea(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
 							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 34);
 				}
-				cantTiquetes--;
-				if(cantTiquetes == 0) {
-					aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Se ha añadido su último equipaje al registro con éxito", AlertType.INFORMATION);				
-					btnAceptarRegistroEquipaje.setDisable(true);	
-				} else if(cantTiquetes > 0) {
-					aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Se ha añadido su equipaje al registro con éxito", AlertType.INFORMATION);				
-				}
+				aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Se ha añadido su equipaje con éxito", AlertType.INFORMATION);				
 				
 				// Dejar en blanco los campos para un nuevo registro
 				txtPesoEquipaje1.setText(""); txtTotalDimensionEquipaje1.setText(""); txtPesoEquipaje2.setText(""); txtTotalDimensionEquipaje2.setText("");
@@ -1267,11 +1290,10 @@ public class AerolineaController implements Initializable {
 	 * @throws DatosInvalidosException 
 	 * @throws EquipajeException 
 	 */
-    private void verificarInformacionIngresada(String pesoEquipaje1, String totalDimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2, String totalDimensionEquipajeMano,
+    private void agregarEquipajeAerolinea(String pesoEquipaje1, String totalDimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2, String totalDimensionEquipajeMano,
 			 String pesoAdicional, int pesoEquipaje) throws DatosInvalidosException, EquipajeException {
     	
     	double pesoTotalEquipaje = 0, equipaje1, equipaje2 = 0, equipajeAdicional = 0, dimensionEquipaje, dimensionEquipaje2, dimensionEquipajeMano; 	
-    	
     	
 		verificarDatos(pesoEquipaje1, totalDimensionEquipaje1);
 		validarNumero(pesoEquipaje1);
@@ -1299,10 +1321,13 @@ public class AerolineaController implements Initializable {
 		}
 		pesoTotalEquipaje = equipaje1 + equipaje2 + equipajeAdicional;
 		
-		Equipaje equipaje = new Equipaje(clienteSeleccion.getIdentificacion(), pesoTotalEquipaje, tiqueteSeleccion.getIdAvion());
+		Equipaje equipaje = modelFactoryController.agregarEquipaje(clienteSeleccion.getIdentificacion(), pesoTotalEquipaje, tiqueteSeleccion.getIdAvion());
+		
 		if(equipaje != null) listadoEquipajes.add(0, equipaje);
-		tableViewEquipajes.setItems(listadoEquipajes);
 		tableViewEquipajes.refresh();
+		
+		listadoTiquetesCliente.remove(tiqueteSeleccion);
+		tableViewTiquetesCliente.refresh();
 	}
 
 	/**
@@ -1352,22 +1377,21 @@ public class AerolineaController implements Initializable {
 		throw new DatosInvalidosException(notificacion); 
 	}
 
-	@FXML
-    void registrarEquipajes(ActionEvent event) {
-		try {
-			boolean confirmacion = aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "¿Desea registrar estos equipajes en el vuelo?");		
-			
-			if(confirmacion == true) {
-				modelFactoryController.registrarEquipajesAerolinea(listadoEquipajes);
-				aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Los equipajes han sido registrados con éxito", AlertType.WARNING);	
-				
-				listadoEquipajes.clear();
-				tableViewEquipajes.setItems(listadoEquipajes);
-				tableViewEquipajes.refresh();
-			}	
-		} catch (EquipajeException e) {
-			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.WARNING);							
-		}
+    @FXML
+    void actualizarEquipaje(ActionEvent event) {
+
+    }
+	
+    @FXML
+    void eliminarEquipaje(ActionEvent event) {
+//    	if(confirmacion == true) {
+//			modelFactoryController.registrarEquipajesAerolinea(listadoEquipajes);
+//			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Los equipajes han sido registrados con éxito", AlertType.WARNING);	
+//			
+//			listadoEquipajes.clear();
+//			tableViewEquipajes.setItems(listadoEquipajes);
+//			tableViewEquipajes.refresh();
+//		}	
     }
     
     @FXML

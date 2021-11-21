@@ -167,14 +167,15 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	public void run() {	}
 	
 	/**
-	 * Registrar los equipajes ya medidos y pesados en la aerolinea
-	 * @param listadoEquipajes
-	 * @throws EquipajeException 
+	 * Agregar un equipaje a la aerolinea
+	 * @param string 
+	 * @param identificacion, pesoTotalEquipaje, idAvion
+	 * @return
 	 */
-	public void registrarEquipajesAerolinea(ObservableList<Equipaje> listadoEquipajes) throws EquipajeException {
-		aerolinea.registrarEquipajes(listadoEquipajes);
+	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String idAvion) {
+		Equipaje equipaje = aerolinea.agregarEquipaje(identificacion, pesoTotalEquipaje, idAvion);
 		guardarRecursoXML();
-		
+		return equipaje;
 	}
 
 	

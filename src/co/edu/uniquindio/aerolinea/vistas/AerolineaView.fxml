@@ -29,6 +29,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="690.0" prefWidth="1376.0">
                      <children>
+                        <Pane layoutX="963.0" layoutY="96.0" prefHeight="499.0" prefWidth="386.0" style="-fx-background-color: #E5E5E5;" />
+                        <Pane layoutX="506.0" layoutY="95.0" prefHeight="499.0" prefWidth="406.0" style="-fx-background-color: #E5E5E5;" />
+                        <Pane layoutX="21.0" layoutY="94.0" prefHeight="498.0" prefWidth="445.0" style="-fx-background-color: #E5E5E5;" />
                         <Label layoutX="580.0" layoutY="13.0" text="Gestión Tripulación">
                            <font>
                               <Font name="System Bold" size="24.0" />
@@ -45,7 +48,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </TableView>
-                        <Label layoutX="654.0" layoutY="99.0" text="Tripulantes">
+                        <Label layoutX="654.0" layoutY="101.0" text="Tripulantes">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -70,12 +73,12 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </TableView>
-                        <Label layoutX="217.0" layoutY="99.0" text="Vuelos">
+                        <Label layoutX="217.0" layoutY="101.0" text="Vuelos">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="1056.0" layoutY="99.0" text="Asignación de Vuelos">
+                        <Label layoutX="1056.0" layoutY="101.0" text="Asignación de Vuelos">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
@@ -152,6 +155,7 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="1345.0">
                                        <children>
+                                          <Pane layoutX="191.0" layoutY="94.0" prefHeight="376.0" prefWidth="974.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
                                           <Button fx:id="btnBuscarViaje" layoutX="190.0" layoutY="524.0" mnemonicParsing="false" onAction="#buscarViaje" prefHeight="38.0" prefWidth="977.0" style="-fx-background-color: green;" text="Buscar" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="17.0" />
@@ -266,12 +270,14 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="67.0" layoutY="88.0" text="Detalles selección ">
+                                          <Pane layoutX="42.0" layoutY="95.0" prefHeight="409.0" prefWidth="311.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
+                                          <Pane layoutX="492.0" layoutY="99.0" prefHeight="373.0" prefWidth="769.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
+                                          <Label layoutX="67.0" layoutY="60.0" text="Detalles selección ">
                                              <font>
                                                 <Font name="System Bold" size="20.0" />
                                              </font>
                                           </Label>
-                                          <RadioButton fx:id="rbtidaVuelta1" layoutX="86.0" layoutY="147.0" mnemonicParsing="false" text="Ida y Vuelta" toggleGroup="$grupoVuelo1">
+                                          <RadioButton fx:id="rbtidaVuelta1" layoutX="70.0" layoutY="115.0" mnemonicParsing="false" text="Ida y Vuelta" toggleGroup="$grupoVuelo1">
                                              <cursor>
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
@@ -279,7 +285,7 @@
                                                 <Font size="15.0" />
                                              </font>
                                           </RadioButton>
-                                          <RadioButton fx:id="rbtIda1" layoutX="216.0" layoutY="146.0" mnemonicParsing="false" text="Solo Ida" textAlignment="RIGHT" toggleGroup="$grupoVuelo1">
+                                          <RadioButton fx:id="rbtIda1" layoutX="226.0" layoutY="114.0" mnemonicParsing="false" text="Solo Ida" textAlignment="RIGHT" toggleGroup="$grupoVuelo1">
                                              <cursor>
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
@@ -287,36 +293,36 @@
                                                 <Font size="15.0" />
                                              </font>
                                           </RadioButton>
-                                          <Label layoutX="66.0" layoutY="200.0" text="Origen">
+                                          <Label layoutX="66.0" layoutY="168.0" text="Origen">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="cmbOrigen1" accessibleRole="TEXT_FIELD" layoutX="67.0" layoutY="232.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <FontAwesomeIconView fill="#057935" glyphName="FLAG" layoutX="65.0" layoutY="257.0" selectionFill="#42eb5e" size="20.0" />
-                                          <Label layoutX="68.0" layoutY="285.0" text="Destino">
+                                          <ComboBox fx:id="cmbOrigen1" accessibleRole="TEXT_FIELD" layoutX="67.0" layoutY="200.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <FontAwesomeIconView fill="#057935" glyphName="FLAG" layoutX="65.0" layoutY="225.0" selectionFill="#42eb5e" size="20.0" />
+                                          <Label layoutX="68.0" layoutY="253.0" text="Destino">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="cmbDestino1" layoutX="65.0" layoutY="311.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <FontAwesomeIconView fill="#057935" glyphName="MAP_MARKER" layoutX="69.0" layoutY="334.0" selectionEnd="0" selectionFill="#42eb5e" size="21.0" text="" />
-                                          <TextField fx:id="txtCostoPorPersona" layoutX="66.0" layoutY="391.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <Label layoutX="69.0" layoutY="365.0" text="Costo por persona">
+                                          <ComboBox fx:id="cmbDestino1" layoutX="65.0" layoutY="279.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <FontAwesomeIconView fill="#057935" glyphName="MAP_MARKER" layoutX="69.0" layoutY="302.0" selectionEnd="0" selectionFill="#42eb5e" size="21.0" text="" />
+                                          <TextField fx:id="txtCostoPorPersona" layoutX="66.0" layoutY="359.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <Label layoutX="69.0" layoutY="333.0" text="Costo por persona">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <FontAwesomeIconView fill="#057935" glyphName="MALE" layoutX="69.0" layoutY="416.0" selectionFill="#42eb5e" size="20.0" />
-                                          <TextField fx:id="txtVuelo" layoutX="68.0" layoutY="478.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" promptText="Seleccione un vuelo de la tabla" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <Label layoutX="70.0" layoutY="446.0" text="Vuelo">
+                                          <FontAwesomeIconView fill="#057935" glyphName="MALE" layoutX="69.0" layoutY="384.0" selectionFill="#42eb5e" size="20.0" />
+                                          <TextField fx:id="txtVuelo" layoutX="68.0" layoutY="446.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="262.0" promptText="Seleccione un vuelo de la tabla" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <Label layoutX="70.0" layoutY="414.0" text="Vuelo">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <FontAwesomeIconView fill="#057935" glyphName="PLANE" layoutX="70.0" layoutY="502.0" selectionFill="#42eb5e" size="20.0" />
+                                          <FontAwesomeIconView fill="#057935" glyphName="PLANE" layoutX="70.0" layoutY="470.0" selectionFill="#42eb5e" size="20.0" />
                                           <Separator layoutX="395.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="609.0" prefWidth="29.0" />
-                                          <Label layoutX="809.0" layoutY="54.0" text="Vuelos">
+                                          <Label layoutX="493.0" layoutY="68.0" text="Vuelos">
                                              <font>
                                                 <Font name="System Bold" size="34.0" />
                                              </font>
@@ -358,35 +364,37 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="89.0" layoutY="118.0" text="Detalles selección vuelo">
+                                          <Pane layoutX="465.0" layoutY="62.0" prefHeight="452.0" prefWidth="840.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
+                                          <Pane layoutX="39.0" layoutY="61.0" prefHeight="453.0" prefWidth="328.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
+                                          <Label layoutX="89.0" layoutY="73.0" text="Detalles selección vuelo">
                                              <font>
                                                 <Font name="System Bold" size="21.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="txtVuelo1" layoutX="69.0" layoutY="215.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <Label layoutX="70.0" layoutY="189.0" text="Vuelo">
+                                          <TextField fx:id="txtVuelo1" layoutX="69.0" layoutY="170.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <Label layoutX="70.0" layoutY="144.0" text="Vuelo">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <FontAwesomeIconView fill="#057935" glyphName="PLANE" layoutX="70.0" layoutY="241.0" selectionFill="#42eb5e" size="20.0" />
-                                          <TextField fx:id="txtDuracionVuelo" layoutX="67.0" layoutY="300.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <Label layoutX="68.0" layoutY="274.0" text="Duración del viaje">
+                                          <FontAwesomeIconView fill="#057935" glyphName="PLANE" layoutX="70.0" layoutY="196.0" selectionFill="#42eb5e" size="20.0" />
+                                          <TextField fx:id="txtDuracionVuelo" layoutX="67.0" layoutY="255.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <Label layoutX="68.0" layoutY="229.0" text="Duración del viaje">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <FontAwesomeIconView fill="#057935" glyphName="HOURGLASS_HALF" layoutX="67.0" layoutY="325.0" selectionFill="#42eb5e" size="20.0" text="" />
-                                          <TextField fx:id="txtHoraSalida" layoutX="67.0" layoutY="380.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <FontAwesomeIconView fill="#057935" glyphName="HISTORY" layoutX="67.0" layoutY="405.0" selectionFill="#42eb5e" size="20.0" />
-                                          <Label layoutX="67.0" layoutY="355.0" text="Hora de salida">
+                                          <FontAwesomeIconView fill="#057935" glyphName="HOURGLASS_HALF" layoutX="67.0" layoutY="280.0" selectionFill="#42eb5e" size="20.0" text="" />
+                                          <TextField fx:id="txtHoraSalida" layoutX="67.0" layoutY="335.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <FontAwesomeIconView fill="#057935" glyphName="HISTORY" layoutX="67.0" layoutY="360.0" selectionFill="#42eb5e" size="20.0" />
+                                          <Label layoutX="67.0" layoutY="310.0" text="Hora de salida">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="txtPrecioTotal" layoutX="68.0" layoutY="462.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                                          <FontAwesomeIconView fill="#057935" glyphName="DOLLAR" layoutX="69.0" layoutY="485.0" selectionFill="#42eb5e" size="20.0" text="" />
-                                          <Label layoutX="70.0" layoutY="436.0" text="Precio Total">
+                                          <TextField fx:id="txtPrecioTotal" layoutX="68.0" layoutY="417.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="275.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                                          <FontAwesomeIconView fill="#057935" glyphName="DOLLAR" layoutX="69.0" layoutY="440.0" selectionFill="#42eb5e" size="20.0" text="" />
+                                          <Label layoutX="70.0" layoutY="391.0" text="Precio Total">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
@@ -497,72 +505,69 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="527.0" layoutY="70.0" prefHeight="580.0" prefWidth="396.0" style="-fx-border-color: #CECECE;">
+                        <Pane layoutX="564.0" layoutY="50.0" prefHeight="598.0" prefWidth="741.0" style="-fx-border-color: #CECECE;">
                            <children>
-                              <Label layoutX="39.0" layoutY="326.0" text="Equipaje de mano">
+                              <Separator layoutX="-8.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="7.0" />
+                              <Separator layoutX="1.0" layoutY="-10.0" prefHeight="10.0" prefWidth="739.0" />
+                              <Separator layoutX="744.0" layoutY="-5.0" orientation="VERTICAL" prefHeight="604.0" prefWidth="8.0" />
+                              <Separator layoutX="1.0" layoutY="603.0" prefHeight="0.0" prefWidth="739.0" />
+                              <TableView fx:id="tableViewEquipajes" layoutX="32.0" layoutY="361.0" prefHeight="180.0" prefWidth="681.0">
+                                <columns>
+                                  <TableColumn fx:id="columnIdAvionEquipaje" prefWidth="91.0" text="Id Avión" />
+                                  <TableColumn fx:id="columnPesoEquipaje" prefWidth="277.0" text="Peso Equipaje" />
+                                    <TableColumn fx:id="columnIdentificacionClienteEquipaje" prefWidth="310.0" text="Identificación Cliente" />
+                                </columns>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </TableView>
+                              <Button fx:id="btnEliminarEquipaje" layoutX="202.0" layoutY="554.0" mnemonicParsing="false" onAction="#eliminarEquipaje" prefHeight="26.0" prefWidth="342.0" style="-fx-background-color: green;" text="Eliminar Equipaje" textFill="WHITE">
                                  <font>
-                                    <Font size="16.0" />
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="33.0" layoutY="334.0" text="Lista de equipajes">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="89.0" layoutY="375.0" text="Alto">
+                              <Button fx:id="btnAgregarEquipaje" layoutX="59.0" layoutY="291.0" mnemonicParsing="false" onAction="#agregarEquipaje" prefHeight="30.0" prefWidth="298.0" style="-fx-background-color: green;" text="Agregar Equipaje" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="39.0" layoutY="6.0" text="Detalle del equipaje">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnActualizarEquipaje" layoutX="388.0" layoutY="291.0" mnemonicParsing="false" onAction="#actualizarEquipaje" prefHeight="30.0" prefWidth="299.0" style="-fx-background-color: green;" text="Actualizar Equipaje" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="lblDetalleTiquete" layoutX="221.0" layoutY="10.0" prefHeight="20.0" prefWidth="285.0">
                                  <font>
                                     <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="151.0" layoutY="375.0" text="Largo">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="219.0" layoutY="376.0" text="Ancho">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtAltoEquipajeMano" layoutX="81.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                              <Label layoutX="128.0" layoutY="392.0" text="+">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="198.0" layoutY="392.0" text="+">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <FontAwesomeIconView fill="#057935" glyphName="BRIEFCASE" layoutX="53.0" layoutY="416.0" selectionFill="#42eb5e" size="20.0" />
-                              <Label layoutX="269.0" layoutY="392.0" text="=">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtLargoEquipajeMano" layoutX="149.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                              <TextField fx:id="txtAnchoEquipajeMano" layoutX="220.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                              <TextField fx:id="txtTotalDimensionEquipajeMano" layoutX="290.0" layoutY="394.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
-                              <Label layoutX="39.0" layoutY="352.0" text="Suma de las dimensiones máximo 110 centímetros" />
-                              <Label layoutX="39.0" layoutY="450.0" text="Equipaje adicional">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="61.0" layoutY="479.0" text="Peso: ">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtPesoAdicional" layoutX="111.0" layoutY="478.0" prefHeight="27.0" prefWidth="88.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                              <Separator layoutX="-8.0" orientation="VERTICAL" prefHeight="581.0" prefWidth="3.0" />
-                              <Separator layoutX="1.0" layoutY="-7.0" prefHeight="0.0" prefWidth="395.0" />
-                              <Separator layoutX="400.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="8.0" />
-                              <Separator layoutX="1.0" layoutY="586.0" prefHeight="0.0" prefWidth="395.0" />
-                              <Label fx:id="lblCantTiquetes" layoutX="234.0" layoutY="21.0" prefHeight="19.0" prefWidth="39.0">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <TextField fx:id="txtAnchoEquipaje1" layoutX="749.0" layoutY="288.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Pane layoutX="52.0" layoutY="45.0" prefHeight="606.0" prefWidth="441.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;">
+                           <children>
+                              <FontAwesomeIconView fill="#057935" glyphName="TICKET" layoutX="25.0" layoutY="328.0" selectionFill="#42eb5e" size="18.0" />
+                           </children>
+                        </Pane>
+                        <TextField fx:id="txtAnchoEquipaje1" layoutX="769.0" layoutY="239.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
                         <TextField fx:id="txtFiltrarCliente" layoutX="189.0" layoutY="56.0" nodeOrientation="RIGHT_TO_LEFT" onKeyReleased="#filtrarCliente" prefHeight="35.0" prefWidth="285.0" promptText="Ingrese la identificación del cliente " style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
                         <FontAwesomeIconView fill="#057935" glyphName="SEARCH" layoutX="194.0" layoutY="81.0" selectionFill="#42eb5e" size="18.0" />
                         <Label layoutX="69.0" layoutY="65.0" text="Buscar Cliente">
@@ -580,7 +585,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </TableView>
-                        <Label layoutX="74.0" layoutY="355.0" text="Registros Tiquete(s) Cliente">
+                        <Label layoutX="101.0" layoutY="354.0" text="Registros Tiquete(s) Cliente">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -596,143 +601,158 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </TableView>
-                        <Label layoutX="624.0" layoutY="26.0" text="Registro Equipaje">
+                        <Label layoutX="837.0" layoutY="14.0" text="Registro Equipaje">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
                         </Label>
-                        <Label layoutX="593.0" layoutY="181.0" text="Equipaje 1:">
+                        <Label layoutX="603.0" layoutY="142.0" text="Equipaje 1:">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtPesoEquipaje1" layoutX="664.0" layoutY="176.0" prefHeight="27.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <Label layoutX="632.0" layoutY="87.0" text="Tiquetes Cliente:">
+                        <TextField fx:id="txtPesoEquipaje1" layoutX="674.0" layoutY="137.0" prefHeight="27.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Label layoutX="600.0" layoutY="92.0" text="Peso y dimensiones por tiquete">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="569.0" layoutY="127.0" text="Peso y dimensiones por tiquete">
+                        <Label fx:id="lblRequerimientoEquipajeClase" layoutX="602.0" layoutY="117.0" text="2 piezas con un peso máximo de 34 kilogramos cada una." />
+                        <Label layoutX="600.0" layoutY="175.0" text="Dimensiones piezas ">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblRequerimientoEquipajeClase" layoutX="572.0" layoutY="152.0" text="2 piezas con un peso máximo de 34 kilogramos cada una." />
-                        <Label layoutX="568.0" layoutY="224.0" text="Dimensiones piezas ">
+                        <Label layoutX="636.0" layoutY="225.0" text="Alto">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="699.0" layoutY="225.0" text="Largo">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="767.0" layoutY="227.0" text="Ancho">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAltoEquipaje1" layoutX="630.0" layoutY="239.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Label layoutX="677.0" layoutY="237.0" text="+">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="747.0" layoutY="237.0" text="+">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#057935" glyphName="SUITCASE" layoutX="602.0" layoutY="261.0" selectionFill="#42eb5e" size="20.0" />
+                        <Label layoutX="818.0" layoutY="237.0" text="=">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtLargoEquipaje1" layoutX="698.0" layoutY="239.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="txtTotalDimensionEquipaje1" layoutX="839.0" layoutY="239.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
+                        <TextField fx:id="txtPesoEquipaje2" layoutX="800.0" layoutY="137.0" prefHeight="27.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Label layoutX="600.0" layoutY="201.0" text="Suma de las dimensiones por pieza (máximo 170 centímetros)" />
+                        <TextField fx:id="txtAnchoEquipaje2" layoutX="768.0" layoutY="289.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Label fx:id="lblAltoEquip2" layoutX="635.0" layoutY="276.0" text="Alto">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblLargoEquip2" layoutX="698.0" layoutY="276.0" text="Largo">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAnchoEquip2" layoutX="766.0" layoutY="278.0" text="Ancho">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAltoEquipaje2" layoutX="629.0" layoutY="289.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Label fx:id="lblSum1Equip2" layoutX="676.0" layoutY="287.0" text="+">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblSum2Equip2" layoutX="746.0" layoutY="292.0" text="+">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="iconEquip2" fill="#057935" glyphName="SUITCASE" layoutX="601.0" layoutY="311.0" selectionFill="#42eb5e" size="20.0" />
+                        <Label fx:id="lblIgualEquip2" layoutX="817.0" layoutY="287.0" text="=">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtLargoEquipaje2" layoutX="697.0" layoutY="289.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="txtTotalDimensionEquipaje2" layoutX="838.0" layoutY="289.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
+                        <Label fx:id="lblEquipaje2" layoutX="728.0" layoutY="142.0" text="Equipaje 2:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="609.0" layoutY="247.0" text="1" textFill="WHITE" />
+                        <Label layoutX="608.0" layoutY="296.0" text="2" textFill="WHITE" />
+                        <Label layoutX="988.0" layoutY="90.0" text="Equipaje de mano">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="617.0" layoutY="270.0" text="Alto">
+                        <Label layoutX="1024.0" layoutY="136.0" text="Alto">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="679.0" layoutY="270.0" text="Largo">
+                        <Label layoutX="1087.0" layoutY="136.0" text="Largo">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="747.0" layoutY="272.0" text="Ancho">
+                        <Label layoutX="1155.0" layoutY="137.0" text="Ancho">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtAltoEquipaje1" layoutX="610.0" layoutY="288.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <Label layoutX="657.0" layoutY="286.0" text="+">
+                        <TextField fx:id="txtAltoEquipajeMano" layoutX="1018.0" layoutY="151.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Label layoutX="1065.0" layoutY="149.0" text="+">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="727.0" layoutY="286.0" text="+">
+                        <Label layoutX="1135.0" layoutY="149.0" text="+">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <FontAwesomeIconView fill="#057935" glyphName="SUITCASE" layoutX="582.0" layoutY="310.0" selectionFill="#42eb5e" size="20.0" />
-                        <FontAwesomeIconView fill="#057935" glyphName="TICKET" layoutX="607.0" layoutY="105.0" selectionFill="#42eb5e" size="18.0" />
-                        <Label layoutX="798.0" layoutY="286.0" text="=">
+                        <FontAwesomeIconView fill="#057935" glyphName="BRIEFCASE" layoutX="990.0" layoutY="173.0" selectionFill="#42eb5e" size="20.0" />
+                        <Label layoutX="1206.0" layoutY="149.0" text="=">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtLargoEquipaje1" layoutX="678.0" layoutY="288.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <TextField fx:id="txtTotalDimensionEquipaje1" layoutX="819.0" layoutY="288.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
-                        <TextField fx:id="txtPesoEquipaje2" layoutX="790.0" layoutY="176.0" prefHeight="27.0" prefWidth="37.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <Label layoutX="568.0" layoutY="250.0" text="Suma de las dimensiones por pieza (máximo 170 centímetros)" />
-                        <TableView fx:id="tableViewEquipajes" layoutX="971.0" layoutY="149.0" prefHeight="371.0" prefWidth="371.0">
-                          <columns>
-                            <TableColumn fx:id="columnIdAvionEquipaje" prefWidth="91.0" text="Id Avión" />
-                            <TableColumn fx:id="columnPesoEquipaje" prefWidth="130.0" text="Peso Equipaje" />
-                              <TableColumn fx:id="columnIdentificacionClienteEquipaje" prefWidth="147.3333740234375" text="Identificación Cliente" />
-                          </columns>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </TableView>
-                        <Button fx:id="btnRegistrarEquipajes" layoutX="986.0" layoutY="542.0" mnemonicParsing="false" onAction="#registrarEquipajes" prefHeight="26.0" prefWidth="342.0" style="-fx-background-color: green;" text="Registrar Equipaje(s)" textFill="WHITE">
+                        <TextField fx:id="txtLargoEquipajeMano" layoutX="1086.0" layoutY="151.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="txtAnchoEquipajeMano" layoutX="1157.0" layoutY="151.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="txtTotalDimensionEquipajeMano" layoutX="1227.0" layoutY="151.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
+                        <Label layoutX="988.0" layoutY="116.0" text="Suma de las dimensiones máximo 110 centímetros" />
+                        <Label layoutX="988.0" layoutY="198.0" text="Equipaje adicional">
                            <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Label layoutX="1061.0" layoutY="108.0" text="Lista de equipajes">
-                           <font>
-                              <Font name="System Bold" size="22.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtAnchoEquipaje2" layoutX="748.0" layoutY="338.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <Label fx:id="lblAltoEquip2" layoutX="616.0" layoutY="321.0" text="Alto">
+                        <Label layoutX="990.0" layoutY="227.0" text="Peso: ">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblLargoEquip2" layoutX="678.0" layoutY="321.0" text="Largo">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="lblAnchoEquip2" layoutX="746.0" layoutY="323.0" text="Ancho">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtAltoEquipaje2" layoutX="609.0" layoutY="338.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <Label fx:id="lblSum1Equip2" layoutX="656.0" layoutY="336.0" text="+">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="lblSum2Equip2" layoutX="726.0" layoutY="336.0" text="+">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <FontAwesomeIconView fx:id="iconEquip2" fill="#057935" glyphName="SUITCASE" layoutX="581.0" layoutY="360.0" selectionFill="#42eb5e" size="20.0" />
-                        <Label fx:id="lblIgualEquip2" layoutX="797.0" layoutY="336.0" text="=">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtLargoEquipaje2" layoutX="677.0" layoutY="338.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
-                        <TextField fx:id="txtTotalDimensionEquipaje2" layoutX="818.0" layoutY="338.0" onKeyReleased="#sumaDimensionesEquipaje" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 0px 0px;" />
-                        <Label fx:id="lblEquipaje2" layoutX="718.0" layoutY="181.0" text="Equipaje 2:">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="btnAceptarRegistroEquipaje" layoutX="558.0" layoutY="597.0" mnemonicParsing="false" onAction="#aceptarRegistroEquipaje" prefHeight="26.0" prefWidth="334.0" style="-fx-background-color: green;" text="Aceptar" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Label layoutX="589.0" layoutY="296.0" text="1" textFill="WHITE" />
-                        <Label layoutX="588.0" layoutY="345.0" text="2" textFill="WHITE" />
+                        <TextField fx:id="txtPesoAdicional" layoutX="1040.0" layoutY="226.0" prefHeight="27.0" prefWidth="88.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-width: 0px 0px 2px 0px;" />
                      </children>
                   </AnchorPane>
               </content>

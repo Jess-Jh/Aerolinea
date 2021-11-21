@@ -205,30 +205,26 @@ public class Aerolinea implements Serializable, IAerolinea {
 		return listaViajes;
 	}
 	
-	
 	/**
-	 * Llenar la lista de los datos de los tiquetes para mostrar en la tableView de la Gestión de Equipaje
+	 * Retornar los datos del tiquete comprado por el usuario
 	 * @param identificacionCliente
 	 * @return
 	 */
-	public ArrayList<CruceAeronavesRutas> datosViajesUsuario(String identificacionCliente) {
-		ArrayList<CruceAeronavesRutas> listaViajes = new ArrayList<>();
-		CruceAeronavesRutas viaje = null;
+	public CruceAeronavesRutas datosViajeUsuario(String identificacionCliente) {
+		CruceAeronavesRutas viaje = new CruceAeronavesRutas();
 		
 		for (Entry<String, Tiquete> entry : listaTiquetes.entrySet()) {
 			if(entry.getKey().equalsIgnoreCase(identificacionCliente)) {
 				Tiquete tiquete = entry.getValue();
-				viaje = new CruceAeronavesRutas();
 				viaje.setIdAvion(tiquete.getIdAvion());
 				viaje.setCiudadDestino(tiquete.getRutaViaje().getCiudadDestino());
 				viaje.setCiudadOrigen(tiquete.getClaseServicio().toString());
 				viaje.setDuracionViaje(tiquete.getRutaViaje().getDuracion());
 				viaje.setNombreAeronave(String.valueOf(tiquete.getCantPersonas()));
-				
-				listaViajes.add(viaje);
+				break;
 			}
 	    }
-		return listaViajes;
+		return viaje;
 	}
 
 	/**
@@ -294,15 +290,15 @@ public class Aerolinea implements Serializable, IAerolinea {
 	}
 
 	/**
-	 * Registrar equipajes medidos y pesados
-	 * @param listadoEquipajes
-	 * @throws EquipajeException 
+	 * Agregar un equipaje a la Aerolinea
+	 * @param idEquipaje, identificacion, pesoTotalEquipaje, idAvion
+	 * @return
 	 */
-	public void registrarEquipajes(ObservableList<Equipaje> listadoEquipajes) throws EquipajeException {
+	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String idAvion) {
+		Equipaje equipaje = new Equipaje(identificacion, pesoTotalEquipaje, idAvion);
+		listaEquipajes.add(equipaje);
 		
-		if(listadoEquipajes.isEmpty()) throw new EquipajeException("Primero llene los datos de algún equipaje para poder realizar su registro.");
-		
-		else this.listaEquipajes.addAll(listadoEquipajes);
+		return equipaje;
 	}
 
 }
