@@ -246,15 +246,30 @@ public class Aerolinea implements Serializable, IAerolinea {
 	 * Agregar Cliente a la Aerolinea
 	 * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia
 	 * @param tarjetaDebitoCredito
+	 * @param tiquete 
 	 * @return
 	 */
 	public Cliente agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, 
-			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito) {
+			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito, Tiquete tiquete) {
 		
-		Cliente cliente = new Cliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
+		Cliente cliente = new Cliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito, tiquete);
 		listaClientes.add(cliente);
 		
 		return cliente;
+	}
+	
+	/**
+	 * Actualizar viaje cliente
+	 * @param identificacionOPasaporte
+	 * @param tiquete
+	 * @return
+	 */
+	public void modificarTiqueteCliente(String identificacionOPasaporte, Tiquete tiquete) {
+		
+		for (Cliente cliente : listaClientes) {
+			if(cliente.getIdentificacion().equalsIgnoreCase(identificacionOPasaporte))
+				cliente.setTiquete(tiquete);
+		}		
 	}
 
 	/**
@@ -296,11 +311,12 @@ public class Aerolinea implements Serializable, IAerolinea {
 	 * @return
 	 */
 
-	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2,
+	public Equipaje agregarEquipaje(String idEquipaje,String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2,
 			String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2,
 			String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano, String idAvion) {
 		
 		Equipaje equipaje = new Equipaje();
+		equipaje.setIdEquipaje(idEquipaje);
 		equipaje.setIdentificacionCliente(identificacion); 
 		equipaje.setPesoTotal(pesoTotalEquipaje);
 		equipaje.setNumAvion(idAvion);
@@ -333,5 +349,65 @@ public class Aerolinea implements Serializable, IAerolinea {
 		
 		return equipaje;
 	}
+
+	/**
+	 * Actualizar un equipaje
+	 * @param idEquipaje, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano
+	 * @param pesoAdicional, altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano
+	 * @param anchoEquipajeMano, largoEquipajeMano
+	 * @return
+	 */
+	public Equipaje actualizarEquipaje(String idEquipaje, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2,
+			String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2, 
+			String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano) {
+		Equipaje equipaje = obtenerEquipaje(idEquipaje);
+		
+		if(equipaje != null) {
+			
+			equipaje.setPesoTotal(pesoTotalEquipaje);
+			
+			if(!(pesoEquipaje1.equals(""))) {
+				equipaje.setPesoEquipaje1(pesoEquipaje1);
+				equipaje.setDimensionEquipaje1(dimensionEquipaje1);
+				equipaje.setAltoEquipaje1(altoEquipaje1);
+				equipaje.setAnchoEquipaje1(anchoEquipaje1);
+				equipaje.setLargoEquipaje1(largoEquipaje1);
+			}
+			if(!(pesoEquipaje2.equals(""))) {
+				equipaje.setPesoEquipaje2(pesoEquipaje2);
+				equipaje.setDimensionEquipaje2(totalDimensionEquipaje2);
+				equipaje.setAltoEquipaje2(altoEquipaje2);
+				equipaje.setAnchoEquipaje2(anchoEquipaje2);
+				equipaje.setLargoEquipaje2(largoEquipaje2);
+			}
+			if(!(totalDimensionEquipajeMano.equals(""))) {
+				equipaje.setDimensionEquipajeMano(totalDimensionEquipajeMano);
+				equipaje.setAltoEquipajeMano(altoEquipajeMano);
+				equipaje.setAnchoEquipajeMano(anchoEquipajeMano);
+				equipaje.setLargoEquipajeMano(largoEquipajeMano);
+			}
+			if(!(totalDimensionEquipajeMano.equals(""))) 
+				equipaje.setPesoAdicional(pesoAdicional);	
+		}
+		return equipaje;		
+	}
+
+	/**
+	 * Buscar un equipaje en la aerolinea
+	 * @param idEquipaje
+	 * @return
+	 */
+	private Equipaje obtenerEquipaje(String idEquipaje) {
+		
+		for (Equipaje equipaje : listaEquipajes) {
+			if(equipaje.getIdEquipaje().equalsIgnoreCase(idEquipaje)) {
+				return equipaje;
+				
+			}
+		}
+		return null;
+	}
+
+
 
 }

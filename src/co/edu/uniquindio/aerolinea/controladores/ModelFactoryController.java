@@ -136,16 +136,28 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	}
 	/**
 	 * Agregar un cliente a la Aerolinea
+	 * @param tiquete 
 	 * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento
 	 * @param direccionResidencia, tarjetaDebitoCredito
 	 * @return
 	 */
 	public Cliente agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, 
-			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito) {
+			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito, Tiquete tiquete) {
 		
-		Cliente cliente = aerolinea.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
+		Cliente cliente = aerolinea.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito, tiquete);
 		guardarRecursoXML();
 		return cliente;
+	}
+	
+	/**
+	 * Modificar el tiquete comprado por el cliente
+	 * @param identificacionOPasaporte
+	 * @param tiquete
+	 * @return
+	 */
+	public void modificarTiqueteCliente(String identificacionOPasaporte, Tiquete tiquete) {
+		aerolinea.modificarTiqueteCliente(identificacionOPasaporte, tiquete);
+		guardarRecursoXML();
 	}
 	
 	/**
@@ -172,15 +184,34 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	 * altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano, idAvion
 	 * @return
 	 */
-	public Equipaje agregarEquipaje(String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, 
+	public Equipaje agregarEquipaje(String idEquipaje, String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, 
 			String totalDimensionEquipaje2, String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, 
 			String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano, String idAvion) {
 		
-		Equipaje equipaje = aerolinea.agregarEquipaje(identificacion, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, 
+		Equipaje equipaje = aerolinea.agregarEquipaje(idEquipaje, identificacion, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, 
 				  altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano, idAvion);
 		guardarRecursoXML();
 		return equipaje;
 	}
+	
+	/**
+	 * Actualizar un equipaje
+	 * @param idEquipaje, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano
+	 * @param pesoAdicional, altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano
+	 * @param anchoEquipajeMano, largoEquipajeMano
+	 * @return
+	 */
+	public Equipaje actualizarEquipaje(String idEquipaje, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, 
+			String totalDimensionEquipaje2, String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1,
+			String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano) {
+		
+		Equipaje equipaje = aerolinea.actualizarEquipaje(idEquipaje, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, 
+				 totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, altoEquipaje1, anchoEquipaje1,
+				 largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano);
+		guardarRecursoXML();
+		return equipaje;
+	}
+
 
 	
 

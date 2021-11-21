@@ -9,10 +9,11 @@ import java.io.Serializable;
 public class Equipaje implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private String idEquipaje;
 	private String identificacionCliente;
-	private String pesoEquipaje1, pesoEquipaje2, dimensionEquipaje1, dimensionEquipaje2, dimensionEquipajeMano, pesoAdicional; 
-	private String altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2;
-	private String altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano;
+	private String pesoEquipaje1 = "", pesoEquipaje2 = "", dimensionEquipaje1 = "", dimensionEquipaje2 = "", dimensionEquipajeMano = "", pesoAdicional = ""; 
+	private String altoEquipaje1 = "", anchoEquipaje1 = "", largoEquipaje1 = "", altoEquipaje2 = "", anchoEquipaje2 = "", largoEquipaje2 = "";
+	private String altoEquipajeMano = "", anchoEquipajeMano = "", largoEquipajeMano = "";
 	private double pesoTotal;
 	private String numAvion;
 	
@@ -22,6 +23,12 @@ public class Equipaje implements Serializable {
 	public Equipaje() {}
 
 	// ------------------------------ Métodos Getters and Setters ----------------------------------------------->>
+	public String getIdEquipaje() {
+		return idEquipaje;
+	}	
+	public void setIdEquipaje(String idEquipaje) {
+		this.idEquipaje = idEquipaje;
+	}
 	public String getIdentificacionCliente() {
 		return identificacionCliente;
 	}

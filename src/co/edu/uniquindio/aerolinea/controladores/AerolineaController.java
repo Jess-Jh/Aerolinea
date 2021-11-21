@@ -685,16 +685,25 @@ public class AerolineaController implements Initializable {
 				}
 			}	
 			if(contPersonas == 0) {
-				for (int i = 0; i < cantPersonasTiquete; i++) listadoTiquetesCliente.add(tiqueteCliente);
+				for (int i = 0; i < cantPersonasTiquete; i++) {
+					tiqueteCliente.setHoraSalida(""+i+clienteSeleccion.getIdentificacion());
+					listadoTiquetesCliente.add(tiqueteCliente);
+				}
 				
 			} else {
 				int totalEquipajesSinRegistrar = cantPersonasTiquete - contPersonas;
 				if(totalEquipajesSinRegistrar > 0) {
-					for (int i = 0; i < totalEquipajesSinRegistrar; i++) listadoTiquetesCliente.add(tiqueteCliente);	
+					for (int i = 0; i < totalEquipajesSinRegistrar; i++) {
+						tiqueteCliente.setHoraSalida(""+i+clienteSeleccion.getIdentificacion());
+						listadoTiquetesCliente.add(tiqueteCliente);	
+					}
 				}
 			}
 		} else {
-			for (int i = 0; i < cantPersonasTiquete; i++) listadoTiquetesCliente.add(tiqueteCliente);
+			for (int i = 0; i < cantPersonasTiquete; i++) {
+				tiqueteCliente.setHoraSalida(""+i+clienteSeleccion.getIdentificacion());
+				listadoTiquetesCliente.add(tiqueteCliente);
+			}
 		}
 		if(listadoTiquetesCliente.isEmpty()) throw new EquipajeException("El cliente ya no cuenta con equipajes para registrar");
 		
@@ -1121,7 +1130,7 @@ public class AerolineaController implements Initializable {
 			ArrayList<String> listaPuestosCliente = new ArrayList<>();
 			listaPuestosCliente = modelFactoryController.getListaPuestosCliente();
 			Cliente clienteCompra = null;
-			Tiquete tiquete;
+			Tiquete tiquete = new Tiquete();
 			
 			String viajeSeleccionado = ""; 	    	
 	    	if(rbtIda.isSelected()) viajeSeleccionado = "ida";
@@ -1132,16 +1141,17 @@ public class AerolineaController implements Initializable {
 					clienteCompra = cliente;
 				}
 			} 
-
 			if(clienteCompra == null) {
 				verificarDatos(identificacionOPasaporte,nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito, listaPuestosCliente);
-				clienteCompra = modelFactoryController.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito);
-			}
+				clienteCompra = modelFactoryController.agregarCliente(identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia, tarjetaDebitoCredito, tiquete);
+			} 
 			
+			if(clienteCompra != null) listadoClientes.add(0, clienteCompra);
+
 			tiquete = modelFactoryController.agregarCompraTiquete(aeronaveSeleccion.getIdAvion(), viajeSeleccionado, cmbClase.getValue(), cmbOrigen.getValue(), cmbDestino.getValue(), txtFechaSalida.getValue(),
 					txtFechaRegreso.getValue(), (int)sldNumeroPersonas.getValue(), costoTotalViaje, clienteCompra, listaPuestosCliente);
 			
-			if(clienteCompra != null) listadoClientes.add(0, clienteCompra);
+			modelFactoryController.modificarTiqueteCliente(identificacionOPasaporte, tiquete);				
 			
 			// Añadir el cliente al filtro al momento de agregarlo al tableview
 			if(clienteCompra.toString().toLowerCase().contains(txtFiltrarCliente.getText().toLowerCase())) {
@@ -1280,15 +1290,38 @@ public class AerolineaController implements Initializable {
 				
 		else {
 			try {
+				double pesoTotalEquipaje = 0;
 				if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
 					
-					agregarEquipajeAerolinea(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+					pesoTotalEquipaje = calcularPesoTotal(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
 							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 24);
+					
+					Equipaje equipaje = modelFactoryController.agregarEquipaje(tiqueteSeleccion.getHoraSalida(), clienteSeleccion.getIdentificacion(), pesoTotalEquipaje, txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(),
+							txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(), txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), txtAltoEquipaje1.getText(), txtAnchoEquipaje1.getText(), 
+							txtLargoEquipaje1.getText(), txtAltoEquipaje2.getText(), txtAnchoEquipaje2.getText(), txtLargoEquipaje2.getText(), txtAltoEquipajeMano.getText(), txtAnchoEquipajeMano.getText(), txtLargoEquipajeMano.getText(),
+							tiqueteSeleccion.getIdAvion());
+					
+					if(equipaje != null) listadoEquipajes.add(0, equipaje);
+					tableViewEquipajes.refresh();
+					
+					listadoTiquetesCliente.remove(tiqueteSeleccion);
+					tableViewTiquetesCliente.refresh();
 					
 				} else if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
 										
-					agregarEquipajeAerolinea(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
+					pesoTotalEquipaje = calcularPesoTotal(txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(), txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(),
 							txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), 34);
+					
+					Equipaje equipaje = modelFactoryController.agregarEquipaje(tiqueteSeleccion.getHoraSalida(), clienteSeleccion.getIdentificacion(), pesoTotalEquipaje, txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(),
+							txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(), txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), txtAltoEquipaje1.getText(), txtAnchoEquipaje1.getText(), 
+							txtLargoEquipaje1.getText(), txtAltoEquipaje2.getText(), txtAnchoEquipaje2.getText(), txtLargoEquipaje2.getText(), txtAltoEquipajeMano.getText(), txtAnchoEquipajeMano.getText(), txtLargoEquipajeMano.getText(),
+							tiqueteSeleccion.getIdAvion());
+					
+					if(equipaje != null) listadoEquipajes.add(0, equipaje);
+					tableViewEquipajes.refresh();
+					
+					listadoTiquetesCliente.remove(tiqueteSeleccion);
+					tableViewTiquetesCliente.refresh();
 				}
 				aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", "Se ha añadido su equipaje con éxito", AlertType.INFORMATION);				
 				
@@ -1311,7 +1344,7 @@ public class AerolineaController implements Initializable {
 	 * @throws DatosInvalidosException 
 	 * @throws EquipajeException 
 	 */
-    private void agregarEquipajeAerolinea(String pesoEquipaje1, String totalDimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2, String totalDimensionEquipajeMano,
+    private double calcularPesoTotal(String pesoEquipaje1, String totalDimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2, String totalDimensionEquipajeMano,
 			 String pesoAdicional, int pesoEquipaje) throws DatosInvalidosException, EquipajeException {
     	
     	double pesoTotalEquipaje = 0, equipaje1, equipaje2 = 0, equipajeAdicional = 0, dimensionEquipaje = 0, dimensionEquipaje2 = 0, dimensionEquipajeMano = 0; 	
@@ -1342,18 +1375,7 @@ public class AerolineaController implements Initializable {
 		}
 		pesoTotalEquipaje = equipaje1 + equipaje2 + equipajeAdicional;
 		
-		
-		
-		Equipaje equipaje = modelFactoryController.agregarEquipaje(clienteSeleccion.getIdentificacion(), pesoTotalEquipaje, txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(),
-				txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(), txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), txtAltoEquipaje1.getText(), txtAnchoEquipaje1.getText(), 
-				txtLargoEquipaje1.getText(), txtAltoEquipaje2.getText(), txtAnchoEquipaje2.getText(), txtLargoEquipaje2.getText(), txtAltoEquipajeMano.getText(), txtAnchoEquipajeMano.getText(), txtLargoEquipajeMano.getText(),
-				tiqueteSeleccion.getIdAvion());
-		
-		if(equipaje != null) listadoEquipajes.add(0, equipaje);
-		tableViewEquipajes.refresh();
-		
-		listadoTiquetesCliente.remove(tiqueteSeleccion);
-		tableViewTiquetesCliente.refresh();
+		return pesoTotalEquipaje;
 	}
 
 	/**
@@ -1405,10 +1427,78 @@ public class AerolineaController implements Initializable {
 
     @FXML
     void actualizarEquipaje(ActionEvent event) {
-
+    	
+    	if(equipajeSeleccion != null) {
+    		actualizarEquipaje(equipajeSeleccion.getIdEquipaje(), txtPesoEquipaje1.getText(), txtTotalDimensionEquipaje1.getText(),
+    				txtPesoEquipaje2.getText(), txtTotalDimensionEquipaje2.getText(), txtTotalDimensionEquipajeMano.getText(), txtPesoAdicional.getText(), txtAltoEquipaje1.getText(), txtAnchoEquipaje1.getText(), 
+    				txtLargoEquipaje1.getText(), txtAltoEquipaje2.getText(), txtAnchoEquipaje2.getText(), txtLargoEquipaje2.getText(), txtAltoEquipajeMano.getText(), txtAnchoEquipajeMano.getText(), txtLargoEquipajeMano.getText());
+    	} else {
+    		aplicacionAerolinea.mostrarMensaje("Actualización Equipaje", "Actualización Equipaje", "No se ha seleccionado ningún equipaje", AlertType.INFORMATION);				
+    		
+    	}
     }
 	
-    @FXML
+    private void actualizarEquipaje(String idEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2,
+			String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2,
+			String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano) {
+    	
+    	try {
+    		String claseEquipaje = verificarClase(equipajeSeleccion.getIdentificacionCliente());
+    		double pesoTotalEquipaje = 0;
+    		Equipaje equipaje;
+    		
+			if(claseEquipaje.equalsIgnoreCase("Economica")) {
+				
+				pesoTotalEquipaje = calcularPesoTotal(pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2,
+						totalDimensionEquipajeMano, pesoAdicional, 24);
+				
+				equipaje = modelFactoryController.actualizarEquipaje(idEquipaje, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1,
+						pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, altoEquipaje1, anchoEquipaje1, 
+						largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano);
+				
+				equipajeSeleccion.setPesoTotal(pesoTotalEquipaje);				
+				tableViewEquipajes.refresh();
+				
+			} else if(claseEquipaje.equalsIgnoreCase("Ejecutiva")) {
+									
+				pesoTotalEquipaje = calcularPesoTotal(pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2,
+						totalDimensionEquipajeMano, pesoAdicional, 34);
+				
+				equipaje = modelFactoryController.actualizarEquipaje(idEquipaje, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1,
+						pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, altoEquipaje1, anchoEquipaje1, 
+						largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano);
+				
+				equipajeSeleccion.setPesoTotal(pesoTotalEquipaje);
+				tableViewEquipajes.refresh();
+				
+			}
+			aplicacionAerolinea.mostrarMensaje("Actualización Equipaje", "Actualización Equipaje", "Se ha actualizado su equipaje con éxito", AlertType.INFORMATION);				
+			
+			// Dejar en blanco los campos para un nuevo registro
+			txtPesoEquipaje1.setText(""); txtTotalDimensionEquipaje1.setText(""); txtPesoEquipaje2.setText(""); txtTotalDimensionEquipaje2.setText("");
+			txtTotalDimensionEquipajeMano.setText(""); txtPesoAdicional.setText(""); txtAltoEquipaje1.setText(""); txtAnchoEquipaje1.setText(""); txtLargoEquipaje1.setText("");
+			txtAltoEquipaje2.setText(""); txtAnchoEquipaje2.setText(""); txtLargoEquipaje2.setText(""); txtAltoEquipajeMano.setText(""); txtAnchoEquipajeMano.setText(""); txtLargoEquipajeMano.setText("");
+			
+		} catch (DatosInvalidosException | EquipajeException e) {
+			aplicacionAerolinea.mostrarMensaje("Registro de Equipaje", "Registro de Equipaje", e.getMessage(), AlertType.WARNING);				
+		}
+    	
+    	
+	}
+
+	private String verificarClase(String identificacionCliente) {
+		
+		String clase = "";
+		
+		for (Cliente cliente : aerolinea.getListaClientes()) {
+			if(cliente.getIdentificacion().equalsIgnoreCase(identificacionCliente)) {
+				clase = cliente.getTiquete().getClaseServicio().toString();
+			}
+		}
+		return clase;
+	}
+
+	@FXML
     void eliminarEquipaje(ActionEvent event) {
 //    	if(confirmacion == true) {
 //			modelFactoryController.registrarEquipajesAerolinea(listadoEquipajes);
