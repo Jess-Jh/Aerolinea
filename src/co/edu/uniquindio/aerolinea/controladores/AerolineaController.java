@@ -13,14 +13,18 @@ import co.edu.uniquindio.aerolinea.excepciones.EquipajeException;
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
+import co.edu.uniquindio.aerolinea.modelo.CarroEmbarque;
 import co.edu.uniquindio.aerolinea.modelo.Cliente;
 import co.edu.uniquindio.aerolinea.modelo.CruceAeronavesRutas;
 import co.edu.uniquindio.aerolinea.modelo.Equipaje;
+import co.edu.uniquindio.aerolinea.modelo.PosicionCarro;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import co.edu.uniquindio.aerolinea.modelo.TipoTripulante;
 import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 import co.edu.uniquindio.aerolinea.modelo.Tripulante;
+import co.edu.uniquindio.aerolinea.pilaBicolaListaEnlazada.Bicola;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -30,7 +34,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -44,6 +47,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -108,6 +112,75 @@ public class AerolineaController implements Initializable {
     
     @FXML
     private Button btnEliminarEquipaje;
+    
+    @FXML
+    private Button btnLista1;
+
+    @FXML
+    private Button btnLista2;
+
+    @FXML
+    private Button btnLista3;
+
+    @FXML
+    private Button btnLista4;
+
+    @FXML
+    private Button btnLista5;
+
+    @FXML
+    private Button btnLista6;
+
+    @FXML
+    private Button btnLista7;
+
+    @FXML
+    private Button btnLista8;
+
+    @FXML
+    private Button btnLista9;
+
+    @FXML
+    private Button btnLista10;
+
+    @FXML
+    private Button btnLlegadaCarroEmbarque;
+
+    @FXML
+    private Button btnPila1;
+
+    @FXML
+    private Button btnPila2;
+
+    @FXML
+    private Button btnPila3;
+
+    @FXML
+    private Button btnPila4;
+
+    @FXML
+    private Button btnPila5;
+
+    @FXML
+    private Button btnPila6;
+
+    @FXML
+    private Button btnPila7;
+
+    @FXML
+    private Button btnPila8;
+
+    @FXML
+    private Button btnPila9;
+    
+    @FXML
+    private Button btnPila10;
+    
+    @FXML
+    private Button btnRetirarCarroEmbarque;
+
+    @FXML
+    private Button btnSalidaCarroEmbarque;
 
     @FXML
     private ComboBox<String> cmbClase;
@@ -204,6 +277,24 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private TableColumn<Equipaje, Double> columnPesoEquipaje;
+    
+    @FXML
+    private TableColumn<Equipaje, String> columnIdAvionEquipaje1;
+
+    @FXML
+    private TableColumn<Equipaje, String> columnIdAvionEquipajeCarroEmbarque;
+
+    @FXML
+    private TableColumn<Equipaje, String> columnIdentificacionCliente1;
+
+    @FXML
+    private TableColumn<Equipaje, String> columnIdentificacionClienteEquipajeCarroEmbarque;
+
+    @FXML
+    private TableColumn<Equipaje, Double> columnPesoEquipaje1;
+
+    @FXML
+    private TableColumn<Equipaje, Double> columnPesoEquipajeCarroEmbarque;
 
     @FXML
     private FontAwesomeIconView iconEquip2;
@@ -234,6 +325,47 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private Label lblSum2Equip2;
+    
+    @FXML
+    private ImageView imgCarroEmbarque1 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque2 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque3 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque4 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque5 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque6 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque7 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque8 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque9 = new ImageView(); 
+    
+    @FXML
+    private ImageView imgCarroEmbarque10 = new ImageView();
+
+    @FXML
+    private ImageView imgCarroEmbarque11 = new ImageView();
+    
+    private ImageView[] listaImagenes;
+
+    @FXML
+    private Label lblNumeroCarroEmbarque;
+
+    @FXML
+    private Label lblPesoTotalCarroEmbarque;
 
     @FXML
     private TextField txtAltoEquipaje1;
@@ -333,6 +465,12 @@ public class AerolineaController implements Initializable {
 
     @FXML
     private TableView<CruceAeronavesRutas> tableViewTiquetesCliente;
+    
+    @FXML
+    private TableView<Equipaje> tableViewEquipajes1;
+
+    @FXML
+    private TableView<Equipaje> tableViewEquipajesCarroEmbarque;
 
     @FXML
     private TextField txtApellido;
@@ -425,8 +563,10 @@ public class AerolineaController implements Initializable {
     private CruceAeronavesRutas tiqueteSeleccion;
     private Equipaje equipajeSeleccion;
     double costoTotalViaje;
-    int cantTiquetes = 0;;
     
+    int cantTiquetes = 0;
+    
+    ArrayList<PosicionCarro> posicionesCarros = new ArrayList<>();
     
     ArrayList<Button> listaPuestosUsuario = new ArrayList<>();
     
@@ -624,6 +764,9 @@ public class AerolineaController implements Initializable {
 
     	tableViewEquipajes.getItems().clear();
     	tableViewEquipajes.setItems(getEquipajes());
+    	
+    	posicionesCarros = inicializarPosiciones();
+    	listaImagenes = llenarListaImagenes();
     }
     
     /**
@@ -749,39 +892,6 @@ public class AerolineaController implements Initializable {
     }
     
     /**
-     * Mostrar los requerimientos de cada equipaje dependiendo del vuelo
-     */
-	private void llenarRequerimientosPesoEquipaje() {
-		lblDetalleTiquete.setText("Destino: " + tiqueteSeleccion.getCiudadDestino());
-		
-		if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Monterrey") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Cancún")) {
-			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
-				lblRequerimientoEquipajeClase.setText("1 Pieza, peso máximo 24kg");
-				
-				//  Quitar requerimientos de la clase económica 
-				cambiarEstado(false);
-			} 
-				
-			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
-				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 34 kilogramos cada una");
-				cambiarEstado(true);
-			}
-		}
-		if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Buenos Aires") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Los Ángeles") ||
-		   tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Bogotá") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Panamá")) {
-			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
-				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 24 kilogramos cada una");
-				cambiarEstado(true);
-			} 
-			
-			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
-				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 34 kilogramos cada una");
-				cambiarEstado(true);
-			}
-		}
-	}
-    
-    /**
      * Cambiar la visibilidad de los labels dependiendo del tipo de viaje
      * @param estado
      */
@@ -793,6 +903,9 @@ public class AerolineaController implements Initializable {
 		txtTotalDimensionEquipaje2.setVisible(estado);
 	}
 
+    
+    //--------------------------------------------------------- GESTIÓN TRIPULANTES ----------------------------------------------------------------------------------------->>	
+    
 	/**
      * Verificar los tripulantes que el usuario vaya seleccionando
      * @param text
@@ -934,7 +1047,11 @@ public class AerolineaController implements Initializable {
 		}
 		throw new DatosInvalidosException(notificacion); 
 	}
+    
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------||
 
+    //--------------------------------------------------------- GESTIÓN DE TIQUETES ----------------------------------------------------------------------------------------->>	
+    
 	@FXML
     void buscarViaje(ActionEvent event) {
     	
@@ -1202,6 +1319,43 @@ public class AerolineaController implements Initializable {
 			return true;
 		
 		throw new DatosInvalidosException(notificacion); 
+	}
+	
+	// ------------------------------------------------------------------------------------------------------------------------------------------------------------------||
+
+    //--------------------------------------------------------- GESTIÓN DE EQUIPAJES ----------------------------------------------------------------------------------------->>	
+ 
+    /**
+     * Mostrar los requerimientos de cada equipaje dependiendo del vuelo
+     */
+	private void llenarRequerimientosPesoEquipaje() {
+		lblDetalleTiquete.setText("Destino: " + tiqueteSeleccion.getCiudadDestino());
+		
+		if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Monterrey") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Cancún")) {
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
+				lblRequerimientoEquipajeClase.setText("1 Pieza, peso máximo 24kg");
+				
+				//  Quitar requerimientos de la clase económica 
+				cambiarEstado(false);
+			} 
+				
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
+				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 34 kilogramos cada una");
+				cambiarEstado(true);
+			}
+		}
+		if(tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Buenos Aires") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Los Ángeles") ||
+		   tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Bogotá") || tiqueteSeleccion.getCiudadDestino().equalsIgnoreCase("Panamá")) {
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Economica")) {
+				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 24 kilogramos cada una");
+				cambiarEstado(true);
+			} 
+			
+			if(tiqueteSeleccion.getCiudadOrigen().equalsIgnoreCase("Ejecutiva")) {
+				lblRequerimientoEquipajeClase.setText("2 piezas con un peso máximo de 34 kilogramos cada una");
+				cambiarEstado(true);
+			}
+		}
 	}
 	
     @FXML
@@ -1539,8 +1693,130 @@ public class AerolineaController implements Initializable {
     		tableViewClientes.setItems(filtroListadoClientes);
     	}
     }
+    
+	// ------------------------------------------------------------------------------------------------------------------------------------------------------------------||
+
+   
+    //--------------------------------------------------------- EMBARQUE DE EQUIPAJE ----------------------------------------------------------------------------------------->>	
+    private ImageView[] llenarListaImagenes() {
+    	ImageView[] listaImagenes = {imgCarroEmbarque1, imgCarroEmbarque2, imgCarroEmbarque3, imgCarroEmbarque4, imgCarroEmbarque5,
+    			                     imgCarroEmbarque6, imgCarroEmbarque7, imgCarroEmbarque8, imgCarroEmbarque9, imgCarroEmbarque10, imgCarroEmbarque11};
+    	
+    	return listaImagenes;
+    }
+    
+    //------------- Datos Embarque ----------------------------------------------------->> 
+    
+    
+    int idCarroEmbarque = 1;
+    Bicola<CarroEmbarque> bicolaCarros = new Bicola<>();
+    
+    @FXML
+    void llegadaCarroEmbarque(ActionEvent event) {
+    	
+    	ImageView ubicarCarro = new ImageView();
+    	
+    	
+    	CarroEmbarque carro = new CarroEmbarque(""+idCarroEmbarque++);  
+    	
+    	bicolaCarros.insertar(carro);
+    	
+    	for (int i = 0; i < listaImagenes.length; i++) {
+			
+			if(!(listaImagenes[i].isDisable())) {
+				ubicarCarro = listaImagenes[i];
+				break;
+			}
+		}
+    	
+    	for (PosicionCarro posicionCarro : posicionesCarros) {
+			if(!(posicionCarro.isOcupado())) {
+				
+				TranslateTransition transition = new TranslateTransition();
+				transition.setDuration(javafx.util.Duration.seconds(3));
+				transition.setToX(posicionCarro.getPosicion());
+				transition.setNode(ubicarCarro);
+				transition.play();
+				
+				posicionCarro.setOcupado(true);
+				break;
+			}	
+		}
+    	ubicarCarro.setDisable(true);
+    	
+    	
+    	lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
+//
+//    	
+//    	TranslateTransition transition1 = new TranslateTransition();
+//    	transition1.setDuration(javafx.util.Duration.seconds(3));
+//    	transition1.setToX(585);
+//    	imgCarroEmbarque2.setVisible(false);
+//    	transition1.setNode(imgCarroEmbarque2);
+//    	
+//    	transition.setOnFinished(new EventHandler<ActionEvent>() {
+//
+//    	    @Override
+//    	    public void handle(ActionEvent event) {
+//    	    	imgCarroEmbarque2.setVisible(true);
+//    	    	
+//    	    	transition1.play();
+//    	    }
+//    	});
+    	
+   
+ 
+    	
+    	
+    	
+    }
 
 
+	/**
+     * Indicar las coordenadas donde van los carros en la interfaz
+     * @return
+     */
+	private ArrayList<PosicionCarro> inicializarPosiciones() {
+		ArrayList<PosicionCarro> listaPosiciones = new ArrayList<>();
+		
+		PosicionCarro posicion1 = new PosicionCarro(735);
+		PosicionCarro posicion2 = new PosicionCarro(660);
+		PosicionCarro posicion3 = new PosicionCarro(585);
+		PosicionCarro posicion4 = new PosicionCarro(510);
+		PosicionCarro posicion5 = new PosicionCarro(435);
+		PosicionCarro posicion6 = new PosicionCarro(360);
+		PosicionCarro posicion7 = new PosicionCarro(285);
+		PosicionCarro posicion8 = new PosicionCarro(210);
+		PosicionCarro posicion9 = new PosicionCarro(135);
+		PosicionCarro posicion10 = new PosicionCarro(60);
+		
+		listaPosiciones.add(posicion1);
+		listaPosiciones.add(posicion2);
+		listaPosiciones.add(posicion3);
+		listaPosiciones.add(posicion4);
+		listaPosiciones.add(posicion5);
+		listaPosiciones.add(posicion6);
+		listaPosiciones.add(posicion7);
+		listaPosiciones.add(posicion8);
+		listaPosiciones.add(posicion9);
+		listaPosiciones.add(posicion10);
+		
+		return listaPosiciones;
+	}
+
+	@FXML
+    void retirarCarroEmbarque(ActionEvent event) {
+
+    }
+
+    @FXML
+    void salidaCarroEmbarque(ActionEvent event) {
+
+    }
+ 
+
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------------------||
 		
 	
 

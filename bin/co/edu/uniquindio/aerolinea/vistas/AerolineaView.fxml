@@ -29,9 +29,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="690.0" prefWidth="1376.0">
                      <children>
-                        <Pane layoutX="963.0" layoutY="96.0" prefHeight="499.0" prefWidth="386.0" style="-fx-background-color: #E5E5E5;" />
-                        <Pane layoutX="506.0" layoutY="95.0" prefHeight="499.0" prefWidth="406.0" style="-fx-background-color: #E5E5E5;" />
-                        <Pane layoutX="21.0" layoutY="94.0" prefHeight="498.0" prefWidth="445.0" style="-fx-background-color: #E5E5E5;" />
+                        <Pane layoutX="963.0" layoutY="96.0" prefHeight="499.0" prefWidth="386.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
+                        <Pane layoutX="506.0" layoutY="95.0" prefHeight="499.0" prefWidth="406.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
+                        <Pane layoutX="21.0" layoutY="94.0" prefHeight="498.0" prefWidth="445.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;" />
                         <Label layoutX="580.0" layoutY="13.0" text="Gestión Tripulación">
                            <font>
                               <Font name="System Bold" size="24.0" />
@@ -761,27 +761,27 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="59.0" layoutY="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="59.0" layoutY="237.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="59.0" layoutY="292.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="59.0" layoutY="347.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="58.0" layoutY="402.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="58.0" layoutY="457.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="58.0" layoutY="512.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="58.0" layoutY="568.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="57.0" layoutY="624.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="59.0" layoutY="127.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="135.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="210.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="285.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="360.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="435.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="510.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="585.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="660.0" layoutY="54.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="735.0" layoutY="54.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button layoutX="60.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
-                        <Button fx:id="btnRealizarCompra1" layoutX="211.0" layoutY="156.0" mnemonicParsing="false" onAction="#realizarCompra" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Llegada" textFill="WHITE">
+                        <Button fx:id="btnPila9" layoutX="59.0" layoutY="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila8" layoutX="59.0" layoutY="237.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila7" layoutX="59.0" layoutY="292.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila6" layoutX="59.0" layoutY="347.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila5" layoutX="58.0" layoutY="402.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila4" layoutX="58.0" layoutY="457.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila3" layoutX="58.0" layoutY="512.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila2" layoutX="58.0" layoutY="568.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila1" layoutX="57.0" layoutY="624.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnPila10" layoutX="59.0" layoutY="127.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista9" layoutX="135.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista8" layoutX="210.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista7" layoutX="285.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista6" layoutX="360.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista5" layoutX="435.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista4" layoutX="510.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista3" layoutX="585.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista2" layoutX="660.0" layoutY="54.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista1" layoutX="735.0" layoutY="54.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLista10" layoutX="60.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" />
+                        <Button fx:id="btnLlegadaCarroEmbarque" layoutX="211.0" layoutY="156.0" mnemonicParsing="false" onAction="#llegadaCarroEmbarque" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Llegada" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -789,7 +789,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="btnRealizarCompra11" layoutX="447.0" layoutY="157.0" mnemonicParsing="false" onAction="#realizarCompra" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Salida" textFill="WHITE">
+                        <Button fx:id="btnSalidaCarroEmbarque" layoutX="447.0" layoutY="157.0" mnemonicParsing="false" onAction="#salidaCarroEmbarque" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Salida" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -797,7 +797,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="btnRealizarCompra111" layoutX="683.0" layoutY="157.0" mnemonicParsing="false" onAction="#realizarCompra" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Retirada" textFill="WHITE">
+                        <Button fx:id="btnRetirarCarroEmbarque" layoutX="683.0" layoutY="157.0" mnemonicParsing="false" onAction="#retirarCarroEmbarque" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: green;" text="Retirada" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -805,7 +805,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Pane layoutX="276.0" layoutY="267.0" prefHeight="416.0" prefWidth="1028.0" style="-fx-background-color: #EAEAEA;">
+                        <Pane layoutX="276.0" layoutY="267.0" prefHeight="416.0" prefWidth="1028.0" style="-fx-background-color: #E5E5E5; -fx-background-radius: 10px;">
                            <children>
                               <Label layoutX="395.0" layoutY="22.0" text="Zona de embarque">
                                  <font>
@@ -821,17 +821,17 @@
                                  <columns>
                                     <TableColumn fx:id="columnIdAvionEquipaje1" prefWidth="91.0" text="Id Avión" />
                                     <TableColumn fx:id="columnPesoEquipaje1" prefWidth="130.0" text="Peso Equipaje" />
-                                    <TableColumn fx:id="columnIdentificacionClienteEquipaje1" prefWidth="147.3333740234375" text="Identificación Cliente" />
+                                    <TableColumn fx:id="columnIdentificacionCliente1" prefWidth="147.3333740234375" text="Identificación Cliente" />
                                  </columns>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </TableView>
-                              <TableView fx:id="tableViewEquipajes11" layoutX="582.0" layoutY="151.0" prefHeight="227.0" prefWidth="371.0">
+                              <TableView fx:id="tableViewEquipajesCarroEmbarque" layoutX="582.0" layoutY="151.0" prefHeight="227.0" prefWidth="371.0">
                                  <columns>
-                                    <TableColumn fx:id="columnIdAvionEquipaje11" prefWidth="91.0" text="Id Avión" />
-                                    <TableColumn fx:id="columnPesoEquipaje11" prefWidth="130.0" text="Peso Equipaje" />
-                                    <TableColumn fx:id="columnIdentificacionClienteEquipaje11" prefWidth="147.3333740234375" text="Identificación Cliente" />
+                                    <TableColumn fx:id="columnIdAvionEquipajeCarroEmbarque" prefWidth="91.0" text="Id Avión" />
+                                    <TableColumn fx:id="columnPesoEquipajeCarroEmbarque" prefWidth="130.0" text="Peso Equipaje" />
+                                    <TableColumn fx:id="columnIdentificacionClienteEquipajeCarroEmbarque" prefWidth="147.3333740234375" text="Identificación Cliente" />
                                  </columns>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -852,9 +852,69 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
+                              <Label fx:id="lblPesoTotalCarroEmbarque" layoutX="910.0" layoutY="83.0" prefHeight="19.0" prefWidth="40.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblNumeroCarroEmbarque" layoutX="314.0" layoutY="86.0" prefHeight="19.0" prefWidth="40.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
-                        <ImageView fitHeight="66.0" fitWidth="66.0" layoutX="736.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgCarroEmbarque1" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque2" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque4" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque3" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque5" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque6" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque7" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque8" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque9" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque10" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carro.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgCarroEmbarque11" fitHeight="66.0" fitWidth="66.0" layoutX="-5.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../resource/carro.png" />
                            </image>
