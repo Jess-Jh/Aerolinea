@@ -23,6 +23,7 @@ import co.edu.uniquindio.aerolinea.modelo.TipoTripulante;
 import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 import co.edu.uniquindio.aerolinea.modelo.Tripulante;
 import co.edu.uniquindio.aerolinea.pilaBicolaListaEnlazada.Bicola;
+import co.edu.uniquindio.aerolinea.pilaBicolaListaEnlazada.Nodo;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
@@ -30,6 +31,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -562,17 +564,14 @@ public class AerolineaController implements Initializable {
     private Cliente clienteSeleccion;
     private CruceAeronavesRutas tiqueteSeleccion;
     private Equipaje equipajeSeleccion;
-    double costoTotalViaje;
-    
-    int cantTiquetes = 0;
-    
+    private Equipaje equipajeSeleccionEmbarque;
+    private double costoTotalViaje;
+        
     ArrayList<PosicionCarro> posicionesCarros = new ArrayList<>();
     
     ArrayList<Button> listaPuestosUsuario = new ArrayList<>();
     
-	// Listado de Aeronaves que se muestran en la interfaz 
     private ObservableList<CruceAeronavesRutas> listadoAeronaves = FXCollections.observableArrayList();
-    // Listado de Tripulantes que se muestran en la interfaz 
     private ObservableList<Tripulante> listadoTripulantes = FXCollections.observableArrayList();
     private ObservableList<Tripulante> listadoTripulantesAsignados = FXCollections.observableArrayList();
     
@@ -582,6 +581,9 @@ public class AerolineaController implements Initializable {
 
     private ObservableList<Equipaje> listadoEquipajes = FXCollections.observableArrayList();
     private ObservableList<CruceAeronavesRutas> listadoTiquetesCliente = FXCollections.observableArrayList();
+    
+    private ObservableList<Equipaje> listadoEquipajes1 = FXCollections.observableArrayList();
+    private ObservableList<Equipaje> listadoEquipajesEmbarque = FXCollections.observableArrayList();
     
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
@@ -723,6 +725,28 @@ public class AerolineaController implements Initializable {
 			}
 		});	
 		//------------------------------------------------------------------------------------------------------------------------------||
+		//----------------------------------------- tableViewEquipajes1 ----------------------------------------------------------------->
+		this.columnIdAvionEquipaje1.setCellValueFactory(new PropertyValueFactory<>("numAvion"));
+		this.columnPesoEquipaje1.setCellValueFactory(new PropertyValueFactory<>("pesoTotal"));
+		this.columnIdentificacionCliente1.setCellValueFactory(new PropertyValueFactory<>("identificacionCliente"));
+		
+		tableViewEquipajes1.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
+			if(newSelection != null) {
+				equipajeSeleccionEmbarque = newSelection;
+			}
+		});	
+		//------------------------------------------------------------------------------------------------------------------------------||
+		//----------------------------------------- tableViewEquipajesCarroEmbarque ----------------------------------------------------------------->
+		this.columnIdAvionEquipajeCarroEmbarque.setCellValueFactory(new PropertyValueFactory<>("numAvion"));
+		this.columnPesoEquipajeCarroEmbarque.setCellValueFactory(new PropertyValueFactory<>("pesoTotal"));
+		this.columnIdentificacionClienteEquipajeCarroEmbarque.setCellValueFactory(new PropertyValueFactory<>("identificacionCliente"));
+		
+		tableViewEquipajesCarroEmbarque.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
+			if(newSelection != null) {
+				equipajeSeleccionEmbarque = newSelection;
+			}
+		});	
+		//------------------------------------------------------------------------------------------------------------------------------||
 		//--------------------------------------------------------------------------------------------------------------------------------------------||
 	}
 
@@ -764,6 +788,9 @@ public class AerolineaController implements Initializable {
 
     	tableViewEquipajes.getItems().clear();
     	tableViewEquipajes.setItems(getEquipajes());
+
+    	tableViewEquipajes1.getItems().clear();
+    	tableViewEquipajes1.setItems(getEquipajes());
     	
     	posicionesCarros = inicializarPosiciones();
     	listaImagenes = llenarListaImagenes();
@@ -874,10 +901,26 @@ public class AerolineaController implements Initializable {
     
     @FXML
     void retirarDatosTablaAsignacionTripulantes(MouseEvent event) {
-    	
     	if(tripulanteSeleccion != null) {
     		listadoTripulantes.add(tripulanteSeleccion);
     		listadoTripulantesAsignados.remove(tripulanteSeleccion);
+    	}
+    }
+    
+    @FXML
+    void pasarEquipajeAlCarroEmbarque(MouseEvent event) {
+    	if(equipajeSeleccionEmbarque != null) {
+			listadoEquipajesEmbarque.add(equipajeSeleccionEmbarque);
+			tableViewEquipajesCarroEmbarque.setItems(listadoEquipajesEmbarque);
+			listadoEquipajes1.remove(equipajeSeleccionEmbarque);			
+		}
+    }
+    
+    @FXML
+    void retirarEquipajedDelCarroEmbarque(MouseEvent event) {
+    	if(equipajeSeleccionEmbarque != null) {
+    		listadoEquipajes1.add(equipajeSeleccionEmbarque);
+    		listadoEquipajesEmbarque.remove(equipajeSeleccionEmbarque);
     	}
     }
     
@@ -890,18 +933,7 @@ public class AerolineaController implements Initializable {
 			aplicacionAerolinea.mostrarMensaje("Registro Equipaje", "Registro Equipaje", e.getMessage(), AlertType.WARNING);
 		}
     }
-    
-    /**
-     * Cambiar la visibilidad de los labels dependiendo del tipo de viaje
-     * @param estado
-     */
-    private void cambiarEstado(boolean estado) {
-    	lblAltoEquip2.setVisible(estado); lblAnchoEquip2.setVisible(estado); lblLargoEquip2.setVisible(estado);
-		lblEquipaje2.setVisible(estado); txtPesoEquipaje2.setVisible(estado); iconEquip2.setVisible(estado);
-		txtAltoEquipaje2.setVisible(estado); txtAnchoEquipaje2.setVisible(estado); txtLargoEquipaje2.setVisible(estado);
-		lblSum1Equip2.setVisible(estado); lblSum2Equip2.setVisible(estado); lblIgualEquip2.setVisible(estado);
-		txtTotalDimensionEquipaje2.setVisible(estado);
-	}
+
 
     
     //--------------------------------------------------------- GESTIÓN TRIPULANTES ----------------------------------------------------------------------------------------->>	
@@ -1358,6 +1390,18 @@ public class AerolineaController implements Initializable {
 		}
 	}
 	
+    /**
+     * Cambiar la visibilidad de los labels dependiendo del tipo de viaje
+     * @param estado
+     */
+    private void cambiarEstado(boolean estado) {
+    	lblAltoEquip2.setVisible(estado); lblAnchoEquip2.setVisible(estado); lblLargoEquip2.setVisible(estado);
+		lblEquipaje2.setVisible(estado); txtPesoEquipaje2.setVisible(estado); iconEquip2.setVisible(estado);
+		txtAltoEquipaje2.setVisible(estado); txtAnchoEquipaje2.setVisible(estado); txtLargoEquipaje2.setVisible(estado);
+		lblSum1Equip2.setVisible(estado); lblSum2Equip2.setVisible(estado); lblIgualEquip2.setVisible(estado);
+		txtTotalDimensionEquipaje2.setVisible(estado);
+	}
+	
     @FXML
     void sumaDimensionesEquipaje(KeyEvent event) {
     	String equip1 = "Equipaje1", equip2 = "Equipaje2", equipMano = "EquipajeMano";
@@ -1702,50 +1746,58 @@ public class AerolineaController implements Initializable {
     	ImageView[] listaImagenes = {imgCarroEmbarque1, imgCarroEmbarque2, imgCarroEmbarque3, imgCarroEmbarque4, imgCarroEmbarque5,
     			                     imgCarroEmbarque6, imgCarroEmbarque7, imgCarroEmbarque8, imgCarroEmbarque9, imgCarroEmbarque10, imgCarroEmbarque11};
     	
+    	for (ImageView imageView : listaImagenes) {
+			imageView.setVisible(false);
+		}
+    	
     	return listaImagenes;
     }
     
-    //------------- Datos Embarque ----------------------------------------------------->> 
-    
-    
+    //------------- Datos Embarque -------------------------->>
     int idCarroEmbarque = 1;
     Bicola<CarroEmbarque> bicolaCarros = new Bicola<>();
+    ImageView ubicarCarro;
     
     @FXML
     void llegadaCarroEmbarque(ActionEvent event) {
     	
-    	ImageView ubicarCarro = new ImageView();
+    	if(bicolaCarros.getTamaño() >= 10) {
+    		aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No puede añadir más carros, la fila se encuentra llena", AlertType.WARNING);		
+    		
+    	} else {
+    		CarroEmbarque carro = new CarroEmbarque(""+idCarroEmbarque++); 
+    		
+    		bicolaCarros.insertar(carro);
+    		
+    		for (int i = 0; i < listaImagenes.length; i++) {
+    			
+    			if(!(listaImagenes[i].isDisable())) {
+    				ubicarCarro = listaImagenes[i];
+    				ubicarCarro.setVisible(true);
+    				break;
+    			}
+    		}
+    		for (PosicionCarro posicionCarro : posicionesCarros) {
+    			if(!(posicionCarro.isOcupado())) {
+    				
+    				TranslateTransition transition = new TranslateTransition();
+    				transition.setDuration(javafx.util.Duration.seconds(3));
+    				transition.setToX(posicionCarro.getPosicion());
+    				transition.setOnFinished(e -> {
+    					ubicarCarro.setTranslateX(posicionCarro.getPosicion());
+    				});
+    				transition.setNode(ubicarCarro);
+    				transition.play();
+    				
+    				posicionCarro.setOcupado(true);
+    				break;
+    			}	
+    		}
+    		ubicarCarro.setDisable(true);
+    		
+    		lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
+    	}
     	
-    	
-    	CarroEmbarque carro = new CarroEmbarque(""+idCarroEmbarque++);  
-    	
-    	bicolaCarros.insertar(carro);
-    	
-    	for (int i = 0; i < listaImagenes.length; i++) {
-			
-			if(!(listaImagenes[i].isDisable())) {
-				ubicarCarro = listaImagenes[i];
-				break;
-			}
-		}
-    	
-    	for (PosicionCarro posicionCarro : posicionesCarros) {
-			if(!(posicionCarro.isOcupado())) {
-				
-				TranslateTransition transition = new TranslateTransition();
-				transition.setDuration(javafx.util.Duration.seconds(3));
-				transition.setToX(posicionCarro.getPosicion());
-				transition.setNode(ubicarCarro);
-				transition.play();
-				
-				posicionCarro.setOcupado(true);
-				break;
-			}	
-		}
-    	ubicarCarro.setDisable(true);
-    	
-    	
-    	lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
 //
 //    	
 //    	TranslateTransition transition1 = new TranslateTransition();
@@ -1811,7 +1863,81 @@ public class AerolineaController implements Initializable {
 
     @FXML
     void salidaCarroEmbarque(ActionEvent event) {
+    	
+    	if(bicolaCarros.getTamaño() <= 0) {
+    		aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No hay ningún carro para retirar", AlertType.WARNING);		
+    	} else {
+    		
+    		try {
+    			bicolaCarros.extraer();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+    		
+    		for (int i = 0; i < listaImagenes.length; i++) {
+    			    			
+    			if(listaImagenes[i].getTranslateX() == 735 && (listaImagenes[i].isDisable())) {
+    				
+    				ImageView ubicarCarro = listaImagenes[i];
+    				
+    				TranslateTransition transition = new TranslateTransition();
+    				transition.setDuration(javafx.util.Duration.seconds(3));
+    				transition.setToX(1292);
+    				transition.setNode(ubicarCarro);
+    				transition.play();
+    				
+    				TranslateTransition transition2 = new TranslateTransition();
+    				transition2.setToX(-5);
+    				transition2.setNode(ubicarCarro);
+    				
+    				transition.setOnFinished(new EventHandler<ActionEvent>() {
 
+					    @Override
+					    public void handle(ActionEvent event) {
+					    	ubicarCarro.setVisible(false);
+	     					ubicarCarro.setDisable(false);    				    	
+
+					    	for (int i = 0; i < posicionesCarros.size(); i++) 
+				    			posicionesCarros.get(0).setOcupado(false);
+    			    				
+		    				for (int j = 0; j < listaImagenes.length; j++) {    			    					
+		    					
+		    					if((listaImagenes[j].isDisable())) {
+		    						
+		    						ImageView ubicarCarro = listaImagenes[j];
+		    						
+		    						for (int i = 0; i < posicionesCarros.size(); i++) {
+		    						
+		    							
+		    							if(!(posicionesCarros.get(i).isOcupado())) {
+		    								
+		    								TranslateTransition transition = new TranslateTransition();
+		    								transition.setDuration(javafx.util.Duration.seconds(3));		    								
+		    								transition.setToX(posicionesCarros.get(i).getPosicion());
+		    								transition.setNode(ubicarCarro);
+		    								posicionesCarros.get(i).setOcupado(true);
+		    								transition.play();
+		    								
+		    								double nuevaPosicion = posicionesCarros.get(i).getPosicion();
+		    								transition.setOnFinished(e -> {
+		    									ubicarCarro.setTranslateX(nuevaPosicion);
+		    								});
+		    								
+		    								if(posicionesCarros.get(i+1) != null)
+		    									posicionesCarros.get(i+1).setOcupado(false);
+		    								break;
+		    							}	
+		    						}
+		    					}
+		    				}
+		    				transition2.play();
+					    }
+    				});
+    			}
+    		}
+			if(!(bicolaCarros.getTamaño() < 0)) 
+				lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
+    	}
     }
  
 

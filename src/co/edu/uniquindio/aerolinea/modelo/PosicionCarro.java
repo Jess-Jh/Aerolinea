@@ -2,18 +2,20 @@ package co.edu.uniquindio.aerolinea.modelo;
 
 public class PosicionCarro {
 
-	private int posicion;
+	private double posicion;
 	private boolean ocupado;
 	
-	public PosicionCarro(int posicion) {
+	public PosicionCarro() {};
+	
+	public PosicionCarro(double posicion) {
 		this.posicion = posicion;
 		this.ocupado = false;
 	}
 
-	public int getPosicion() {
+	public double getPosicion() {
 		return posicion;
 	}
-	public void setPosicion(int posicion) {
+	public void setPosicion(double posicion) {
 		this.posicion = posicion;
 	}
 	public boolean isOcupado() {

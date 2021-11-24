@@ -166,5 +166,15 @@ public class Cola<T> {
 		}
 		return texto;
 	}
+	
+	public void mostrar(){
+		Nodo<T> puntero = primero;
+		String datos = "";
+		while(puntero != null){
+			datos += puntero.getValorNodo() + "   ";
+			puntero = puntero.getSiguienteNodo();
+		}
+		System.out.println(datos);
+	}
 
 }
