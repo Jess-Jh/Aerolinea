@@ -1982,17 +1982,14 @@ public class AerolineaController implements Initializable {
 
 	@FXML
     void retirarCarroEmbarque(ActionEvent event) {
-		
-		System.out.println(posicionVehiculoRetirada);
-		
+				
 		if(posicionVehiculoRetirada == 0) {
 			aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No ha seleccionado ningún carro para retirar", AlertType.WARNING);				   
 		} else if(bicolaCarros.getPrimero() == null) {
 			aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No hay ningún carro para retirar en esa posición", AlertType.WARNING);		
 		
 		} else {
-			CarroEmbarque carroEncontrado;
-			
+			CarroEmbarque carroEncontrado = null;
 			String idImgCarro = null;
 			for (ImageView img : listaImagenes) {
 				if(img.getTranslateX() == posicionVehiculoRetirada)
@@ -2001,14 +1998,17 @@ public class AerolineaController implements Initializable {
 			
 			Nodo<CarroEmbarque> carro = bicolaCarros.getPrimero();			
 			for (int i = 0; i < bicolaCarros.longitud(); i++) {
-				
 				if(carro.getValorNodo().getNumIdentificacion().equalsIgnoreCase(idImgCarro)) {
 					carroEncontrado = carro.getValorNodo();
 					break;
 				} else {
 					carro = carro.getSiguienteNodo();
 				}
-				
+			}
+			try {
+				bicolaCarros.extraer(carroEncontrado);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
     }

@@ -104,6 +104,47 @@ public class Cola<T> {
 			tamaño--;
 		}
 	}
+	/**
+	 * Método que extrae un elemento de la Cola.
+	 * @throws Exception : la cola está vacía
+	 */
+	public T extraer(T valor) throws Exception {
+		
+		Nodo<T> nodo = primero;
+		Nodo<T> previo = null;
+		Nodo<T> siguiente = null;
+		boolean encontrado = false;
+
+		//buscar el nodo previo
+		while(nodo!=null) {
+			if( nodo.getValorNodo() == valor ) {
+				encontrado = true;
+				break;
+			}
+			previo = nodo;
+			nodo = nodo.getSiguienteNodo();
+		}
+
+		if(encontrado) {
+			siguiente = nodo.getSiguienteNodo();
+			if( previo==null ) {
+				primero = siguiente;
+			}else {
+				previo.setSiguienteNodo(siguiente);
+			}
+
+			if(siguiente==null) {
+				ultimo = previo;
+			}else {
+				nodo.setSiguienteNodo(null);
+			}
+
+			nodo = null;
+			tamaño--;
+			return valor;
+		}
+		throw new RuntimeException("El elemento no existe");
+	}
 	
 	/**
 	 * Retorna y elimina el elemento que está al incio de la Cola
