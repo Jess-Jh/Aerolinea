@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
@@ -57,6 +55,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 
 /**
  * Controlador de la Aerolinea
@@ -1887,7 +1886,7 @@ public class AerolineaController implements Initializable {
     void salidaCarroEmbarque(ActionEvent event) {
     	
     	if(bicolaCarros.getTamaño() <= 0) {
-    		aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No hay ningún carro para retirar", AlertType.WARNING);		
+    		aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No hay ningún carro para realizar una salida", AlertType.WARNING);		
     	} else {
     		
     		try {
@@ -1927,9 +1926,7 @@ public class AerolineaController implements Initializable {
 		    				for (int j = 0; j < listaImagenes.length; j++) {    			    					
 		    					
 		    					if((listaImagenes[j].isDisable())) {
-		    						
-		    						System.out.println(listaImagenes[j].getId());
-		    						
+		    								    						
 		    						ImageView ubicarCarro = listaImagenes[j];
 		    						
 		    						for (int i = 0; i < posicionesCarros.size(); i++) {
@@ -1985,12 +1982,38 @@ public class AerolineaController implements Initializable {
 
 	@FXML
     void retirarCarroEmbarque(ActionEvent event) {
+		
+		System.out.println(posicionVehiculoRetirada);
+		
+		if(posicionVehiculoRetirada == 0) {
+			aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No ha seleccionado ningún carro para retirar", AlertType.WARNING);				   
+		} else if(bicolaCarros.getPrimero() == null) {
+			aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No hay ningún carro para retirar en esa posición", AlertType.WARNING);		
+		
+		} else {
+			CarroEmbarque carroEncontrado;
+			
+			String idImgCarro = null;
+			for (ImageView img : listaImagenes) {
+				if(img.getTranslateX() == posicionVehiculoRetirada)
+					idImgCarro = img.getId();
+			}
+			
+			Nodo<CarroEmbarque> carro = bicolaCarros.getPrimero();			
+			for (int i = 0; i < bicolaCarros.longitud(); i++) {
 				
-		for (ImageView img : llenarListaImagenes()) {
-			if(img.getTranslateX() == posicionVehiculoRetirada)
-				System.out.println(img.getId());
+				if(carro.getValorNodo().getNumIdentificacion().equalsIgnoreCase(idImgCarro)) {
+					carroEncontrado = carro.getValorNodo();
+					break;
+				} else {
+					carro = carro.getSiguienteNodo();
+				}
+				
+			}
 		}
     }
+	
+	
  
 
 
