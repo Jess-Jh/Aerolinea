@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
@@ -1211,7 +1212,7 @@ public class AerolineaController implements Initializable {
     @FXML
     void seleccionarPuesto(ActionEvent event) {
     	
-    	if(aeronaveSeleccion.getNombreAeronave() == null){
+    	if(aeronaveSeleccion == null){
     		aplicacionAerolinea.mostrarMensaje("Compra de Tiquetes", "Compra de Tiquetes", "Para la selección de su puesto primero elija el vuelo en el que va a viajar", AlertType.WARNING);
     	} else {
     		if(aeronaveSeleccion.getNombreAeronave().equals("Airbus A320")) 
@@ -1758,6 +1759,7 @@ public class AerolineaController implements Initializable {
     Bicola<CarroEmbarque> bicolaCarros = new Bicola<>();
     ImageView ubicarCarro;
     double posicionVehiculoRetirada;
+    int posiciones = 0;
     
     @FXML
     void llegadaCarroEmbarque(ActionEvent event) {
@@ -1767,7 +1769,6 @@ public class AerolineaController implements Initializable {
     		
     	} else {
     		CarroEmbarque carro = new CarroEmbarque(""+idCarroEmbarque++); 
-    		
     		bicolaCarros.insertar(carro);
     		
     		for (int i = 0; i < listaImagenes.length; i++) {
@@ -1795,9 +1796,11 @@ public class AerolineaController implements Initializable {
     			}	
     		}
     		ubicarCarro.setDisable(true);
-    		
     		lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
     	}
+    	
+    	
+
     	
 //
 //    	
@@ -1857,23 +1860,26 @@ public class AerolineaController implements Initializable {
 		return listaPosiciones;
 	}
 	
-
     @FXML
     void retirarVehiculo(ActionEvent event) {
 
-    	if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {
-	    	((Button)event.getTarget()).setStyle("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
-	    	posicionVehiculoRetirada = ((Button)event.getTarget()).getLayoutX();  
-    	} else if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {    		
-	    	((Button)event.getTarget()).setStyle("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");    		
-    	}
+		if (((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {
+			if(posiciones+1 > 1) {
+				aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No puede seleccionar más de un carro", AlertType.WARNING);		
+			} else {
+    			((Button)event.getTarget()).setStyle("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
+    			posicionVehiculoRetirada = ((Button)event.getTarget()).getLayoutX();  
+    			posiciones++;
+    			System.out.println(posiciones);
+			}
+		} else if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {    		
+			((Button)event.getTarget()).setStyle("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
+			posiciones--;
+			System.out.println(posiciones);
+		}
+    	
     }
-
-	@FXML
-    void retirarCarroEmbarque(ActionEvent event) {
-
-    }
-
+	
     @FXML
     void salidaCarroEmbarque(ActionEvent event) {
     	
@@ -1886,6 +1892,7 @@ public class AerolineaController implements Initializable {
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
+    	
     		
     		for (int i = 0; i < listaImagenes.length; i++) {
     			    			
@@ -1916,6 +1923,8 @@ public class AerolineaController implements Initializable {
 		    				for (int j = 0; j < listaImagenes.length; j++) {    			    					
 		    					
 		    					if((listaImagenes[j].isDisable())) {
+		    						
+		    						System.out.println(listaImagenes[j].getId());
 		    						
 		    						ImageView ubicarCarro = listaImagenes[j];
 		    						
@@ -1951,6 +1960,13 @@ public class AerolineaController implements Initializable {
 			if(!(bicolaCarros.getTamaño() < 0)) 
 				lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
     	}
+    }
+    
+
+	@FXML
+    void retirarCarroEmbarque(ActionEvent event) {
+		
+		double posicion = posicionVehiculoRetirada; 
     }
  
 
