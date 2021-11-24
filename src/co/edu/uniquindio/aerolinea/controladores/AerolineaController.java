@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
@@ -1747,10 +1748,12 @@ public class AerolineaController implements Initializable {
     	ImageView[] listaImagenes = {imgCarroEmbarque1, imgCarroEmbarque2, imgCarroEmbarque3, imgCarroEmbarque4, imgCarroEmbarque5,
     			                     imgCarroEmbarque6, imgCarroEmbarque7, imgCarroEmbarque8, imgCarroEmbarque9, imgCarroEmbarque10, imgCarroEmbarque11};
     	
-    	for (ImageView imageView : listaImagenes) {
-			imageView.setVisible(false);
-		}
+    	for (int i = 1; i < listaImagenes.length; i++) 
+    		listaImagenes[i].setId(""+i);
     	
+    	for (ImageView imageView : listaImagenes) 
+    		imageView.setVisible(false);
+		
     	return listaImagenes;
     }
     
@@ -1768,7 +1771,9 @@ public class AerolineaController implements Initializable {
     		aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No puede añadir más carros, la fila se encuentra llena", AlertType.WARNING);		
     		
     	} else {
-    		CarroEmbarque carro = new CarroEmbarque(""+idCarroEmbarque++); 
+    		int idCarro = idCarroEmbarque++;
+    		
+    		CarroEmbarque carro = new CarroEmbarque(""+idCarro); 
     		bicolaCarros.insertar(carro);
     		
     		for (int i = 0; i < listaImagenes.length; i++) {
@@ -1776,6 +1781,7 @@ public class AerolineaController implements Initializable {
     			if(!(listaImagenes[i].isDisable())) {
     				ubicarCarro = listaImagenes[i];
     				ubicarCarro.setVisible(true);
+    				ubicarCarro.setId(""+idCarro);
     				break;
     			}
     		}
@@ -1870,14 +1876,11 @@ public class AerolineaController implements Initializable {
     			((Button)event.getTarget()).setStyle("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
     			posicionVehiculoRetirada = ((Button)event.getTarget()).getLayoutX();  
     			posiciones++;
-    			System.out.println(posiciones);
 			}
 		} else if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {    		
 			((Button)event.getTarget()).setStyle("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
 			posiciones--;
-			System.out.println(posiciones);
 		}
-    	
     }
 	
     @FXML
@@ -1893,7 +1896,6 @@ public class AerolineaController implements Initializable {
 				e1.printStackTrace();
 			}
     	
-    		
     		for (int i = 0; i < listaImagenes.length; i++) {
     			    			
     			if(listaImagenes[i].getTranslateX() == 735 && (listaImagenes[i].isDisable())) {
@@ -1919,7 +1921,9 @@ public class AerolineaController implements Initializable {
 
 					    	for (int i = 0; i < posicionesCarros.size(); i++) 
 				    			posicionesCarros.get(0).setOcupado(false);
-    			    				
+					    	
+					    	ordenarArregloPorId(listaImagenes);
+					    	    			    				
 		    				for (int j = 0; j < listaImagenes.length; j++) {    			    					
 		    					
 		    					if((listaImagenes[j].isDisable())) {
@@ -1954,6 +1958,7 @@ public class AerolineaController implements Initializable {
 		    				}
 		    				transition2.play();
 					    }
+
     				});
     			}
     		}
@@ -1962,11 +1967,29 @@ public class AerolineaController implements Initializable {
     	}
     }
     
+    private void ordenarArregloPorId(ImageView[] listaImagenes) {
+    	
+    	ImageView aux;
+    	
+    	for(int j = 0; j < listaImagenes.length-1; j++){
+    		   for(int i = 0; i < listaImagenes.length-1; i++){
+    		      if (Integer.valueOf(listaImagenes[i].getId()) > Integer.valueOf(listaImagenes[i+1].getId())) {
+    		      aux = listaImagenes[i];
+    		      listaImagenes[i] = listaImagenes[i+1];
+    		      listaImagenes[i+1] = aux;
+    		   }
+    		}
+    	}
+	}
+    
 
 	@FXML
     void retirarCarroEmbarque(ActionEvent event) {
-		
-		double posicion = posicionVehiculoRetirada; 
+				
+		for (ImageView img : llenarListaImagenes()) {
+			if(img.getTranslateX() == posicionVehiculoRetirada)
+				System.out.println(img.getId());
+		}
     }
  
 
