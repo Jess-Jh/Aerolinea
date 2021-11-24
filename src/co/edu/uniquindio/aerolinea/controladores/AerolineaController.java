@@ -1757,6 +1757,7 @@ public class AerolineaController implements Initializable {
     int idCarroEmbarque = 1;
     Bicola<CarroEmbarque> bicolaCarros = new Bicola<>();
     ImageView ubicarCarro;
+    double posicionVehiculoRetirada;
     
     @FXML
     void llegadaCarroEmbarque(ActionEvent event) {
@@ -1855,6 +1856,18 @@ public class AerolineaController implements Initializable {
 		
 		return listaPosiciones;
 	}
+	
+
+    @FXML
+    void retirarVehiculo(ActionEvent event) {
+
+    	if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {
+	    	((Button)event.getTarget()).setStyle("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
+	    	posicionVehiculoRetirada = ((Button)event.getTarget()).getLayoutX();  
+    	} else if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {    		
+	    	((Button)event.getTarget()).setStyle("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");    		
+    	}
+    }
 
 	@FXML
     void retirarCarroEmbarque(ActionEvent event) {
