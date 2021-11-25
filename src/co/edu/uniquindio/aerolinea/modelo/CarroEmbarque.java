@@ -13,7 +13,7 @@ public class CarroEmbarque implements Serializable {
 	private double peso;
 	private ArrayList<Equipaje> listaEquipajes;
 	private String numIdentificacion;
-	
+
 	/**
 	 * Constructor
 	 * @param peso, listaEquipajes, numIdentificacion

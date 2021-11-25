@@ -136,9 +136,9 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="txtTextoConfirmacionRegistroTripulantes" layoutX="953.0" layoutY="540.0" prefHeight="27.0" prefWidth="403.0" style="-fx-text-fill: #FD6F00;">
+                        <Label fx:id="txtTextoConfirmacionRegistroTripulantes" layoutX="984.0" layoutY="541.0" prefHeight="26.0" prefWidth="370.0" style="-fx-text-fill: #FD6F00;">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -877,12 +877,12 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="807.0" layoutY="82.0" text="Peso total:">
+                              <Label layoutX="782.0" layoutY="82.0" text="Peso total:">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lblPesoTotalCarroEmbarque" layoutX="910.0" layoutY="83.0" prefHeight="19.0" prefWidth="40.0">
+                              <Label fx:id="lblPesoTotalCarroEmbarque" layoutX="885.0" layoutY="82.0" prefHeight="25.0" prefWidth="77.0">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
@@ -983,6 +983,14 @@
                            </cursor>
                         </ImageView>
                         <Button fx:id="btnLista11" layoutX="1292.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: #34495E; -fx-border-color: black; -fx-border-width: 3px 0px 0px 3px;" />
+                        <ImageView fx:id="imgCarroEmbarqueR" fitHeight="66.0" fitWidth="66.0" layoutX="737.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resource/carroR.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
                      </children></AnchorPane>
               </content>
             </Tab>
