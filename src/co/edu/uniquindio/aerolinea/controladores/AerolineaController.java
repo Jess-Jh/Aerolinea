@@ -740,9 +740,6 @@ public class AerolineaController implements Initializable {
 		tableViewEquipajes1.getSelectionModel().selectedItemProperty().addListener((obs, oldSeletion, newSelection) -> {
 			if(newSelection != null) {				
 				equipajeSeleccionEmbarque = newSelection;
-				totalEquipajeEmbarque += equipajeSeleccionEmbarque.getPesoTotal();
-				
-				lblPesoTotalCarroEmbarque.setText(String.valueOf(totalEquipajeEmbarque));
 			}
 		});	
 		//------------------------------------------------------------------------------------------------------------------------------||
@@ -847,6 +844,16 @@ public class AerolineaController implements Initializable {
 		listadoClientes.addAll(aerolinea.getListaClientes());
 		return listadoClientes;
 	}
+	
+	/**
+	 * Obtener los equipajes del cliente
+	 * @return
+	 */
+	private ObservableList<Equipaje> getEquipajes() {
+		listadoEquipajes.clear();
+		listadoEquipajes.addAll(aerolinea.getListaEquipajes());			
+		return listadoEquipajes;
+	}
 
 	/**
 	 * Obtener los tiquetes del cliente, sin contar con los que su equipaje ya se encuentra registrado
@@ -891,48 +898,64 @@ public class AerolineaController implements Initializable {
 		
 		return listadoTiquetesCliente;
 	}
-
-	/**
-	 * Obtener los equipajes del cliente
-	 * @return
-	 */
-	private ObservableList<Equipaje> getEquipajes() {
-		listadoEquipajes.clear();
-		listadoEquipajes.addAll(aerolinea.getListaEquipajes());			
-		return listadoEquipajes;
-	}
 	
     @FXML
     void pasarDatosTablaAsignacionTripulantes(MouseEvent event) {
-    	if(tripulanteSeleccion != null) {
-			listadoTripulantesAsignados.add(tripulanteSeleccion);
-			tableviewAsignacionVuelos.setItems(listadoTripulantesAsignados);
-			listadoTripulantes.remove(tripulanteSeleccion);
-		}
+    	if(listadoTripulantes.isEmpty()) {
+    		aplicacionAerolinea.mostrarMensaje("Notificación Asignación Tripulante", "Notificación Asignación Tripulante", "Ya no hay tripulantes para seleccionar", AlertType.WARNING);		
+    		
+    	} else {
+	    	if(tripulanteSeleccion != null) {
+				listadoTripulantesAsignados.add(tripulanteSeleccion);
+				tableviewAsignacionVuelos.setItems(listadoTripulantesAsignados);
+				listadoTripulantes.remove(tripulanteSeleccion);
+			}
+    	}
     }
     
     @FXML
     void retirarDatosTablaAsignacionTripulantes(MouseEvent event) {
-    	if(tripulanteSeleccion != null) {
-    		listadoTripulantes.add(tripulanteSeleccion);
-    		listadoTripulantesAsignados.remove(tripulanteSeleccion);
+    	if(listadoTripulantesAsignados.isEmpty()) {
+    		aplicacionAerolinea.mostrarMensaje("Notificación Asignación Tripulante", "Notificación Asignación Tripulante", "Ya no hay tripulantes para seleccionar", AlertType.WARNING);		
+    		
+    	} else {
+	    	if(tripulanteSeleccion != null) {
+	    		listadoTripulantes.add(tripulanteSeleccion);    		
+	    		listadoTripulantesAsignados.remove(tripulanteSeleccion);
+	    	}
     	}
     }
     
     @FXML
     void pasarEquipajeAlCarroEmbarque(MouseEvent event) {
-    	if(equipajeSeleccionEmbarque != null) {
+    	
+    	if(listadoEquipajes.isEmpty()) {
+    		aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "Ya no hay equipajes para seleccionar", AlertType.WARNING);		
+    		
+    	} else {
+    		if(equipajeSeleccionEmbarque != null) {
 			listadoEquipajesEmbarque.add(equipajeSeleccionEmbarque);
 			tableViewEquipajesCarroEmbarque.setItems(listadoEquipajesEmbarque);
-			listadoEquipajes1.remove(equipajeSeleccionEmbarque);			
-		}
+			listadoEquipajes.remove(equipajeSeleccionEmbarque);	
+			
+			totalEquipajeEmbarque += equipajeSeleccionEmbarque.getPesoTotal();
+			lblPesoTotalCarroEmbarque.setText(String.valueOf(totalEquipajeEmbarque));
+    		}
+    	}
     }
     
     @FXML
     void retirarEquipajedDelCarroEmbarque(MouseEvent event) {
-    	if(equipajeSeleccionEmbarque != null) {
-    		listadoEquipajes1.add(equipajeSeleccionEmbarque);
-    		listadoEquipajesEmbarque.remove(equipajeSeleccionEmbarque);
+    	if(listadoEquipajesEmbarque.isEmpty()) {
+    		aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "Ya no hay equipajes para seleccionar", AlertType.WARNING);		
+    	} else {
+	    	if(equipajeSeleccionEmbarque != null) {
+	    		listadoEquipajes.add(equipajeSeleccionEmbarque);
+	    		listadoEquipajesEmbarque.remove(equipajeSeleccionEmbarque);
+	    		
+	    		totalEquipajeEmbarque -= equipajeSeleccionEmbarque.getPesoTotal();
+				lblPesoTotalCarroEmbarque.setText(String.valueOf(totalEquipajeEmbarque));
+	    	}
     	}
     }
     
@@ -1902,7 +1925,10 @@ public class AerolineaController implements Initializable {
 					listaEquipajesEmbarque.addAll(listadoEquipajesEmbarque);
 					carroSalida.setPeso(pesoTotal);
 					
+					totalEquipajeEmbarque = 0;
 					lblPesoTotalCarroEmbarque.setText("");
+					listadoEquipajesEmbarque.clear();
+					
 					animacionSalidaCarroEmbarque();
 				}
 	

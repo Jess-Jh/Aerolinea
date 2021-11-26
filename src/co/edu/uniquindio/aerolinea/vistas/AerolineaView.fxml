@@ -982,7 +982,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Button fx:id="btnLista11" layoutX="1292.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: #34495E; -fx-border-color: black; -fx-border-width: 3px 0px 0px 3px;" />
+                        <Button fx:id="btnLista11" layoutX="1292.0" layoutY="55.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: #E5E5E5; -fx-border-color: green; -fx-border-width: 3px 0px 0px 3px;" />
                         <ImageView fx:id="imgCarroEmbarqueR" fitHeight="66.0" fitWidth="66.0" layoutX="737.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../resource/carroR.png" />
