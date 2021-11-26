@@ -13,6 +13,7 @@ public class CarroEmbarque implements Serializable {
 	private double peso;
 	private ArrayList<Equipaje> listaEquipajes;
 	private String numIdentificacion;
+	private String numAvion;
 
 	/**
 	 * Constructor
@@ -44,6 +45,12 @@ public class CarroEmbarque implements Serializable {
 	}
 	public void setNumIdentificacion(String numIdentificacion) {
 		this.numIdentificacion = numIdentificacion;
+	}
+	public String getNumAvion() {
+		return numAvion;
+	}
+	public void setNumAvion(String numAvion) {
+		this.numAvion = numAvion;
 	}
 	//--------------------------------------------------------------------------------------------------------------------------------------------------||
 
