@@ -2053,7 +2053,7 @@ public class AerolineaController implements Initializable {
     private double validarPeso(Label lblPesoTotalCarroEmbarque2) throws EquipajeException {
     	String notificacion = "";
     	
-    	if(lblPesoTotalCarroEmbarque == null) notificacion += "Seleccione los equpajes para el carro embarque\n";
+    	if(lblPesoTotalCarroEmbarque == null) notificacion += "Seleccione los equipajes para el carro embarque\n";
     	
     	double pesoTotal = Double.valueOf(lblPesoTotalCarroEmbarque.getText());
     	
@@ -2106,7 +2106,7 @@ public class AerolineaController implements Initializable {
 			
 			while(!bicolaCarros.isVacia()) {	
 				Nodo<CarroEmbarque> carro = bicolaCarros.getPrimero();
-												
+				
 				if(carro.getValorNodo().getNumIdentificacion().equalsIgnoreCase(idImgCarro)) {
 					carroEncontrado = bicolaCarros.desencolar();				
 					break;
@@ -2116,142 +2116,142 @@ public class AerolineaController implements Initializable {
 			}
 			
 			while(!pilaCarros.estaVacia()) {
-				bicolaCarros.ponerFrente(pilaCarros.pop());
+				bicolaCarros.ponerFinal(pilaCarros.pop());
 			}
-						
-			for (int i = 0; i < listaImagenes.length; i++) { 				
-							
-				if((listaImagenes[i].isDisable())) {
-												    						
-					ImageView ubicarCarro = listaImagenes[i];
-					if(listaImagenes[i].getId().equalsIgnoreCase(carroEncontrado.getNumIdentificacion())) {
-						
-//						animacionSacarCarro();
-						
-						
-						
-						TranslateTransition transition = new TranslateTransition();
-	    				transition.setDuration(javafx.util.Duration.seconds(10));
-	    				transition.setToX(1292);
-	    				transition.setNode(ubicarCarro);
-	    				validarBoton();
-	    				transition.play();
-	    				
-	    				TranslateTransition transition2 = new TranslateTransition();
-	    				TranslateTransition transition4 = new TranslateTransition();
-	    				transition2.setToX(-5);
-	    				transition2.setNode(ubicarCarro);
-	    				
-	    				transition.setOnFinished(new EventHandler<ActionEvent>() {
+			
+			if(!(bicolaCarros.getTamaño() < 0)) {
+				lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
+			}
+			
+			animacionRetirarCarroEmbarque(carroEncontrado);												
+		}
+	}
+	
+	private void animacionRetirarCarroEmbarque(CarroEmbarque carroEncontrado) {
+	
+		for (int i = 0; i < listaImagenes.length; i++) { 				
+			
+			if((listaImagenes[i].isDisable())) {
+											    						
+				ImageView ubicarCarro = listaImagenes[i];
+				if(listaImagenes[i].getId().equalsIgnoreCase(carroEncontrado.getNumIdentificacion())) {					
+					
+					TranslateTransition transition = new TranslateTransition();
+    				transition.setDuration(javafx.util.Duration.seconds(10));
+    				transition.setToX(1292);
+    				transition.setNode(ubicarCarro);
+    				validarBoton();
+    				transition.play();
+    				
+    				TranslateTransition transition2 = new TranslateTransition();
+    				TranslateTransition transition4 = new TranslateTransition();
+    				transition2.setToX(-5);
+    				transition2.setNode(ubicarCarro);
+    				
+    				transition.setOnFinished(new EventHandler<ActionEvent>() {
 
-						    @Override
-						    public void handle(ActionEvent event) {
-						    	ubicarCarro.setVisible(false);
-		     					ubicarCarro.setDisable(false); 
-		     					transition2.play();
-		     					
-		     					
-		     					ordenarArregloPorId(listaImagenes);
-		     					for (int l = 0; l < listaImagenes.length; l++) {    			    					
+					    @Override
+					    public void handle(ActionEvent event) {
+					    	ubicarCarro.setVisible(false);
+	     					ubicarCarro.setDisable(false); 
+	     					transition2.play();
+	     					
+	     					
+	     					ordenarArregloPorId(listaImagenes);
+	     					for (int l = 0; l < listaImagenes.length; l++) {    			    					
+		    					
+		    					if((listaImagenes[l].isDisable())) {
+		    								    						
+		    						ImageView ubicarCarro1 = listaImagenes[l];
+		    						
+		    						TranslateTransition transition3 = new TranslateTransition();
+		    						habilitarPosicion(ubicarCarro1);
+		    						for (int m = 0; m < posicionesCarros.size(); m++) {
+		    						
+		    							if(!(posicionesCarros.get(m).isOcupado())) {
+		    								
+		    								transition3.setDuration(javafx.util.Duration.seconds(5));		    								
+		    								transition3.setToX(posicionesCarros.get(m).getPosicion());
+		    								transition3.setNode(ubicarCarro1);
+		    								posicionesCarros.get(m).setOcupado(true);
+		    								transition3.play();
+		    								
+		    								double nuevaPosicion1 = posicionesCarros.get(m).getPosicion();
+		    								transition3.setOnFinished(a -> {			    									
+		    									ubicarCarro1.setTranslateX(nuevaPosicion1);
+		    									transition4.play();
+		    								});
+		    								
+		    								if(posicionesCarros.get(m+1) != null)
+		    									posicionesCarros.get(m+1).setOcupado(false);
+		    								break;
+		    							}	
+		    						}
+		    					}
+	     					}
+	     					transition4.setOnFinished(a -> {
+		     					for (int j = 0; j < listaImagenes.length; j++) {    			    					
 			    					
-			    					if((listaImagenes[l].isDisable())) {
+	    							if(!(listaImagenes[j].isDisable()) && listaImagenes[j].getTranslateY() > 0) {
 			    								    						
-			    						ImageView ubicarCarro1 = listaImagenes[l];
+			    						ImageView ubicarCarro2 = listaImagenes[j];
+			    						TranslateTransition transition5 = new TranslateTransition();
 			    						
-			    						TranslateTransition transition3 = new TranslateTransition();
-			    						habilitarPosicion(ubicarCarro1);
-			    						for (int m = 0; m < posicionesCarros.size(); m++) {
-			    						
-			    							if(!(posicionesCarros.get(m).isOcupado())) {
+			    						for (int i = 0; i < posicionesCarros.size(); i++) {
+
+			    							
+			    							if(!(posicionesCarros.get(i).isOcupado())) {
 			    								
-			    								transition3.setDuration(javafx.util.Duration.seconds(5));		    								
-			    								transition3.setToX(posicionesCarros.get(m).getPosicion());
-			    								transition3.setNode(ubicarCarro1);
-			    								posicionesCarros.get(m).setOcupado(true);
-			    								transition3.play();
-			    								
-			    								double nuevaPosicion1 = posicionesCarros.get(m).getPosicion();
-			    								transition3.setOnFinished(a -> {			    									
-			    									ubicarCarro1.setTranslateX(nuevaPosicion1);
-			    									transition4.play();
-			    								});
-			    								
-			    								if(posicionesCarros.get(m+1) != null)
-			    									posicionesCarros.get(m+1).setOcupado(false);
-			    								
-			    								
-			    								
+			    								transition5.setDuration(javafx.util.Duration.seconds(5));		    								
+			    								transition5.setToY(1);
+			    								transition5.setNode(ubicarCarro2);
+			    								transition5.play();
 			    								break;
 			    							}	
 			    						}
+			    						transition5.setOnFinished(ex -> {
+				     						ordenarArregloPorId(listaImagenes);
+				     						for (int k = 0; k < listaImagenes.length; k++) {
+				    			    				
+				    			    			if(!(listaImagenes[k].isDisable())) {
+				    			    				ImageView ubicarCarro = listaImagenes[k];
+				    			    				
+				    			    				for (PosicionCarro posicionCarro : posicionesCarros) {
+//				    			    					System.out.println("Posiciones que cumplen");			     							
+//		    			    			    			System.out.println(!(posicionCarro.isOcupado()));
+		    			    			    			
+						    			    			if(!(posicionCarro.isOcupado())) {
+						    			    				
+						    			    				TranslateTransition transition6 = new TranslateTransition();
+						    			    				transition6.setDuration(javafx.util.Duration.seconds(3));
+						    			    				transition6.setToX(posicionCarro.getPosicion());
+						    			    				transition6.setNode(ubicarCarro);
+						    			    				posicionCarro.setOcupado(true);
+						    			    				transition6.play();						    			    				
+						    			    				transition6.setOnFinished(e -> {
+						    			    					ubicarCarro.setTranslateX(posicionCarro.getPosicion());
+						    			    				});
+						    			    				break;
+						    			    			}	
+						    			    		}
+				    			    			}
+				    			    		}
+				     					});
 			    					}
 		     					}
-		     					transition4.setOnFinished(a -> {
-			     					for (int j = 0; j < listaImagenes.length; j++) {    			    					
-				    					
-		    							if(!(listaImagenes[j].isDisable()) && listaImagenes[j].getTranslateY() > 0) {
-				    								    						
-				    						ImageView ubicarCarro2 = listaImagenes[j];
-				    						TranslateTransition transition5 = new TranslateTransition();
-				    						
-				    						for (int i = 0; i < posicionesCarros.size(); i++) {
-				    							if(!(posicionesCarros.get(i).isOcupado())) {
-				    								
-				    								transition5.setDuration(javafx.util.Duration.seconds(5));		    								
-				    								transition5.setToY(1);
-				    								transition5.setNode(ubicarCarro2);
-				    								transition5.play();
-				    								break;
-				    							}	
-				    						}
-				    						
-					     					transition5.setOnFinished(ex -> {
-					     						ordenarArregloPorId(listaImagenes);
-							    				
-							    				for (int k = 0; k < listaImagenes.length; k++) {    			    					
-							    					
-							    					if(!(listaImagenes[k].isDisable())) {	    						
-							    						ImageView ubicarCarro = listaImagenes[k];
-							    						
-							    						for (int i = 0; i < posicionesCarros.size(); i++) {
-							    						
-							    							if(!(posicionesCarros.get(i).isOcupado())) {
-							    								
-							    								TranslateTransition transition = new TranslateTransition();
-							    								transition.setDuration(javafx.util.Duration.seconds(3));		    								
-							    								transition.setToX(posicionesCarros.get(i).getPosicion());
-							    								transition.setNode(ubicarCarro);
-							    								posicionesCarros.get(i).setOcupado(true);
-							    								transition.play();
-							    								
-							    								double nuevaPosicion = posicionesCarros.get(i).getPosicion();
-							    								transition.setOnFinished(e -> {
-							    									ubicarCarro.setTranslateX(nuevaPosicion);
-							    								});							    								
-							    								break;
-							    							}	
-							    						}
-							    					}
-							    				}
-					     					});
-				    					}
-			     					}
-		     					});
-						    }
-	    				});
-	    				break;
-					} else {
-						colocarCarrosPila(ubicarCarro);
-					}
+	     					});
+					    }
+    				});
+    				break;
+		
+				} else {
+					colocarCarrosPila(ubicarCarro);
 				}
 			}
 		}
-		
-		for (PosicionCarro pos : posicionesCarrosPila) {
-			pos.setOcupado(false);
-		}		
-	}
 	
+	}
+
 	/**
 	 * Colocar los carros que estan en la cola en la pila
 	 * @param ubicarCarro2
