@@ -242,13 +242,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 		return cargoTripulante;
 	}
 
-	/**
-	 * Agregar Cliente a la Aerolinea
-	 * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento, direccionResidencia
-	 * @param tarjetaDebitoCredito
-	 * @param tiquete 
-	 * @return
-	 */
+	@Override
 	public Cliente agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, 
 			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito, Tiquete tiquete) {
 		
@@ -272,12 +266,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 		}		
 	}
 
-	/**
-	 * Agregar un tiquete a la Aerolinea
-	 * @param idAvion, destino, costoTotalViaje, viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numPersonas, cliente
-	 * @param listaPuestosCliente
-	 * @return
-	 */
+	@Override
 	public Tiquete agregarTiquete(String idAvion, String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, int numPersonas, double costoTotalViaje, Cliente cliente,
 			ArrayList<String> listaPuestosCliente) {
 		TipoViaje tipoViaje = null;
@@ -303,14 +292,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 	}
 
 	
-	/**
-	 * Agregr un equipaje a la aerolinea
-	 * @param identificacion, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2
-	 * @param totalDimensionEquipajeMano, pesoAdicional, altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2
-	 * @param anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano, idAvion
-	 * @return
-	 */
-
+	@Override
 	public Equipaje agregarEquipaje(String idEquipaje,String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2,
 			String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2,
 			String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano, String idAvion) {
@@ -350,13 +332,7 @@ public class Aerolinea implements Serializable, IAerolinea {
 		return equipaje;
 	}
 
-	/**
-	 * Actualizar un equipaje
-	 * @param idEquipaje, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano
-	 * @param pesoAdicional, altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano
-	 * @param anchoEquipajeMano, largoEquipajeMano
-	 * @return
-	 */
+	@Override
 	public Equipaje actualizarEquipaje(String idEquipaje, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, String totalDimensionEquipaje2,
 			String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2, 
 			String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano) {
@@ -402,16 +378,12 @@ public class Aerolinea implements Serializable, IAerolinea {
 		for (Equipaje equipaje : listaEquipajes) {
 			if(equipaje.getIdEquipaje().equalsIgnoreCase(idEquipaje)) {
 				return equipaje;
-				
 			}
 		}
 		return null;
 	}
 
-	/**
-	 * Eliminar un equipaje
-	 * @param idEquipaje
-	 */
+	@Override
 	public boolean eliminarEquipaje(String idEquipaje) {
 		Equipaje equipaje = obtenerEquipaje(idEquipaje);
 		boolean equipajeEliminado = false;
@@ -422,6 +394,11 @@ public class Aerolinea implements Serializable, IAerolinea {
 		}
 		return equipajeEliminado;
 		
+	}
+
+	@Override
+	public void guardarCarroEmbarque(CarroEmbarque carroSalida) {
+		listaCarros.add(carroSalida);
 	}
 
 

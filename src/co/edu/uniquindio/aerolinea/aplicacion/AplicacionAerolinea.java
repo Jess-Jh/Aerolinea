@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import co.edu.uniquindio.aerolinea.controladores.AerolineaController;
 import co.edu.uniquindio.aerolinea.controladores.ModelFactoryController;
-import co.edu.uniquindio.aerolinea.controladores.OcupacionSillasController;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

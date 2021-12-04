@@ -6,9 +6,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
-import co.edu.uniquindio.aerolinea.excepciones.EquipajeException;
 import co.edu.uniquindio.aerolinea.excepciones.VueloException;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
+import co.edu.uniquindio.aerolinea.modelo.CarroEmbarque;
 import co.edu.uniquindio.aerolinea.modelo.Cliente;
 import co.edu.uniquindio.aerolinea.modelo.Equipaje;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
@@ -18,7 +18,6 @@ import co.edu.uniquindio.aerolinea.modelo.Tiquete;
 import co.edu.uniquindio.aerolinea.modelo.Tripulante;
 import co.edu.uniquindio.aerolinea.modelo.servicios.IModelFactory;
 import co.edu.uniquindio.aerolinea.persistencia.Persistencia;
-import javafx.collections.ObservableList;
 
 /**
  * Clase Singleton
@@ -134,13 +133,8 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	public void ocupacionSillasCliente(ArrayList<String> listaSillasCliente) {
 		listaPuestosCliente.addAll(listaSillasCliente);
 	}
-	/**
-	 * Agregar un cliente a la Aerolinea
-	 * @param tiquete 
-	 * @param identificacionOPasaporte, nombre, apellido, direccion, correoElectronico, fechaNacimiento
-	 * @param direccionResidencia, tarjetaDebitoCredito
-	 * @return
-	 */
+	
+	@Override
 	public Cliente agregarCliente(String identificacionOPasaporte, String nombre, String apellido, String direccion, String correoElectronico, 
 			LocalDate fechaNacimiento, String direccionResidencia, String tarjetaDebitoCredito, Tiquete tiquete) {
 		
@@ -160,14 +154,7 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		guardarRecursoXML();
 	}
 	
-	/**
-	 * Agregar un tiquete a la Aerolinea
-	 * @param string 
-	 * @param costoTotalViaje 
-	 * @param viajeSeleccionado, clase, origen, destino, fechaSalida, fechaRegreso, numPersonas, cliente
-	 * @param listaPuestosCliente
-	 * @return
-	 */
+	@Override
 	public Tiquete agregarCompraTiquete(String idAvion, String viajeSeleccionado, String clase, String origen, String destino, LocalDate fechaSalida, LocalDate fechaRegreso, int numPersonas, double costoTotalViaje, Cliente cliente,
 			ArrayList<String> listaPuestosCliente) {
 		
@@ -178,12 +165,7 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	@Override
 	public void run() {	}
 	
-	/**
-	 * Agregar un equipaje a la aerolinea
-	 * @param identificacion, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano, pesoAdicional, 
-	 * altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano, anchoEquipajeMano, largoEquipajeMano, idAvion
-	 * @return
-	 */
+	@Override
 	public Equipaje agregarEquipaje(String idEquipaje, String identificacion, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, 
 			String totalDimensionEquipaje2, String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1, String largoEquipaje1, 
 			String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano, String idAvion) {
@@ -194,13 +176,7 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		return equipaje;
 	}
 	
-	/**
-	 * Actualizar un equipaje
-	 * @param idEquipaje, pesoTotalEquipaje, pesoEquipaje1, dimensionEquipaje1, pesoEquipaje2, totalDimensionEquipaje2, totalDimensionEquipajeMano
-	 * @param pesoAdicional, altoEquipaje1, anchoEquipaje1, largoEquipaje1, altoEquipaje2, anchoEquipaje2, largoEquipaje2, altoEquipajeMano
-	 * @param anchoEquipajeMano, largoEquipajeMano
-	 * @return
-	 */
+	@Override
 	public Equipaje actualizarEquipaje(String idEquipaje, double pesoTotalEquipaje, String pesoEquipaje1, String dimensionEquipaje1, String pesoEquipaje2, 
 			String totalDimensionEquipaje2, String totalDimensionEquipajeMano, String pesoAdicional, String altoEquipaje1, String anchoEquipaje1,
 			String largoEquipaje1, String altoEquipaje2, String anchoEquipaje2, String largoEquipaje2, String altoEquipajeMano, String anchoEquipajeMano, String largoEquipajeMano) {
@@ -211,10 +187,7 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 		guardarRecursoXML();
 		return equipaje;
 	}
-	/**
-	 * Eliminar un equipaje
-	 * @param idEquipaje
-	 */
+	@Override
 	public boolean eliminarEquipaje(String idEquipaje) {
 		
 		if(aerolinea.eliminarEquipaje(idEquipaje)) {
@@ -222,6 +195,12 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 			return true;
 		}
 		return false;
+	}
+	
+	@Override
+	public void guardarCarroEmbarque(CarroEmbarque carroSalida) {
+		aerolinea.guardarCarroEmbarque(carroSalida);
+//		guardarRecursoXML();
 	}
 
 

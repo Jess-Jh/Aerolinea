@@ -1,6 +1,5 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
-import java.beans.Transient;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -1959,6 +1958,8 @@ public class AerolineaController implements Initializable {
 					
 					String numAvion = listaEquipajesEmbarque.get(0).getNumAvion();
 					carroSalida.setNumAvion(numAvion);
+					
+					modelFactoryController.guardarCarroEmbarque(carroSalida);
 										
 					lblPesoTotalCarroEmbarque.setText("");
 					listadoEquipajesEmbarque.clear();

@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.aerolinea.aplicacion.AplicacionAerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aerolinea;
 import co.edu.uniquindio.aerolinea.modelo.Aeronave;
-import co.edu.uniquindio.aerolinea.modelo.AirbusA320;
 import co.edu.uniquindio.aerolinea.modelo.Ruta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
