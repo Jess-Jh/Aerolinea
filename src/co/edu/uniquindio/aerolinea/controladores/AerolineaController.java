@@ -1809,7 +1809,11 @@ public class AerolineaController implements Initializable {
     int idCarroEmbarque = 1;
     Bicola<CarroEmbarque> bicolaCarros = new Bicola<>();
     Pila<CarroEmbarque> pilaCarros = new Pila<>();
+    
+    Bicola<ImageView> bicolaImagenesCarros = new Bicola<>();
+    Pila<ImageView> pilaImagenesCarros = new Pila<>();
     ImageView ubicarCarro;
+    
     double posicionVehiculoRetirada;
     int posiciones = 0;
     
@@ -1825,8 +1829,6 @@ public class AerolineaController implements Initializable {
 		
     	return listaImagenes;
     }
-    
-   
     
     @FXML
     void llegadaCarroEmbarque(ActionEvent event) {
@@ -1845,7 +1847,8 @@ public class AerolineaController implements Initializable {
     			if(!(listaImagenes[i].isDisable())) {
     				ubicarCarro = listaImagenes[i];
     				ubicarCarro.setVisible(true);
-    				ubicarCarro.setId(""+idCarro);
+    				ubicarCarro.setId(""+idCarro);    				
+    				bicolaImagenesCarros.insertar(ubicarCarro);
     				break;
     			}
     		}
@@ -1866,7 +1869,7 @@ public class AerolineaController implements Initializable {
     				posicionCarro.setIdCarro(ubicarCarro.getId());
     				break;
     			}	
-    		}
+    		}    		
     		ubicarCarro.setDisable(true);
     		lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
     	}
@@ -1981,67 +1984,61 @@ public class AerolineaController implements Initializable {
      * Animación de la salida de un carro embarque 
      */
     private void animacionSalidaCarroEmbarque() {
-    	
-    	for (int i = 0; i < listaImagenes.length; i++) {
+    				
+		ImageView ubicarCarro = bicolaImagenesCarros.desencolar();	
 			
-			if(listaImagenes[i].getTranslateX() == 735 && (listaImagenes[i].isDisable())) {
-				
-				ImageView ubicarCarro = listaImagenes[i];
-				
-				TranslateTransition transition = new TranslateTransition();
-				transition.setDuration(javafx.util.Duration.seconds(3));
-				transition.setToX(1292);
-				transition.setNode(ubicarCarro);				
-				transition.play();
-				
-				TranslateTransition transition2 = new TranslateTransition();
-				transition2.setToX(-5);
-				transition2.setNode(ubicarCarro);
-				
-				transition.setOnFinished(new EventHandler<ActionEvent>() {
-
-				    @Override
-				    public void handle(ActionEvent event) {
-				    	ubicarCarro.setVisible(false);
-     					ubicarCarro.setDisable(false);  
-
-				    	for (int i = 0; i < posicionesCarros.size(); i++) 
-			    			posicionesCarros.get(0).setOcupado(false);
-				    	
-				    	ordenarArregloPorId(listaImagenes);
-				    	    			    				
-	    				for (int j = 0; j < listaImagenes.length; j++) {    			    					
-	    					
-	    					if((listaImagenes[j].isDisable())) {
-	    								    						
-	    						ImageView ubicarCarro = listaImagenes[j];
-	    						
-	    						for (int i = 0; i < posicionesCarros.size(); i++) {
-	    						
-	    							if(!(posicionesCarros.get(i).isOcupado())) {
-	    								
-	    								TranslateTransition transition = new TranslateTransition();
-	    								transition.setDuration(javafx.util.Duration.seconds(3));		    								
-	    								transition.setToX(posicionesCarros.get(i).getPosicion());
-	    								transition.setNode(ubicarCarro);
-	    								posicionesCarros.get(i).setOcupado(true);
-	    								posicionesCarros.get(i).setIdCarro(ubicarCarro.getId());
-	    								transition.play();
-    								
-	    								if(posicionesCarros.get(i+1) != null) {
-	    									posicionesCarros.get(i+1).setOcupado(false);
-	    									posicionesCarros.get(i+1).setIdCarro("");
-	    								}
-	    								break;
-	    							}	
-	    						}
-	    					}
-	    				}
-	    				transition2.play();
-				    }
-				});
-			}
-		}
+		TranslateTransition transition = new TranslateTransition();
+		transition.setDuration(javafx.util.Duration.seconds(3));
+		transition.setToX(1292);
+		transition.setNode(ubicarCarro);				
+		transition.play();
+		
+		TranslateTransition transition2 = new TranslateTransition();
+		transition2.setToX(-5);
+		transition2.setNode(ubicarCarro);
+		
+		transition.setOnFinished(new EventHandler<ActionEvent>() {
+			
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	ubicarCarro.setVisible(false);
+				ubicarCarro.setDisable(false);  
+				ImageView ubicarCarro;
+					
+		    	for (int i = 0; i < posicionesCarros.size(); i++) 
+	    			posicionesCarros.get(0).setOcupado(false);
+		    				    	    			    				
+		    	Nodo<ImageView> auxCarro = bicolaImagenesCarros.getPrimero();
+				for (int j = 0; j < bicolaImagenesCarros.longitud(); j++) {    	
+					ubicarCarro = auxCarro.getValorNodo();
+					    					    						
+					for (int i = 0; i < posicionesCarros.size(); i++) {
+					
+						if(!(posicionesCarros.get(i).isOcupado())) {
+							
+							TranslateTransition transition = new TranslateTransition();
+							transition.setDuration(javafx.util.Duration.seconds(3));		    								
+							transition.setToX(posicionesCarros.get(i).getPosicion());
+							transition.setNode(ubicarCarro);
+							posicionesCarros.get(i).setOcupado(true);
+							posicionesCarros.get(i).setIdCarro(ubicarCarro.getId());
+							transition.play();
+						
+							if(posicionesCarros.get(i+1) != null) {
+								posicionesCarros.get(i+1).setOcupado(false);
+								posicionesCarros.get(i+1).setIdCarro("");
+							}
+							break;
+						}	
+					}
+					if(auxCarro.getSiguienteNodo() != null) {
+						auxCarro = auxCarro.getSiguienteNodo();
+						ubicarCarro = auxCarro.getValorNodo();
+					}
+				}
+				transition2.play();
+		    }
+		});
 	}
 
 	/**
@@ -2065,27 +2062,7 @@ public class AerolineaController implements Initializable {
     	if(notificacion.equals("")) return pesoTotal;
     	else throw new EquipajeException(notificacion);
 	}
-
-	/**
-     * Ordena el arreglo de los carros por el id
-     * @param listaImagenes
-     */
-    private void ordenarArregloPorId(ImageView[] listaImagenes) {
-    	
-    	ImageView aux;
-    	
-    	for(int j = 0; j < listaImagenes.length-1; j++){
-    		   for(int i = 0; i < listaImagenes.length-1; i++){
-    		      if (Integer.valueOf(listaImagenes[i].getId()) > Integer.valueOf(listaImagenes[i+1].getId())) {
-    		      aux = listaImagenes[i];
-    		      listaImagenes[i] = listaImagenes[i+1];
-    		      listaImagenes[i+1] = aux;
-    		   }
-    		}
-    	}
-	}
     
-
 	@FXML
     void retirarCarroEmbarque(ActionEvent event) {
 				
@@ -2124,11 +2101,10 @@ public class AerolineaController implements Initializable {
 			if(!(bicolaCarros.getTamaño() < 0)) {
 				lblNumeroCarroEmbarque.setText(bicolaCarros.getPrimero().getValorNodo().getNumIdentificacion());
 			}
-			
 			animacionRetirarCarroEmbarque(carroEncontrado, tamañoPila);												
 		}
 	}
-	int cont = 0;
+	
 	private void animacionRetirarCarroEmbarque(CarroEmbarque carroEncontrado, int tamañoPila) {
 		
 		TranslateTransition transition = new TranslateTransition();
@@ -2136,128 +2112,122 @@ public class AerolineaController implements Initializable {
 		TranslateTransition transition3 = new TranslateTransition();
 		TranslateTransition transition4 = new TranslateTransition();
 	
-		for (int i = 0; i < listaImagenes.length; i++) { 				
-														  
-			if(listaImagenes[i].isDisable()) {
+		while(!bicolaImagenesCarros.isVacia()) {	
+			Nodo<ImageView> auxCarro = bicolaImagenesCarros.getPrimero();
+																	  
+			if(auxCarro.getValorNodo().getId().equalsIgnoreCase(carroEncontrado.getNumIdentificacion())) {
+				ImageView ubicarCarroEncontrado = bicolaImagenesCarros.desencolar();
+									
+				transition.setDuration(javafx.util.Duration.seconds(10));
+				transition.setToX(1292);
+				transition.setNode(ubicarCarroEncontrado);
+				validarBoton();
+				transition.play();
 				
-				ImageView ubicarCarro = listaImagenes[i];
-				if(ubicarCarro.getId().equalsIgnoreCase(carroEncontrado.getNumIdentificacion())) {					
+				transition2.setToX(-5);
+				transition2.setNode(ubicarCarroEncontrado);
+				
+				transition.setOnFinished(new EventHandler<ActionEvent>() {
 					
-					transition.setDuration(javafx.util.Duration.seconds(10));
-					transition.setToX(1292);
-					transition.setNode(ubicarCarro);
-					validarBoton();
-					transition.play();
-					
-					transition2.setToX(-5);
-					transition2.setNode(ubicarCarro);
-					
-					transition.setOnFinished(new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(ActionEvent event) {
+						ubicarCarroEncontrado.setVisible(false);
+						ubicarCarroEncontrado.setDisable(false); 
+						transition2.play();
 						
-						@Override
-						public void handle(ActionEvent event) {
-							ubicarCarro.setVisible(false);
-							ubicarCarro.setDisable(false); 
-							transition2.play();
+						Nodo<ImageView> auxCarrosQuedan = bicolaImagenesCarros.getPrimero();
+						for (int l = 0; l < bicolaImagenesCarros.longitud(); l++) {    			    					
+							ImageView ubicarCarro1 = auxCarrosQuedan.getValorNodo();
 							
-							for (int l = 0; l < listaImagenes.length; l++) {    			    					
+							habilitarPosicion(ubicarCarro1);
+							for (int i = 0; i < posicionesCarros.size(); i++) {
 								
-								if((listaImagenes[l].isDisable())) {
+								if(!(posicionesCarros.get(i).isOcupado())) {
 									
-									ImageView ubicarCarro1 = listaImagenes[l];
+									TranslateTransition transition = new TranslateTransition();
+									transition.setDuration(javafx.util.Duration.seconds(5));		    								
+									transition.setToX(posicionesCarros.get(i).getPosicion());
+									transition.setNode(ubicarCarro1);
+									posicionesCarros.get(i).setOcupado(true);
+									posicionesCarros.get(i).setIdCarro(ubicarCarro1.getId());
+									transition.play();
+																				
+									transition.setOnFinished(e -> {
+										transition3.play();
+									});
 									
-									habilitarPosicion(ubicarCarro1);
-									for (int i = 0; i < posicionesCarros.size(); i++) {
+									if(posicionesCarros.get(i+1) != null) posicionesCarros.get(i+1).setOcupado(false);
+									break;
+								}	
+							}
+							if(auxCarrosQuedan.getSiguienteNodo() != null) {
+								auxCarrosQuedan = auxCarrosQuedan.getSiguienteNodo();
+								ubicarCarro1 = auxCarrosQuedan.getValorNodo();
+							}
+						}
+						
+						transition3.setOnFinished(a -> {
+							Nodo<ImageView> auxCarrosPila = pilaImagenesCarros.getCima();
+							for (int j = 0; j < pilaImagenesCarros.getTamano(); j++) {    
+								
+								ImageView ubicarCarro2 = auxCarrosPila.getValorNodo();
+								
+								for (PosicionCarro posPila : posicionesCarrosPila) {
+									
+									if(posPila.getIdCarro() == ubicarCarro2.getId()) {	   
 										
-										if(!(posicionesCarros.get(i).isOcupado())) {
-											
-											TranslateTransition transition = new TranslateTransition();
-											transition.setDuration(javafx.util.Duration.seconds(5));		    								
-											transition.setToX(posicionesCarros.get(i).getPosicion());
-											transition.setNode(ubicarCarro1);
-											posicionesCarros.get(i).setOcupado(true);
-											posicionesCarros.get(i).setIdCarro(ubicarCarro1.getId());
-											transition.play();
-																						
-											double nuevaPosicion = posicionesCarros.get(i).getPosicion();
-											transition.setOnFinished(e -> {
-												ubicarCarro1.setTranslateX(nuevaPosicion);
-												transition3.play();
-											});
-											
-											if(posicionesCarros.get(i+1) != null) posicionesCarros.get(i+1).setOcupado(false);
-											break;
-										}	
-									}
+										TranslateTransition transition5 = new TranslateTransition();	
+										ubicarCarro2.setVisible(true);
+										transition5.setDuration(javafx.util.Duration.seconds(5));		    								
+										transition5.setToY(1);
+										transition5.setNode(ubicarCarro2);
+										transition5.play();
+										
+										transition5.setOnFinished(e -> {
+											transition4.play();
+										});
+										break;	
+									}		
+								}
+								if(auxCarrosPila.getSiguienteNodo() != null) {
+									auxCarrosPila = auxCarrosPila.getSiguienteNodo();
+									ubicarCarro2 = auxCarrosPila.getValorNodo();
 								}
 							}
-							transition3.setOnFinished(a -> {
-								
-								for (int j = 0; j < listaImagenes.length; j++) {    
-									
-									if(!(listaImagenes[j].isDisable())) {
-										ImageView ubicarCarro2 = listaImagenes[j];
-										
-										for (PosicionCarro posPila : posicionesCarrosPila) {
-											
-											if(posPila.getIdCarro() == ubicarCarro2.getId()) {	   
-												
-												TranslateTransition transition5 = new TranslateTransition();	
-												ubicarCarro2.setVisible(true);
-												transition5.setDuration(javafx.util.Duration.seconds(5));		    								
-												transition5.setToY(1);
-												transition5.setNode(ubicarCarro2);
-												transition5.play();
-												
-												transition5.setOnFinished(e -> {
-													transition4.play();
-												});
-												break;	
-											}		
-										}
-									}
+						});
+						transition4.setOnFinished(ex -> {
+							
+							while(!pilaImagenesCarros.estaVacia()) {
+								ImageView ubicarCarro3 = pilaImagenesCarros.getCima().getValorNodo();
+								bicolaImagenesCarros.ponerFinal(pilaImagenesCarros.pop());
+							
+								for (PosicionCarro posicionCarro : posicionesCarros) {
+									if(!(posicionCarro.isOcupado())) {
+
+										TranslateTransition transition6 = new TranslateTransition();
+										transition6.setDuration(javafx.util.Duration.seconds(6));
+										transition6.setToX(posicionCarro.getPosicion());
+										transition6.setNode(ubicarCarro3);
+										posicionCarro.setOcupado(true);
+										posicionCarro.setIdCarro(ubicarCarro3.getId());
+										ubicarCarro3.setDisable(true);
+										transition6.play();	
+																								
+										break;
+									}	
 								}
-							});
-							transition4.setOnFinished(ex -> {
-								
-								for (int k = 0; k < listaImagenes.length; k++) {
-									if(!(listaImagenes[k].isDisable())) {
-										ImageView ubicarCarro3 = listaImagenes[k];
-										cont++;
-										if(cont <= tamañoPila) {
-											
-											for (PosicionCarro posicionCarro : posicionesCarros) {
-												if(!(posicionCarro.isOcupado())) {
-	
-													TranslateTransition transition6 = new TranslateTransition();
-													transition6.setDuration(javafx.util.Duration.seconds(6));
-													transition6.setToX(posicionCarro.getPosicion());
-													transition6.setNode(ubicarCarro3);
-													posicionCarro.setOcupado(true);
-													posicionCarro.setIdCarro(ubicarCarro3.getId());
-													ubicarCarro3.setDisable(true);
-													transition6.play();	
-																											
-													break;
-													
-												}	
-											}
-										}
-									}
-								}
-							});
-						}
-					});
-					break;
-				} else {
-					colocarCarrosPila(ubicarCarro);
-				}
-			}	
+							}
+						});
+					}
+				});
+				break;
+			} else {
+				colocarCarrosPila(bicolaImagenesCarros.desencolar());
+			}
 		}
 		for (PosicionCarro pos : posicionesCarrosPila) {
 			pos.setOcupado(false);
 		}
-		cont = 0;
 	}
 
 	/**
@@ -2265,6 +2235,8 @@ public class AerolineaController implements Initializable {
 	 * @param ubicarCarro2
 	 */
 	private void colocarCarrosPila(ImageView ubicarCarro) {
+		
+		pilaImagenesCarros.push(ubicarCarro);
 				
 		ubicarCarro.setVisible(false);
 		ubicarCarro.setTranslateX(60);
