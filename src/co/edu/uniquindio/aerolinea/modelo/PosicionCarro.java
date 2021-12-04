@@ -4,6 +4,7 @@ public class PosicionCarro {
 
 	private double posicion;
 	private boolean ocupado;
+	private String idCarro;
 	
 	public PosicionCarro() {};
 	
@@ -24,6 +25,13 @@ public class PosicionCarro {
 	public void setOcupado(boolean ocupado) {
 		this.ocupado = ocupado;
 	}
+	public String getIdCarro() {
+		return idCarro;
+	}
+	public void setIdCarro(String idCarro) {
+		this.idCarro = idCarro;
+	}
+	
 		
 
 }
