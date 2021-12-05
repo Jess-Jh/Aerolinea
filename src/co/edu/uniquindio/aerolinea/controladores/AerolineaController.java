@@ -2145,7 +2145,7 @@ public class AerolineaController implements Initializable {
 								if(!(posicionesCarros.get(i).isOcupado())) {
 									
 									TranslateTransition transition = new TranslateTransition();
-									transition.setDuration(javafx.util.Duration.seconds(5));		    								
+									transition.setDuration(javafx.util.Duration.seconds(3));		    								
 									transition.setToX(posicionesCarros.get(i).getPosicion());
 									transition.setNode(ubicarCarro1);
 									posicionesCarros.get(i).setOcupado(true);
@@ -2178,7 +2178,7 @@ public class AerolineaController implements Initializable {
 										
 										TranslateTransition transition5 = new TranslateTransition();	
 										ubicarCarro2.setVisible(true);
-										transition5.setDuration(javafx.util.Duration.seconds(5));		    								
+										transition5.setDuration(javafx.util.Duration.seconds(4));		    								
 										transition5.setToY(1);
 										transition5.setNode(ubicarCarro2);
 										transition5.play();
@@ -2205,7 +2205,7 @@ public class AerolineaController implements Initializable {
 									if(!(posicionCarro.isOcupado())) {
 
 										TranslateTransition transition6 = new TranslateTransition();
-										transition6.setDuration(javafx.util.Duration.seconds(6));
+										transition6.setDuration(javafx.util.Duration.seconds(4));
 										transition6.setToX(posicionCarro.getPosicion());
 										transition6.setNode(ubicarCarro3);
 										posicionCarro.setOcupado(true);
@@ -2238,13 +2238,13 @@ public class AerolineaController implements Initializable {
 		
 		pilaImagenesCarros.push(ubicarCarro);
 				
+		imgCarroEmbarqueR.setVisible(true);
 		ubicarCarro.setVisible(false);
 		ubicarCarro.setTranslateX(60);
 		ubicarCarro.setTranslateY(55);
-		imgCarroEmbarqueR.setVisible(true);
 		
 		TranslateTransition transition = new TranslateTransition();
-		transition.setDuration(javafx.util.Duration.seconds(6));		    								
+		transition.setDuration(javafx.util.Duration.seconds(4));		    								
 		transition.setToX(-670);
 		transition.setNode(imgCarroEmbarqueR);
 		transition.play();
@@ -2258,7 +2258,7 @@ public class AerolineaController implements Initializable {
 				if(!(posicionesCarrosPila.get(k).isOcupado())) {
 									
 					TranslateTransition transition1 = new TranslateTransition();
-					transition1.setDuration(javafx.util.Duration.seconds(6));		    								
+					transition1.setDuration(javafx.util.Duration.seconds(4));		    								
 					transition1.setToY(posicionesCarrosPila.get(k).getPosicion());
 					transition1.setNode(ubicarCarro);
 					posicionesCarrosPila.get(k).setOcupado(true);
@@ -2270,6 +2270,7 @@ public class AerolineaController implements Initializable {
 					double nuevaPosicion = posicionesCarrosPila.get(k).getPosicion();
 					transition1.setOnFinished(ex -> {
 						ubicarCarro.setTranslateY(nuevaPosicion);
+						imgCarroEmbarqueR.setTranslateX(0);
 					});
 					break;
 				}
