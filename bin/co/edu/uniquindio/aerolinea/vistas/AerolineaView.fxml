@@ -505,7 +505,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="564.0" layoutY="50.0" prefHeight="598.0" prefWidth="741.0" style="-fx-border-color: #CECECE;">
+                        <Pane layoutX="564.0" layoutY="50.0" prefHeight="598.0" prefWidth="741.0" style="-fx-border-color: #CECECE; -fx-background-color: #E5E5E5;">
                            <children>
                               <Separator layoutX="-8.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="7.0" />
                               <Separator layoutX="1.0" layoutY="-10.0" prefHeight="10.0" prefWidth="739.0" />
@@ -761,53 +761,53 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="btnPila9" layoutX="59.0" layoutY="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila8" layoutX="59.0" layoutY="237.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila7" layoutX="59.0" layoutY="292.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila6" layoutX="59.0" layoutY="347.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila5" layoutX="58.0" layoutY="402.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila4" layoutX="58.0" layoutY="457.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila3" layoutX="58.0" layoutY="512.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila2" layoutX="58.0" layoutY="568.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila1" layoutX="57.0" layoutY="624.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnPila10" layoutX="59.0" layoutY="127.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;" />
-                        <Button fx:id="btnLista9" layoutX="135.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnPila9" layoutX="59.0" layoutY="182.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila8" layoutX="59.0" layoutY="237.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila7" layoutX="59.0" layoutY="292.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila6" layoutX="59.0" layoutY="347.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila5" layoutX="58.0" layoutY="402.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila4" layoutX="58.0" layoutY="457.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila3" layoutX="58.0" layoutY="512.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila2" layoutX="58.0" layoutY="568.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila1" layoutX="57.0" layoutY="624.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnPila10" layoutX="59.0" layoutY="127.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(14, 98, 81, .3); -fx-border-color: #0B5345; -fx-border-width: 0px 0px 3px 0px;" />
+                        <Button fx:id="btnLista9" layoutX="135.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista8" layoutX="210.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista8" layoutX="210.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista7" layoutX="285.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista7" layoutX="285.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista6" layoutX="360.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista6" layoutX="360.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista5" layoutX="435.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista5" layoutX="435.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista4" layoutX="510.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista4" layoutX="510.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista3" layoutX="585.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista3" layoutX="585.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista2" layoutX="660.0" layoutY="54.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista2" layoutX="660.0" layoutY="54.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista1" layoutX="735.0" layoutY="54.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista1" layoutX="735.0" layoutY="54.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnLista10" layoutX="60.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;">
+                        <Button fx:id="btnLista10" layoutX="60.0" layoutY="55.0" mnemonicParsing="false" onAction="#retirarVehiculo" prefHeight="52.0" prefWidth="70.0" style="-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>

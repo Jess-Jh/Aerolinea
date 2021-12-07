@@ -1911,7 +1911,7 @@ public class AerolineaController implements Initializable {
     void retirarVehiculo(ActionEvent event) {
     	
     	//---------------------------------------------------------- Cambiar el color del botón para retirar el carro --------------------------------------------------------->>    	
-		if (((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {
+		if (((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;")) {
 			if(posiciones+1 > 1) {
 				aplicacionAerolinea.mostrarMensaje("Notificación Embarque Equipaje", "Notificación Embarque Equipaje", "No puede seleccionar más de un carro", AlertType.WARNING);		
 			} else {
@@ -1920,7 +1920,7 @@ public class AerolineaController implements Initializable {
     			posiciones++;
 			}
 		} else if(((Button)event.getTarget()).getStyle().equalsIgnoreCase("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;")) {    		
-			((Button)event.getTarget()).setStyle("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
+			((Button)event.getTarget()).setStyle("-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;");
 			posiciones--;
 		}
     }
@@ -1934,7 +1934,7 @@ public class AerolineaController implements Initializable {
     	posicionVehiculoRetirada = 0;
     	for (Button button : listaBotones) {
     		if(button.getStyle().equalsIgnoreCase("-fx-background-color: #D51919; -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;"))   		
-    			button.setStyle("-fx-background-color: rgba(150,104,38,.3); -fx-border-color: #4B320E; -fx-border-width: 0px 0px 3px 0px;");
+    			button.setStyle("-fx-background-color: rgba(93, 109, 126,.3); -fx-border-color: #283747; -fx-border-width: 0px 0px 3px 0px;");
 		}
     }
 
