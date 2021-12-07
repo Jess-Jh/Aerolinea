@@ -200,7 +200,7 @@ public class ModelFactoryController implements Runnable, IModelFactory {
 	@Override
 	public void guardarCarroEmbarque(CarroEmbarque carroSalida) {
 		aerolinea.guardarCarroEmbarque(carroSalida);
-//		guardarRecursoXML();
+		guardarRecursoXML();
 	}
 
 

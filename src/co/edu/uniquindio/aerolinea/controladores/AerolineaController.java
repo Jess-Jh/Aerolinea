@@ -1,6 +1,7 @@
 package co.edu.uniquindio.aerolinea.controladores;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -848,6 +849,7 @@ public class AerolineaController implements Initializable {
 	 */
 	private ObservableList<Equipaje> getEquipajes() {
 		listadoEquipajes.clear();
+				
 		listadoEquipajes.addAll(aerolinea.getListaEquipajes());				
 		
 		return listadoEquipajes;
